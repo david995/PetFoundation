@@ -1,0 +1,15 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+s_pruebas_pruebas:
+    resource: "@SPruebasPRUEBASBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pruebas:
+    resource: "@PruebasBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
