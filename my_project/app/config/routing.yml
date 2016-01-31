@@ -13,3 +13,7 @@ pruebas:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+    
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group

@@ -551,6 +551,14 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="fos_user.group_manager.class">FOS\UserBundle\Doctrine\GroupManager</parameter>
+    <parameter key="fos_user.model.group.class">AppBundle\Entity\Group</parameter>
+    <parameter key="fos_user.group.form.type">FOS\UserBundle\Form\Type\GroupFormType</parameter>
+    <parameter key="fos_user.group.form.name">fos_user_group_form</parameter>
+    <parameter key="fos_user.group.form.validation_groups" type="collection">
+      <parameter>Registration</parameter>
+      <parameter>Default</parameter>
+    </parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -1161,6 +1169,8 @@
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
+              <argument key="fos_user_group">fos_user.group.form.type</argument>
+              <argument key="FOS\UserBundle\Form\Type\GroupFormType">fos_user.group.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1834,7 +1844,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
-            <argument type="service" id="fos_user.user_provider.username"/>
+            <argument type="service" id="fos_user.user_manager"/>
             <argument type="service" id="security.user_checker.main"/>
             <argument>main</argument>
             <argument type="service" id="security.encoder_factory"/>
@@ -1843,7 +1853,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>56ab41ce24a8a1.22553094</argument>
+            <argument>56ae8ddc642816.69065955</argument>
           </service>
         </argument>
       </argument>
@@ -2018,7 +2028,7 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.token_storage"/>
             <argument type="collection">
-              <argument type="service" id="fos_user.user_provider.username"/>
+              <argument type="service" id="fos_user.user_manager"/>
             </argument>
             <argument>main</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
@@ -2132,7 +2142,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>56ab41ce24a8a1.22553094</argument>
+            <argument>56ae8ddc642816.69065955</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2757,6 +2767,10 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
+    <service id="fos_user.entity_manager" class="Doctrine\ORM\EntityManager" public="false">
+      <argument>null</argument>
+      <factory service="doctrine" method="getManager"/>
+    </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="fos_user.user_manager"/>
@@ -2766,9 +2780,6 @@
       <argument type="service" id="security.user_checker.main"/>
       <argument type="service" id="security.authentication.session_strategy"/>
       <argument type="service" id="service_container"/>
-    </service>
-    <service id="fos_user.user_provider.username" class="FOS\UserBundle\Security\UserProvider" public="false">
-      <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
       <argument type="service" id="fos_user.user_manager"/>
@@ -2847,6 +2858,19 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="router"/>
       <argument>86400</argument>
+    </service>
+    <service id="fos_user.group.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
+      <argument type="service" id="form.factory"/>
+      <argument>fos_user_group_form</argument>
+      <argument>FOS\UserBundle\Form\Type\GroupFormType</argument>
+      <argument type="collection">
+        <argument>Registration</argument>
+        <argument>Default</argument>
+      </argument>
+    </service>
+    <service id="fos_user.group.form.type" class="FOS\UserBundle\Form\Type\GroupFormType">
+      <tag name="form.type" alias="fos_user_group"/>
+      <argument>AppBundle\Entity\Group</argument>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -3276,13 +3300,12 @@
       <argument type="service" id="security.encoder_factory"/>
       <argument type="service" id="fos_user.util.email_canonicalizer"/>
       <argument type="service" id="fos_user.util.email_canonicalizer"/>
-      <argument type="service">
-        <service class="Doctrine\ORM\EntityManager" public="false">
-          <argument>null</argument>
-          <factory service="doctrine" method="getManager"/>
-        </service>
-      </argument>
+      <argument type="service" id="fos_user.entity_manager"/>
       <argument>AppBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
+      <argument type="service" id="fos_user.entity_manager"/>
+      <argument>AppBundle\Entity\Group</argument>
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
