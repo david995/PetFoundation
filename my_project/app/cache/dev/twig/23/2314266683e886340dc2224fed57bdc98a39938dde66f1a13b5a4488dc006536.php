@@ -21,28 +21,52 @@ class __TwigTemplate_de1146ebb097c819364deeb5b632a82037eb8eb4ba576ddfd7568ccfbc9
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9412bc7b49adddf5a745276012db8d4cd5957a34477ab2c5c4715e7980de3cc9 = $this->env->getExtension("native_profiler");
-        $__internal_9412bc7b49adddf5a745276012db8d4cd5957a34477ab2c5c4715e7980de3cc9->enter($__internal_9412bc7b49adddf5a745276012db8d4cd5957a34477ab2c5c4715e7980de3cc9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SPruebasPRUEBASBundle:Default:contenidoindex.html.twig"));
+        $__internal_df022805a1f40e11e8dc255977e7eb439e2063a3ad729ed00d4f3e7b5fe4bbf2 = $this->env->getExtension("native_profiler");
+        $__internal_df022805a1f40e11e8dc255977e7eb439e2063a3ad729ed00d4f3e7b5fe4bbf2->enter($__internal_df022805a1f40e11e8dc255977e7eb439e2063a3ad729ed00d4f3e7b5fe4bbf2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SPruebasPRUEBASBundle:Default:contenidoindex.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_9412bc7b49adddf5a745276012db8d4cd5957a34477ab2c5c4715e7980de3cc9->leave($__internal_9412bc7b49adddf5a745276012db8d4cd5957a34477ab2c5c4715e7980de3cc9_prof);
+        $__internal_df022805a1f40e11e8dc255977e7eb439e2063a3ad729ed00d4f3e7b5fe4bbf2->leave($__internal_df022805a1f40e11e8dc255977e7eb439e2063a3ad729ed00d4f3e7b5fe4bbf2_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_a5b52e6e97b50ff06e7e0424ae26b033c3032c1e6d378fe30e8acdc9fbf3cb63 = $this->env->getExtension("native_profiler");
-        $__internal_a5b52e6e97b50ff06e7e0424ae26b033c3032c1e6d378fe30e8acdc9fbf3cb63->enter($__internal_a5b52e6e97b50ff06e7e0424ae26b033c3032c1e6d378fe30e8acdc9fbf3cb63_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_2d570bcaf2eb4adaf0e2890b6edde140534904b74f425c5d9a403afc0972f767 = $this->env->getExtension("native_profiler");
+        $__internal_2d570bcaf2eb4adaf0e2890b6edde140534904b74f425c5d9a403afc0972f767->enter($__internal_2d570bcaf2eb4adaf0e2890b6edde140534904b74f425c5d9a403afc0972f767_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "
 
-<button style=\"width:90%; height:45%;\" class=\"btn btn-info\">BOTONmnnnn</button>
+<input type=\"button\" class=\"btn botonMenuPaginaPrincipal\" style=\"background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/buscaPerd.jpg);
+\t\t\t\t\t  background-repeat:no-repeat;
+\t\t\t\t\t  background-position:center; background-size: 330px ;\" style=\"background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/labrador.jpg);
+\t\t\t\t\t  background-repeat:no-repeat;
+\t\t\t\t\t  background-position:center;\" value=\"Se busca\">&nbsp;
+\t\t\t\t\t<div class=\"visible-xs\"><br></div>
+\t\t\t\t\t<input type=\"button\" class=\"btn botonMenuPaginaPrincipal\" style=\"background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/protectora.jpg);
+\t\t\t\t\t  background-repeat:no-repeat;
+\t\t\t\t\t  background-position:center; background-size: 300px ;\" value=\"Protectoras\">&nbsp;
+\t\t\t\t\t<div class=\"visible-xs\"><br></div>
+\t\t\t\t\t<input type=\"button\" class=\"btn botonMenuPaginaPrincipal\" style=\"background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/labrador.jpg);
+\t\t\t\t\t  background-repeat:no-repeat;
+\t\t\t\t\t  background-position:center;\" value=\"Camadas\">&nbsp;
+\t\t\t\t\t<br><br>
+\t\t\t\t\t<input type=\"button\" class=\"btn botonMenuPaginaPrincipal\" style=\"background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/adopttt.jpg);
+\t\t\t\t\t  background-repeat:no-repeat;
+\t\t\t\t\t  background-position:center; background-size: 310px ;\" value=\"Adopciones\">&nbsp;
+\t\t\t\t\t<div class=\"visible-xs\"><br></div>
+\t\t\t\t\t<input type=\"button\" class=\"btn botonMenuPaginaPrincipal\" style=\"background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/donaciones.png);
+\t\t\t\t\t  background-repeat:no-repeat;
+\t\t\t\t\t  background-position:center; background-size: 300px ;\" value=\"Donaciones\">&nbsp;
+\t\t\t\t\t<div class=\"visible-xs\"><br></div>
+\t\t\t\t\t<input type=\"button\" class=\"btn botonMenuPaginaPrincipal\" style=\"background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/foro.jpg);
+\t\t\t\t\t  background-repeat:no-repeat;
+\t\t\t\t\t  background-position:center; background-size: 320px ;\" value=\"Foro\">
 ";
         
-        $__internal_a5b52e6e97b50ff06e7e0424ae26b033c3032c1e6d378fe30e8acdc9fbf3cb63->leave($__internal_a5b52e6e97b50ff06e7e0424ae26b033c3032c1e6d378fe30e8acdc9fbf3cb63_prof);
+        $__internal_2d570bcaf2eb4adaf0e2890b6edde140534904b74f425c5d9a403afc0972f767->leave($__internal_2d570bcaf2eb4adaf0e2890b6edde140534904b74f425c5d9a403afc0972f767_prof);
 
     }
 
@@ -66,5 +90,29 @@ class __TwigTemplate_de1146ebb097c819364deeb5b632a82037eb8eb4ba576ddfd7568ccfbc9
 /* {% block body %}*/
 /* */
 /* */
-/* <button style="width:90%; height:45%;" class="btn btn-info">BOTONmnnnn</button>*/
+/* <input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/buscaPerd.jpg);*/
+/* 					  background-repeat:no-repeat;*/
+/* 					  background-position:center; background-size: 330px ;" style="background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/labrador.jpg);*/
+/* 					  background-repeat:no-repeat;*/
+/* 					  background-position:center;" value="Se busca">&nbsp;*/
+/* 					<div class="visible-xs"><br></div>*/
+/* 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/protectora.jpg);*/
+/* 					  background-repeat:no-repeat;*/
+/* 					  background-position:center; background-size: 300px ;" value="Protectoras">&nbsp;*/
+/* 					<div class="visible-xs"><br></div>*/
+/* 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/labrador.jpg);*/
+/* 					  background-repeat:no-repeat;*/
+/* 					  background-position:center;" value="Camadas">&nbsp;*/
+/* 					<br><br>*/
+/* 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/adopttt.jpg);*/
+/* 					  background-repeat:no-repeat;*/
+/* 					  background-position:center; background-size: 310px ;" value="Adopciones">&nbsp;*/
+/* 					<div class="visible-xs"><br></div>*/
+/* 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/donaciones.png);*/
+/* 					  background-repeat:no-repeat;*/
+/* 					  background-position:center; background-size: 300px ;" value="Donaciones">&nbsp;*/
+/* 					<div class="visible-xs"><br></div>*/
+/* 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/spruebaspruebas/imgs/imgs/foro.jpg);*/
+/* 					  background-repeat:no-repeat;*/
+/* 					  background-position:center; background-size: 320px ;" value="Foro">*/
 /* {% endblock body %}*/

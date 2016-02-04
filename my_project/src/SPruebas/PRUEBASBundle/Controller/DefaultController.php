@@ -55,6 +55,12 @@ class DefaultController extends Controller
         return $this->render('FOSUserBundle/Resources/:views/Security:login.html.twig');
     }
     
+     public function publicarAction()
+    {
+        
+        return $this->render('SPruebasPRUEBASBundle:Default:publicaranuncio.html.twig');
+    }
+    
     public function indexAction()
     {
         

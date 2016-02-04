@@ -1,0 +1,3 @@
+propietario_homepage:
+    path:     /
+    defaults: { _controller: PropietarioBundle:Default:index }

@@ -1,0 +1,66 @@
+{% extends 'newproyectopetes:my_project:app:Resources:base.html.twig' %}
+{% block body %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript" language="javascript"></script>
+    <script src="../../bundles/anuncios/js/multifile-master/multifile-master/jquery.MultiFile.js" type="text/javascript" language="javascript"></script>
+    {{ form_start(form) }}
+         
+           <div class="row">
+                <div class="col-sm-2" align="left">
+                    
+                {{form_row(form.nombre) }}<br>
+                {{form_row(form.tipo) }}<br>
+                {{ form_row(form.raza) }}<br>
+                {{form_row(form.pedigri) }}<br>
+                
+                </div>
+                <div class="col-sm-3" align="left">
+                {{form_row(form.sexo) }}<br>
+                {{form_row(form.nacimiento) }}<br>
+                {{form_row(form.propietario) }}<br>
+                
+                </div>
+                
+                
+                <div class="visible-xs"><br></div> <div class="visible-xs"><br></div>
+                <div class="col-sm-1" align="right">
+                    
+                </div>
+                <div class="col-sm-4" align="left">
+                    <b>Titulo del anuncio: </b><input type="text" class="form-control" placeholder='...'>
+      
+                    <textarea class="form-control" rows="6" placeholder="Escribe el texto del anuncio" style="height:200px"></textarea>
+                   <!-- <input id="botonPublicar" class="btn btn-info" type="submit" value="Publicar" style='width:100%; height:40px; font-size:20px' />-->
+                    <select name="url" class="form-control">
+                           <option value="0">Elija la sección del anuncio</option>
+                           <option value="1">Camadas</option> 
+                           <option value="2">Adopción</option> 
+                           <option value="3">Se busca</option>
+                           <option value="">Protectoras</option> 
+                    </select>
+                </div>
+                
+                <div class="col-sm-1" align="left">
+                 <img src="../../bundles/anuncios/imgs/addimg.png" style="border-color:grey" width="100px"  >
+                    <input type="file" class="multi with-preview" data-maxfile="1024" />
+                    <!-- Ejemplos: http://www.fyneworks.com/jquery/multifile/#Install -->
+                </div>
+            </div>
+ 
+
+                <br>
+                
+                
+             <div class="row" >
+                 <div class="col-sm-4 col-md-offset-4">
+                     <br>
+                       <input id="botonPublicar" class="btn btn-info" type="submit" value="Publicar" style='width:100%; height:40px; font-size:20px' />
+                 </div>
+             </div>
+    {{ form_end(form) }}
+    
+    <ul>
+        <li>
+            <a href="{{ path('anuncios_index') }}" hidden>Volver a la lista</a>
+        </li>
+    </ul>
+{% endblock %}

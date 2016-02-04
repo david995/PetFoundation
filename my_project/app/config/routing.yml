@@ -1,3 +1,15 @@
+propietario:
+    resource: "@PropietarioBundle/Resources/config/routing.yml"
+    prefix:   /propietario
+
+animales:
+    resource: "@AnimalesBundle/Resources/config/routing.yml"
+    prefix:   /animales
+
+anuncios:
+    resource: "@AnunciosBundle/Resources/config/routing.yml"
+    prefix:   /
+
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 

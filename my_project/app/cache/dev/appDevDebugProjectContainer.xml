@@ -4,7 +4,7 @@
     <parameter key="kernel.root_dir">/home/ubuntu/workspace/my_project/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">app</parameter>
+    <parameter key="kernel.name">ap_</parameter>
     <parameter key="kernel.cache_dir">/home/ubuntu/workspace/my_project/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">/home/ubuntu/workspace/my_project/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
@@ -19,6 +19,9 @@
       <parameter key="PruebasBundle">PruebasBundle\PruebasBundle</parameter>
       <parameter key="SPruebasPRUEBASBundle">SPruebas\PRUEBASBundle\SPruebasPRUEBASBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="AnunciosBundle">AnunciosBundle\AnunciosBundle</parameter>
+      <parameter key="AnimalesBundle">AnimalesBundle\AnimalesBundle</parameter>
+      <parameter key="PropietarioBundle">PropietarioBundle\PropietarioBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -1853,7 +1856,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>56ae8ddc642816.69065955</argument>
+            <argument>56b32cf9be2ce2.43495818</argument>
           </service>
         </argument>
       </argument>
@@ -2013,6 +2016,17 @@
                   </argument>
                   <argument>null</argument>
                 </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/publicar</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
               </service>
             </argument>
             <argument type="service">
@@ -2142,7 +2156,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>56ae8ddc642816.69065955</argument>
+            <argument>56b32cf9be2ce2.43495818</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2195,6 +2209,17 @@
                   </argument>
                   <argument type="collection">
                     <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/publicar</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2614,6 +2639,9 @@
               <argument key="AppBundle">AppBundle\Entity</argument>
               <argument key="PruebasBundle">PruebasBundle\Entity</argument>
               <argument key="SPruebasPRUEBASBundle">SPruebas\PRUEBASBundle\Entity</argument>
+              <argument key="AnunciosBundle">AnunciosBundle\Entity</argument>
+              <argument key="AnimalesBundle">AnimalesBundle\Entity</argument>
+              <argument key="PropietarioBundle">PropietarioBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2666,6 +2694,51 @@
                     </service>
                   </argument>
                   <argument>SPruebas\PRUEBASBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/config/doctrine">AnunciosBundle\Entity</argument>
+                        <argument key="/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/config/doctrine">AnimalesBundle\Entity</argument>
+                        <argument key="/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/config/doctrine">PropietarioBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>AnunciosBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/config/doctrine">AnunciosBundle\Entity</argument>
+                        <argument key="/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/config/doctrine">AnimalesBundle\Entity</argument>
+                        <argument key="/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/config/doctrine">PropietarioBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>AnimalesBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/config/doctrine">AnunciosBundle\Entity</argument>
+                        <argument key="/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/config/doctrine">AnimalesBundle\Entity</argument>
+                        <argument key="/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/config/doctrine">PropietarioBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>PropietarioBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -3188,6 +3261,18 @@
       <call method="addPath">
         <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/views</argument>
+        <argument>Anuncios</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/views</argument>
+        <argument>Animales</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/views</argument>
+        <argument>Propietario</argument>
       </call>
       <call method="addPath">
         <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>

@@ -105,6 +105,98 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // propietario_homepage
+        if (rtrim($pathinfo, '/') === '/propietario') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'propietario_homepage');
+            }
+
+            return array (  '_controller' => 'PropietarioBundle\\Controller\\DefaultController::indexAction',  '_route' => 'propietario_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/an')) {
+            // animales_homepage
+            if (rtrim($pathinfo, '/') === '/animales') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'animales_homepage');
+                }
+
+                return array (  '_controller' => 'AnimalesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'animales_homepage',);
+            }
+
+            if (0 === strpos($pathinfo, '/anuncios')) {
+                // anuncios_index
+                if (rtrim($pathinfo, '/') === '/anuncios') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_anuncios_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'anuncios_index');
+                    }
+
+                    return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::indexAction',  '_route' => 'anuncios_index',);
+                }
+                not_anuncios_index:
+
+                // anuncios_show
+                if (preg_match('#^/anuncios/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_anuncios_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_show')), array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::showAction',));
+                }
+                not_anuncios_show:
+
+                // anuncios_new
+                if ($pathinfo === '/anuncios/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_anuncios_new;
+                    }
+
+                    return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::newAction',  '_route' => 'anuncios_new',);
+                }
+                not_anuncios_new:
+
+                // anuncios_edit
+                if (preg_match('#^/anuncios/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_anuncios_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_edit')), array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::editAction',));
+                }
+                not_anuncios_edit:
+
+                // anuncios_delete
+                if (preg_match('#^/anuncios/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_anuncios_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_delete')), array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::deleteAction',));
+                }
+                not_anuncios_delete:
+
+            }
+
+        }
+
+        // anuncios_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'anuncios_homepage');
+            }
+
+            return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::indexAction',  '_route' => 'anuncios_homepage',);
+        }
+
         if (0 === strpos($pathinfo, '/log')) {
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
@@ -313,6 +405,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  '_controller' => 'SPruebas\\PRUEBASBundle\\Controller\\DefaultController::indexAction',  '_route' => 's_pruebas_pruebas_homepage',);
+        }
+
+        // publicaranuncio
+        if ($pathinfo === '/anuncios') {
+            return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::indexAction',  '_route' => 'publicaranuncio',);
         }
 
         // pruebas_default_index

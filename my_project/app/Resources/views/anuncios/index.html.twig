@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>Lista de anuncios</h1>
+
+    <table border="">
+        <thead>
+            <tr>
+                <th>Id&nbsp;&nbsp;&nbsp;</th>
+                <th>Nombre&nbsp;&nbsp;&nbsp;</th>
+                <th>Tipo&nbsp;&nbsp;&nbsp;</th>
+                <th>Raza&nbsp;&nbsp;&nbsp;</th>
+                <th>Sexo&nbsp;&nbsp;&nbsp;</th>
+                <th>Nacimiento&nbsp;&nbsp;&nbsp;</th>
+                <th>Propietario&nbsp;&nbsp;</th>
+                <th>Pedigri&nbsp;&nbsp;&nbsp;</th>
+                <th>Actions&nbsp;&nbsp;&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for anuncios in anuncios %}
+            <tr>
+                <td><a href="{{ path('anuncios_show', { 'id': anuncios.id }) }}">{{ anuncios.id }}</a></td>
+                <td>{{ anuncios.nombre }}&nbsp;&nbsp;</td>
+                <td>{{ anuncios.tipo }}&nbsp;&nbsp;</td>
+                <td>{{ anuncios.raza }}&nbsp;&nbsp;</td>
+                <td>{{ anuncios.sexo }}&nbsp;&nbsp;</td>
+                <td>{% if anuncios.nacimiento %}{{ anuncios.nacimiento|date('Y-m-d') }}&nbsp;&nbsp;{% endif %}</td>
+                <td>{{ anuncios.propietario }}&nbsp;&nbsp;</td>
+                <td>{% if anuncios.pedigri %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('anuncios_show', { 'id': anuncios.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('anuncios_edit', { 'id': anuncios.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('anuncios_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

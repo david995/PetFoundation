@@ -1,0 +1,43 @@
+AnimalesBundle\Entity\Animales:
+    type: entity
+    table: null
+    repositoryClass: AnimalesBundle\Repository\AnimalesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nombre:
+            type: string
+            length: 255
+            column: Nombre
+        tipo:
+            type: string
+            length: 255
+            column: Tipo
+        raza:
+            type: string
+            length: 255
+            nullable: true
+            column: Raza
+        sexo:
+            type: string
+            length: 255
+            nullable: true
+            column: Sexo
+        nacimiento:
+            type: date
+            nullable: true
+            column: Nacimiento
+        propietario:
+            type: string
+            length: 255
+            column: Propietario
+        pedigri:
+            type: string
+            length: 255
+            nullable: true
+            column: Pedigri
+    lifecycleCallbacks: {  }

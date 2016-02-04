@@ -1,6 +1,6 @@
 <?php
 
-/* default/new.html.twig */
+/* :default:new.html.twig */
 class __TwigTemplate_321e3d5fb214e40e5ee2b0e9fd1369d1b07311fd4d886693d8279941ff6f9e90 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_321e3d5fb214e40e5ee2b0e9fd1369d1b07311fd4d886693d8279941ff6
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_65d959c0c0e1c027e990fab442ba3a92207b2d4df1a007241f19df57fd329965 = $this->env->getExtension("native_profiler");
-        $__internal_65d959c0c0e1c027e990fab442ba3a92207b2d4df1a007241f19df57fd329965->enter($__internal_65d959c0c0e1c027e990fab442ba3a92207b2d4df1a007241f19df57fd329965_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/new.html.twig"));
+        $__internal_c5f911a4c26c34d23ce4af2502582233d6743d7128ee3f361e8d449b229e4ec4 = $this->env->getExtension("native_profiler");
+        $__internal_c5f911a4c26c34d23ce4af2502582233d6743d7128ee3f361e8d449b229e4ec4->enter($__internal_c5f911a4c26c34d23ce4af2502582233d6743d7128ee3f361e8d449b229e4ec4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":default:new.html.twig"));
 
         // line 1
         echo "<form action=\"";
@@ -52,13 +52,13 @@ class __TwigTemplate_321e3d5fb214e40e5ee2b0e9fd1369d1b07311fd4d886693d8279941ff6
     <input type=\"submit\" />
 </form>";
         
-        $__internal_65d959c0c0e1c027e990fab442ba3a92207b2d4df1a007241f19df57fd329965->leave($__internal_65d959c0c0e1c027e990fab442ba3a92207b2d4df1a007241f19df57fd329965_prof);
+        $__internal_c5f911a4c26c34d23ce4af2502582233d6743d7128ee3f361e8d449b229e4ec4->leave($__internal_c5f911a4c26c34d23ce4af2502582233d6743d7128ee3f361e8d449b229e4ec4_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "default/new.html.twig";
+        return ":default:new.html.twig";
     }
 
     public function isTraitable()

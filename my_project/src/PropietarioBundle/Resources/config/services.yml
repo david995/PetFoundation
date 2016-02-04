@@ -1,0 +1,4 @@
+services:
+#    propietario.example:
+#        class: src\PropietarioBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

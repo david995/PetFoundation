@@ -14,4 +14,6 @@ s_pruebas_pruebas_homepage:
     path:     /
     defaults: { _controller: SPruebasPRUEBASBundle:Default:index }
     
-
+publicaranuncio:
+    path:     /anuncios
+    defaults: { _controller: AnunciosBundle:Anuncios:index }
