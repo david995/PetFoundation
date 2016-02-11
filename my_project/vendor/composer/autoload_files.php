@@ -8,6 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     $vendorDir . '/symfony/phpunit-bridge/bootstrap.php',
     $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
+    $vendorDir . '/guzzlehttp/promises/src/functions_include.php',
+    $vendorDir . '/guzzlehttp/psr7/src/functions_include.php',
+    $vendorDir . '/guzzlehttp/guzzle/src/functions_include.php',
     $vendorDir . '/paragonie/random_compat/lib/random.php',
     $vendorDir . '/ircmaxell/password-compat/lib/password.php',
     $vendorDir . '/symfony/polyfill-php70/bootstrap.php',

@@ -1,26 +1,8 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
-    <table align="center" class="table ">
-         <tr>
-             <td><label for="username">{{ 'Nombre de usuario' }}</label></td>
-             <td>{{ form_row(form.username) }}</td>
-         </tr>
-        <tr>
-            <td><label for="email">{{ 'Email'|trans }}</label></td>
-            <td>{{ form_row(form.email) }}</td>
-        </tr>
-        <tr>
-            <td><label for="password">{{ 'Contraseña actual'|trans }}</label></td>
-            <td>{{ form_row(form.current_password) }}</td>
-        </tr>
-        
-         <tr>
-            <td colspan="2"><input class="btn btn-default btn-block" type="submit" value="{{ 'Enviar'|trans }}" /></td>
-        </tr>
-        
-        </table>
-    
-        
-    
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
 {{ form_end(form) }}

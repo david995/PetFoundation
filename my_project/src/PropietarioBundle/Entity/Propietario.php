@@ -4,53 +4,78 @@ namespace PropietarioBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Propietario
+ *
+ * @ORM\Table(name="propietario")
+ * @ORM\Entity(repositoryClass="PropietarioBundle\Repository\PropietarioRepository")
  */
 class Propietario
 {
     /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Nombre", type="string", length=255)
      */
     private $nombre;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Email", type="string", length=255, unique=true)
      */
     private $email;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Apellido", type="string", length=255, nullable=true)
      */
     private $apellido;
 
     /**
-     * @var string
+     * @var int
+     *
+     * @ORM\Column(name="Anuncio", type="integer", unique=true)
      */
     private $anuncio;
 
     /**
      * @var int
+     *
+     * @ORM\Column(name="Telefono", type="integer")
      */
     private $telefono;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Direccion", type="string", length=255)
      */
     private $direccion;
 
     /**
-     * @var string
+     * @var int
+     *
+     * @ORM\Column(name="CP", type="integer")
      */
     private $cP;
 
     /**
-     * @var string
+     * @var int
+     *
+     * @ORM\Column(name="Animal", type="integer", unique=true)
      */
     private $animal;
 
@@ -140,7 +165,7 @@ class Propietario
     /**
      * Set anuncio
      *
-     * @param string $anuncio
+     * @param integer $anuncio
      *
      * @return Propietario
      */
@@ -154,7 +179,7 @@ class Propietario
     /**
      * Get anuncio
      *
-     * @return string
+     * @return int
      */
     public function getAnuncio()
     {
@@ -212,7 +237,7 @@ class Propietario
     /**
      * Set cP
      *
-     * @param string $cP
+     * @param integer $cP
      *
      * @return Propietario
      */
@@ -226,7 +251,7 @@ class Propietario
     /**
      * Get cP
      *
-     * @return string
+     * @return int
      */
     public function getCP()
     {
@@ -236,7 +261,7 @@ class Propietario
     /**
      * Set animal
      *
-     * @param string $animal
+     * @param integer $animal
      *
      * @return Propietario
      */
@@ -250,7 +275,7 @@ class Propietario
     /**
      * Get animal
      *
-     * @return string
+     * @return int
      */
     public function getAnimal()
     {
@@ -258,22 +283,89 @@ class Propietario
     }
     
     /**
-     * Un propietario puede tener muchos animales
+     * Relationship OneToMany
      * 
-     * @ORM\OneToMany(targetEntity="Animales", mappedBy="propietarioAnimal")
+     * @ORM\OneToMany(targetEntity="AnimalesBundle\Entity\Animales", mappedBy="animalPropietario")
      */
-    protected $animales;
-    
+     private $propietarioAnimal;
+     
+     /**
+     * Relationship OneToMany
+     * 
+     * @ORM\OneToMany(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="tituloAnuncio")
+     */
+     private $propietarioAnuncio;
+     
+     public function __construct(){
+         $this->propietarioAnimal = new ArrayCollection();
+         $this->propietarioAnuncio = new ArrayCollection();
+     }
+
     /**
-     * Un propietario puede tener muchos anuncios
-     * 
-     * @ORM\OneToMany(targetEntity="Anuncios", mappedBy="propietarioAnuncio")
+     * Add propietarioAnimal
+     *
+     * @param \AnimalesBundle\Entity\Animales $propietarioAnimal
+     *
+     * @return Propietario
      */
-    protected $anuncios;
- 
-    public function __construct()
+    public function addPropietarioAnimal(\AnimalesBundle\Entity\Animales $propietarioAnimal)
     {
-        $this->animales = new ArrayCollection();
-        $this->anuncios = new ArrayCollection();
+        $this->propietarioAnimal[] = $propietarioAnimal;
+
+        return $this;
+    }
+
+    /**
+     * Remove propietarioAnimal
+     *
+     * @param \AnimalesBundle\Entity\Animales $propietarioAnimal
+     */
+    public function removePropietarioAnimal(\AnimalesBundle\Entity\Animales $propietarioAnimal)
+    {
+        $this->propietarioAnimal->removeElement($propietarioAnimal);
+    }
+
+    /**
+     * Get propietarioAnimal
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPropietarioAnimal()
+    {
+        return $this->propietarioAnimal;
+    }
+
+    /**
+     * Add propietarioAnuncio
+     *
+     * @param \AnunciosBundle\Entity\Anuncios $propietarioAnuncio
+     *
+     * @return Propietario
+     */
+    public function addPropietarioAnuncio(\AnunciosBundle\Entity\Anuncios $propietarioAnuncio)
+    {
+        $this->propietarioAnuncio[] = $propietarioAnuncio;
+
+        return $this;
+    }
+
+    /**
+     * Remove propietarioAnuncio
+     *
+     * @param \AnunciosBundle\Entity\Anuncios $propietarioAnuncio
+     */
+    public function removePropietarioAnuncio(\AnunciosBundle\Entity\Anuncios $propietarioAnuncio)
+    {
+        $this->propietarioAnuncio->removeElement($propietarioAnuncio);
+    }
+
+    /**
+     * Get propietarioAnuncio
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPropietarioAnuncio()
+    {
+        return $this->propietarioAnuncio;
     }
 }

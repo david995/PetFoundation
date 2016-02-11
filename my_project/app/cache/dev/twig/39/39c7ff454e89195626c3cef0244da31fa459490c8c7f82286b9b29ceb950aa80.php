@@ -21,20 +21,20 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5b45c8453a3ca00ea1fb46af5d91d7460ac0e02193061dcf8fe2052656665f5e = $this->env->getExtension("native_profiler");
-        $__internal_5b45c8453a3ca00ea1fb46af5d91d7460ac0e02193061dcf8fe2052656665f5e->enter($__internal_5b45c8453a3ca00ea1fb46af5d91d7460ac0e02193061dcf8fe2052656665f5e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
+        $__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9 = $this->env->getExtension("native_profiler");
+        $__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9->enter($__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5b45c8453a3ca00ea1fb46af5d91d7460ac0e02193061dcf8fe2052656665f5e->leave($__internal_5b45c8453a3ca00ea1fb46af5d91d7460ac0e02193061dcf8fe2052656665f5e_prof);
+        $__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9->leave($__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9_prof);
 
     }
 
     // line 5
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_82c723ed6769f96569ebb7b5a8070af068657ddf7554c8ac278050ce37c7cec0 = $this->env->getExtension("native_profiler");
-        $__internal_82c723ed6769f96569ebb7b5a8070af068657ddf7554c8ac278050ce37c7cec0->enter($__internal_82c723ed6769f96569ebb7b5a8070af068657ddf7554c8ac278050ce37c7cec0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45 = $this->env->getExtension("native_profiler");
+        $__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45->enter($__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
         // line 6
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
@@ -46,58 +46,70 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
         }
         // line 9
         echo "
-\t\t 
-        
-
-<form action=\"";
-        // line 13
+\t\t
+            
+            
+        <div class=\"row\">
+            <div class=\"col-sm-8 col-md-offset-2\" align=\"left\">
+               <font style=\"color: #00BCD4;font-weight: bold; font-size:23px;\">Inicio de sesión</font><br><br>
+                 
+                 
+                 <form action=\"";
+        // line 18
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
    
         <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 15
+        // line 20
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
-     <table align=\"center\" class=\"table \">
-         <tr>
-             <td><label for=\"username\">";
-        // line 18
-        echo "Nombre de usuario";
-        echo "</label></td>
-             <td><input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 19
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" required=\"required\" /></td>
-         </tr>
-        <tr>
-            <td><label for=\"password\">";
+        
+    <label for=\"username\">";
         // line 22
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Contraseña", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label></td>
-            <td><input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" /></td>
-        </tr>
-        
-         <tr>
-            
-            <td ><label for=\"remember_me\">";
+        echo "Nombre de usuario";
+        echo "</label>
+    \t <div class=\"input-group\">
+<input type=\"text\" id=\"username\" class=\"form-control\" name=\"_username\" value=\"";
+        // line 24
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
+        echo "\" required=\"required\" placeholder=\"...\"/>
+<span class=\"input-group-addon \"><span class=\"glyphicon glyphicon-user\"></span></span>    </div><br>
+
+
+<label for=\"password\">";
         // line 28
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Recordarme", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label></td>
-            <td align=\"left\"><input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" /></td>
-        </tr>
-        
-         <tr>
-            <td colspan=\"2\"><center><input class=\"btn btn-default btn-block\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
-        // line 33
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Enviar", array(), "FOSUserBundle"), "html", null, true);
-        echo "\" /></center></td>
-        </tr>
-        
-        </table>
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Contraseña", array(), "FOSUserBundle"), "html", null, true);
+        echo "</label>
+<div class=\"input-group\">
+<input type=\"password\" id=\"password\" class=\"form-control\" name=\"_password\" required=\"required\" placeholder=\"...\"/>
+<span class=\"input-group-addon \"><span class=\"glyphicon glyphicon-asterisk\"></span></span>   
+</div>
+<br>
+<label for=\"remember_me\">";
+        // line 34
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Recordar", array(), "FOSUserBundle"), "html", null, true);
+        echo "</label>
+<input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" style=\"/* All browsers except webkit*/
+  transform: scale(1.5);
+
+  /* Webkit browsers*/
+  -webkit-transform: scale(1.4);\"/>
+ <br><br>
+<input id=\"botonPublicar\" class=\"btn btn-info\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Iniciar sesión", array(), "FOSUserBundle"), "html", null, true);
+        echo "\" style='width:100%; height:40px; font-size:20px' />
+            
 </form>
+                 
+                 
+            </div>
+        </div>
+
+
 ";
         
-        $__internal_82c723ed6769f96569ebb7b5a8070af068657ddf7554c8ac278050ce37c7cec0->leave($__internal_82c723ed6769f96569ebb7b5a8070af068657ddf7554c8ac278050ce37c7cec0_prof);
+        $__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45->leave($__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45_prof);
 
     }
 
@@ -113,7 +125,7 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
 
     public function getDebugInfo()
     {
-        return array (  92 => 33,  84 => 28,  75 => 22,  69 => 19,  65 => 18,  59 => 15,  54 => 13,  48 => 9,  42 => 7,  40 => 6,  34 => 5,  11 => 1,);
+        return array (  100 => 41,  90 => 34,  81 => 28,  74 => 24,  69 => 22,  64 => 20,  59 => 18,  48 => 9,  42 => 7,  40 => 6,  34 => 5,  11 => 1,);
     }
 }
 /* {% extends "FOSUserBundle::layout.html.twig" %}*/
@@ -125,33 +137,45 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
 /*     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>*/
 /* {% endif %}*/
 /* */
-/* 		 */
-/*         */
-/* */
-/* <form action="{{ path("fos_user_security_check") }}" method="post">*/
+/* 		*/
+/*             */
+/*             */
+/*         <div class="row">*/
+/*             <div class="col-sm-8 col-md-offset-2" align="left">*/
+/*                <font style="color: #00BCD4;font-weight: bold; font-size:23px;">Inicio de sesión</font><br><br>*/
+/*                  */
+/*                  */
+/*                  <form action="{{ path("fos_user_security_check") }}" method="post">*/
 /*    */
 /*         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
-/*      <table align="center" class="table ">*/
-/*          <tr>*/
-/*              <td><label for="username">{{ 'Nombre de usuario' }}</label></td>*/
-/*              <td><input type="text" id="username" name="_username" value="{{ last_username }}" required="required" /></td>*/
-/*          </tr>*/
-/*         <tr>*/
-/*             <td><label for="password">{{ 'Contraseña'|trans }}</label></td>*/
-/*             <td><input type="password" id="password" name="_password" required="required" /></td>*/
-/*         </tr>*/
 /*         */
-/*          <tr>*/
+/*     <label for="username">{{ 'Nombre de usuario' }}</label>*/
+/*     	 <div class="input-group">*/
+/* <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" required="required" placeholder="..."/>*/
+/* <span class="input-group-addon "><span class="glyphicon glyphicon-user"></span></span>    </div><br>*/
+/* */
+/* */
+/* <label for="password">{{ 'Contraseña'|trans }}</label>*/
+/* <div class="input-group">*/
+/* <input type="password" id="password" class="form-control" name="_password" required="required" placeholder="..."/>*/
+/* <span class="input-group-addon "><span class="glyphicon glyphicon-asterisk"></span></span>   */
+/* </div>*/
+/* <br>*/
+/* <label for="remember_me">{{ 'Recordar'|trans }}</label>*/
+/* <input type="checkbox" id="remember_me" name="_remember_me" value="on" style="/* All browsers except webkit*//* */
+/*   transform: scale(1.5);*/
+/* */
+/*   /* Webkit browsers*//* */
+/*   -webkit-transform: scale(1.4);"/>*/
+/*  <br><br>*/
+/* <input id="botonPublicar" class="btn btn-info" type="submit" id="_submit" name="_submit" value="{{ 'Iniciar sesión'|trans }}" style='width:100%; height:40px; font-size:20px' />*/
 /*             */
-/*             <td ><label for="remember_me">{{ 'Recordarme'|trans }}</label></td>*/
-/*             <td align="left"><input type="checkbox" id="remember_me" name="_remember_me" value="on" /></td>*/
-/*         </tr>*/
-/*         */
-/*          <tr>*/
-/*             <td colspan="2"><center><input class="btn btn-default btn-block" type="submit" id="_submit" name="_submit" value="{{ 'Enviar'|trans }}" /></center></td>*/
-/*         </tr>*/
-/*         */
-/*         </table>*/
 /* </form>*/
+/*                  */
+/*                  */
+/*             </div>*/
+/*         </div>*/
+/* */
+/* */
 /* {% endblock fos_user_content %}*/
 /* */

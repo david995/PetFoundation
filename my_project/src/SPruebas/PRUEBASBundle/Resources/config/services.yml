@@ -1,4 +1,0 @@
-services:
-#    s_pruebas_pruebas.example:
-#        class: SPruebas\PRUEBASBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

@@ -16,12 +16,13 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
-            new PruebasBundle\PruebasBundle(),
-            new SPruebas\PRUEBASBundle\SPruebasPRUEBASBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
-            new AnunciosBundle\AnunciosBundle(),
             new AnimalesBundle\AnimalesBundle(),
             new PropietarioBundle\PropietarioBundle(),
+            new AnunciosBundle\AnunciosBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new IndexBundle\IndexBundle(),
+            new PaginasIndexBundle\PaginasIndexBundle(),
+#            new Payum\Bundle\PayumBundle\PayumBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

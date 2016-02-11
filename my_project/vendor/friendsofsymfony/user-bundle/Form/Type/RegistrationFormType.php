@@ -32,13 +32,13 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'), array('label' => ' ', 'translation_domain' => 'FOSUserBundle'))
-            ->add('username', null, array('label' => ' ', 'translation_domain' => 'FOSUserBundle'))
+            ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'), array('label' => 'E-mail', 'translation_domain' => 'FOSUserBundle'))
+            ->add('username', null, array('label' => 'Nombre de usuario', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
                 'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
                 'options' => array('translation_domain' => 'FOSUserBundle'),
-                'first_options' => array('label' => ' '),
-                'second_options' => array('label' => ' '),
+                'first_options' => array('label' => 'Contraseña'),
+                'second_options' => array('label' => 'Confirmar contraseña'),
                 'invalid_message' => 'Error, las contraseñas no coinciden',
             ))
             ->add('roles', 'choice', array('label' => ' ','attr' => array('hidden'=> true), 

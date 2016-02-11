@@ -16,12 +16,12 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
-      <parameter key="PruebasBundle">PruebasBundle\PruebasBundle</parameter>
-      <parameter key="SPruebasPRUEBASBundle">SPruebas\PRUEBASBundle\SPruebasPRUEBASBundle</parameter>
-      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
-      <parameter key="AnunciosBundle">AnunciosBundle\AnunciosBundle</parameter>
       <parameter key="AnimalesBundle">AnimalesBundle\AnimalesBundle</parameter>
       <parameter key="PropietarioBundle">PropietarioBundle\PropietarioBundle</parameter>
+      <parameter key="AnunciosBundle">AnunciosBundle\AnunciosBundle</parameter>
+      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="IndexBundle">IndexBundle\IndexBundle</parameter>
+      <parameter key="PaginasIndexBundle">PaginasIndexBundle\PaginasIndexBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -38,8 +38,8 @@
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
-    <parameter key="secret">77d3ac75b1aa66c554612bd224fd09d01946a49c</parameter>
-    <parameter key="locale">en</parameter>
+    <parameter key="secret">1bf7844c34aa44cd3392d304c2ffa60fccd7a312</parameter>
+    <parameter key="locale">es</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -88,11 +88,11 @@
     <parameter key="translation.extractor.class">Symfony\Component\Translation\Extractor\ChainExtractor</parameter>
     <parameter key="translation.writer.class">Symfony\Component\Translation\Writer\TranslationWriter</parameter>
     <parameter key="property_accessor.class">Symfony\Component\PropertyAccess\PropertyAccessor</parameter>
-    <parameter key="kernel.secret">77d3ac75b1aa66c554612bd224fd09d01946a49c</parameter>
+    <parameter key="kernel.secret">1bf7844c34aa44cd3392d304c2ffa60fccd7a312</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.trusted_proxies" type="collection"/>
-    <parameter key="kernel.default_locale">en</parameter>
+    <parameter key="kernel.default_locale">es</parameter>
     <parameter key="session.class">Symfony\Component\HttpFoundation\Session\Session</parameter>
     <parameter key="session.flashbag.class">Symfony\Component\HttpFoundation\Session\Flash\FlashBag</parameter>
     <parameter key="session.attribute_bag.class">Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag</parameter>
@@ -149,6 +149,7 @@
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="validator.api">2.5-bc</parameter>
     <parameter key="fragment.listener.class">Symfony\Component\HttpKernel\EventListener\FragmentListener</parameter>
+    <parameter key="translator.logging">true</parameter>
     <parameter key="profiler.class">Symfony\Component\HttpKernel\Profiler\Profiler</parameter>
     <parameter key="profiler_listener.class">Symfony\Component\HttpKernel\EventListener\ProfilerListener</parameter>
     <parameter key="data_collector.config.class">Symfony\Component\HttpKernel\DataCollector\ConfigDataCollector</parameter>
@@ -554,14 +555,6 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
-    <parameter key="fos_user.group_manager.class">FOS\UserBundle\Doctrine\GroupManager</parameter>
-    <parameter key="fos_user.model.group.class">AppBundle\Entity\Group</parameter>
-    <parameter key="fos_user.group.form.type">FOS\UserBundle\Form\Type\GroupFormType</parameter>
-    <parameter key="fos_user.group.form.name">fos_user_group_form</parameter>
-    <parameter key="fos_user.group.form.validation_groups" type="collection">
-      <parameter>Registration</parameter>
-      <parameter>Default</parameter>
-    </parameter>
     <parameter key="web_profiler.controller.profiler.class">Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController</parameter>
     <parameter key="web_profiler.controller.router.class">Symfony\Bundle\WebProfilerBundle\Controller\RouterController</parameter>
     <parameter key="web_profiler.controller.exception.class">Symfony\Bundle\WebProfilerBundle\Controller\ExceptionController</parameter>
@@ -607,6 +600,10 @@
         <parameter>router</parameter>
         <parameter>@WebProfiler/Collector/router.html.twig</parameter>
       </parameter>
+      <parameter key="data_collector.translation" type="collection">
+        <parameter>translation</parameter>
+        <parameter>@WebProfiler/Collector/translation.html.twig</parameter>
+      </parameter>
       <parameter key="data_collector.security" type="collection">
         <parameter>security</parameter>
         <parameter>@Security/Collector/security.html.twig</parameter>
@@ -651,7 +648,7 @@
     <service id="locale_listener" class="Symfony\Component\HttpKernel\EventListener\LocaleListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="request_stack"/>
-      <argument>en</argument>
+      <argument>es</argument>
       <argument type="service" id="router" on-invalid="ignore"/>
     </service>
     <service id="translator_listener" class="Symfony\Component\HttpKernel\EventListener\TranslatorListener">
@@ -686,7 +683,7 @@
         <argument type="service">
           <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TranslationsCacheWarmer" public="false">
             <tag name="kernel.cache_warmer"/>
-            <argument type="service" id="translator"/>
+            <argument type="service" id="translator.default"/>
           </service>
         </argument>
         <argument type="service">
@@ -747,7 +744,7 @@
       <argument>/home/ubuntu/workspace/my_project/app/Resources</argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
-      <argument>77d3ac75b1aa66c554612bd224fd09d01946a49c</argument>
+      <argument>1bf7844c34aa44cd3392d304c2ffa60fccd7a312</argument>
     </service>
     <service id="config_cache_factory" class="Symfony\Component\Config\ResourceCheckerConfigCacheFactory">
       <argument type="collection">
@@ -826,7 +823,9 @@
     </service>
     <service id="translator.default" class="Symfony\Bundle\FrameworkBundle\Translation\Translator">
       <argument type="service" id="service_container"/>
-      <argument type="service" id="translator.selector"/>
+      <argument type="service">
+        <service class="Symfony\Component\Translation\MessageSelector" public="false"/>
+      </argument>
       <argument type="collection">
         <argument key="translation.loader.php" type="collection">
           <argument>php</argument>
@@ -866,16 +865,324 @@
       <argument type="collection">
         <argument key="cache_dir">/home/ubuntu/workspace/my_project/app/cache/dev/translations</argument>
         <argument key="debug">true</argument>
+        <argument key="resource_files" type="collection">
+          <argument key="pt_BR" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt_BR.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt_BR.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pt_BR.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt_BR.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
+          </argument>
+          <argument key="et" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.et.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.et.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.et.yml</argument>
+          </argument>
+          <argument key="hy" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hy.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hy.xlf</argument>
+          </argument>
+          <argument key="gl" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.gl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.gl.xlf</argument>
+          </argument>
+          <argument key="fi" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fi.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fi.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fi.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fi.yml</argument>
+          </argument>
+          <argument key="sl" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sl.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sl.yml</argument>
+          </argument>
+          <argument key="cs" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cs.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.cs.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.cs.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.cs.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.cs.yml</argument>
+          </argument>
+          <argument key="th" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.th.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.th.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.th.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.th.yml</argument>
+          </argument>
+          <argument key="mn" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.mn.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.mn.xlf</argument>
+          </argument>
+          <argument key="fr" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.fr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml</argument>
+          </argument>
+          <argument key="pt" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt.yml</argument>
+          </argument>
+          <argument key="sr_Cyrl" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Cyrl.xlf</argument>
+          </argument>
+          <argument key="nl" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.nl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.nl.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.nl.yml</argument>
+          </argument>
+          <argument key="hu" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hu.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hu.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.hu.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hu.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hu.yml</argument>
+          </argument>
+          <argument key="af" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.af.xlf</argument>
+          </argument>
+          <argument key="ar" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ar.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ar.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ar.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ar.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ar.yml</argument>
+          </argument>
+          <argument key="cy" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cy.xlf</argument>
+          </argument>
+          <argument key="sk" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sk.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sk.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sk.yml</argument>
+          </argument>
+          <argument key="tr" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.tr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.tr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.tr.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.tr.yml</argument>
+          </argument>
+          <argument key="ro" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ro.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ro.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ro.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ro.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ro.yml</argument>
+          </argument>
+          <argument key="bg" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.bg.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.bg.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.bg.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.bg.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.bg.yml</argument>
+          </argument>
+          <argument key="sq" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sq.xlf</argument>
+          </argument>
+          <argument key="de" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.de.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.de.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.de.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.de.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.de.yml</argument>
+          </argument>
+          <argument key="eu" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.eu.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.eu.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.eu.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.eu.yml</argument>
+          </argument>
+          <argument key="lt" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lt.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lt.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lt.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.lt.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lt.yml</argument>
+          </argument>
+          <argument key="sv" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sv.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sv.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sv.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sv.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sv.yml</argument>
+          </argument>
+          <argument key="id" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.id.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.id.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.id.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.id.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.id.yml</argument>
+          </argument>
+          <argument key="da" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.da.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.da.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.da.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.da.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.da.yml</argument>
+          </argument>
+          <argument key="he" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.he.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.he.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.he.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.he.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.he.yml</argument>
+          </argument>
+          <argument key="nb" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nb.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nb.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.nb.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.nb.yml</argument>
+          </argument>
+          <argument key="uk" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.uk.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.uk.yml</argument>
+          </argument>
+          <argument key="zh_CN" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.zh_CN.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.zh_CN.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.zh_CN.yml</argument>
+          </argument>
+          <argument key="vi" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.vi.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.vi.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.vi.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.vi.yml</argument>
+          </argument>
+          <argument key="ca" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ca.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ca.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ca.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ca.yml</argument>
+          </argument>
+          <argument key="es" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.es.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.es.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.es.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
+          </argument>
+          <argument key="lb" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lb.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lb.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.lb.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lb.yml</argument>
+          </argument>
+          <argument key="el" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.el.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.el.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.el.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.el.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.el.yml</argument>
+          </argument>
+          <argument key="it" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.it.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.it.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.it.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.it.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.it.yml</argument>
+          </argument>
+          <argument key="pl" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pl.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pl.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pl.yml</argument>
+          </argument>
+          <argument key="en" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.en.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.en.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.en.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml</argument>
+          </argument>
+          <argument key="ja" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ja.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ja.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ja.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ja.yml</argument>
+          </argument>
+          <argument key="sr_Latn" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Latn.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sr_Latn.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sr_Latn.yml</argument>
+          </argument>
+          <argument key="ru" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ru.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ru.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ru.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ru.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ru.yml</argument>
+          </argument>
+          <argument key="hr" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.hr.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hr.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hr.yml</argument>
+          </argument>
+          <argument key="no" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.no.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.no.xlf</argument>
+          </argument>
+          <argument key="fa" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fa.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fa.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.fa.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fa.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fa.yml</argument>
+          </argument>
+          <argument key="az" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.az.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.az.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.az.xlf</argument>
+          </argument>
+          <argument key="zh_TW" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_TW.xlf</argument>
+          </argument>
+          <argument key="lv" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lv.xlf</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.lv.yml</argument>
+            <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lv.yml</argument>
+          </argument>
+          <argument key="pt_PT" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.pt_PT.xlf</argument>
+          </argument>
+          <argument key="ua" type="collection">
+            <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ua.xlf</argument>
+          </argument>
+        </argument>
       </argument>
       <argument type="collection"/>
       <call method="setConfigCacheFactory">
         <argument type="service" id="config_cache_factory"/>
       </call>
+      <call method="setFallbackLocales">
+        <argument type="collection">
+          <argument>es</argument>
+        </argument>
+      </call>
     </service>
-    <service id="translator" class="Symfony\Component\Translation\IdentityTranslator">
-      <argument type="service" id="translator.selector"/>
-    </service>
-    <service id="translator.selector" class="Symfony\Component\Translation\MessageSelector" public="false"/>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
     </service>
@@ -1172,8 +1479,6 @@
               <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType">fos_user.change_password.form.type</argument>
               <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
               <argument key="FOS\UserBundle\Form\Type\ResettingFormType">fos_user.resetting.form.type</argument>
-              <argument key="fos_user_group">fos_user.group.form.type</argument>
-              <argument key="FOS\UserBundle\Form\Type\GroupFormType">fos_user.group.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1508,6 +1813,9 @@
         <argument type="service" id="data_collector.router"/>
       </call>
       <call method="add">
+        <argument type="service" id="data_collector.translation"/>
+      </call>
+      <call method="add">
         <argument type="service">
           <service class="Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector" public="false">
             <tag name="data_collector" template="@Security/Collector/security.html.twig" id="security" priority="270"/>
@@ -1583,6 +1891,10 @@
     <service id="data_collector.form" class="Symfony\Component\Form\Extension\DataCollector\FormDataCollector">
       <tag name="data_collector" template="@WebProfiler/Collector/form.html.twig" id="form" priority="310"/>
       <argument type="service" id="data_collector.form.extractor"/>
+    </service>
+    <service id="data_collector.translation" class="Symfony\Component\Translation\DataCollector\TranslationDataCollector">
+      <tag name="data_collector" template="@WebProfiler/Collector/translation.html.twig" id="translation" priority="275"/>
+      <argument type="service" id="translator"/>
     </service>
     <service id="routing.loader" class="Symfony\Bundle\FrameworkBundle\Routing\DelegatingLoader">
       <argument type="service" id="controller_name_converter"/>
@@ -1847,16 +2159,16 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
-            <argument type="service" id="fos_user.user_manager"/>
-            <argument type="service" id="security.user_checker.main"/>
-            <argument>main</argument>
+            <argument type="service" id="fos_user.user_provider.username"/>
+            <argument type="service" id="security.user_checker.dev"/>
+            <argument>dev</argument>
             <argument type="service" id="security.encoder_factory"/>
             <argument>true</argument>
           </service>
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>56b332a2438ed6.39555843</argument>
+            <argument>56b8b098af8c42.68091974</argument>
           </service>
         </argument>
       </argument>
@@ -1923,7 +2235,7 @@
         <service class="Symfony\Bundle\SecurityBundle\Security\FirewallMap" public="false">
           <argument type="service" id="service_container"/>
           <argument type="collection">
-            <argument key="security.firewall.map.context.main" type="service">
+            <argument key="security.firewall.map.context.dev" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
                 <argument>^/</argument>
               </service>
@@ -1938,7 +2250,7 @@
       <argument type="service" id="router" on-invalid="null"/>
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <call method="registerListener">
-        <argument>main</argument>
+        <argument>dev</argument>
         <argument>/logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
@@ -1965,13 +2277,24 @@
       <argument type="service" id="security.token_storage"/>
       <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
     </service>
-    <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
+    <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
             <tag name="monolog.logger" channel="security"/>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/animales/new</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
@@ -2019,11 +2342,11 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/publicar</argument>
+                      <argument>^/animales</argument>
                     </service>
                   </argument>
                   <argument type="collection">
-                    <argument>ROLE_USER</argument>
+                    <argument>ROLE_ADMIN</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2042,9 +2365,9 @@
           <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
             <argument type="service" id="security.token_storage"/>
             <argument type="collection">
-              <argument type="service" id="fos_user.user_manager"/>
+              <argument type="service" id="fos_user.user_provider.username"/>
             </argument>
-            <argument>main</argument>
+            <argument>dev</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="debug.event_dispatcher" on-invalid="null"/>
           </service>
@@ -2083,7 +2406,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
-            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.fos_userbundle"/>
+            <tag name="security.remember_me_aware" id="dev" provider="security.user.provider.concrete.fos_userbundle"/>
             <argument type="service" id="security.token_storage"/>
             <argument type="service" id="security.authentication.manager"/>
             <argument type="service" id="security.authentication.session_strategy"/>
@@ -2093,7 +2416,7 @@
                 <argument type="service" id="router" on-invalid="null"/>
               </service>
             </argument>
-            <argument>main</argument>
+            <argument>dev</argument>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
                 <argument type="service">
@@ -2113,7 +2436,7 @@
                   </argument>
                 </call>
                 <call method="setProviderKey">
-                  <argument>main</argument>
+                  <argument>dev</argument>
                 </call>
               </service>
             </argument>
@@ -2156,7 +2479,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>56b332a2438ed6.39555843</argument>
+            <argument>56b8b098af8c42.68091974</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2168,6 +2491,17 @@
             <argument type="service" id="security.access.decision_manager"/>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/animales/new</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_USER</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
@@ -2215,11 +2549,11 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/publicar</argument>
+                      <argument>^/animales</argument>
                     </service>
                   </argument>
                   <argument type="collection">
-                    <argument>ROLE_USER</argument>
+                    <argument>ROLE_ADMIN</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2239,7 +2573,7 @@
               <argument type="service" id="router" on-invalid="null"/>
             </service>
           </argument>
-          <argument>main</argument>
+          <argument>dev</argument>
           <argument type="service">
             <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
               <argument type="service" id="http_kernel"/>
@@ -2574,7 +2908,7 @@
           <argument type="service" id="service_container"/>
           <call method="addEventSubscriber">
             <argument type="service">
-              <service class="FOS\UserBundle\Doctrine\Orm\UserListener" public="false">
+              <service class="FOS\UserBundle\Doctrine\UserListener" public="false">
                 <tag name="doctrine.event_subscriber"/>
                 <argument type="service" id="service_container"/>
               </service>
@@ -2588,7 +2922,9 @@
           </call>
         </service>
       </argument>
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="enum">string</argument>
+      </argument>
       <factory service="doctrine.dbal.connection_factory" method="createConnection"/>
     </service>
     <service id="form.type_guesser.doctrine" class="Symfony\Bridge\Doctrine\Form\DoctrineOrmTypeGuesser">
@@ -2637,11 +2973,9 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="AppBundle">AppBundle\Entity</argument>
-              <argument key="PruebasBundle">PruebasBundle\Entity</argument>
-              <argument key="SPruebasPRUEBASBundle">SPruebas\PRUEBASBundle\Entity</argument>
-              <argument key="AnunciosBundle">AnunciosBundle\Entity</argument>
               <argument key="AnimalesBundle">AnimalesBundle\Entity</argument>
               <argument key="PropietarioBundle">PropietarioBundle\Entity</argument>
+              <argument key="AnunciosBundle">AnunciosBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2662,8 +2996,9 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>/home/ubuntu/workspace/my_project/src/AppBundle/Entity</argument>
-                        <argument>/home/ubuntu/workspace/my_project/src/PruebasBundle/Entity</argument>
-                        <argument>/home/ubuntu/workspace/my_project/src/SPruebas/PRUEBASBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnimalesBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/PropietarioBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnunciosBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -2675,12 +3010,13 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>/home/ubuntu/workspace/my_project/src/AppBundle/Entity</argument>
-                        <argument>/home/ubuntu/workspace/my_project/src/PruebasBundle/Entity</argument>
-                        <argument>/home/ubuntu/workspace/my_project/src/SPruebas/PRUEBASBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnimalesBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/PropietarioBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnunciosBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
-                  <argument>PruebasBundle\Entity</argument>
+                  <argument>AnimalesBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -2688,57 +3024,27 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>/home/ubuntu/workspace/my_project/src/AppBundle/Entity</argument>
-                        <argument>/home/ubuntu/workspace/my_project/src/PruebasBundle/Entity</argument>
-                        <argument>/home/ubuntu/workspace/my_project/src/SPruebas/PRUEBASBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnimalesBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/PropietarioBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnunciosBundle/Entity</argument>
                       </argument>
-                    </service>
-                  </argument>
-                  <argument>SPruebas\PRUEBASBundle\Entity</argument>
-                </call>
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
-                      <argument type="collection">
-                        <argument key="/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/config/doctrine">AnunciosBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/config/doctrine">AnimalesBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/config/doctrine">PropietarioBundle\Entity</argument>
-                      </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
-                    </service>
-                  </argument>
-                  <argument>AnunciosBundle\Entity</argument>
-                </call>
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
-                      <argument type="collection">
-                        <argument key="/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/config/doctrine">AnunciosBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/config/doctrine">AnimalesBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/config/doctrine">PropietarioBundle\Entity</argument>
-                      </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
-                    </service>
-                  </argument>
-                  <argument>AnimalesBundle\Entity</argument>
-                </call>
-                <call method="addDriver">
-                  <argument type="service">
-                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
-                      <argument type="collection">
-                        <argument key="/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/config/doctrine">AnunciosBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/config/doctrine">AnimalesBundle\Entity</argument>
-                        <argument key="/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/config/doctrine">PropietarioBundle\Entity</argument>
-                      </argument>
-                      <call method="setGlobalBasename">
-                        <argument>mapping</argument>
-                      </call>
                     </service>
                   </argument>
                   <argument>PropietarioBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/home/ubuntu/workspace/my_project/src/AppBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnimalesBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/PropietarioBundle/Entity</argument>
+                        <argument>/home/ubuntu/workspace/my_project/src/AnunciosBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>AnunciosBundle\Entity</argument>
                 </call>
                 <call method="addDriver">
                   <argument type="service">
@@ -2840,19 +3146,18 @@
       <argument type="service" id="security.token_storage" on-invalid="null"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
-    <service id="fos_user.entity_manager" class="Doctrine\ORM\EntityManager" public="false">
-      <argument>null</argument>
-      <factory service="doctrine" method="getManager"/>
-    </service>
     <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\EventListener\LastLoginListener">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
       <argument type="service" id="security.token_storage"/>
-      <argument type="service" id="security.user_checker.main"/>
+      <argument type="service" id="security.user_checker.dev"/>
       <argument type="service" id="security.authentication.session_strategy"/>
       <argument type="service" id="service_container"/>
+    </service>
+    <service id="fos_user.user_provider.username" class="FOS\UserBundle\Security\UserProvider" public="false">
+      <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
       <argument type="service" id="fos_user.user_manager"/>
@@ -2932,19 +3237,6 @@
       <argument type="service" id="router"/>
       <argument>86400</argument>
     </service>
-    <service id="fos_user.group.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
-      <argument type="service" id="form.factory"/>
-      <argument>fos_user_group_form</argument>
-      <argument>FOS\UserBundle\Form\Type\GroupFormType</argument>
-      <argument type="collection">
-        <argument>Registration</argument>
-        <argument>Default</argument>
-      </argument>
-    </service>
-    <service id="fos_user.group.form.type" class="FOS\UserBundle\Form\Type\GroupFormType">
-      <tag name="form.type" alias="fos_user_group"/>
-      <argument>AppBundle\Entity\Group</argument>
-    </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -3010,6 +3302,10 @@
         <argument key="data_collector.router" type="collection">
           <argument>router</argument>
           <argument>@WebProfiler/Collector/router.html.twig</argument>
+        </argument>
+        <argument key="data_collector.translation" type="collection">
+          <argument>translation</argument>
+          <argument>@WebProfiler/Collector/translation.html.twig</argument>
         </argument>
         <argument key="data_collector.security" type="collection">
           <argument>security</argument>
@@ -3178,6 +3474,15 @@
       <argument type="service" id="templating.name_parser"/>
       <argument type="service" id="templating.locator"/>
     </service>
+    <service id="translator" class="Symfony\Component\Translation\DataCollectorTranslator">
+      <argument type="service">
+        <service class="Symfony\Component\Translation\LoggingTranslator" public="false">
+          <tag name="monolog.logger" channel="translation"/>
+          <argument type="service" id="translator.default"/>
+          <argument type="service" id="monolog.logger.translation"/>
+        </service>
+      </argument>
+    </service>
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
@@ -3225,7 +3530,7 @@
     <service id="security.password_encoder" class="Symfony\Component\Security\Core\Encoder\UserPasswordEncoder">
       <argument type="service" id="security.encoder_factory"/>
     </service>
-    <service id="security.user_checker.main" class="Symfony\Component\Security\Core\User\UserChecker"/>
+    <service id="security.user_checker.dev" class="Symfony\Component\Security\Core\User\UserChecker"/>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
       <argument type="service" id="templating.locator"/>
@@ -3251,28 +3556,28 @@
         <argument>Doctrine</argument>
       </call>
       <call method="addPath">
-        <argument>/home/ubuntu/workspace/my_project/src/PruebasBundle/Resources/views</argument>
-        <argument>Pruebas</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/ubuntu/workspace/my_project/src/SPruebas/PRUEBASBundle/Resources/views</argument>
-        <argument>SPruebasPRUEBAS</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
-        <argument>FOSUser</argument>
-      </call>
-      <call method="addPath">
-        <argument>/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/views</argument>
-        <argument>Anuncios</argument>
-      </call>
-      <call method="addPath">
         <argument>/home/ubuntu/workspace/my_project/src/AnimalesBundle/Resources/views</argument>
         <argument>Animales</argument>
       </call>
       <call method="addPath">
         <argument>/home/ubuntu/workspace/my_project/src/PropietarioBundle/Resources/views</argument>
         <argument>Propietario</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ubuntu/workspace/my_project/src/AnunciosBundle/Resources/views</argument>
+        <argument>Anuncios</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ubuntu/workspace/my_project/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ubuntu/workspace/my_project/src/IndexBundle/Resources/views</argument>
+        <argument>Index</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/ubuntu/workspace/my_project/src/PaginasIndexBundle/Resources/views</argument>
+        <argument>PaginasIndex</argument>
       </call>
       <call method="addPath">
         <argument>/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -3385,13 +3690,15 @@
       <argument type="service" id="security.encoder_factory"/>
       <argument type="service" id="fos_user.util.email_canonicalizer"/>
       <argument type="service" id="fos_user.util.email_canonicalizer"/>
-      <argument type="service" id="fos_user.entity_manager"/>
+      <argument type="service">
+        <service class="Doctrine\Common\Persistence\ObjectManager" public="false">
+          <argument>null</argument>
+          <factory service="fos_user.doctrine_registry" method="getManager"/>
+        </service>
+      </argument>
       <argument>AppBundle\Entity\User</argument>
     </service>
-    <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
-      <argument type="service" id="fos_user.entity_manager"/>
-      <argument>AppBundle\Entity\Group</argument>
-    </service>
+    <service id="fos_user.doctrine_registry" alias="doctrine"/>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
     <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>

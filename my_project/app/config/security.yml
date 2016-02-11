@@ -9,11 +9,11 @@ security:
 
     providers:
         fos_userbundle:
-            #id: fos_user.user_provider.username
-            id: fos_user.user_manager
+            id: fos_user.user_provider.username
 
     firewalls:
-        main:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
             pattern: ^/
             form_login:
                 provider: fos_userbundle
@@ -25,9 +25,11 @@ security:
             anonymous:    true
 
     access_control:
+        - { path: ^/animales/new, roles: ROLE_USER }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/publicar, roles: ROLE_USER }
+        - { path: ^/animales, roles: ROLE_ADMIN }
+       
         

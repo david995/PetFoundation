@@ -1,24 +1,26 @@
-propietario:
-    resource: "@PropietarioBundle/Resources/config/routing.yml"
-    prefix:   /propietario
+paginas_index:
+    resource: "@PaginasIndexBundle/Resources/config/routing.yml"
+    prefix:   /
 
-animales:
-    resource: "@AnimalesBundle/Resources/config/routing.yml"
-    prefix:   /animales
+index:
+    resource: "@IndexBundle/Resources/config/routing.yml"
+    prefix:   /
 
 anuncios:
     resource: "@AnunciosBundle/Resources/config/routing.yml"
     prefix:   /
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-
-s_pruebas_pruebas:
-    resource: "@SPruebasPRUEBASBundle/Resources/config/routing.yml"
+propietario:
+    resource: "@PropietarioBundle/Resources/config/routing.yml"
     prefix:   /
 
-pruebas:
-    resource: "@PruebasBundle/Controller/"
+animales:
+    resource: "@AnimalesBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    
+propietario:
+    resource: "@PropietarioBundle/Controller/"
     type:     annotation
     prefix:   /
 
@@ -26,6 +28,18 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
     
-fos_user_group:
-    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
-    prefix: /group
+animales_animales:
+    resource: "@AnimalesBundle/Resources/config/routing/animales.yml"
+    prefix:   /animales
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+#
+#payum_capture:
+#    resource: "@PayumBundle/Resources/config/routing/capture.xml"
+#
+#payum_authorize:
+#    resource: "@PayumBundle/Resources/config/routing/authorize.xml"
+#
+#payum_notify:
+#    resource: "@PayumBundle/Resources/config/routing/notify.xml"

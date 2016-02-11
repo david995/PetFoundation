@@ -1,6 +1,6 @@
 <?php
 
-namespace src\AnimalesBundle\Tests\Controller;
+namespace AnimalesBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

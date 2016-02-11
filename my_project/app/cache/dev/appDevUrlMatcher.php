@@ -105,87 +105,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // propietario_homepage
-        if (rtrim($pathinfo, '/') === '/propietario') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'propietario_homepage');
-            }
-
-            return array (  '_controller' => 'PropietarioBundle\\Controller\\DefaultController::indexAction',  '_route' => 'propietario_homepage',);
+        // paginas_index_homepage
+        if ($pathinfo === '/paginas') {
+            return array (  '_controller' => 'PaginasIndexBundle\\Controller\\DefaultController::indexAction',  '_route' => 'paginas_index_homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/an')) {
-            // animales_homepage
-            if (rtrim($pathinfo, '/') === '/animales') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'animales_homepage');
-                }
-
-                return array (  '_controller' => 'AnimalesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'animales_homepage',);
+        // index_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'index_homepage');
             }
 
-            if (0 === strpos($pathinfo, '/anuncios')) {
-                // anuncios_index
-                if (rtrim($pathinfo, '/') === '/anuncios') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_anuncios_index;
-                    }
+            return array (  '_controller' => 'IndexBundle\\Controller\\DefaultController::indexAction',  '_route' => 'index_homepage',);
+        }
 
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'anuncios_index');
-                    }
-
-                    return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::indexAction',  '_route' => 'anuncios_index',);
-                }
-                not_anuncios_index:
-
-                // anuncios_show
-                if (preg_match('#^/anuncios/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_anuncios_show;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_show')), array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::showAction',));
-                }
-                not_anuncios_show:
-
-                // anuncios_new
-                if ($pathinfo === '/anuncios/new') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_anuncios_new;
-                    }
-
-                    return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::newAction',  '_route' => 'anuncios_new',);
-                }
-                not_anuncios_new:
-
-                // anuncios_edit
-                if (preg_match('#^/anuncios/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_anuncios_edit;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_edit')), array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::editAction',));
-                }
-                not_anuncios_edit:
-
-                // anuncios_delete
-                if (preg_match('#^/anuncios/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                    if ($this->context->getMethod() != 'DELETE') {
-                        $allow[] = 'DELETE';
-                        goto not_anuncios_delete;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_delete')), array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::deleteAction',));
-                }
-                not_anuncios_delete:
-
-            }
-
+        // ani
+        if ($pathinfo === '/animales/new') {
+            return array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::newAction',  '_route' => 'ani',);
         }
 
         // anuncios_homepage
@@ -194,7 +130,158 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->redirect($pathinfo.'/', 'anuncios_homepage');
             }
 
-            return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::indexAction',  '_route' => 'anuncios_homepage',);
+            return array (  '_controller' => 'AnunciosBundle\\Controller\\DefaultController::indexAction',  '_route' => 'anuncios_homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/propietario')) {
+            // propietario_index
+            if (rtrim($pathinfo, '/') === '/propietario') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_propietario_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'propietario_index');
+                }
+
+                return array (  '_controller' => 'PropietarioBundle\\Controller\\PropietarioController::indexAction',  '_route' => 'propietario_index',);
+            }
+            not_propietario_index:
+
+            // propietario_show
+            if (preg_match('#^/propietario/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_propietario_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'propietario_show')), array (  '_controller' => 'PropietarioBundle\\Controller\\PropietarioController::showAction',));
+            }
+            not_propietario_show:
+
+            // propietario_new
+            if ($pathinfo === '/propietario/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_propietario_new;
+                }
+
+                return array (  '_controller' => 'PropietarioBundle\\Controller\\PropietarioController::newAction',  '_route' => 'propietario_new',);
+            }
+            not_propietario_new:
+
+            // propietario_edit
+            if (preg_match('#^/propietario/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_propietario_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'propietario_edit')), array (  '_controller' => 'PropietarioBundle\\Controller\\PropietarioController::editAction',));
+            }
+            not_propietario_edit:
+
+            // propietario_delete
+            if (preg_match('#^/propietario/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_propietario_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'propietario_delete')), array (  '_controller' => 'PropietarioBundle\\Controller\\PropietarioController::deleteAction',));
+            }
+            not_propietario_delete:
+
+        }
+
+        // propietario_homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'propietario_homepage');
+            }
+
+            return array (  '_controller' => 'PropietarioBundle:Default:index',  '_route' => 'propietario_homepage',);
+        }
+
+        // animales_default_index
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'animales_default_index');
+            }
+
+            return array (  '_controller' => 'AnimalesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'animales_default_index',);
+        }
+
+        // homepage
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'homepage');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
+        }
+
+        if (0 === strpos($pathinfo, '/animales')) {
+            // animales_index
+            if (rtrim($pathinfo, '/') === '/animales') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_animales_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'animales_index');
+                }
+
+                return array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::indexAction',  '_route' => 'animales_index',);
+            }
+            not_animales_index:
+
+            // animales_show
+            if (preg_match('#^/animales/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_animales_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'animales_show')), array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::showAction',));
+            }
+            not_animales_show:
+
+            // animales_new
+            if ($pathinfo === '/animales/new') {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_animales_new;
+                }
+
+                return array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::newAction',  '_route' => 'animales_new',);
+            }
+            not_animales_new:
+
+            // animales_edit
+            if (preg_match('#^/animales/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_animales_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'animales_edit')), array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::editAction',));
+            }
+            not_animales_edit:
+
+            // animales_delete
+            if (preg_match('#^/animales/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_animales_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'animales_delete')), array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::deleteAction',));
+            }
+            not_animales_delete:
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {
@@ -382,111 +469,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
         not_fos_user_change_password:
-
-        // formulario
-        if ($pathinfo === '/form') {
-            return array (  '_controller' => 'SPruebas\\PRUEBASBundle\\Controller\\DefaultController::formAction',  '_route' => 'formulario',);
-        }
-
-        // registrarse
-        if ($pathinfo === '/register') {
-            return array (  '_controller' => 'SPruebas\\PRUEBASBundle\\Controller\\DefaultController::registerAction',  '_route' => 'registrarse',);
-        }
-
-        // login
-        if ($pathinfo === '/login') {
-            return array (  '_controller' => 'SPruebas\\PRUEBASBundle\\Controller\\DefaultController::loginAction',  '_route' => 'login',);
-        }
-
-        // s_pruebas_pruebas_homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 's_pruebas_pruebas_homepage');
-            }
-
-            return array (  '_controller' => 'SPruebas\\PRUEBASBundle\\Controller\\DefaultController::indexAction',  '_route' => 's_pruebas_pruebas_homepage',);
-        }
-
-        // publicaranuncio
-        if ($pathinfo === '/anuncios') {
-            return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::indexAction',  '_route' => 'publicaranuncio',);
-        }
-
-        // pruebas_default_index
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'pruebas_default_index');
-            }
-
-            return array (  '_controller' => 'PruebasBundle\\Controller\\DefaultController::indexAction',  '_route' => 'pruebas_default_index',);
-        }
-
-        // homepage
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'homepage');
-            }
-
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
-        }
-
-        if (0 === strpos($pathinfo, '/group')) {
-            // fos_user_group_list
-            if ($pathinfo === '/group/list') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_group_list;
-                }
-
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::listAction',  '_route' => 'fos_user_group_list',);
-            }
-            not_fos_user_group_list:
-
-            // fos_user_group_new
-            if ($pathinfo === '/group/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_group_new;
-                }
-
-                return array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::newAction',  '_route' => 'fos_user_group_new',);
-            }
-            not_fos_user_group_new:
-
-            // fos_user_group_show
-            if (preg_match('#^/group/(?P<groupName>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_group_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_show')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::showAction',));
-            }
-            not_fos_user_group_show:
-
-            // fos_user_group_edit
-            if (preg_match('#^/group/(?P<groupName>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_group_edit;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_edit')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::editAction',));
-            }
-            not_fos_user_group_edit:
-
-            // fos_user_group_delete
-            if (preg_match('#^/group/(?P<groupName>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_group_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_group_delete')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\GroupController::deleteAction',));
-            }
-            not_fos_user_group_delete:
-
-        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

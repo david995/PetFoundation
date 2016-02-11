@@ -2,51 +2,74 @@
 
 namespace AnimalesBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Animales
+ *
+ * @ORM\Table(name="animales")
+ * @ORM\Entity(repositoryClass="AnimalesBundle\Repository\AnimalesRepository")
  */
 class Animales
 {
     /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * 
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Nombre", type="string", length=255, nullable=true)
      */
     private $nombre;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Tipo", type="string", length=255)
      */
     private $tipo;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Raza", type="string", length=255, nullable=true)
      */
     private $raza;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Sexo", type="string", length=255, nullable=true)
      */
     private $sexo;
 
     /**
      * @var \DateTime
+     *
+     * @ORM\Column(name="Nacimiento", type="date")
      */
     private $nacimiento;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="Propietario", type="string", length=255)
      */
     private $propietario;
 
     /**
-     * @var boolean
+     * @var bool
+     *
+     * @ORM\Column(name="Pedigri", type="boolean", nullable=true)
      */
     private $pedigri;
-
 
     /**
      * Get id
@@ -56,6 +79,20 @@ class Animales
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set iD
+     *
+     * @param integer $iD
+     *
+     * @return Animales
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -191,7 +228,6 @@ class Animales
 
         return $this;
     }
-    
 
     /**
      * Get propietario
@@ -220,25 +256,75 @@ class Animales
     /**
      * Get pedigri
      *
-     * @return boolean
+     * @return bool
      */
     public function getPedigri()
     {
         return $this->pedigri;
     }
-    
-    /**
-     * Un Propietario puede tener muchos animales, un animal solo un propietario
-     * Hacemos un join de la propiedad propietario animal y propietario
-     * 
-     * @ORM\ManyToOne(targetEntity="Propietario", inversedBy="animales")
-     * @JoinColumn(name="propietarioAnimal", referencedColumnName="propietario")
-     */
-     protected $propietarioAnimal;
+     
      
      /**
-     * @OneToOne(targetEntity="Anuncios", mappedBy="id_animal")
+     * Relationship ManyToOne
+     * 
+     * @ORM\ManyToOne(targetEntity="PropietarioBundle\Entity\Propietario", inversedBy="propietarioAnimal")
      */
-     private $id_animalAnuncio;
-}
+     private $animalPropietario;
+     
+     /**
+      * Relationship OneToOne
+      * 
+      * @ORM\OneToOne(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="anuncioAnimal")
+      */
+      private $animalAnuncia;
+     
+   
 
+    /**
+     * Set animalPropietario
+     *
+     * @param \PropietarioBundle\Entity\Propietario $animalPropietario
+     *
+     * @return Animales
+     */
+    public function setAnimalPropietario(\PropietarioBundle\Entity\Propietario $animalPropietario = null)
+    {
+        $this->animalPropietario = $animalPropietario;
+
+        return $this;
+    }
+
+    /**
+     * Get animalPropietario
+     *
+     * @return \PropietarioBundle\Entity\Propietario
+     */
+    public function getAnimalPropietario()
+    {
+        return $this->animalPropietario;
+    }
+
+    /**
+     * Set animalAnuncia
+     *
+     * @param \AnunciosBundle\Entity\Anuncios $animalAnuncia
+     *
+     * @return Animales
+     */
+    public function setAnimalAnuncia(\AnunciosBundle\Entity\Anuncios $animalAnuncia = null)
+    {
+        $this->animalAnuncia = $animalAnuncia;
+
+        return $this;
+    }
+
+    /**
+     * Get animalAnuncia
+     *
+     * @return \AnunciosBundle\Entity\Anuncios
+     */
+    public function getAnimalAnuncia()
+    {
+        return $this->animalAnuncia;
+    }
+}

@@ -37,14 +37,14 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
     <!-- menu redondo-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block estilos %}
-    <link href="{{ asset('bundles/spruebaspruebas/css/normalize.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('bundles/spruebaspruebas/css/demo.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/spruebaspruebas/css/component1.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/spruebaspruebas/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
-		<link href="{{ asset('bundles/spruebaspruebas/css/style.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/index/css/normalize.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('bundles/index/css/demo.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/index/css/component1.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/index/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+		<link href="{{ asset('bundles/index/css/style.css') }}" type="text/css" rel="stylesheet" />
 		{% endblock %}
 		{% block javascripts %}
-		<script src="{{ asset('bundles/spruebaspruebas/js/modernizr-2.6.2.min.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/index/js/modernizr-2.6.2.min.js') }}" type="text/javascript"></script>
 		{% endblock %}
 		
 	<!-- fin menu redondo -->
@@ -64,11 +64,11 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 				<button class="cn-button" id="cn-button">+</button>
 				<div class="cn-wrapper" id="cn-wrapper" style="margin-bottom: 10px"> <!-- mover posicion de los botones del menu -->
 				    <ul>
-				      <li><a href="#"><img src="/my_project/web/bundles/spruebaspruebas/imgs/iconsMenu/camada.png" width="45px"></a></li>
-				      <li><a href="#"><img src="/my_project/web/bundles/spruebaspruebas/imgs/iconsMenu/adoptar.png" width="45px"></span></a></li>
-				      <li><a href="#"><img src="/my_project/web/bundles/spruebaspruebas/imgs/iconsMenu/home.png" width="40px"></a></li>
-				      <li><a href="#"><img src="/my_project/web/bundles/spruebaspruebas/imgs/iconsMenu/buscar.png" width="30px"></a></li>
-				       <li><a href="#"><img src="/my_project/web/bundles/spruebaspruebas/imgs/iconsMenu/donar.png" width="45px"></a></li>
+				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/camada.png" width="45px"></a></li>
+				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png" width="45px"></span></a></li>
+				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/home.png" width="40px"></a></li>
+				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/buscar.png" width="30px"></a></li>
+				       <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/donar.png" width="45px"></a></li>
 
 
 
@@ -83,22 +83,22 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 		<div class="col-md-12">
 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="height:95px;">
 				<div class="navbar-header" >
-					<a href="{{ path("publicaranuncio") }}">
+					<a href="{{ path("ani") }}">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border:0;">
-						<img src="/my_project/web/bundles/spruebaspruebas/imgs/publicar.png" class="visible-xs">
+						<img src="/my_project/web/bundles/index/imgs/publicar.png" class="visible-xs">
 						</button>
 					</a>
-					<a class="navbar-brand container-fluid" height="100px" href="{{ path("s_pruebas_pruebas_homepage") }}"><img src="/my_project/web/bundles/spruebaspruebas/imgs/logo.png" width="160px"> </a>
+					<a class="navbar-brand container-fluid" height="100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>
 				</div>
 				<ul class="nav navbar-nav nav-justified hidden-xs" role="menu">
  					<li>
 							<!--<button type="submit" class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;
 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;">
-							<img src="/my_project/web/bundles/spruebaspruebas/imgs/publicar.png" onClick="location.href='{{ path("publicaranuncio") }}'"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
+							<img src="/my_project/web/bundles/index/imgs/publicar.png" onClick="location.href=''"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
 							</button>-->
-							<button type="submit" class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;
-							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;" onClick="location.href='{{ path("publicaranuncio") }}'" value="publicar anuncio">
-								<img src="/my_project/web/bundles/spruebaspruebas/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
+							<button class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;
+							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">
+								<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
 				<div class="navbar-right container-fluid " >
 						<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-32px; border-radius: 15px;">
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -134,10 +134,8 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 						</a>
 				</form>-->
 				<div class="navbar-right container-fluid" style="margin-top:20px;">
-		<input type="button" class="btnJ" value="Iniciar sesión" onclick="location.href='{{ path("login") }}';"/><div class="visible-xs"><br></div>
-		<input type="button" class="btnJ" value="Registrarse" onclick="location.href='{{ path("registrarse") }}';"/>
-		
-		</div>
+
+				</div>
 			</nav>
 			<center>
 			<div style="margin-top: 170px; margin-bottom: 50px; width:100%;">
@@ -165,11 +163,11 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 		<script src="js/demo1.js"></script>-->
 		
 		{% block javascripts1 %}
-		<script src="{{ asset('bundles/spruebaspruebas/js/jquery.min.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('bundles/spruebaspruebas/js/bootstrap.min.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('bundles/spruebaspruebas/js/scripts.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('bundles/spruebaspruebas/js/polyfills.js') }}" type="text/javascript"></script>
-		<script src="{{ asset('bundles/spruebaspruebas/js/demo1.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/index/js/jquery.min.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/index/js/bootstrap.min.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/index/js/scripts.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/index/js/polyfills.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('bundles/index/js/demo1.js') }}" type="text/javascript"></script>
 		{% endblock %}
 		<!-- fin menu redondo -->   
   </body>

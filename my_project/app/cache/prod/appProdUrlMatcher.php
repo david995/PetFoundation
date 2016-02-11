@@ -27,27 +27,13 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
-        // formulario
-        if ($pathinfo === '/form') {
-            return array (  '_controller' => 'SPruebas\\PRUEBASBundle\\Controller\\DefaultController::formAction',  '_route' => 'formulario',);
-        }
-
-        // s_pruebas_pruebas_homepage
+        // animales_default_index
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 's_pruebas_pruebas_homepage');
+                return $this->redirect($pathinfo.'/', 'animales_default_index');
             }
 
-            return array (  '_controller' => 'SPruebas\\PRUEBASBundle\\Controller\\DefaultController::indexAction',  '_route' => 's_pruebas_pruebas_homepage',);
-        }
-
-        // pruebas_default_index
-        if (rtrim($pathinfo, '/') === '') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'pruebas_default_index');
-            }
-
-            return array (  '_controller' => 'PruebasBundle\\Controller\\DefaultController::indexAction',  '_route' => 'pruebas_default_index',);
+            return array (  '_controller' => 'AnimalesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'animales_default_index',);
         }
 
         // homepage
