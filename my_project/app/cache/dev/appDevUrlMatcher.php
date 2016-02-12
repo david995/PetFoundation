@@ -119,9 +119,41 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'IndexBundle\\Controller\\DefaultController::indexAction',  '_route' => 'index_homepage',);
         }
 
-        // ani
-        if ($pathinfo === '/animales/new') {
-            return array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::newAction',  '_route' => 'ani',);
+        if (0 === strpos($pathinfo, '/an')) {
+            // ani
+            if ($pathinfo === '/animales/new') {
+                return array (  '_controller' => 'AnimalesBundle\\Controller\\AnimalesController::newAction',  '_route' => 'ani',);
+            }
+
+            if (0 === strpos($pathinfo, '/anuncios')) {
+                // anuncios_index
+                if (rtrim($pathinfo, '/') === '/anuncios') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_anuncios_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'anuncios_index');
+                    }
+
+                    return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::indexAction',  '_route' => 'anuncios_index',);
+                }
+                not_anuncios_index:
+
+                // anuncios_show
+                if (preg_match('#^/anuncios/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_anuncios_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'anuncios_show')), array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::showAction',));
+                }
+                not_anuncios_show:
+
+            }
+
         }
 
         // anuncios_homepage

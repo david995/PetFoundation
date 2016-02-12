@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -12,6 +13,14 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User extends BaseUser
 {
+    
+    /**
+     * Relationship OneToMany
+     * 
+     * @ORM\OneToMany(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="user")
+     */
+     protected $anuncios;
+    
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -22,8 +31,41 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->anuncios = new ArrayCollection();
     }
     
+
+    /**
+     * Add anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     *
+     * @return User
+     */
+    public function addAnuncio(\AnunciosBundle\Anuncios $anuncio)
+    {
+        $this->anuncios[] = $anuncio;
+
+        return $this;
+    }
+
+    /**
+     * Remove anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     */
+    public function removeAnuncio(\AnunciosBundle\Anuncios $anuncio)
+    {
+        $this->anuncios->removeElement($anuncio);
+    }
+
+    /**
+     * Get anuncios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnuncios()
+    {
+        return $this->anuncios;
+    }
 }
-?>

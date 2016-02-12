@@ -15,8 +15,8 @@ class __TwigTemplate_e7506826d07b4e5d89a952ead0526b78cefb935502171c95b31ca924240
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a6b2334fddb294398caa2cd4ffb115de64b49f4534c045d3c74db10ba3f677c4 = $this->env->getExtension("native_profiler");
-        $__internal_a6b2334fddb294398caa2cd4ffb115de64b49f4534c045d3c74db10ba3f677c4->enter($__internal_a6b2334fddb294398caa2cd4ffb115de64b49f4534c045d3c74db10ba3f677c4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
+        $__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1 = $this->env->getExtension("native_profiler");
+        $__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1->enter($__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -57,25 +57,25 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <!-- menu redondo-->
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/paginasindex/css/normalize.css\" />
-\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/paginasindex/css/demo.css\" />
-\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/paginasindex/css/component1.css\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/index/css/normalize.css\" />
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/index/css/demo.css\" />
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/index/css/component1.css\" />
 
-\t\t<link rel=\"stylesheet\" href=\"/my_project/web/bundles/paginasindex/css/normalizebuscar.css\">
-        <link rel=\"stylesheet\" href=\"/my_project/web/bundles/paginasindex/css/estilobuscar.css\">
+\t\t<link rel=\"stylesheet\" href=\"/my_project/web/bundles/index/css/normalizebuscar.css\">
+        <link rel=\"stylesheet\" href=\"/my_project/web/bundles/index/css/estilobuscar.css\">
 
-\t\t<script src=\"/my_project/web/bundles/paginasindex/js/modernizr-2.6.2.min.js\"></script>
-\t\t<script src=\"/my_project/web/bundles/paginasindex/js/jquery-1.10.2.js\"></script>
-        <script src=\"/my_project/web/bundles/paginasindex/js/anuncioshow.js\"></script>
+\t\t<script src=\"/my_project/web/bundles/index/js/modernizr-2.6.2.min.js\"></script>
+\t\t<script src=\"/my_project/web/bundles/index/js/jquery-1.10.2.js\"></script>
+        <script src=\"/my_project/web/bundles/index/js/anuncioshow.js\"></script>
 \t<!-- fin menu redondo -->
     <title>Pet’s, adoptalo y no compres</title>
-
+\t
     <meta name=\"description\" content=\"Pets page\">
     <meta name=\"author\" content=\"Pets\">
 
 
-    <link href=\"/my_project/web/bundles/paginasindex/css/bootstrap.min.css\" rel=\"stylesheet\">
-    <link href=\"/my_project/web/bundles/paginasindex/css/style.css\" rel=\"stylesheet\">
+    <link href=\"/my_project/web/bundles/index/css/bootstrap.min.css\" rel=\"stylesheet\">
+    <link href=\"/my_project/web/bundles/index/css/style.css\" rel=\"stylesheet\">
 
   </head>
   <body>
@@ -128,50 +128,73 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t\t\t
 \t\t
 \t\t\t</nav><center> 
-\t\t\t<div class=\"jumbotron\" style=\"margin-top: 135px; margin-bottom: 50px; width: 95%\">
-\t\t\t<div class=\"sw\" >
-    <form action=\"http://storm.it\" method=\"get\" >
-      <input type=\"search\" name=\"q\" class=\"search\" placeholder=\"Buscar animal\" />
-      <button class=\"go\"><span class=\"entypo-search\"></span></button>
-    </form>
-  </div><br><br><br><br><br><br>
-\t\t\t\t <table class=\"table\" border=\"0\">
-\t\t\t\t    <tbody>
-\t\t\t\t      <tr class=\"mostrarDescripcion\"> <!--     PRUEBAS          -->
-\t\t\t\t        <td ><img src=\"/my_project/web/bundles/paginasindex/imgs/anuncio.jpg\" class=\"img-rounded\" width=\"50%\" style=\"max-width:20%;\"></td>
-\t\t\t\t        <td>Pomerania</td>
-\t\t\t\t\t        <tr class=\"abrirDescripcion\" style=\"display:none; \">
-\t\t\t\t\t        <td colspan=\"2\"  style=\"font-weight: bold;\">Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.</td>
-\t\t\t\t\t        </tr>
-\t\t\t\t        </td>
-\t\t\t\t      </tr>
+\t\t\t\t<div class=\"jumbotron\" style=\"margin-top: 70px; margin-bottom: 50px; background-color:white\">
 
+      <div class=\"row\"><!-- buscador -->
+          <div class=\"col-sm-6 col-md-offset-3 \">
+          \t<div class=\"sw\" style=\"border-style: solid; color: #E0E0E0; height: 86px\">
+\t\t\t    <form action=\"http://storm.it\" method=\"get\">
+\t\t\t      <input type=\"search\" name=\"q\" class=\"search\" placeholder=\"Buscar animal\"/>
+\t\t\t      <button class=\"go\"><span class=\"entypo-search\"></span></button>
+\t\t\t    </form>
 
-\t\t\t\t      <tr class=\"mostrarDescripcion\"> <!--     PRUEBAS          -->
-\t\t\t\t        <td ><img src=\"/my_project/web/bundles/paginasindex/imgs/caballo.jpg\" class=\"img-rounded\" width=\"50%\" style=\"max-width:20%;\"></td>
-\t\t\t\t        <td>Caballo salvaje</td>
-\t\t\t\t\t        <tr class=\"abrirDescripcion\" style=\"display:none;\">
-\t\t\t\t\t        <td colspan=\"2\"  style=\"font-weight: bold;\">Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.</td>
-\t\t\t\t\t        </tr>
-\t\t\t\t        </td>
-\t\t\t\t      </tr>
+   \t\t\t </div>
+   \t\t\t  <br><br><br><br><br>
+    \t</div>
+    </div><!-- fin buscador -->
+<center> 
+      <div class=\"row\" > <!-- anuncio -->
+      \t<hr style=\"display: block;height: 1px;border: 0;border-top: 2px solid #ccc;margin: 1em 0;padding: 0; \">
+          <div class=\"col-sm-4 mostrarDescripcion \"><!--  col-md-offset-2 -->
+          \t<img src=\"/my_project/web/bundles/paginasindex/imgs/anuncio.jpg\" class=\"img-rounded\" style=\"width:50%\">
+          </div>
+          <div class=\"col-sm-3\" >
+          \t<img src=\"/my_project/web/bundles/index/imgs/add-notes.png\" style=\"width: 30px\"/><b>Regalo Pomerania, urgente</b>
+          </div>
+          <div class=\"col-sm-5 \" align=\"left\" >
+          \t<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>
+\t\t\t\t\t        \t<b>- Nombre:</b>  Vigupe<br>
+\t\t\t\t\t        \t<b>- Raza:</b>  cruzado<br>
+\t\t\t\t\t        \t<b>- Tipo:</b>  perro<br>
+\t\t\t\t\t        \t<b>- Sexo:</b>  macho<br>
+\t\t\t\t\t        \t<b>- Nacimiento:</b>  21/09/1989<br>
+\t\t\t\t\t        \t<b>- Pedrigri:</b>  No<br>
+\t\t\t\t\t        \t<b>- Propietario:</b>  Jonathan Romero<br>
+          </div>
+      </div><hr style=\"display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #ccc;
+    margin: 1em 0;
+    padding: 0; \"><br><!-- fin anuncio -->
 
-\t\t\t\t      <tr class=\"mostrarDescripcion\"> <!--     PRUEBAS          -->
-\t\t\t\t        <td ><img src=\"/my_project/web/bundles/paginasindex/imgs/labrador.png\" class=\"img-rounded\" width=\"50%\" style=\"max-width:20%;\"></td>
-\t\t\t\t        <td>Labrador</td>
-\t\t\t\t\t        <tr class=\"abrirDescripcion\" style=\"display:none;\">
-\t\t\t\t\t        <td colspan=\"2\"  style=\"font-weight: bold;\">Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.</td>
-\t\t\t\t\t        </tr>
-\t\t\t\t        </td>
-\t\t\t\t      </tr>
+      <div >
+      <div class=\"row\" ><!-- anuncio -->
+          <div class=\"col-sm-4 mostrarDescripcion\" ><!--  col-md-offset-2 -->
+          \t<img src=\"/my_project/web/bundles/paginasindex/imgs/labrador.png\" class=\"img-rounded\" style=\"width:50%\">
+          </div>
+          <div class=\"col-sm-3\">
+          \t<img src=\"/my_project/web/bundles/index/imgs/add-notes.png\" style=\"width: 30px\"/><b>Doy Labrador, motivos personales</b>
+          </div>
+          <div class=\"col-sm-5\" align=\"left\" hidden>
+          \t<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>
+\t\t\t\t\t        \t<b>- Nombre:</b>  Vigupe<br>
+\t\t\t\t\t        \t<b>- Raza:</b>  cruzado<br>
+\t\t\t\t\t        \t<b>- Tipo:</b>  perro<br>
+\t\t\t\t\t        \t<b>- Sexo:</b>  macho<br>
+\t\t\t\t\t        \t<b>- Nacimiento:</b>  21/09/1989<br>
+\t\t\t\t\t        \t<b>- Pedrigri:</b>  No<br>
+\t\t\t\t\t        \t<b>- Propietario:</b>  Jonathan Romero<br>
+          </div>
+      </div><!-- fin anuncio -->
+  </div>
 
-\t\t\t\t    </tbody>
-\t\t\t\t  </table>
 
 
 
 \t\t\t\t</center>
-\t\t\t</div>
+\t\t\t
+\t\t</div>
 \t\t</div>
 \t</div>
 \t
@@ -193,7 +216,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
   </body>
 </html>";
         
-        $__internal_a6b2334fddb294398caa2cd4ffb115de64b49f4534c045d3c74db10ba3f677c4->leave($__internal_a6b2334fddb294398caa2cd4ffb115de64b49f4534c045d3c74db10ba3f677c4_prof);
+        $__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1->leave($__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1_prof);
 
     }
 
@@ -250,25 +273,25 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /*     <meta http-equiv="X-UA-Compatible" content="IE=edge">*/
 /*     <!-- menu redondo-->*/
 /*     <meta name="viewport" content="width=device-width, initial-scale=1">*/
-/*     <link rel="stylesheet" type="text/css" href="/my_project/web/bundles/paginasindex/css/normalize.css" />*/
-/* 		<link rel="stylesheet" type="text/css" href="/my_project/web/bundles/paginasindex/css/demo.css" />*/
-/* 		<link rel="stylesheet" type="text/css" href="/my_project/web/bundles/paginasindex/css/component1.css" />*/
+/*     <link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/normalize.css" />*/
+/* 		<link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/demo.css" />*/
+/* 		<link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/component1.css" />*/
 /* */
-/* 		<link rel="stylesheet" href="/my_project/web/bundles/paginasindex/css/normalizebuscar.css">*/
-/*         <link rel="stylesheet" href="/my_project/web/bundles/paginasindex/css/estilobuscar.css">*/
+/* 		<link rel="stylesheet" href="/my_project/web/bundles/index/css/normalizebuscar.css">*/
+/*         <link rel="stylesheet" href="/my_project/web/bundles/index/css/estilobuscar.css">*/
 /* */
-/* 		<script src="/my_project/web/bundles/paginasindex/js/modernizr-2.6.2.min.js"></script>*/
-/* 		<script src="/my_project/web/bundles/paginasindex/js/jquery-1.10.2.js"></script>*/
-/*         <script src="/my_project/web/bundles/paginasindex/js/anuncioshow.js"></script>*/
+/* 		<script src="/my_project/web/bundles/index/js/modernizr-2.6.2.min.js"></script>*/
+/* 		<script src="/my_project/web/bundles/index/js/jquery-1.10.2.js"></script>*/
+/*         <script src="/my_project/web/bundles/index/js/anuncioshow.js"></script>*/
 /* 	<!-- fin menu redondo -->*/
 /*     <title>Pet’s, adoptalo y no compres</title>*/
-/* */
+/* 	*/
 /*     <meta name="description" content="Pets page">*/
 /*     <meta name="author" content="Pets">*/
 /* */
 /* */
-/*     <link href="/my_project/web/bundles/paginasindex/css/bootstrap.min.css" rel="stylesheet">*/
-/*     <link href="/my_project/web/bundles/paginasindex/css/style.css" rel="stylesheet">*/
+/*     <link href="/my_project/web/bundles/index/css/bootstrap.min.css" rel="stylesheet">*/
+/*     <link href="/my_project/web/bundles/index/css/style.css" rel="stylesheet">*/
 /* */
 /*   </head>*/
 /*   <body>*/
@@ -315,50 +338,73 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 				*/
 /* 		*/
 /* 			</nav><center> */
-/* 			<div class="jumbotron" style="margin-top: 135px; margin-bottom: 50px; width: 95%">*/
-/* 			<div class="sw" >*/
-/*     <form action="http://storm.it" method="get" >*/
-/*       <input type="search" name="q" class="search" placeholder="Buscar animal" />*/
-/*       <button class="go"><span class="entypo-search"></span></button>*/
-/*     </form>*/
-/*   </div><br><br><br><br><br><br>*/
-/* 				 <table class="table" border="0">*/
-/* 				    <tbody>*/
-/* 				      <tr class="mostrarDescripcion"> <!--     PRUEBAS          -->*/
-/* 				        <td ><img src="/my_project/web/bundles/paginasindex/imgs/anuncio.jpg" class="img-rounded" width="50%" style="max-width:20%;"></td>*/
-/* 				        <td>Pomerania</td>*/
-/* 					        <tr class="abrirDescripcion" style="display:none; ">*/
-/* 					        <td colspan="2"  style="font-weight: bold;">Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.</td>*/
-/* 					        </tr>*/
-/* 				        </td>*/
-/* 				      </tr>*/
+/* 				<div class="jumbotron" style="margin-top: 70px; margin-bottom: 50px; background-color:white">*/
 /* */
+/*       <div class="row"><!-- buscador -->*/
+/*           <div class="col-sm-6 col-md-offset-3 ">*/
+/*           	<div class="sw" style="border-style: solid; color: #E0E0E0; height: 86px">*/
+/* 			    <form action="http://storm.it" method="get">*/
+/* 			      <input type="search" name="q" class="search" placeholder="Buscar animal"/>*/
+/* 			      <button class="go"><span class="entypo-search"></span></button>*/
+/* 			    </form>*/
 /* */
-/* 				      <tr class="mostrarDescripcion"> <!--     PRUEBAS          -->*/
-/* 				        <td ><img src="/my_project/web/bundles/paginasindex/imgs/caballo.jpg" class="img-rounded" width="50%" style="max-width:20%;"></td>*/
-/* 				        <td>Caballo salvaje</td>*/
-/* 					        <tr class="abrirDescripcion" style="display:none;">*/
-/* 					        <td colspan="2"  style="font-weight: bold;">Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.</td>*/
-/* 					        </tr>*/
-/* 				        </td>*/
-/* 				      </tr>*/
+/*    			 </div>*/
+/*    			  <br><br><br><br><br>*/
+/*     	</div>*/
+/*     </div><!-- fin buscador -->*/
+/* <center> */
+/*       <div class="row" > <!-- anuncio -->*/
+/*       	<hr style="display: block;height: 1px;border: 0;border-top: 2px solid #ccc;margin: 1em 0;padding: 0; ">*/
+/*           <div class="col-sm-4 mostrarDescripcion "><!--  col-md-offset-2 -->*/
+/*           	<img src="/my_project/web/bundles/paginasindex/imgs/anuncio.jpg" class="img-rounded" style="width:50%">*/
+/*           </div>*/
+/*           <div class="col-sm-3" >*/
+/*           	<img src="/my_project/web/bundles/index/imgs/add-notes.png" style="width: 30px"/><b>Regalo Pomerania, urgente</b>*/
+/*           </div>*/
+/*           <div class="col-sm-5 " align="left" >*/
+/*           	<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>*/
+/* 					        	<b>- Nombre:</b>  Vigupe<br>*/
+/* 					        	<b>- Raza:</b>  cruzado<br>*/
+/* 					        	<b>- Tipo:</b>  perro<br>*/
+/* 					        	<b>- Sexo:</b>  macho<br>*/
+/* 					        	<b>- Nacimiento:</b>  21/09/1989<br>*/
+/* 					        	<b>- Pedrigri:</b>  No<br>*/
+/* 					        	<b>- Propietario:</b>  Jonathan Romero<br>*/
+/*           </div>*/
+/*       </div><hr style="display: block;*/
+/*     height: 1px;*/
+/*     border: 0;*/
+/*     border-top: 2px solid #ccc;*/
+/*     margin: 1em 0;*/
+/*     padding: 0; "><br><!-- fin anuncio -->*/
 /* */
-/* 				      <tr class="mostrarDescripcion"> <!--     PRUEBAS          -->*/
-/* 				        <td ><img src="/my_project/web/bundles/paginasindex/imgs/labrador.png" class="img-rounded" width="50%" style="max-width:20%;"></td>*/
-/* 				        <td>Labrador</td>*/
-/* 					        <tr class="abrirDescripcion" style="display:none;">*/
-/* 					        <td colspan="2"  style="font-weight: bold;">Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.</td>*/
-/* 					        </tr>*/
-/* 				        </td>*/
-/* 				      </tr>*/
+/*       <div >*/
+/*       <div class="row" ><!-- anuncio -->*/
+/*           <div class="col-sm-4 mostrarDescripcion" ><!--  col-md-offset-2 -->*/
+/*           	<img src="/my_project/web/bundles/paginasindex/imgs/labrador.png" class="img-rounded" style="width:50%">*/
+/*           </div>*/
+/*           <div class="col-sm-3">*/
+/*           	<img src="/my_project/web/bundles/index/imgs/add-notes.png" style="width: 30px"/><b>Doy Labrador, motivos personales</b>*/
+/*           </div>*/
+/*           <div class="col-sm-5" align="left" hidden>*/
+/*           	<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>*/
+/* 					        	<b>- Nombre:</b>  Vigupe<br>*/
+/* 					        	<b>- Raza:</b>  cruzado<br>*/
+/* 					        	<b>- Tipo:</b>  perro<br>*/
+/* 					        	<b>- Sexo:</b>  macho<br>*/
+/* 					        	<b>- Nacimiento:</b>  21/09/1989<br>*/
+/* 					        	<b>- Pedrigri:</b>  No<br>*/
+/* 					        	<b>- Propietario:</b>  Jonathan Romero<br>*/
+/*           </div>*/
+/*       </div><!-- fin anuncio -->*/
+/*   </div>*/
 /* */
-/* 				    </tbody>*/
-/* 				  </table>*/
 /* */
 /* */
 /* */
 /* 				</center>*/
-/* 			</div>*/
+/* 			*/
+/* 		</div>*/
 /* 		</div>*/
 /* 	</div>*/
 /* 	*/

@@ -21,20 +21,20 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9 = $this->env->getExtension("native_profiler");
-        $__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9->enter($__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
+        $__internal_8e9768e181ba9f67b820838a6a414af7b14ba958e3a891652abd88a74c1c0915 = $this->env->getExtension("native_profiler");
+        $__internal_8e9768e181ba9f67b820838a6a414af7b14ba958e3a891652abd88a74c1c0915->enter($__internal_8e9768e181ba9f67b820838a6a414af7b14ba958e3a891652abd88a74c1c0915_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9->leave($__internal_f411d547a050dbe120a4c4bc38c28496a8bcf0fd99438995e0fbc7d17a7355f9_prof);
+        $__internal_8e9768e181ba9f67b820838a6a414af7b14ba958e3a891652abd88a74c1c0915->leave($__internal_8e9768e181ba9f67b820838a6a414af7b14ba958e3a891652abd88a74c1c0915_prof);
 
     }
 
     // line 5
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45 = $this->env->getExtension("native_profiler");
-        $__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45->enter($__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_420639ec68da062d71e85f93d9a0232871998b6d8a3b071f3faa39dbd42c5179 = $this->env->getExtension("native_profiler");
+        $__internal_420639ec68da062d71e85f93d9a0232871998b6d8a3b071f3faa39dbd42c5179->enter($__internal_420639ec68da062d71e85f93d9a0232871998b6d8a3b071f3faa39dbd42c5179_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
         // line 6
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
@@ -50,7 +50,7 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
             
             
         <div class=\"row\">
-            <div class=\"col-sm-8 col-md-offset-2\" align=\"left\">
+            <div class=\"col-sm-4 col-md-offset-4\" align=\"left\">
                <font style=\"color: #00BCD4;font-weight: bold; font-size:23px;\">Inicio de sesión</font><br><br>
                  
                  
@@ -105,11 +105,11 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
                  
             </div>
         </div>
-
+<br><br><br><br><br>
 
 ";
         
-        $__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45->leave($__internal_6d6ae14e981ed86d6c4684b7b9ed4052d5a1bcc1550878ce0a6dfa3fb7c1dc45_prof);
+        $__internal_420639ec68da062d71e85f93d9a0232871998b6d8a3b071f3faa39dbd42c5179->leave($__internal_420639ec68da062d71e85f93d9a0232871998b6d8a3b071f3faa39dbd42c5179_prof);
 
     }
 
@@ -141,7 +141,7 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
 /*             */
 /*             */
 /*         <div class="row">*/
-/*             <div class="col-sm-8 col-md-offset-2" align="left">*/
+/*             <div class="col-sm-4 col-md-offset-4" align="left">*/
 /*                <font style="color: #00BCD4;font-weight: bold; font-size:23px;">Inicio de sesión</font><br><br>*/
 /*                  */
 /*                  */
@@ -175,7 +175,7 @@ class __TwigTemplate_8dc4f5c5d4620b8bc88cabcb1510ad9b515ac8c149e056e7214f92fdd92
 /*                  */
 /*             </div>*/
 /*         </div>*/
-/* */
+/* <br><br><br><br><br>*/
 /* */
 /* {% endblock fos_user_content %}*/
 /* */

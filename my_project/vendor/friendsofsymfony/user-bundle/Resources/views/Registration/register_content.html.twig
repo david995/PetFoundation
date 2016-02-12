@@ -4,7 +4,7 @@
  
          
       <div class="row">
-          <div class="col-sm-8 col-md-offset-2" align="left">
+          <div class="col-sm-6 col-md-offset-3" align="left">
              <font style="color: #00BCD4;font-weight: bold; font-size:23px;">Registrarse</font><br><br>
                        
            <label>Nombre de usuario</label> 
@@ -43,8 +43,13 @@
             </select>
         </div>
         {% else %}
-          <div class="col-sm-10"> 
-            {{ form_row(form.roles) }}
+          <div class="col-sm-10">
+              <select style="" id="fos_user_registration_form_roles" name="fos_user_registration_form[roles][]" required="required" multiple="multiple">
+                <option value="ROLE_ADMIN" >ADMINISTRADOR</option>
+                <option value="ROLE_SUPERADMIN" >SUPERADMINISTRADOR</option>
+                <option value="ROLE_USER"  selected="selected">USUARIO</option>
+            </select> 
+            
           </div>
       
       {% endif %}

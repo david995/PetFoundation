@@ -1,0 +1,12 @@
+anuncios_index:
+    path:     /
+    defaults: { _controller: "AnunciosBundle:Anuncios:index" }
+    methods:  GET
+
+anuncios_show:
+    path:     /{id}/show
+    defaults: { _controller: "AnunciosBundle:Anuncios:show" }
+    methods:  GET
+
+
+

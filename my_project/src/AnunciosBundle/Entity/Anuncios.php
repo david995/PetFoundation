@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Anuncios
 {
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="anuncios")
+     * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id")
+     */
+    protected $user;
     /**
      * @var int
      *
@@ -187,5 +193,29 @@ class Anuncios
     public function getAnuncioAnimal()
     {
         return $this->anuncioAnimal;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\User $user
+     *
+     * @return Anuncios
+     */
+    public function setUser(\AppBundle\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

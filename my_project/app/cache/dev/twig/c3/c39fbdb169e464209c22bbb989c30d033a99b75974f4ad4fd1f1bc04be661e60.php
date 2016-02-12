@@ -19,8 +19,8 @@ class __TwigTemplate_9d3f89b4b876caf4ddd27b5fff24002962d13d42c14ee824a6499a14963
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6296488c435e49bd7488c3228d86f4206479d157ad5dd7319d0639e728a15b06 = $this->env->getExtension("native_profiler");
-        $__internal_6296488c435e49bd7488c3228d86f4206479d157ad5dd7319d0639e728a15b06->enter($__internal_6296488c435e49bd7488c3228d86f4206479d157ad5dd7319d0639e728a15b06_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_017b13e76c954d40ea37180b11d3a6aa2b1b1d784da0d5c30ca8cdf850ba6590 = $this->env->getExtension("native_profiler");
+        $__internal_017b13e76c954d40ea37180b11d3a6aa2b1b1d784da0d5c30ca8cdf850ba6590->enter($__internal_017b13e76c954d40ea37180b11d3a6aa2b1b1d784da0d5c30ca8cdf850ba6590_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -113,7 +113,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" class=\"visible-xs\">
 \t\t\t\t\t\t</button>
 \t\t\t\t\t</a>
-\t\t\t\t\t<a class=\"navbar-brand container-fluid\" height=\"100px\" href=\"";
+\t\t\t\t\t<a class=\"navbar-brand container-fluid\" style=\"height:100px\" href=\"";
         // line 91
         echo $this->env->getExtension('routing')->getPath("index_homepage");
         echo "\"><img src=\"/my_project/web/bundles/index/imgs/logo.png\" width=\"160px\"> </a>
@@ -125,13 +125,13 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" onClick=\"location.href=''\"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
 \t\t\t\t\t\t\t</button>-->
 \t\t\t\t\t\t\t<button class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
-\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;\" onClick=\"location.href='";
+\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;\" onClick=\"location.href='";
         // line 100
         echo $this->env->getExtension('routing')->getPath("ani");
         echo "'\" value=\"publicar anuncio\">
 \t\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
 \t\t\t\t<div class=\"navbar-right container-fluid \" >
-\t\t\t\t\t\t<div style=\"background-color:white; padding:5px; margin-right:13px; margin-top:-32px; border-radius: 15px;\">
+\t\t\t\t\t\t<div style=\"background-color:white; padding:5px; margin-right:13px; margin-top:-90px; border-radius: 15px;\">
             ";
         // line 104
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
@@ -139,7 +139,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
             echo "                    Estás logueado como: ";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
             echo " <br><center>
-                <a href=\"";
+                <a style=\"height:-150px;\" href=\"";
             // line 106
             echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
             echo "\">
@@ -151,7 +151,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
             ";
         } else {
             // line 110
-            echo "                <a href=\"";
+            echo "                <a style=\"height:-150px;\" href=\"";
             echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
             echo "\">";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Login", array(), "FOSUserBundle"), "html", null, true);
@@ -159,27 +159,28 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
             ";
         }
         // line 112
-        echo "        </div>
+        echo "            
+        </div>
 
         ";
-        // line 114
+        // line 115
         if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 115
+            // line 116
             echo "            ";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 116
+                // line 117
                 echo "                ";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 117
+                    // line 118
                     echo "                    <div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
                         ";
-                    // line 118
+                    // line 119
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo "
                     </div>
@@ -188,16 +189,16 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 121
+                // line 122
                 echo "            ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 122
+            // line 123
             echo "        ";
         }
-        // line 123
+        // line 124
         echo "        </div>\t\t
  \t\t\t\t</ul>
 \t\t\t\t\t\t\t\t<!--
@@ -218,21 +219,21 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t\t<center>
 \t\t\t<div style=\"margin-top: 170px; margin-bottom: 50px; width:100%;\">
 \t\t\t\t";
-        // line 142
+        // line 143
         $this->displayBlock('body', $context, $blocks);
-        // line 144
+        // line 145
         echo "\t\t\t</div>
 \t\t\t</center>
 \t\t</div>
 \t</div>
 \t
 </div>
-<div id=\"footer\" style=\"position: fixed; bottom: 0; width: 100%; height: 40px; background-color: #00BCD4;text-align: right; line-height: 40px;\">
+<footer id=\"footer\" style=\"background-color: #00BCD4;text-align: right; line-height: 40px;\">
       <div class=\"container\" >
         <p class=\"text-muted credit\" ><font color=\"#FFFFFF\">Pet's | Copyright © 2016 - 2017</font></p>
-
-      </div>
-    </div>
+\t</div>
+</footer>
+    
 
 
     <!--<script src=\"js/jquery.min.js\"></script>
@@ -243,22 +244,22 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t<script src=\"js/demo1.js\"></script>-->
 \t\t
 \t\t";
-        // line 165
+        // line 166
         $this->displayBlock('javascripts1', $context, $blocks);
-        // line 172
+        // line 173
         echo "\t\t<!-- fin menu redondo -->   
   </body>
 </html>";
         
-        $__internal_6296488c435e49bd7488c3228d86f4206479d157ad5dd7319d0639e728a15b06->leave($__internal_6296488c435e49bd7488c3228d86f4206479d157ad5dd7319d0639e728a15b06_prof);
+        $__internal_017b13e76c954d40ea37180b11d3a6aa2b1b1d784da0d5c30ca8cdf850ba6590->leave($__internal_017b13e76c954d40ea37180b11d3a6aa2b1b1d784da0d5c30ca8cdf850ba6590_prof);
 
     }
 
     // line 39
     public function block_estilos($context, array $blocks = array())
     {
-        $__internal_c8a69b43065a37228075ae2c16458a679631051d5f02e623d4e4d7069601162c = $this->env->getExtension("native_profiler");
-        $__internal_c8a69b43065a37228075ae2c16458a679631051d5f02e623d4e4d7069601162c->enter($__internal_c8a69b43065a37228075ae2c16458a679631051d5f02e623d4e4d7069601162c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "estilos"));
+        $__internal_ed851e137a9707cc4b07215d247812d26825d3dcb1cf08b35af302712d3bf5f4 = $this->env->getExtension("native_profiler");
+        $__internal_ed851e137a9707cc4b07215d247812d26825d3dcb1cf08b35af302712d3bf5f4->enter($__internal_ed851e137a9707cc4b07215d247812d26825d3dcb1cf08b35af302712d3bf5f4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "estilos"));
 
         // line 40
         echo "    <link href=\"";
@@ -282,15 +283,15 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
 \t\t";
         
-        $__internal_c8a69b43065a37228075ae2c16458a679631051d5f02e623d4e4d7069601162c->leave($__internal_c8a69b43065a37228075ae2c16458a679631051d5f02e623d4e4d7069601162c_prof);
+        $__internal_ed851e137a9707cc4b07215d247812d26825d3dcb1cf08b35af302712d3bf5f4->leave($__internal_ed851e137a9707cc4b07215d247812d26825d3dcb1cf08b35af302712d3bf5f4_prof);
 
     }
 
     // line 46
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_ca8b9167fab603aad0f5128e198c93285d20141fc161a0c35a7eb7112bdbff57 = $this->env->getExtension("native_profiler");
-        $__internal_ca8b9167fab603aad0f5128e198c93285d20141fc161a0c35a7eb7112bdbff57->enter($__internal_ca8b9167fab603aad0f5128e198c93285d20141fc161a0c35a7eb7112bdbff57_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_08e7c2b7fbc4f45cfca2f878cb9d182aa0742d0ab7bb0a96d6baafeb7a4d9520 = $this->env->getExtension("native_profiler");
+        $__internal_08e7c2b7fbc4f45cfca2f878cb9d182aa0742d0ab7bb0a96d6baafeb7a4d9520->enter($__internal_08e7c2b7fbc4f45cfca2f878cb9d182aa0742d0ab7bb0a96d6baafeb7a4d9520_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 47
         echo "\t\t<script src=\"";
@@ -298,52 +299,52 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
         echo "\" type=\"text/javascript\"></script>
 \t\t";
         
-        $__internal_ca8b9167fab603aad0f5128e198c93285d20141fc161a0c35a7eb7112bdbff57->leave($__internal_ca8b9167fab603aad0f5128e198c93285d20141fc161a0c35a7eb7112bdbff57_prof);
+        $__internal_08e7c2b7fbc4f45cfca2f878cb9d182aa0742d0ab7bb0a96d6baafeb7a4d9520->leave($__internal_08e7c2b7fbc4f45cfca2f878cb9d182aa0742d0ab7bb0a96d6baafeb7a4d9520_prof);
 
     }
 
-    // line 142
+    // line 143
     public function block_body($context, array $blocks = array())
     {
-        $__internal_5dde71b5b79ee70194ad2ac5cdd91b8e3139e57f65519792b3ed5457bb5060ad = $this->env->getExtension("native_profiler");
-        $__internal_5dde71b5b79ee70194ad2ac5cdd91b8e3139e57f65519792b3ed5457bb5060ad->enter($__internal_5dde71b5b79ee70194ad2ac5cdd91b8e3139e57f65519792b3ed5457bb5060ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_084c7e360cf5912906b6a1cdb519a8692f68f337d7d840700c69253e392558a2 = $this->env->getExtension("native_profiler");
+        $__internal_084c7e360cf5912906b6a1cdb519a8692f68f337d7d840700c69253e392558a2->enter($__internal_084c7e360cf5912906b6a1cdb519a8692f68f337d7d840700c69253e392558a2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 143
+        // line 144
         echo "        \t\t";
         
-        $__internal_5dde71b5b79ee70194ad2ac5cdd91b8e3139e57f65519792b3ed5457bb5060ad->leave($__internal_5dde71b5b79ee70194ad2ac5cdd91b8e3139e57f65519792b3ed5457bb5060ad_prof);
+        $__internal_084c7e360cf5912906b6a1cdb519a8692f68f337d7d840700c69253e392558a2->leave($__internal_084c7e360cf5912906b6a1cdb519a8692f68f337d7d840700c69253e392558a2_prof);
 
     }
 
-    // line 165
+    // line 166
     public function block_javascripts1($context, array $blocks = array())
     {
-        $__internal_900745769c6ebf80f81ef02ebc9a90a6192df7e7713f56e544068d6b61c30a88 = $this->env->getExtension("native_profiler");
-        $__internal_900745769c6ebf80f81ef02ebc9a90a6192df7e7713f56e544068d6b61c30a88->enter($__internal_900745769c6ebf80f81ef02ebc9a90a6192df7e7713f56e544068d6b61c30a88_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts1"));
+        $__internal_127a4ae52485915bd89cfc949d089a8927022044861241e7e6d6b5f001c750aa = $this->env->getExtension("native_profiler");
+        $__internal_127a4ae52485915bd89cfc949d089a8927022044861241e7e6d6b5f001c750aa->enter($__internal_127a4ae52485915bd89cfc949d089a8927022044861241e7e6d6b5f001c750aa_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts1"));
 
-        // line 166
+        // line 167
         echo "\t\t<script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/jquery.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 167
+        // line 168
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 168
+        // line 169
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/scripts.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 169
+        // line 170
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/polyfills.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 170
+        // line 171
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/demo1.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t";
         
-        $__internal_900745769c6ebf80f81ef02ebc9a90a6192df7e7713f56e544068d6b61c30a88->leave($__internal_900745769c6ebf80f81ef02ebc9a90a6192df7e7713f56e544068d6b61c30a88_prof);
+        $__internal_127a4ae52485915bd89cfc949d089a8927022044861241e7e6d6b5f001c750aa->leave($__internal_127a4ae52485915bd89cfc949d089a8927022044861241e7e6d6b5f001c750aa_prof);
 
     }
 
@@ -359,7 +360,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 
     public function getDebugInfo()
     {
-        return array (  342 => 170,  338 => 169,  334 => 168,  330 => 167,  325 => 166,  319 => 165,  312 => 143,  306 => 142,  296 => 47,  290 => 46,  281 => 44,  277 => 43,  273 => 42,  269 => 41,  264 => 40,  258 => 39,  249 => 172,  247 => 165,  224 => 144,  222 => 142,  201 => 123,  198 => 122,  192 => 121,  183 => 118,  178 => 117,  173 => 116,  168 => 115,  166 => 114,  162 => 112,  154 => 110,  148 => 107,  144 => 106,  139 => 105,  137 => 104,  130 => 100,  118 => 91,  110 => 86,  71 => 49,  68 => 46,  66 => 39,  26 => 1,);
+        return array (  343 => 171,  339 => 170,  335 => 169,  331 => 168,  326 => 167,  320 => 166,  313 => 144,  307 => 143,  297 => 47,  291 => 46,  282 => 44,  278 => 43,  274 => 42,  270 => 41,  265 => 40,  259 => 39,  250 => 173,  248 => 166,  225 => 145,  223 => 143,  202 => 124,  199 => 123,  193 => 122,  184 => 119,  179 => 118,  174 => 117,  169 => 116,  167 => 115,  162 => 112,  154 => 110,  148 => 107,  144 => 106,  139 => 105,  137 => 104,  130 => 100,  118 => 91,  110 => 86,  71 => 49,  68 => 46,  66 => 39,  26 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -452,7 +453,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 						<img src="/my_project/web/bundles/index/imgs/publicar.png" class="visible-xs">*/
 /* 						</button>*/
 /* 					</a>*/
-/* 					<a class="navbar-brand container-fluid" height="100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>*/
+/* 					<a class="navbar-brand container-fluid" style="height:100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>*/
 /* 				</div>*/
 /* 				<ul class="nav navbar-nav nav-justified hidden-xs" role="menu">*/
 /*  					<li>*/
@@ -461,18 +462,19 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 							<img src="/my_project/web/bundles/index/imgs/publicar.png" onClick="location.href=''"/>&nbsp;&nbsp;&nbsp;Publicar anuncio*/
 /* 							</button>-->*/
 /* 							<button class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
-/* 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">*/
+/* 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">*/
 /* 								<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>*/
 /* 				<div class="navbar-right container-fluid " >*/
-/* 						<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-32px; border-radius: 15px;">*/
+/* 						<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-90px; border-radius: 15px;">*/
 /*             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}*/
 /*                     Estás logueado como: {{ app.user.username }} <br><center>*/
-/*                 <a href="{{ path('fos_user_security_logout') }}">*/
+/*                 <a style="height:-150px;" href="{{ path('fos_user_security_logout') }}">*/
 /*                     {{ 'Salir'|trans({}, 'FOSUserBundle') }}*/
 /*                 </a></center>*/
 /*             {% else %}*/
-/*                 <a href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a>*/
+/*                 <a style="height:-150px;" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a>*/
 /*             {% endif %}*/
+/*             */
 /*         </div>*/
 /* */
 /*         {% if app.request.hasPreviousSession %}*/
@@ -511,12 +513,12 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 	</div>*/
 /* 	*/
 /* </div>*/
-/* <div id="footer" style="position: fixed; bottom: 0; width: 100%; height: 40px; background-color: #00BCD4;text-align: right; line-height: 40px;">*/
+/* <footer id="footer" style="background-color: #00BCD4;text-align: right; line-height: 40px;">*/
 /*       <div class="container" >*/
 /*         <p class="text-muted credit" ><font color="#FFFFFF">Pet's | Copyright © 2016 - 2017</font></p>*/
-/* */
-/*       </div>*/
-/*     </div>*/
+/* 	</div>*/
+/* </footer>*/
+/*     */
 /* */
 /* */
 /*     <!--<script src="js/jquery.min.js"></script>*/

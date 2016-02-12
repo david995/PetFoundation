@@ -88,7 +88,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 						<img src="/my_project/web/bundles/index/imgs/publicar.png" class="visible-xs">
 						</button>
 					</a>
-					<a class="navbar-brand container-fluid" height="100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"></a>
+					<a class="navbar-brand container-fluid" style="height:100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>
 				</div>
 				<ul class="nav navbar-nav nav-justified hidden-xs" role="menu">
  					<li>
@@ -96,19 +96,20 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;">
 							<img src="/my_project/web/bundles/index/imgs/publicar.png" onClick="location.href=''"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
 							</button>-->
-							<button type="submit" class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;
-							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">
+							<button class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;
+							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">
 								<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
 				<div class="navbar-right container-fluid " >
-						<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-32px; border-radius: 15px;">
+						<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-90px; border-radius: 15px;">
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                     Estás logueado como: {{ app.user.username }} <br><center>
-                <a href="{{ path('fos_user_security_logout') }}">
+                <a style="height:-150px;" href="{{ path('fos_user_security_logout') }}">
                     {{ 'Salir'|trans({}, 'FOSUserBundle') }}
                 </a></center>
             {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'Iniciar sesión'|trans({}, 'FOSUserBundle') }}</a>
+                <a style="height:-150px;" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a>
             {% endif %}
+            
         </div>
 
         {% if app.request.hasPreviousSession %}
@@ -149,12 +150,11 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 	</div>
 	
 </div>
-<div id="footer" style="position: fixed; bottom: 0; width: 100%; height: 40px; background-color: #00BCD4;text-align: right; line-height: 40px;">
+<footer id="footer" style="background-color: #00BCD4;text-align: right; line-height: 40px;">
       <div class="container" >
         <p class="text-muted credit" ><font color="#FFFFFF">Pet's | Copyright © 2016 - 2017</font></p>
-
-      </div>
-    </div>
+	</div>
+</footer>
 
 
     <!--<script src="js/jquery.min.js"></script>
