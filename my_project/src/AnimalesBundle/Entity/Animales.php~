@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Animales
 {
+    
+    /**
+     * @ORM\OneToOne(targetEntity="AnunciosBundle\Entity\Anuncios", inversedBy="animal")
+     * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id")
+     */
+    protected $anuncio;
+    
     /**
      * @var int
      *
@@ -263,24 +270,5 @@ class Animales
         return $this->pedigri;
     }
      
-     
-     /**
-     * Relationship ManyToOne
-     * 
-     * @ORM\ManyToOne(targetEntity="PropietarioBundle\Entity\Propietario", inversedBy="propietarioAnimal")
-     */
-     private $animalPropietario;
-     
-     /**
-      * Relationship OneToOne
-      * 
-      * @ORM\OneToOne(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="anuncioAnimal")
-      */
-      private $animalAnuncia;
-     
-   
+
 }
-
-
-
-

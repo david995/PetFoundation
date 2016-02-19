@@ -12,7 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Anuncios
 {
-
+    /**
+     * Relationship OneToOne
+     * 
+     * @ORM\OneToOne(targetEntity="AnimalesBundle\Entity\Animales", inversedBy="anuncio")
+     */
+     protected $animal;
+     
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="anuncios")
      * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id")
@@ -132,77 +138,17 @@ class Anuncios
         return $this->categoria;
     }
 
-    /**
-     * Set tituloAnuncio
-     *
-     * @param \PropietarioBundle\Entity\Propietario $tituloAnuncio
-     *
-     * @return Anuncios
-     */
-    public function setTituloAnuncio(\PropietarioBundle\Entity\Propietario $tituloAnuncio = null)
-    {
-        $this->tituloAnuncio = $tituloAnuncio;
-
-        return $this;
-    }
-
-    /**
-     * Get tituloAnuncio
-     *
-     * @return \PropietarioBundle\Entity\Propietario
-     */
-    public function getTituloAnuncio()
-    {
-        return $this->tituloAnuncio;
-    }
-    
-    /**
-     * Relationship ManyToOne
-     * 
-     * @ORM\ManyToOne(targetEntity="PropietarioBundle\Entity\Propietario", inversedBy="propietarioAnuncio")
-     */
-     private $tituloAnuncio;
-     
-     /**
-      * Relationship OneToOne
-      * 
-      * @ORM\OneToOne(targetEntity="AnimalesBundle\Entity\Animales", inversedBy="animalAnuncia")
-      * @ORM\JoinColumn(name="idAnimal", referencedColumnName="id")
-      */
-      private $anuncioAnimal;
-
-    /**
-     * Set anuncioAnimal
-     *
-     * @param \AnimalesBundle\Entity\Animales $anuncioAnimal
-     *
-     * @return Anuncios
-     */
-    public function setAnuncioAnimal(\AnimalesBundle\Entity\Animales $anuncioAnimal = null)
-    {
-        $this->anuncioAnimal = $anuncioAnimal;
-
-        return $this;
-    }
-
-    /**
-     * Get anuncioAnimal
-     *
-     * @return \AnimalesBundle\Entity\Animales
-     */
-    public function getAnuncioAnimal()
-    {
-        return $this->anuncioAnimal;
-    }
+   
+   
 
     /**
      * Set user
      *
-     * @param \AppBundle\User $user
+     * @param \AppBundle\Entity\User $user
      *
      * @return Anuncios
      */
-    public function setUser(\AppBundle\User $user = null)
+    public function setUser(\AppBundle\Entity\User $user = null)
     {
         $this->user = $user;
 
@@ -212,10 +158,35 @@ class Anuncios
     /**
      * Get user
      *
-     * @return \AppBundle\User
+     * @return \AppBundle\Entity\User
      */
     public function getUser()
     {
         return $this->user;
     }
+
+    /**
+     * Set animal
+     *
+     * @param \AnimalesBundle\Entity\Animales $animal
+     *
+     * @return Anuncios
+     */
+    public function setAnimal(\AnimalesBundle\Entity\Animales $animal = null)
+    {
+        $this->animal = $animal;
+
+        return $this;
+    }
+
+    /**
+     * Get animal
+     *
+     * @return \AnimalesBundle\Entity\Animales
+     */
+    public function getAnimal()
+    {
+        return $this->animal;
+    }
+       
 }

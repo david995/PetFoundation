@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Animales
 {
+    
+    /**
+     * @ORM\OneToOne(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="animal",cascade={"persist", "remove"},)
+     * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id")
+     */
+    protected $anuncio;
+    
     /**
      * @var int
      *
@@ -263,5 +270,30 @@ class Animales
         return $this->pedigri;
     }
      
+
+
+    /**
+     * Set anuncio
+     *
+     * @param \AnunciosBundle\Entity\Anuncios $anuncio
+     *
+     * @return Animales
+     */
+    public function setAnuncio(\AnunciosBundle\Entity\Anuncios $anuncio = null)
+    {
+        $this->anuncio = $anuncio;
+
+        return $this;
+    }
+
+    /**
+     * Get anuncio
+     *
+     * @return \AnunciosBundle\Entity\Anuncios
+     */
+    public function getAnuncio()
+    {
+        return $this->anuncio;
+    }
 
 }

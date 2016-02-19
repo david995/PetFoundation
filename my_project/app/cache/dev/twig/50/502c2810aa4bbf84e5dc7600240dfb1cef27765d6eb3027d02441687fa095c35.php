@@ -15,8 +15,8 @@ class __TwigTemplate_e7506826d07b4e5d89a952ead0526b78cefb935502171c95b31ca924240
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1 = $this->env->getExtension("native_profiler");
-        $__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1->enter($__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
+        $__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33 = $this->env->getExtension("native_profiler");
+        $__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33->enter($__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -51,6 +51,37 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
     float:none;
 }
 
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}
 
   </style>
     <meta charset=\"utf-8\">
@@ -111,7 +142,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t\t\t\t\t</button>
 \t\t\t\t\t</a> 
 \t\t\t\t\t<a class=\"navbar-brand container-fluid\" height=\"100px\" href=\"";
-        // line 92
+        // line 123
         echo $this->env->getExtension('routing')->getPath("index_homepage");
         echo "\"><img src=\"/my_project/web/bundles/index/imgs/logo.png\" width=\"160px\"> </a>
 \t\t\t\t</div>
@@ -119,7 +150,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
  \t\t\t\t\t<li>
 \t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
 \t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;\" onClick=\"location.href='";
-        // line 97
+        // line 128
         echo $this->env->getExtension('routing')->getPath("ani");
         echo "'\" value=\"publicar anuncio\">
 \t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
@@ -130,18 +161,24 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t\t</nav><center> 
 \t\t\t\t<div class=\"jumbotron\" style=\"margin-top: 70px; margin-bottom: 50px; background-color:white\">
 
-      <div class=\"row\"><!-- buscador -->
-          <div class=\"col-sm-6 col-md-offset-3 \">
-          \t<div class=\"sw\" style=\"border-style: solid; color: #E0E0E0; height: 86px\">
-\t\t\t    <form action=\"http://storm.it\" method=\"get\">
-\t\t\t      <input type=\"search\" name=\"q\" class=\"search\" placeholder=\"Buscar animal\"/>
-\t\t\t      <button class=\"go\"><span class=\"entypo-search\"></span></button>
-\t\t\t    </form>
-
-   \t\t\t </div>
-   \t\t\t  <br><br><br><br><br>
-    \t</div>
-    </div><!-- fin buscador -->
+<!-- inicio buscador -->
+      <div class=\"container\">
+\t<div class=\"row\">
+        <div class=\"col-md-7 col-md-offset-2\">
+            <div id=\"custom-search-input\">
+                <div class=\"input-group col-md-12\">
+                    <input type=\"text\" class=\"form-control input-lg\" placeholder=\"Buscar animal\" />
+                    <span class=\"input-group-btn\">
+                        <button class=\"btn btn-info btn-lg\" type=\"button\">
+                            <i class=\"glyphicon glyphicon-search\"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+\t</div>
+</div><br><!-- fin buscador -->
+    
 <center> 
       <div class=\"row\" > <!-- anuncio -->
       \t<hr style=\"display: block;height: 1px;border: 0;border-top: 2px solid #ccc;margin: 1em 0;padding: 0; \">
@@ -216,7 +253,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
   </body>
 </html>";
         
-        $__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1->leave($__internal_cbb54d9dcad11586e8059845c2114d11f5955999f23408b1bda9f0d89892bec1_prof);
+        $__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33->leave($__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33_prof);
 
     }
 
@@ -232,7 +269,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 
     public function getDebugInfo()
     {
-        return array (  123 => 97,  115 => 92,  22 => 1,);
+        return array (  154 => 128,  146 => 123,  22 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -267,6 +304,37 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /*     float:none;*/
 /* }*/
 /* */
+/* #custom-search-input{*/
+/*     padding: 3px;*/
+/*     border: solid 1px #E4E4E4;*/
+/*     border-radius: 6px;*/
+/*     background-color: #fff;*/
+/* }*/
+/* */
+/* #custom-search-input input{*/
+/*     border: 0;*/
+/*     box-shadow: none;*/
+/* }*/
+/* */
+/* #custom-search-input button{*/
+/*     margin: 2px 0 0 0;*/
+/*     background: none;*/
+/*     box-shadow: none;*/
+/*     border: 0;*/
+/*     color: #666666;*/
+/*     padding: 0 8px 0 10px;*/
+/*     border-left: solid 1px #ccc;*/
+/* }*/
+/* */
+/* #custom-search-input button:hover{*/
+/*     border: 0;*/
+/*     box-shadow: none;*/
+/*     border-left: solid 1px #ccc;*/
+/* }*/
+/* */
+/* #custom-search-input .glyphicon-search{*/
+/*     font-size: 23px;*/
+/* }*/
 /* */
 /*   </style>*/
 /*     <meta charset="utf-8">*/
@@ -340,18 +408,24 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 			</nav><center> */
 /* 				<div class="jumbotron" style="margin-top: 70px; margin-bottom: 50px; background-color:white">*/
 /* */
-/*       <div class="row"><!-- buscador -->*/
-/*           <div class="col-sm-6 col-md-offset-3 ">*/
-/*           	<div class="sw" style="border-style: solid; color: #E0E0E0; height: 86px">*/
-/* 			    <form action="http://storm.it" method="get">*/
-/* 			      <input type="search" name="q" class="search" placeholder="Buscar animal"/>*/
-/* 			      <button class="go"><span class="entypo-search"></span></button>*/
-/* 			    </form>*/
-/* */
-/*    			 </div>*/
-/*    			  <br><br><br><br><br>*/
-/*     	</div>*/
-/*     </div><!-- fin buscador -->*/
+/* <!-- inicio buscador -->*/
+/*       <div class="container">*/
+/* 	<div class="row">*/
+/*         <div class="col-md-7 col-md-offset-2">*/
+/*             <div id="custom-search-input">*/
+/*                 <div class="input-group col-md-12">*/
+/*                     <input type="text" class="form-control input-lg" placeholder="Buscar animal" />*/
+/*                     <span class="input-group-btn">*/
+/*                         <button class="btn btn-info btn-lg" type="button">*/
+/*                             <i class="glyphicon glyphicon-search"></i>*/
+/*                         </button>*/
+/*                     </span>*/
+/*                 </div>*/
+/*             </div>*/
+/*         </div>*/
+/* 	</div>*/
+/* </div><br><!-- fin buscador -->*/
+/*     */
 /* <center> */
 /*       <div class="row" > <!-- anuncio -->*/
 /*       	<hr style="display: block;height: 1px;border: 0;border-top: 2px solid #ccc;margin: 1em 0;padding: 0; ">*/

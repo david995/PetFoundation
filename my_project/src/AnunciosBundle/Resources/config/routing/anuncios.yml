@@ -8,5 +8,17 @@ anuncios_show:
     defaults: { _controller: "AnunciosBundle:Anuncios:show" }
     methods:  GET
 
+anuncios_new:
+    path:     /new
+    defaults: { _controller: "AnunciosBundle:Anuncios:new" }
+    methods:  [GET, POST]
 
+anuncios_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AnunciosBundle:Anuncios:edit" }
+    methods:  [GET, POST]
 
+anuncios_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AnunciosBundle:Anuncios:delete" }
+    methods:  DELETE

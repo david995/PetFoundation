@@ -17,9 +17,9 @@ class User extends BaseUser
     /**
      * Relationship OneToMany
      * 
-     * @ORM\OneToMany(targetEntity="AnunciosBundle\Anuncios", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="user")
      */
-     public $anuncios;
+     protected $anuncios;
     
     /**
      * @ORM\Id
@@ -34,5 +34,42 @@ class User extends BaseUser
         $this->anuncios = new ArrayCollection();
     }
     
+
+    /**
+     * Add anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     *
+     * @return User
+     */
+    public function addAnuncio(\AnunciosBundle\Anuncios $anuncio)
+    {
+        $this->anuncios[] = $anuncio;
+
+        return $this;
+    }
+
+    /**
+     * Remove anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     */
+    public function removeAnuncio(\AnunciosBundle\Anuncios $anuncio)
+    {
+        $this->anuncios->removeElement($anuncio);
+    }
+
+    /**
+     * Get anuncios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnuncios()
+    {
+        return $this->anuncios;
+    }
+    
+    public function __toString() {
+    return $anuncios;
 }
-?>
+}

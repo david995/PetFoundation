@@ -1,6 +1,6 @@
 <?php
 
-/* animales/index.html.twig */
+/* :animales:index.html.twig */
 class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb83902095 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "animales/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":animales:index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -21,36 +21,36 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cb68518c22cf414fc69590b3c3946d556e0f78d59460030be4d3dbb227e712c4 = $this->env->getExtension("native_profiler");
-        $__internal_cb68518c22cf414fc69590b3c3946d556e0f78d59460030be4d3dbb227e712c4->enter($__internal_cb68518c22cf414fc69590b3c3946d556e0f78d59460030be4d3dbb227e712c4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "animales/index.html.twig"));
+        $__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1 = $this->env->getExtension("native_profiler");
+        $__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1->enter($__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":animales:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_cb68518c22cf414fc69590b3c3946d556e0f78d59460030be4d3dbb227e712c4->leave($__internal_cb68518c22cf414fc69590b3c3946d556e0f78d59460030be4d3dbb227e712c4_prof);
+        $__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1->leave($__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_05a96ba2d1be18e54777b8f8f7c185b438a29c40a234d0489ce59c1d2ae83080 = $this->env->getExtension("native_profiler");
-        $__internal_05a96ba2d1be18e54777b8f8f7c185b438a29c40a234d0489ce59c1d2ae83080->enter($__internal_05a96ba2d1be18e54777b8f8f7c185b438a29c40a234d0489ce59c1d2ae83080_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6 = $this->env->getExtension("native_profiler");
+        $__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6->enter($__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <h1>Lista de animales</h1>
+        echo "    <h1>Animales list</h1>
 
-    <table border=\"\">
+    <table>
         <thead>
             <tr>
-                <th>Id&nbsp;&nbsp;&nbsp;</th>
-                <th>Nombre&nbsp;&nbsp;&nbsp;</th>
-                <th>Tipo&nbsp;&nbsp;&nbsp;</th>
-                <th>Raza&nbsp;&nbsp;&nbsp;</th>
-                <th>Sexo&nbsp;&nbsp;&nbsp;</th>
-                <th>Nacimiento&nbsp;&nbsp;&nbsp;</th>
-                <th>Propietario&nbsp;&nbsp;</th>
-                <th>Pedigri&nbsp;&nbsp;&nbsp;</th>
-                <th>Actions&nbsp;&nbsp;&nbsp;</th>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Raza</th>
+                <th>Sexo</th>
+                <th>Nacimiento</th>
+                <th>Propietario</th>
+                <th>Pedigri</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -70,30 +70,29 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
                 <td>";
             // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["animale"], "nombre", array()), "html", null, true);
-            echo "&nbsp;&nbsp;</td>
+            echo "</td>
                 <td>";
             // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($context["animale"], "tipo", array()), "html", null, true);
-            echo "&nbsp;&nbsp;</td>
+            echo "</td>
                 <td>";
             // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($context["animale"], "raza", array()), "html", null, true);
-            echo "&nbsp;&nbsp;</td>
+            echo "</td>
                 <td>";
             // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["animale"], "sexo", array()), "html", null, true);
-            echo "&nbsp;&nbsp;</td>
+            echo "</td>
                 <td>";
             // line 28
             if ($this->getAttribute($context["animale"], "nacimiento", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["animale"], "nacimiento", array()), "Y-m-d"), "html", null, true);
-                echo "&nbsp;&nbsp;";
             }
             echo "</td>
                 <td>";
             // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["animale"], "propietario", array()), "html", null, true);
-            echo "&nbsp;&nbsp;</td>
+            echo "</td>
                 <td>";
             // line 30
             if ($this->getAttribute($context["animale"], "pedigri", array())) {
@@ -138,13 +137,13 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
     </ul>
 ";
         
-        $__internal_05a96ba2d1be18e54777b8f8f7c185b438a29c40a234d0489ce59c1d2ae83080->leave($__internal_05a96ba2d1be18e54777b8f8f7c185b438a29c40a234d0489ce59c1d2ae83080_prof);
+        $__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6->leave($__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "animales/index.html.twig";
+        return ":animales:index.html.twig";
     }
 
     public function isTraitable()
@@ -154,38 +153,38 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
 
     public function getDebugInfo()
     {
-        return array (  135 => 48,  128 => 43,  116 => 37,  110 => 34,  99 => 30,  95 => 29,  88 => 28,  84 => 27,  80 => 26,  76 => 25,  72 => 24,  66 => 23,  63 => 22,  59 => 21,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  134 => 48,  127 => 43,  115 => 37,  109 => 34,  98 => 30,  94 => 29,  88 => 28,  84 => 27,  80 => 26,  76 => 25,  72 => 24,  66 => 23,  63 => 22,  59 => 21,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
-/*     <h1>Lista de animales</h1>*/
+/*     <h1>Animales list</h1>*/
 /* */
-/*     <table border="">*/
+/*     <table>*/
 /*         <thead>*/
 /*             <tr>*/
-/*                 <th>Id&nbsp;&nbsp;&nbsp;</th>*/
-/*                 <th>Nombre&nbsp;&nbsp;&nbsp;</th>*/
-/*                 <th>Tipo&nbsp;&nbsp;&nbsp;</th>*/
-/*                 <th>Raza&nbsp;&nbsp;&nbsp;</th>*/
-/*                 <th>Sexo&nbsp;&nbsp;&nbsp;</th>*/
-/*                 <th>Nacimiento&nbsp;&nbsp;&nbsp;</th>*/
-/*                 <th>Propietario&nbsp;&nbsp;</th>*/
-/*                 <th>Pedigri&nbsp;&nbsp;&nbsp;</th>*/
-/*                 <th>Actions&nbsp;&nbsp;&nbsp;</th>*/
+/*                 <th>Id</th>*/
+/*                 <th>Nombre</th>*/
+/*                 <th>Tipo</th>*/
+/*                 <th>Raza</th>*/
+/*                 <th>Sexo</th>*/
+/*                 <th>Nacimiento</th>*/
+/*                 <th>Propietario</th>*/
+/*                 <th>Pedigri</th>*/
+/*                 <th>Actions</th>*/
 /*             </tr>*/
 /*         </thead>*/
 /*         <tbody>*/
 /*         {% for animale in animales %}*/
 /*             <tr>*/
 /*                 <td><a href="{{ path('animales_show', { 'id': animale.id }) }}">{{ animale.id }}</a></td>*/
-/*                 <td>{{ animale.nombre }}&nbsp;&nbsp;</td>*/
-/*                 <td>{{ animale.tipo }}&nbsp;&nbsp;</td>*/
-/*                 <td>{{ animale.raza }}&nbsp;&nbsp;</td>*/
-/*                 <td>{{ animale.sexo }}&nbsp;&nbsp;</td>*/
-/*                 <td>{% if animale.nacimiento %}{{ animale.nacimiento|date('Y-m-d') }}&nbsp;&nbsp;{% endif %}</td>*/
-/*                 <td>{{ animale.propietario }}&nbsp;&nbsp;</td>*/
+/*                 <td>{{ animale.nombre }}</td>*/
+/*                 <td>{{ animale.tipo }}</td>*/
+/*                 <td>{{ animale.raza }}</td>*/
+/*                 <td>{{ animale.sexo }}</td>*/
+/*                 <td>{% if animale.nacimiento %}{{ animale.nacimiento|date('Y-m-d') }}{% endif %}</td>*/
+/*                 <td>{{ animale.propietario }}</td>*/
 /*                 <td>{% if animale.pedigri %}Yes{% else %}No{% endif %}</td>*/
 /*                 <td>*/
 /*                     <ul>*/

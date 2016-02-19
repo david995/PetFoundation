@@ -2,30 +2,72 @@
 
 {% block body %}
 
+<style>
+#imagen {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+#imagen:hover, #imagen:focus, #imagen:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+
+#imagen {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+#imagen:hover, #imagen:focus, .#imagen:active {
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+
+</style>
 
 <input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/buscaPerd.jpg);
 					  background-repeat:no-repeat;
 					  background-position:center; background-size: 330px ;" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/labrador.jpg);
 					  background-repeat:no-repeat;
-					  background-position:center;" value="Se busca">&nbsp;
+					  background-position:center;" value="Se busca" id="imagen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<div class="visible-xs"><br></div>
 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/protectora.jpg);
 					  background-repeat:no-repeat;
-					  background-position:center; background-size: 300px ;" value="Protectoras">&nbsp;
+					  background-position:center; background-size: 300px ;" value="Protectoras" id="imagen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<div class="visible-xs"><br></div>
 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/labrador.jpg);
 					  background-repeat:no-repeat;
-					  background-position:center;" value="Camadas">&nbsp;
+					  background-position:center;" value="Camadas" id="imagen">
 					<br><br>
 					<a href="{{ path("paginas_index_homepage") }}"><input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/adopttt.jpg);
 					  background-repeat:no-repeat;
-					  background-position:center; background-size: 310px ;" value="Adopciones"></a>&nbsp;
+					  background-position:center; background-size: 310px ;" value="Adopciones" id="imagen"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<div class="visible-xs"><br></div>
 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/donaciones.png);
 					  background-repeat:no-repeat;
-					  background-position:center; background-size: 300px ;" value="Donaciones">&nbsp;
+					  background-position:center; background-size: 300px ;" value="Donaciones" id="imagen">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<div class="visible-xs"><br></div>
 					<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/foro.jpg);
 					  background-repeat:no-repeat;
-					  background-position:center; background-size: 320px ;" value="Foro">
+					  background-position:center; background-size: 320px ;" value="Foro" id="imagen">
 {% endblock body %}

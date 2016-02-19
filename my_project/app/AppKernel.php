@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new IndexBundle\IndexBundle(),
             new PaginasIndexBundle\PaginasIndexBundle(),
 #            new Payum\Bundle\PayumBundle\PayumBundle(),
+            new DonacionesBundle\DonacionesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

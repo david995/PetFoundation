@@ -21,20 +21,20 @@ class __TwigTemplate_e7e0f774e5be4090c7f47d37425fd6fa0e3dcd9f95f8a99eb81c0e8d28d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_53f8b2a8d1c15056d5d9b5d5d485bd35ce26f1a09b673caebb7252322f0f6c51 = $this->env->getExtension("native_profiler");
-        $__internal_53f8b2a8d1c15056d5d9b5d5d485bd35ce26f1a09b673caebb7252322f0f6c51->enter($__internal_53f8b2a8d1c15056d5d9b5d5d485bd35ce26f1a09b673caebb7252322f0f6c51_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "anuncios/index.html.twig"));
+        $__internal_bb111b5585aece5904ea0a3dc5a2e390237ffea56b86da421d919b3c803726c0 = $this->env->getExtension("native_profiler");
+        $__internal_bb111b5585aece5904ea0a3dc5a2e390237ffea56b86da421d919b3c803726c0->enter($__internal_bb111b5585aece5904ea0a3dc5a2e390237ffea56b86da421d919b3c803726c0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "anuncios/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_53f8b2a8d1c15056d5d9b5d5d485bd35ce26f1a09b673caebb7252322f0f6c51->leave($__internal_53f8b2a8d1c15056d5d9b5d5d485bd35ce26f1a09b673caebb7252322f0f6c51_prof);
+        $__internal_bb111b5585aece5904ea0a3dc5a2e390237ffea56b86da421d919b3c803726c0->leave($__internal_bb111b5585aece5904ea0a3dc5a2e390237ffea56b86da421d919b3c803726c0_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_b6975acc5a9f8af709b67ca6b044eb2e54961592943974f85dc895cc768a9afb = $this->env->getExtension("native_profiler");
-        $__internal_b6975acc5a9f8af709b67ca6b044eb2e54961592943974f85dc895cc768a9afb->enter($__internal_b6975acc5a9f8af709b67ca6b044eb2e54961592943974f85dc895cc768a9afb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_1ef8f0792c13b9024e86059f0d5b7c25575d6147f3a6506a6064177d5ea87746 = $this->env->getExtension("native_profiler");
+        $__internal_1ef8f0792c13b9024e86059f0d5b7c25575d6147f3a6506a6064177d5ea87746->enter($__internal_1ef8f0792c13b9024e86059f0d5b7c25575d6147f3a6506a6064177d5ea87746_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Anuncios list</h1>
@@ -83,6 +83,12 @@ class __TwigTemplate_e7e0f774e5be4090c7f47d37425fd6fa0e3dcd9f95f8a99eb81c0e8d28d
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("anuncios_show", array("id" => $this->getAttribute($context["anuncio"], "id", array()))), "html", null, true);
             echo "\">show</a>
                         </li>
+                        <li>
+                            <a href=\"";
+            // line 29
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("anuncios_edit", array("id" => $this->getAttribute($context["anuncio"], "id", array()))), "html", null, true);
+            echo "\">edit</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -91,14 +97,21 @@ class __TwigTemplate_e7e0f774e5be4090c7f47d37425fd6fa0e3dcd9f95f8a99eb81c0e8d28d
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['anuncio'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 32
+        // line 35
         echo "        </tbody>
     </table>
 
-    
+    <ul>
+        <li>
+            <a href=\"";
+        // line 40
+        echo $this->env->getExtension('routing')->getPath("anuncios_new");
+        echo "\">Create a new entry</a>
+        </li>
+    </ul>
 ";
         
-        $__internal_b6975acc5a9f8af709b67ca6b044eb2e54961592943974f85dc895cc768a9afb->leave($__internal_b6975acc5a9f8af709b67ca6b044eb2e54961592943974f85dc895cc768a9afb_prof);
+        $__internal_1ef8f0792c13b9024e86059f0d5b7c25575d6147f3a6506a6064177d5ea87746->leave($__internal_1ef8f0792c13b9024e86059f0d5b7c25575d6147f3a6506a6064177d5ea87746_prof);
 
     }
 
@@ -114,7 +127,7 @@ class __TwigTemplate_e7e0f774e5be4090c7f47d37425fd6fa0e3dcd9f95f8a99eb81c0e8d28d
 
     public function getDebugInfo()
     {
-        return array (  95 => 32,  83 => 26,  76 => 22,  72 => 21,  68 => 20,  62 => 19,  59 => 18,  55 => 17,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  108 => 40,  101 => 35,  89 => 29,  83 => 26,  76 => 22,  72 => 21,  68 => 20,  62 => 19,  59 => 18,  55 => 17,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -144,6 +157,9 @@ class __TwigTemplate_e7e0f774e5be4090c7f47d37425fd6fa0e3dcd9f95f8a99eb81c0e8d28d
 /*                         <li>*/
 /*                             <a href="{{ path('anuncios_show', { 'id': anuncio.id }) }}">show</a>*/
 /*                         </li>*/
+/*                         <li>*/
+/*                             <a href="{{ path('anuncios_edit', { 'id': anuncio.id }) }}">edit</a>*/
+/*                         </li>*/
 /*                     </ul>*/
 /*                 </td>*/
 /*             </tr>*/
@@ -151,6 +167,10 @@ class __TwigTemplate_e7e0f774e5be4090c7f47d37425fd6fa0e3dcd9f95f8a99eb81c0e8d28d
 /*         </tbody>*/
 /*     </table>*/
 /* */
-/*     */
+/*     <ul>*/
+/*         <li>*/
+/*             <a href="{{ path('anuncios_new') }}">Create a new entry</a>*/
+/*         </li>*/
+/*     </ul>*/
 /* {% endblock %}*/
 /* */
