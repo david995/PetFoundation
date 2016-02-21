@@ -15,12 +15,12 @@ class Anuncios
     /**
      * Relationship OneToOne
      * 
-     * @ORM\OneToOne(targetEntity="AnimalesBundle\Entity\Animales", inversedBy="anuncio")
+     * @ORM\OneToOne(targetEntity="AnimalesBundle\Entity\Animales", inversedBy="anuncio",cascade={"persist", "remove"})
      */
      protected $animal;
      
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="anuncios")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="anuncios",cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id")
      */
     protected $user;
@@ -47,12 +47,6 @@ class Anuncios
      */
     private $categoria;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="IdAnimal", type="integer", unique=true)
-     */
-    private $idAnimal;
 
 
     /**
@@ -89,29 +83,6 @@ class Anuncios
         return $this->titulo;
     }
 
-    /**
-     * Set idAnimal
-     *
-     * @param integer $idAnimal
-     *
-     * @return Anuncios
-     */
-    public function setIdAnimal($idAnimal)
-    {
-        $this->idAnimal = $idAnimal;
-
-        return $this;
-    }
-
-    /**
-     * Get idAnimal
-     *
-     * @return int
-     */
-    public function getIdAnimal()
-    {
-        return $this->idAnimal;
-    }
 
 
     /**

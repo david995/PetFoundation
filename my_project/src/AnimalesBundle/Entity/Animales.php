@@ -14,7 +14,7 @@ class Animales
 {
     
     /**
-     * @ORM\OneToOne(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="animal",cascade={"persist", "remove"},)
+     * @ORM\OneToOne(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="animal",cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id")
      */
     protected $anuncio;

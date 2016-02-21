@@ -10,13 +10,17 @@ class __TwigTemplate_e7506826d07b4e5d89a952ead0526b78cefb935502171c95b31ca924240
         $this->parent = false;
 
         $this->blocks = array(
+            'estilos' => array($this, 'block_estilos'),
+            'javascripts' => array($this, 'block_javascripts'),
+            'body' => array($this, 'block_body'),
+            'javascripts1' => array($this, 'block_javascripts1'),
         );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33 = $this->env->getExtension("native_profiler");
-        $__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33->enter($__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
+        $__internal_767ceb0bb30093caa09798ac9520a4a0765e3f0ee1445994d3288f3b16f63048 = $this->env->getExtension("native_profiler");
+        $__internal_767ceb0bb30093caa09798ac9520a4a0765e3f0ee1445994d3288f3b16f63048->enter($__internal_767ceb0bb30093caa09798ac9520a4a0765e3f0ee1445994d3288f3b16f63048_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -51,62 +55,28 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
     float:none;
 }
 
-#custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
-}
-
-#custom-search-input input{
-    border: 0;
-    box-shadow: none;
-}
-
-#custom-search-input button{
-    margin: 2px 0 0 0;
-    background: none;
-    box-shadow: none;
-    border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input button:hover{
-    border: 0;
-    box-shadow: none;
-    border-left: solid 1px #ccc;
-}
-
-#custom-search-input .glyphicon-search{
-    font-size: 23px;
-}
 
   </style>
     <meta charset=\"utf-8\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
     <!-- menu redondo-->
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/index/css/normalize.css\" />
-\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/index/css/demo.css\" />
-\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/my_project/web/bundles/index/css/component1.css\" />
-
-\t\t<link rel=\"stylesheet\" href=\"/my_project/web/bundles/index/css/normalizebuscar.css\">
-        <link rel=\"stylesheet\" href=\"/my_project/web/bundles/index/css/estilobuscar.css\">
-
-\t\t<script src=\"/my_project/web/bundles/index/js/modernizr-2.6.2.min.js\"></script>
-\t\t<script src=\"/my_project/web/bundles/index/js/jquery-1.10.2.js\"></script>
-        <script src=\"/my_project/web/bundles/index/js/anuncioshow.js\"></script>
+    ";
+        // line 39
+        $this->displayBlock('estilos', $context, $blocks);
+        // line 46
+        echo "\t\t";
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 49
+        echo "\t\t
 \t<!-- fin menu redondo -->
     <title>Pet’s, adoptalo y no compres</title>
-\t
+
     <meta name=\"description\" content=\"Pets page\">
     <meta name=\"author\" content=\"Pets\">
 
 
-    <link href=\"/my_project/web/bundles/index/css/bootstrap.min.css\" rel=\"stylesheet\">
-    <link href=\"/my_project/web/bundles/index/css/style.css\" rel=\"stylesheet\">
+    
 
   </head>
   <body>
@@ -114,14 +84,13 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
   \t<div class=\"component\">
 \t\t\t\t<!-- Start Nav Structure -->
 \t\t\t\t<button class=\"cn-button\" id=\"cn-button\">+</button>
-\t\t\t\t<!--<button class=\"cn-button visible-xs\" id=\"cn-button\" style=\"width:90px;\">+</button>-->
 \t\t\t\t<div class=\"cn-wrapper\" id=\"cn-wrapper\" style=\"margin-bottom: 10px\"> <!-- mover posicion de los botones del menu -->
 \t\t\t\t    <ul>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/paginasindex/imgs/iconsMenu/camada.png\" width=\"45px\"></a></li>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/paginasindex/imgs/iconsMenu/adoptar.png\" width=\"45px\"></span></a></li>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/paginasindex/imgs/iconsMenu/home.png\" width=\"40px\"></a></li>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/paginasindex/imgs/iconsMenu/buscar.png\" width=\"30px\"></a></li>
-\t\t\t\t       <li><a href=\"#\"><img src=\"/my_project/web/bundles/paginasindex/imgs/iconsMenu/donar.png\" width=\"45px\"></a></li>
+\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/camada.png\" width=\"45px\"></a></li>
+\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png\" width=\"45px\"></span></a></li>
+\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/home.png\" width=\"40px\"></a></li>
+\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/buscar.png\" width=\"30px\"></a></li>
+\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/donar.png\" width=\"45px\"></a></li>
 
 
 
@@ -136,124 +105,253 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t<div class=\"col-md-12\">
 \t\t\t<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\" style=\"height:95px;\">
 \t\t\t\t<div class=\"navbar-header\" >
-\t\t\t\t\t<a href=\"publicar.html\">
+\t\t\t\t\t<a href=\"";
+        // line 86
+        echo $this->env->getExtension('routing')->getPath("ani");
+        echo "\">
 \t\t\t\t\t\t<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" style=\"border:0;\">
-\t\t\t\t\t\t<img src=\"/my_project/web/bundles/paginasindex/imgs/publicar.png\" class=\"visible-xs\">
+\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" class=\"visible-xs\">
 \t\t\t\t\t\t</button>
-\t\t\t\t\t</a> 
-\t\t\t\t\t<a class=\"navbar-brand container-fluid\" height=\"100px\" href=\"";
-        // line 123
+\t\t\t\t\t</a>
+\t\t\t\t\t<a class=\"navbar-brand container-fluid\" style=\"height:100px\" href=\"";
+        // line 91
         echo $this->env->getExtension('routing')->getPath("index_homepage");
         echo "\"><img src=\"/my_project/web/bundles/index/imgs/logo.png\" width=\"160px\"> </a>
 \t\t\t\t</div>
 \t\t\t\t<ul class=\"nav navbar-nav nav-justified hidden-xs\" role=\"menu\">
  \t\t\t\t\t<li>
-\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
-\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;\" onClick=\"location.href='";
-        // line 128
+\t\t\t\t\t\t\t<!--<button type=\"submit\" class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;\">
+\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" onClick=\"location.href=''\"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
+\t\t\t\t\t\t\t</button>-->
+\t\t\t\t\t\t\t<button class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;\" onClick=\"location.href='";
+        // line 100
         echo $this->env->getExtension('routing')->getPath("ani");
         echo "'\" value=\"publicar anuncio\">
-\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
-\t\t\t\t\t\t
- \t\t\t\t</ul>
-\t\t\t\t
-\t\t
-\t\t\t</nav><center> 
-\t\t\t\t<div class=\"jumbotron\" style=\"margin-top: 70px; margin-bottom: 50px; background-color:white\">
-
-<!-- inicio buscador -->
-      <div class=\"container\">
-\t<div class=\"row\">
-        <div class=\"col-md-7 col-md-offset-2\">
-            <div id=\"custom-search-input\">
-                <div class=\"input-group col-md-12\">
-                    <input type=\"text\" class=\"form-control input-lg\" placeholder=\"Buscar animal\" />
-                    <span class=\"input-group-btn\">
-                        <button class=\"btn btn-info btn-lg\" type=\"button\">
-                            <i class=\"glyphicon glyphicon-search\"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
+\t\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
+\t\t\t\t<div class=\"navbar-right container-fluid \" >
+\t\t\t\t\t\t<div style=\"background-color:white; padding:5px; margin-right:13px; margin-top:-90px; border-radius: 15px;\">
+            ";
+        // line 104
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 105
+            echo "                    Estás logueado como: ";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
+            echo " <br><center>
+                <a style=\"height:-150px;\" href=\"";
+            // line 106
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+            echo "\">
+                    ";
+            // line 107
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Salir", array(), "FOSUserBundle"), "html", null, true);
+            echo "
+                </a></center>
+            ";
+        } else {
+            // line 110
+            echo "                <a style=\"height:-150px;\" href=\"";
+            echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Login", array(), "FOSUserBundle"), "html", null, true);
+            echo "</a>
+            ";
+        }
+        // line 112
+        echo "            
         </div>
-\t</div>
-</div><br><!-- fin buscador -->
-    
-<center> 
-      <div class=\"row\" > <!-- anuncio -->
-      \t<hr style=\"display: block;height: 1px;border: 0;border-top: 2px solid #ccc;margin: 1em 0;padding: 0; \">
-          <div class=\"col-sm-4 mostrarDescripcion \"><!--  col-md-offset-2 -->
-          \t<img src=\"/my_project/web/bundles/paginasindex/imgs/anuncio.jpg\" class=\"img-rounded\" style=\"width:50%\">
-          </div>
-          <div class=\"col-sm-3\" >
-          \t<img src=\"/my_project/web/bundles/index/imgs/add-notes.png\" style=\"width: 30px\"/><b>Regalo Pomerania, urgente</b>
-          </div>
-          <div class=\"col-sm-5 \" align=\"left\" >
-          \t<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>
-\t\t\t\t\t        \t<b>- Nombre:</b>  Vigupe<br>
-\t\t\t\t\t        \t<b>- Raza:</b>  cruzado<br>
-\t\t\t\t\t        \t<b>- Tipo:</b>  perro<br>
-\t\t\t\t\t        \t<b>- Sexo:</b>  macho<br>
-\t\t\t\t\t        \t<b>- Nacimiento:</b>  21/09/1989<br>
-\t\t\t\t\t        \t<b>- Pedrigri:</b>  No<br>
-\t\t\t\t\t        \t<b>- Propietario:</b>  Jonathan Romero<br>
-          </div>
-      </div><hr style=\"display: block;
-    height: 1px;
-    border: 0;
-    border-top: 2px solid #ccc;
-    margin: 1em 0;
-    padding: 0; \"><br><!-- fin anuncio -->
 
-      <div >
-      <div class=\"row\" ><!-- anuncio -->
-          <div class=\"col-sm-4 mostrarDescripcion\" ><!--  col-md-offset-2 -->
-          \t<img src=\"/my_project/web/bundles/paginasindex/imgs/labrador.png\" class=\"img-rounded\" style=\"width:50%\">
-          </div>
-          <div class=\"col-sm-3\">
-          \t<img src=\"/my_project/web/bundles/index/imgs/add-notes.png\" style=\"width: 30px\"/><b>Doy Labrador, motivos personales</b>
-          </div>
-          <div class=\"col-sm-5\" align=\"left\" hidden>
-          \t<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>
-\t\t\t\t\t        \t<b>- Nombre:</b>  Vigupe<br>
-\t\t\t\t\t        \t<b>- Raza:</b>  cruzado<br>
-\t\t\t\t\t        \t<b>- Tipo:</b>  perro<br>
-\t\t\t\t\t        \t<b>- Sexo:</b>  macho<br>
-\t\t\t\t\t        \t<b>- Nacimiento:</b>  21/09/1989<br>
-\t\t\t\t\t        \t<b>- Pedrigri:</b>  No<br>
-\t\t\t\t\t        \t<b>- Propietario:</b>  Jonathan Romero<br>
-          </div>
-      </div><!-- fin anuncio -->
-  </div>
-
-
-
-
-\t\t\t\t</center>
-\t\t\t
+        ";
+        // line 115
+        if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
+            // line 116
+            echo "            ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
+            foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
+                // line 117
+                echo "                ";
+                $context['_parent'] = $context;
+                $context['_seq'] = twig_ensure_traversable($context["messages"]);
+                foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                    // line 118
+                    echo "                    <div class=\"flash-";
+                    echo twig_escape_filter($this->env, $context["type"], "html", null, true);
+                    echo "\">
+                        ";
+                    // line 119
+                    echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                    echo "
+                    </div>
+                ";
+                }
+                $_parent = $context['_parent'];
+                unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+                $context = array_intersect_key($context, $_parent) + $_parent;
+                // line 122
+                echo "            ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 123
+            echo "        ";
+        }
+        // line 124
+        echo "        </div>\t\t
+ \t\t\t\t</ul>
+\t\t\t\t\t\t\t\t<!--
+\t\t\t\t<form class=\"navbar-right\" style=\"margin-top:10px;\">
+\t\t\t\t\t<a href=\"publicar.html\">
+\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default hidden-xs\" style=\"border: 0px;border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t\t-webkit-border-radius: 27px 27px 27px 27px; margin-right:390px;\">
+\t\t\t\t\t\t\t<img src=\"imgs/publicar.png\"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
+\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t
+\t\t\t\t\t\t</a>
+\t\t\t\t</form>-->
+\t\t\t\t<div class=\"navbar-right container-fluid\" style=\"margin-top:20px;\">
+\t\t<input type=\"button\" class=\"btnJ\" value=\"Iniciar sesión\" onclick=\"location.href='";
+        // line 138
+        echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
+        echo "';\"/><div class=\"visible-xs\"><br></div>
+\t\t<input type=\"button\" class=\"btnJ\" value=\"Registrarse\" onclick=\"location.href='";
+        // line 139
+        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
+        echo "';\"/>
+\t\t
 \t\t</div>
+\t\t\t</nav>
+\t\t\t<center>
+\t\t\t<div style=\"margin-top: 170px; margin-bottom: 50px; width:100%;\">
+\t\t\t\t";
+        // line 145
+        $this->displayBlock('body', $context, $blocks);
+        // line 147
+        echo "\t\t\t</div>
+\t\t\t</center>
 \t\t</div>
 \t</div>
 \t
 </div>
-<div id=\"footer\" style=\"position: fixed; bottom: 0; width: 100%; height: 40px; background-color: #00BCD4;text-align: right; line-height: 40px;\">
+<footer id=\"footer\" style=\"background-color: #00BCD4;text-align: right; line-height: 40px;\">
       <div class=\"container\" >
-        <p class=\"text-muted credit\" ><font color=\"#FFFFFF\">Pet's | Copyright © 2016</font></p>
+        <p class=\"text-muted credit\" ><font color=\"#FFFFFF\">Pet's | Copyright © 2016 - 2017</font></p>
+\t</div>
+</footer>
 
-      </div>
-    </div>
 
-    <script src=\"/my_project/web/bundles/paginasindex/js/jquery.min.js\"></script>
-    <script src=\"/my_project/web/bundles/paginasindex/js/bootstrap.min.js\"></script>
-    <script src=\"/my_project/web/bundles/paginasindex/js/scripts.js\"></script>
+    <!--<script src=\"js/jquery.min.js\"></script>
+    <script src=\"js/bootstrap.min.js\"></script>
+    <script src=\"js/scripts.js\"></script>-->
     \t<!-- menu redondo-->
-\t\t<script src=\"/my_project/web/bundles/paginasindex/js/polyfills.js\"></script>
-\t\t<script src=\"/my_project/web/bundles/paginasindex/js/demo1.js\"></script>
-\t\t<!-- fin menu redondo -->   
+\t\t<!--<script src=\"js/polyfills.js\"></script>
+\t\t<script src=\"js/demo1.js\"></script>-->
+\t\t
+\t\t";
+        // line 167
+        $this->displayBlock('javascripts1', $context, $blocks);
+        // line 174
+        echo "\t\t<!-- fin menu redondo -->   
   </body>
 </html>";
         
-        $__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33->leave($__internal_07ad36711332894a0bcc4443e3224a6c46059a8cea812dd31c3d42838eebbc33_prof);
+        $__internal_767ceb0bb30093caa09798ac9520a4a0765e3f0ee1445994d3288f3b16f63048->leave($__internal_767ceb0bb30093caa09798ac9520a4a0765e3f0ee1445994d3288f3b16f63048_prof);
+
+    }
+
+    // line 39
+    public function block_estilos($context, array $blocks = array())
+    {
+        $__internal_68901d4622de1fedbeafd55d2f00603b7e13cb67697ee5cb07626b26e4adaab6 = $this->env->getExtension("native_profiler");
+        $__internal_68901d4622de1fedbeafd55d2f00603b7e13cb67697ee5cb07626b26e4adaab6->enter($__internal_68901d4622de1fedbeafd55d2f00603b7e13cb67697ee5cb07626b26e4adaab6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "estilos"));
+
+        // line 40
+        echo "    <link href=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/normalize.css"), "html", null, true);
+        echo "\" type=\"text/css\" rel=\"stylesheet\" />
+    <link href=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/demo.css"), "html", null, true);
+        echo "\" type=\"text/css\" rel=\"stylesheet\" />
+\t\t<link href=\"";
+        // line 42
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/component1.css"), "html", null, true);
+        echo "\" type=\"text/css\" rel=\"stylesheet\" />
+\t\t<link href=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/bootstrap.min.css"), "html", null, true);
+        echo "\" type=\"text/css\" rel=\"stylesheet\" />
+\t\t<link href=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/style.css"), "html", null, true);
+        echo "\" type=\"text/css\" rel=\"stylesheet\" />
+\t\t";
+        
+        $__internal_68901d4622de1fedbeafd55d2f00603b7e13cb67697ee5cb07626b26e4adaab6->leave($__internal_68901d4622de1fedbeafd55d2f00603b7e13cb67697ee5cb07626b26e4adaab6_prof);
+
+    }
+
+    // line 46
+    public function block_javascripts($context, array $blocks = array())
+    {
+        $__internal_9d5078ba656afb826fae8464509794b1e7d2addf36f0594641bddfff91bd197c = $this->env->getExtension("native_profiler");
+        $__internal_9d5078ba656afb826fae8464509794b1e7d2addf36f0594641bddfff91bd197c->enter($__internal_9d5078ba656afb826fae8464509794b1e7d2addf36f0594641bddfff91bd197c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 47
+        echo "\t\t<script src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/modernizr-2.6.2.min.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+\t\t";
+        
+        $__internal_9d5078ba656afb826fae8464509794b1e7d2addf36f0594641bddfff91bd197c->leave($__internal_9d5078ba656afb826fae8464509794b1e7d2addf36f0594641bddfff91bd197c_prof);
+
+    }
+
+    // line 145
+    public function block_body($context, array $blocks = array())
+    {
+        $__internal_59445bf1fbf230e68b7737e5d803900ab295301209bef7fc3710cfdf08b41586 = $this->env->getExtension("native_profiler");
+        $__internal_59445bf1fbf230e68b7737e5d803900ab295301209bef7fc3710cfdf08b41586->enter($__internal_59445bf1fbf230e68b7737e5d803900ab295301209bef7fc3710cfdf08b41586_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+
+        // line 146
+        echo "        \t\t";
+        
+        $__internal_59445bf1fbf230e68b7737e5d803900ab295301209bef7fc3710cfdf08b41586->leave($__internal_59445bf1fbf230e68b7737e5d803900ab295301209bef7fc3710cfdf08b41586_prof);
+
+    }
+
+    // line 167
+    public function block_javascripts1($context, array $blocks = array())
+    {
+        $__internal_55338ac7971d0c8f32cf7a579c81e881f61e94c43840884f1ea906a868293d2f = $this->env->getExtension("native_profiler");
+        $__internal_55338ac7971d0c8f32cf7a579c81e881f61e94c43840884f1ea906a868293d2f->enter($__internal_55338ac7971d0c8f32cf7a579c81e881f61e94c43840884f1ea906a868293d2f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts1"));
+
+        // line 168
+        echo "\t\t<script src=\"";
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/jquery.min.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+\t\t<script src=\"";
+        // line 169
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/bootstrap.min.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+\t\t<script src=\"";
+        // line 170
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/scripts.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+\t\t<script src=\"";
+        // line 171
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/polyfills.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+\t\t<script src=\"";
+        // line 172
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/demo1.js"), "html", null, true);
+        echo "\" type=\"text/javascript\"></script>
+\t\t";
+        
+        $__internal_55338ac7971d0c8f32cf7a579c81e881f61e94c43840884f1ea906a868293d2f->leave($__internal_55338ac7971d0c8f32cf7a579c81e881f61e94c43840884f1ea906a868293d2f_prof);
 
     }
 
@@ -269,7 +367,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 
     public function getDebugInfo()
     {
-        return array (  154 => 128,  146 => 123,  22 => 1,);
+        return array (  350 => 172,  346 => 171,  342 => 170,  338 => 169,  333 => 168,  327 => 167,  320 => 146,  314 => 145,  304 => 47,  298 => 46,  289 => 44,  285 => 43,  281 => 42,  277 => 41,  272 => 40,  266 => 39,  257 => 174,  255 => 167,  233 => 147,  231 => 145,  222 => 139,  218 => 138,  202 => 124,  199 => 123,  193 => 122,  184 => 119,  179 => 118,  174 => 117,  169 => 116,  167 => 115,  162 => 112,  154 => 110,  148 => 107,  144 => 106,  139 => 105,  137 => 104,  130 => 100,  118 => 91,  110 => 86,  71 => 49,  68 => 46,  66 => 39,  26 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -304,62 +402,31 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /*     float:none;*/
 /* }*/
 /* */
-/* #custom-search-input{*/
-/*     padding: 3px;*/
-/*     border: solid 1px #E4E4E4;*/
-/*     border-radius: 6px;*/
-/*     background-color: #fff;*/
-/* }*/
-/* */
-/* #custom-search-input input{*/
-/*     border: 0;*/
-/*     box-shadow: none;*/
-/* }*/
-/* */
-/* #custom-search-input button{*/
-/*     margin: 2px 0 0 0;*/
-/*     background: none;*/
-/*     box-shadow: none;*/
-/*     border: 0;*/
-/*     color: #666666;*/
-/*     padding: 0 8px 0 10px;*/
-/*     border-left: solid 1px #ccc;*/
-/* }*/
-/* */
-/* #custom-search-input button:hover{*/
-/*     border: 0;*/
-/*     box-shadow: none;*/
-/*     border-left: solid 1px #ccc;*/
-/* }*/
-/* */
-/* #custom-search-input .glyphicon-search{*/
-/*     font-size: 23px;*/
-/* }*/
 /* */
 /*   </style>*/
 /*     <meta charset="utf-8">*/
 /*     <meta http-equiv="X-UA-Compatible" content="IE=edge">*/
 /*     <!-- menu redondo-->*/
 /*     <meta name="viewport" content="width=device-width, initial-scale=1">*/
-/*     <link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/normalize.css" />*/
-/* 		<link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/demo.css" />*/
-/* 		<link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/component1.css" />*/
-/* */
-/* 		<link rel="stylesheet" href="/my_project/web/bundles/index/css/normalizebuscar.css">*/
-/*         <link rel="stylesheet" href="/my_project/web/bundles/index/css/estilobuscar.css">*/
-/* */
-/* 		<script src="/my_project/web/bundles/index/js/modernizr-2.6.2.min.js"></script>*/
-/* 		<script src="/my_project/web/bundles/index/js/jquery-1.10.2.js"></script>*/
-/*         <script src="/my_project/web/bundles/index/js/anuncioshow.js"></script>*/
+/*     {% block estilos %}*/
+/*     <link href="{{ asset('bundles/index/css/normalize.css') }}" type="text/css" rel="stylesheet" />*/
+/*     <link href="{{ asset('bundles/index/css/demo.css') }}" type="text/css" rel="stylesheet" />*/
+/* 		<link href="{{ asset('bundles/index/css/component1.css') }}" type="text/css" rel="stylesheet" />*/
+/* 		<link href="{{ asset('bundles/index/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />*/
+/* 		<link href="{{ asset('bundles/index/css/style.css') }}" type="text/css" rel="stylesheet" />*/
+/* 		{% endblock %}*/
+/* 		{% block javascripts %}*/
+/* 		<script src="{{ asset('bundles/index/js/modernizr-2.6.2.min.js') }}" type="text/javascript"></script>*/
+/* 		{% endblock %}*/
+/* 		*/
 /* 	<!-- fin menu redondo -->*/
 /*     <title>Pet’s, adoptalo y no compres</title>*/
-/* 	*/
+/* */
 /*     <meta name="description" content="Pets page">*/
 /*     <meta name="author" content="Pets">*/
 /* */
 /* */
-/*     <link href="/my_project/web/bundles/index/css/bootstrap.min.css" rel="stylesheet">*/
-/*     <link href="/my_project/web/bundles/index/css/style.css" rel="stylesheet">*/
+/*     */
 /* */
 /*   </head>*/
 /*   <body>*/
@@ -367,14 +434,13 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /*   	<div class="component">*/
 /* 				<!-- Start Nav Structure -->*/
 /* 				<button class="cn-button" id="cn-button">+</button>*/
-/* 				<!--<button class="cn-button visible-xs" id="cn-button" style="width:90px;">+</button>-->*/
 /* 				<div class="cn-wrapper" id="cn-wrapper" style="margin-bottom: 10px"> <!-- mover posicion de los botones del menu -->*/
 /* 				    <ul>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/paginasindex/imgs/iconsMenu/camada.png" width="45px"></a></li>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/paginasindex/imgs/iconsMenu/adoptar.png" width="45px"></span></a></li>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/paginasindex/imgs/iconsMenu/home.png" width="40px"></a></li>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/paginasindex/imgs/iconsMenu/buscar.png" width="30px"></a></li>*/
-/* 				       <li><a href="#"><img src="/my_project/web/bundles/paginasindex/imgs/iconsMenu/donar.png" width="45px"></a></li>*/
+/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/camada.png" width="45px"></a></li>*/
+/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png" width="45px"></span></a></li>*/
+/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/home.png" width="40px"></a></li>*/
+/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/buscar.png" width="30px"></a></li>*/
+/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/donar.png" width="45px"></a></li>*/
 /* */
 /* */
 /* */
@@ -389,113 +455,94 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 		<div class="col-md-12">*/
 /* 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="height:95px;">*/
 /* 				<div class="navbar-header" >*/
-/* 					<a href="publicar.html">*/
+/* 					<a href="{{ path("ani") }}">*/
 /* 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border:0;">*/
-/* 						<img src="/my_project/web/bundles/paginasindex/imgs/publicar.png" class="visible-xs">*/
+/* 						<img src="/my_project/web/bundles/index/imgs/publicar.png" class="visible-xs">*/
 /* 						</button>*/
-/* 					</a> */
-/* 					<a class="navbar-brand container-fluid" height="100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>*/
+/* 					</a>*/
+/* 					<a class="navbar-brand container-fluid" style="height:100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>*/
 /* 				</div>*/
 /* 				<ul class="nav navbar-nav nav-justified hidden-xs" role="menu">*/
 /*  					<li>*/
-/* 						<button type="submit" class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
-/* 						-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">*/
-/* 						<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>*/
-/* 						*/
-/*  				</ul>*/
-/* 				*/
-/* 		*/
-/* 			</nav><center> */
-/* 				<div class="jumbotron" style="margin-top: 70px; margin-bottom: 50px; background-color:white">*/
-/* */
-/* <!-- inicio buscador -->*/
-/*       <div class="container">*/
-/* 	<div class="row">*/
-/*         <div class="col-md-7 col-md-offset-2">*/
-/*             <div id="custom-search-input">*/
-/*                 <div class="input-group col-md-12">*/
-/*                     <input type="text" class="form-control input-lg" placeholder="Buscar animal" />*/
-/*                     <span class="input-group-btn">*/
-/*                         <button class="btn btn-info btn-lg" type="button">*/
-/*                             <i class="glyphicon glyphicon-search"></i>*/
-/*                         </button>*/
-/*                     </span>*/
-/*                 </div>*/
-/*             </div>*/
+/* 							<!--<button type="submit" class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
+/* 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;">*/
+/* 							<img src="/my_project/web/bundles/index/imgs/publicar.png" onClick="location.href=''"/>&nbsp;&nbsp;&nbsp;Publicar anuncio*/
+/* 							</button>-->*/
+/* 							<button class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
+/* 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">*/
+/* 								<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>*/
+/* 				<div class="navbar-right container-fluid " >*/
+/* 						<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-90px; border-radius: 15px;">*/
+/*             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}*/
+/*                     Estás logueado como: {{ app.user.username }} <br><center>*/
+/*                 <a style="height:-150px;" href="{{ path('fos_user_security_logout') }}">*/
+/*                     {{ 'Salir'|trans({}, 'FOSUserBundle') }}*/
+/*                 </a></center>*/
+/*             {% else %}*/
+/*                 <a style="height:-150px;" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a>*/
+/*             {% endif %}*/
+/*             */
 /*         </div>*/
-/* 	</div>*/
-/* </div><br><!-- fin buscador -->*/
-/*     */
-/* <center> */
-/*       <div class="row" > <!-- anuncio -->*/
-/*       	<hr style="display: block;height: 1px;border: 0;border-top: 2px solid #ccc;margin: 1em 0;padding: 0; ">*/
-/*           <div class="col-sm-4 mostrarDescripcion "><!--  col-md-offset-2 -->*/
-/*           	<img src="/my_project/web/bundles/paginasindex/imgs/anuncio.jpg" class="img-rounded" style="width:50%">*/
-/*           </div>*/
-/*           <div class="col-sm-3" >*/
-/*           	<img src="/my_project/web/bundles/index/imgs/add-notes.png" style="width: 30px"/><b>Regalo Pomerania, urgente</b>*/
-/*           </div>*/
-/*           <div class="col-sm-5 " align="left" >*/
-/*           	<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>*/
-/* 					        	<b>- Nombre:</b>  Vigupe<br>*/
-/* 					        	<b>- Raza:</b>  cruzado<br>*/
-/* 					        	<b>- Tipo:</b>  perro<br>*/
-/* 					        	<b>- Sexo:</b>  macho<br>*/
-/* 					        	<b>- Nacimiento:</b>  21/09/1989<br>*/
-/* 					        	<b>- Pedrigri:</b>  No<br>*/
-/* 					        	<b>- Propietario:</b>  Jonathan Romero<br>*/
-/*           </div>*/
-/*       </div><hr style="display: block;*/
-/*     height: 1px;*/
-/*     border: 0;*/
-/*     border-top: 2px solid #ccc;*/
-/*     margin: 1em 0;*/
-/*     padding: 0; "><br><!-- fin anuncio -->*/
 /* */
-/*       <div >*/
-/*       <div class="row" ><!-- anuncio -->*/
-/*           <div class="col-sm-4 mostrarDescripcion" ><!--  col-md-offset-2 -->*/
-/*           	<img src="/my_project/web/bundles/paginasindex/imgs/labrador.png" class="img-rounded" style="width:50%">*/
-/*           </div>*/
-/*           <div class="col-sm-3">*/
-/*           	<img src="/my_project/web/bundles/index/imgs/add-notes.png" style="width: 30px"/><b>Doy Labrador, motivos personales</b>*/
-/*           </div>*/
-/*           <div class="col-sm-5" align="left" hidden>*/
-/*           	<b>- Descripcion:</b> Es una raza canina de la familia Spitz, que recibe su nombre de la región de Pomerania Central, en Alemania oriental, y se clasifica como perro toy (juguete) por su pequeño tamaño.<br>*/
-/* 					        	<b>- Nombre:</b>  Vigupe<br>*/
-/* 					        	<b>- Raza:</b>  cruzado<br>*/
-/* 					        	<b>- Tipo:</b>  perro<br>*/
-/* 					        	<b>- Sexo:</b>  macho<br>*/
-/* 					        	<b>- Nacimiento:</b>  21/09/1989<br>*/
-/* 					        	<b>- Pedrigri:</b>  No<br>*/
-/* 					        	<b>- Propietario:</b>  Jonathan Romero<br>*/
-/*           </div>*/
-/*       </div><!-- fin anuncio -->*/
-/*   </div>*/
-/* */
-/* */
-/* */
-/* */
-/* 				</center>*/
-/* 			*/
+/*         {% if app.request.hasPreviousSession %}*/
+/*             {% for type, messages in app.session.flashbag.all() %}*/
+/*                 {% for message in messages %}*/
+/*                     <div class="flash-{{ type }}">*/
+/*                         {{ message }}*/
+/*                     </div>*/
+/*                 {% endfor %}*/
+/*             {% endfor %}*/
+/*         {% endif %}*/
+/*         </div>		*/
+/*  				</ul>*/
+/* 								<!--*/
+/* 				<form class="navbar-right" style="margin-top:10px;">*/
+/* 					<a href="publicar.html">*/
+/* 							<button type="submit" class="btn btn-default hidden-xs" style="border: 0px;border-radius: 27px 27px 27px 27px;*/
+/* 							-moz-border-radius: 27px 27px 27px 27px;*/
+/* 							-webkit-border-radius: 27px 27px 27px 27px; margin-right:390px;">*/
+/* 							<img src="imgs/publicar.png"/>&nbsp;&nbsp;&nbsp;Publicar anuncio*/
+/* 							</button>*/
+/* 						*/
+/* 						</a>*/
+/* 				</form>-->*/
+/* 				<div class="navbar-right container-fluid" style="margin-top:20px;">*/
+/* 		<input type="button" class="btnJ" value="Iniciar sesión" onclick="location.href='{{ path("fos_user_security_login") }}';"/><div class="visible-xs"><br></div>*/
+/* 		<input type="button" class="btnJ" value="Registrarse" onclick="location.href='{{ path("fos_user_registration_register") }}';"/>*/
+/* 		*/
 /* 		</div>*/
+/* 			</nav>*/
+/* 			<center>*/
+/* 			<div style="margin-top: 170px; margin-bottom: 50px; width:100%;">*/
+/* 				{% block body %}*/
+/*         		{% endblock body %}*/
+/* 			</div>*/
+/* 			</center>*/
 /* 		</div>*/
 /* 	</div>*/
 /* 	*/
 /* </div>*/
-/* <div id="footer" style="position: fixed; bottom: 0; width: 100%; height: 40px; background-color: #00BCD4;text-align: right; line-height: 40px;">*/
+/* <footer id="footer" style="background-color: #00BCD4;text-align: right; line-height: 40px;">*/
 /*       <div class="container" >*/
-/*         <p class="text-muted credit" ><font color="#FFFFFF">Pet's | Copyright © 2016</font></p>*/
+/*         <p class="text-muted credit" ><font color="#FFFFFF">Pet's | Copyright © 2016 - 2017</font></p>*/
+/* 	</div>*/
+/* </footer>*/
 /* */
-/*       </div>*/
-/*     </div>*/
 /* */
-/*     <script src="/my_project/web/bundles/paginasindex/js/jquery.min.js"></script>*/
-/*     <script src="/my_project/web/bundles/paginasindex/js/bootstrap.min.js"></script>*/
-/*     <script src="/my_project/web/bundles/paginasindex/js/scripts.js"></script>*/
+/*     <!--<script src="js/jquery.min.js"></script>*/
+/*     <script src="js/bootstrap.min.js"></script>*/
+/*     <script src="js/scripts.js"></script>-->*/
 /*     	<!-- menu redondo-->*/
-/* 		<script src="/my_project/web/bundles/paginasindex/js/polyfills.js"></script>*/
-/* 		<script src="/my_project/web/bundles/paginasindex/js/demo1.js"></script>*/
+/* 		<!--<script src="js/polyfills.js"></script>*/
+/* 		<script src="js/demo1.js"></script>-->*/
+/* 		*/
+/* 		{% block javascripts1 %}*/
+/* 		<script src="{{ asset('bundles/index/js/jquery.min.js') }}" type="text/javascript"></script>*/
+/* 		<script src="{{ asset('bundles/index/js/bootstrap.min.js') }}" type="text/javascript"></script>*/
+/* 		<script src="{{ asset('bundles/index/js/scripts.js') }}" type="text/javascript"></script>*/
+/* 		<script src="{{ asset('bundles/index/js/polyfills.js') }}" type="text/javascript"></script>*/
+/* 		<script src="{{ asset('bundles/index/js/demo1.js') }}" type="text/javascript"></script>*/
+/* 		{% endblock %}*/
 /* 		<!-- fin menu redondo -->   */
 /*   </body>*/
 /* </html>*/

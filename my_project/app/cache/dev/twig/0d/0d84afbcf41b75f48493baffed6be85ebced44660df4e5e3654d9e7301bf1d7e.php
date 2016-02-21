@@ -19,8 +19,8 @@ class __TwigTemplate_ba5a29de54156e1c59d63a366256b8e0dbdb970dde71ad0b9372dd015c3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b52e80573c404c93a0ff4c5ef36e646d7d5bc9523e29cf7ca4e8390a5fbfc1ed = $this->env->getExtension("native_profiler");
-        $__internal_b52e80573c404c93a0ff4c5ef36e646d7d5bc9523e29cf7ca4e8390a5fbfc1ed->enter($__internal_b52e80573c404c93a0ff4c5ef36e646d7d5bc9523e29cf7ca4e8390a5fbfc1ed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "DonacionesBundle:Default:index.html.twig"));
+        $__internal_47abb00abee101daf0663592eb19f52c19afcb56110da7c578e0fa5fd8f34182 = $this->env->getExtension("native_profiler");
+        $__internal_47abb00abee101daf0663592eb19f52c19afcb56110da7c578e0fa5fd8f34182->enter($__internal_47abb00abee101daf0663592eb19f52c19afcb56110da7c578e0fa5fd8f34182_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "DonacionesBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -32,215 +32,224 @@ Si aplicamos esta clase CSS a un DIV no aparecerá en la versión móvil pero si
 .visible-xs
 Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero no desde una dispositivo con la pantalla mayor.
 -->
-  <head>
-  <style>
-\t\t  .btnJ{
-\t\t   -webkit-border-radius: 35;
-\t\t  -moz-border-radius: 35;
-\t\t  border-radius: 35px;
-\t\t  color: #ffffff;
-\t\t  font-size: 20px;
-\t\t  background: #00BCD4;
-\t\t  padding: 10px 20px 10px 20px;
-\t\t  border: solid #1f628d 0px;
-\t\t  text-decoration: none;
-\t\t}
-
-
-\t\t.btnJ:hover {
-\t\t  text-decoration: none;
-\t\t}
-
-\t\t.navbar-nav.nav-justified > li{
-    float:none;
-}
-
-
-  </style>
-    <meta charset=\"utf-8\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
-    <!-- menu redondo-->
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
-    ";
-        // line 39
+\t<head>
+  \t\t<style>
+\t\t\t.btnJ{
+\t\t\t\t-webkit-border-radius: 35;
+\t\t\t\t-moz-border-radius: 35;
+\t\t\t\tborder-radius: 35px;
+\t\t\t\tcolor: #ffffff;
+\t\t\t\tfont-size: 20px;
+\t\t\t\tbackground: #00BCD4;
+\t\t\t\tpadding: 10px 20px 10px 20px;
+\t\t\t\tborder: solid #1f628d 0px;
+\t\t\t\ttext-decoration: none;
+\t\t\t}
+\t\t\t
+\t\t\t.btnJ:hover {
+\t\t\t\ttext-decoration: none;
+\t\t\t}
+\t\t\t
+\t\t\t.navbar-nav.nav-justified > li{
+\t\t\t\tfloat:none;
+\t\t\t}
+  \t\t</style>
+\t\t<meta charset=\"utf-8\">
+\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+\t\t<!-- menu redondo-->
+\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\t\t";
+        // line 36
         $this->displayBlock('estilos', $context, $blocks);
-        // line 46
+        // line 43
         echo "\t\t";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 49
+        // line 46
         echo "\t\t
-\t<!-- fin menu redondo -->
-    <title>Pet’s, adoptalo y no compres</title>
-
-    <meta name=\"description\" content=\"Pets page\">
-    <meta name=\"author\" content=\"Pets\">
-
-
-    
-
-  </head>
-  <body>
-  \t<!-- menu redondo-->
-  \t<div class=\"component\">
-\t\t\t\t<!-- Start Nav Structure -->
-\t\t\t\t<button class=\"cn-button\" id=\"cn-button\">+</button>
-\t\t\t\t<div class=\"cn-wrapper\" id=\"cn-wrapper\" style=\"margin-bottom: 10px\"> <!-- mover posicion de los botones del menu -->
-\t\t\t\t    <ul>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/camada.png\" width=\"45px\"></a></li>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png\" width=\"45px\"></span></a></li>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/home.png\" width=\"40px\"></a></li>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/buscar.png\" width=\"30px\"></a></li>
-\t\t\t\t      <li><a href=\"#\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/donar.png\" width=\"45px\"></a></li>
-
-
-
-\t\t\t\t     </ul>
-\t\t\t\t</div>
-\t\t\t\t<div id=\"cn-overlay\" class=\"cn-overlay\"></div>
-\t\t\t\t<!-- End Nav Structure -->
-\t</div>
-\t<!-- fin menu redondo-->
-    <div class=\"container-fluid\">
-\t<div class=\"row\">
-\t\t<div class=\"col-md-12\">
-\t\t\t<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\" style=\"height:95px;\">
-\t\t\t\t<div class=\"navbar-header\" >
-\t\t\t\t\t<a href=\"";
-        // line 86
+\t\t<!-- fin menu redondo -->
+\t\t<title>Pet’s, adoptalo y no compres</title>
+\t\t
+\t\t<meta name=\"description\" content=\"Pets page\">
+\t\t<meta name=\"author\" content=\"Pets\">
+\t</head>
+  \t<body>
+\t  \t<!-- menu redondo-->
+\t  \t<div class=\"component\">
+\t\t\t<!-- Start Nav Structure -->
+\t\t\t<button class=\"cn-button\" id=\"cn-button\">+</button>
+\t\t\t<div class=\"cn-wrapper\" id=\"cn-wrapper\" style=\"margin-bottom: 10px\"> <!-- mover posicion de los botones del menu -->
+\t\t\t\t<ul>
+\t\t\t\t\t<li><a onclick=\"location.href='";
+        // line 60
+        echo $this->env->getExtension('routing')->getPath("paginas_sebusca");
+        echo "'\" ><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/buscarperdido.png\" width=\"45px\"></a></li>
+\t\t\t\t\t<li><a onclick=\"location.href='";
+        // line 61
+        echo $this->env->getExtension('routing')->getPath("paginas_adopciones");
+        echo "'\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png\" width=\"50px\"></span></a></li>
+\t\t\t\t\t<li><a onclick=\"location.href='";
+        // line 62
+        echo $this->env->getExtension('routing')->getPath("paginas_protectoras");
+        echo "'\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/refugio.png\" width=\"45px\"></a></li>
+\t\t\t\t\t<li><a onclick=\"location.href='";
+        // line 63
+        echo $this->env->getExtension('routing')->getPath("paginas_camadas");
+        echo "'\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/camada.png\" width=\"45px\"></a></li>
+\t\t\t\t\t<li><a href=\"http://www.sustitutas.com/\"><img src=\"/my_project/web/bundles/index/imgs/iconsMenu/forum.png\" width=\"45px\"></a></li>
+\t\t\t\t</ul>
+\t\t\t</div>
+\t\t\t<div id=\"cn-overlay\" class=\"cn-overlay\"></div>
+\t\t\t<!-- End Nav Structure -->
+\t\t</div>
+\t\t<!-- fin menu redondo-->
+    \t<div class=\"container-fluid\">
+\t\t\t<div class=\"row\">
+\t\t\t\t<div class=\"col-md-12\">
+\t\t\t\t\t<nav class=\"navbar navbar-default navbar-fixed-top\" role=\"navigation\" style=\"height:95px;\">
+\t\t\t\t\t\t<div class=\"navbar-header\" >
+\t\t\t\t\t\t\t<a href=\"";
+        // line 76
         echo $this->env->getExtension('routing')->getPath("ani");
         echo "\">
-\t\t\t\t\t\t<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" style=\"border:0;\">
-\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" class=\"visible-xs\">
-\t\t\t\t\t\t</button>
-\t\t\t\t\t</a>
-\t\t\t\t\t<a class=\"navbar-brand container-fluid\" style=\"height:100px\" href=\"";
-        // line 91
+\t\t\t\t\t\t\t\t<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" style=\"border:0;\">
+\t\t\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" class=\"visible-xs\">
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t\t<a class=\"navbar-brand container-fluid\" style=\"height:100px\" href=\"";
+        // line 81
         echo $this->env->getExtension('routing')->getPath("index_homepage");
         echo "\"><img src=\"/my_project/web/bundles/index/imgs/logo.png\" width=\"160px\"> </a>
-\t\t\t\t</div>
-\t\t\t\t<ul class=\"nav navbar-nav nav-justified hidden-xs\" role=\"menu\">
- \t\t\t\t\t<li>
-\t\t\t\t\t\t\t<!--<button type=\"submit\" class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
-\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;\">
-\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" onClick=\"location.href=''\"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
-\t\t\t\t\t\t\t</button>-->
-\t\t\t\t\t\t\t<button class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
-\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;\" onClick=\"location.href='";
-        // line 100
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<ul class=\"nav navbar-nav nav-justified hidden-xs\" role=\"menu\">
+\t\t\t\t\t\t\t<li>
+\t\t\t\t\t\t\t\t<!--<button type=\"submit\" class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;\">
+\t\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\" onClick=\"location.href=''\"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
+\t\t\t\t\t\t\t\t</button>-->
+\t\t\t\t\t\t\t\t<button class=\"btn btn-default hidden-xs\"  style=\"border: 0px;border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;\" onClick=\"location.href='";
+        // line 90
         echo $this->env->getExtension('routing')->getPath("ani");
         echo "'\" value=\"publicar anuncio\">
-\t\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>
-\t\t\t\t<div class=\"navbar-right container-fluid \" >
-\t\t\t\t\t\t<div style=\"background-color:white; padding:5px; margin-right:13px; margin-top:-90px; border-radius: 15px;\">
-            ";
-        // line 104
+\t\t\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/publicar.png\">&nbsp;&nbsp;&nbsp; Publicar anuncio
+\t\t\t\t\t\t\t\t</button>
+\t\t\t\t\t\t\t</li>
+\t\t\t\t\t\t\t<div class=\"navbar-right container-fluid \" >
+\t\t\t\t\t\t\t\t<div style=\"background-color:white; padding:5px; margin-right:13px; margin-top:-105px; border: 0px;border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px;\">
+\t\t\t\t\t\t\t\t\t";
+        // line 97
         if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-            // line 105
-            echo "                    Estás logueado como: ";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
-            echo " <br><center>
-                <a style=\"height:-150px;\" href=\"";
-            // line 106
+            // line 98
+            echo "\t\t\t\t\t\t\t\t\t\t<img src=\"/my_project/web/bundles/index/imgs/user.png\">&nbsp;&nbsp; 
+\t\t\t\t\t\t\t\t\t\t<a style=\"height:-150px;\" href=\"http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/profile/\">
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 100
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Perfil", array(), "FOSUserBundle"), "html", null, true);
+            echo "
+\t\t\t\t\t\t\t\t\t\t</a> | 
+\t\t\t\t\t\t\t\t\t\t<a style=\"height:-150px;\" href=\"";
+            // line 102
             echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
             echo "\">
-                    ";
-            // line 107
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Salir", array(), "FOSUserBundle"), "html", null, true);
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 103
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Cerrar sesión", array(), "FOSUserBundle"), "html", null, true);
             echo "
-                </a></center>
-            ";
+\t\t\t\t\t\t\t\t\t\t</a>&nbsp;&nbsp; 
+\t\t\t\t\t\t\t\t\t\t<center>
+\t\t\t\t\t\t\t\t\t\t</center>
+\t\t\t\t\t\t\t\t\t";
         } else {
-            // line 110
-            echo "                <a style=\"height:-150px;\" href=\"";
+            // line 108
+            echo "\t\t\t\t\t\t\t\t\t\t<a style=\"height:-150px; text-decoration:none;\" href=\"";
             echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-            echo "\">";
-            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("Login", array(), "FOSUserBundle"), "html", null, true);
+            echo "\"><img src=\"/my_project/web/bundles/index/imgs/user.png\">&nbsp;";
+            echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("   Mi cuenta", array(), "FOSUserBundle"), "html", null, true);
             echo "</a>
-            ";
+\t\t\t\t\t\t\t\t\t";
         }
-        // line 112
-        echo "            
-        </div>
-
-        ";
-        // line 115
+        // line 110
+        echo "\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t";
+        // line 111
         if ($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "hasPreviousSession", array())) {
-            // line 116
-            echo "            ";
+            // line 112
+            echo "\t\t\t\t\t\t\t\t\t";
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashbag", array()), "all", array(), "method"));
             foreach ($context['_seq'] as $context["type"] => $context["messages"]) {
-                // line 117
-                echo "                ";
+                // line 113
+                echo "\t\t\t\t\t\t\t\t\t\t";
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($context["messages"]);
                 foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                    // line 118
-                    echo "                    <div class=\"flash-";
+                    // line 114
+                    echo "\t\t\t\t\t\t\t\t\t\t\t<div class=\"flash-";
                     echo twig_escape_filter($this->env, $context["type"], "html", null, true);
                     echo "\">
-                        ";
-                    // line 119
+\t\t\t\t\t\t\t\t\t\t\t\t";
+                    // line 115
                     echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                     echo "
-                    </div>
-                ";
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 122
-                echo "            ";
+                // line 118
+                echo "\t\t\t\t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['type'], $context['messages'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 123
-            echo "        ";
+            // line 119
+            echo "\t\t\t\t\t\t\t\t";
         }
-        // line 124
-        echo "        </div>\t\t
- \t\t\t\t</ul>
-\t\t\t\t\t\t\t\t<!--
-\t\t\t\t<form class=\"navbar-right\" style=\"margin-top:10px;\">
-\t\t\t\t\t<a href=\"publicar.html\">
-\t\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default hidden-xs\" style=\"border: 0px;border-radius: 27px 27px 27px 27px;
-\t\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px;
-\t\t\t\t\t\t\t-webkit-border-radius: 27px 27px 27px 27px; margin-right:390px;\">
-\t\t\t\t\t\t\t<img src=\"imgs/publicar.png\"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
-\t\t\t\t\t\t\t</button>
+        // line 120
+        echo "\t\t\t\t\t\t\t</div>\t\t
+\t\t\t\t\t\t</ul>
+\t\t\t\t\t\t<!--
+\t\t\t\t\t\t<form class=\"navbar-right\" style=\"margin-top:10px;\">
+\t\t\t\t\t\t<a href=\"publicar.html\">
+\t\t\t\t\t\t<button type=\"submit\" class=\"btn btn-default hidden-xs\" style=\"border: 0px;border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t-moz-border-radius: 27px 27px 27px 27px;
+\t\t\t\t\t\t-webkit-border-radius: 27px 27px 27px 27px; margin-right:390px;\">
+\t\t\t\t\t\t<img src=\"imgs/publicar.png\"/>&nbsp;&nbsp;&nbsp;Publicar anuncio
+\t\t\t\t\t\t</button>
 \t\t\t\t\t\t
 \t\t\t\t\t\t</a>
-\t\t\t\t</form>-->
-\t\t\t\t<div class=\"navbar-right container-fluid\" style=\"margin-top:-20px;\">
-\t\t<input type=\"button\" class=\"btnJ\" value=\"Iniciar sesión\" onclick=\"location.href='";
-        // line 138
+\t\t\t\t\t\t</form>-->
+\t\t\t\t\t\t<div class=\"navbar-right container-fluid\" style=\"margin-top:7px;\">
+\t\t\t\t\t\t\t<img class=\"visible-xs\" src=\"/my_project/web/bundles/index/imgs/user.png\" onclick=\"location.href='";
+        // line 134
         echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
-        echo "';\"/><div class=\"visible-xs\"><br></div>
-\t\t<input type=\"button\" class=\"btnJ\" value=\"Registrarse\" onclick=\"location.href='";
-        // line 139
-        echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
-        echo "';\"/>
-\t\t
-\t\t</div>
-\t\t\t</nav>
-\t\t\t<center>
-\t\t\t<div style=\"margin-top: 170px; margin-bottom: 50px; width:100%;\">
-\t\t\t\t";
-        // line 145
+        echo "';\" style=\"float: right; margin-right: 10px\"><br>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</nav>
+\t\t\t\t\t<div style=\"vertical-align:left; margin-top: 100px; margin-bottom: -60px; font-weight:bold;\">
+                        <a href=\"";
+        // line 138
+        echo $this->env->getExtension('routing')->getPath("index_homepage");
+        echo "\">Inicio</a> > <a href=\"#\">Donaciones</a>
+                    </div>
+\t\t\t\t\t<center>
+\t\t\t\t\t\t<div style=\"margin-top: 110px; margin-bottom: 50px; width:100%;\">
+\t\t\t\t\t\t\t";
+        // line 142
         $this->displayBlock('body', $context, $blocks);
-        // line 148
-        echo "\t\t\t</div>
-\t\t\t</center>
+        // line 145
+        echo "\t\t\t\t\t\t</div>
+\t\t\t\t\t</center>
+\t\t\t\t</div>
+\t\t\t</div>
 \t\t</div>
-\t</div>
-\t
-</div>
-<footer id=\"footer\" style=\"background-color: #00BCD4;text-align: right; line-height: 40px;\">
-      <div class=\"container\" >
-        <p class=\"text-muted credit\" ><font color=\"#FFFFFF\">Pet's | Copyright © 2016 - 2017</font></p>
-\t</div>
-</footer>
+\t\t<div id=\"footer\" style=\"position: fixed; bottom: 0; width: 100%; height: 50px; background-color: #00BCD4;text-align: right; line-height: 40px;\">
+            <div class=\"container\" >
+                <p class=\"text-muted credit\" ><font color=\"#FFFFFF\">Pet's | Copyright © 2016</font></p>
+            </div>
+            </div>
 
 
     <!--<script src=\"js/jquery.min.js\"></script>
@@ -251,108 +260,108 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t\t<script src=\"js/demo1.js\"></script>-->
 \t\t
 \t\t";
-        // line 168
+        // line 164
         $this->displayBlock('javascripts1', $context, $blocks);
-        // line 175
+        // line 171
         echo "\t\t<!-- fin menu redondo -->   
-  </body>
+\t</body>
 </html>";
         
-        $__internal_b52e80573c404c93a0ff4c5ef36e646d7d5bc9523e29cf7ca4e8390a5fbfc1ed->leave($__internal_b52e80573c404c93a0ff4c5ef36e646d7d5bc9523e29cf7ca4e8390a5fbfc1ed_prof);
+        $__internal_47abb00abee101daf0663592eb19f52c19afcb56110da7c578e0fa5fd8f34182->leave($__internal_47abb00abee101daf0663592eb19f52c19afcb56110da7c578e0fa5fd8f34182_prof);
 
     }
 
-    // line 39
+    // line 36
     public function block_estilos($context, array $blocks = array())
     {
-        $__internal_de928bc36153fe0e7d006009f5c0c42b14aa27b23e38e7fb1ed192bdd7660bee = $this->env->getExtension("native_profiler");
-        $__internal_de928bc36153fe0e7d006009f5c0c42b14aa27b23e38e7fb1ed192bdd7660bee->enter($__internal_de928bc36153fe0e7d006009f5c0c42b14aa27b23e38e7fb1ed192bdd7660bee_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "estilos"));
+        $__internal_8376361484f570b20ef4690785ed8a123097156cc768cfd5e827e6d4b7114dfd = $this->env->getExtension("native_profiler");
+        $__internal_8376361484f570b20ef4690785ed8a123097156cc768cfd5e827e6d4b7114dfd->enter($__internal_8376361484f570b20ef4690785ed8a123097156cc768cfd5e827e6d4b7114dfd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "estilos"));
 
-        // line 40
-        echo "    <link href=\"";
+        // line 37
+        echo "\t\t<link href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/normalize.css"), "html", null, true);
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
-    <link href=\"";
-        // line 41
+\t\t<link href=\"";
+        // line 38
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/demo.css"), "html", null, true);
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
 \t\t<link href=\"";
-        // line 42
+        // line 39
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/component1.css"), "html", null, true);
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
 \t\t<link href=\"";
-        // line 43
+        // line 40
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/bootstrap.min.css"), "html", null, true);
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
 \t\t<link href=\"";
-        // line 44
+        // line 41
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/css/style.css"), "html", null, true);
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
 \t\t";
         
-        $__internal_de928bc36153fe0e7d006009f5c0c42b14aa27b23e38e7fb1ed192bdd7660bee->leave($__internal_de928bc36153fe0e7d006009f5c0c42b14aa27b23e38e7fb1ed192bdd7660bee_prof);
+        $__internal_8376361484f570b20ef4690785ed8a123097156cc768cfd5e827e6d4b7114dfd->leave($__internal_8376361484f570b20ef4690785ed8a123097156cc768cfd5e827e6d4b7114dfd_prof);
 
     }
 
-    // line 46
+    // line 43
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_10c427630076600f90eaddecc0e75f560254a4428e7b45906f463ca10d63bd20 = $this->env->getExtension("native_profiler");
-        $__internal_10c427630076600f90eaddecc0e75f560254a4428e7b45906f463ca10d63bd20->enter($__internal_10c427630076600f90eaddecc0e75f560254a4428e7b45906f463ca10d63bd20_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_a1a0be4d6048e1248282445c4fc07d5c7cb450cb8979f1f313cac81d182077a1 = $this->env->getExtension("native_profiler");
+        $__internal_a1a0be4d6048e1248282445c4fc07d5c7cb450cb8979f1f313cac81d182077a1->enter($__internal_a1a0be4d6048e1248282445c4fc07d5c7cb450cb8979f1f313cac81d182077a1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 47
+        // line 44
         echo "\t\t<script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/modernizr-2.6.2.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t";
         
-        $__internal_10c427630076600f90eaddecc0e75f560254a4428e7b45906f463ca10d63bd20->leave($__internal_10c427630076600f90eaddecc0e75f560254a4428e7b45906f463ca10d63bd20_prof);
+        $__internal_a1a0be4d6048e1248282445c4fc07d5c7cb450cb8979f1f313cac81d182077a1->leave($__internal_a1a0be4d6048e1248282445c4fc07d5c7cb450cb8979f1f313cac81d182077a1_prof);
 
     }
 
-    // line 145
+    // line 142
     public function block_body($context, array $blocks = array())
     {
-        $__internal_ef851b4a0553cf274a6e5e67f300c2ebf420979da0596ab022f6c3a1e3806ca9 = $this->env->getExtension("native_profiler");
-        $__internal_ef851b4a0553cf274a6e5e67f300c2ebf420979da0596ab022f6c3a1e3806ca9->enter($__internal_ef851b4a0553cf274a6e5e67f300c2ebf420979da0596ab022f6c3a1e3806ca9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_65285806be6a381b247f24f686a4247060a3675f1227eda9b2944192565a30f5 = $this->env->getExtension("native_profiler");
+        $__internal_65285806be6a381b247f24f686a4247060a3675f1227eda9b2944192565a30f5->enter($__internal_65285806be6a381b247f24f686a4247060a3675f1227eda9b2944192565a30f5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 146
+        // line 143
         echo "\t\t\t\t
-        \t\t";
+        \t\t\t\t\t";
         
-        $__internal_ef851b4a0553cf274a6e5e67f300c2ebf420979da0596ab022f6c3a1e3806ca9->leave($__internal_ef851b4a0553cf274a6e5e67f300c2ebf420979da0596ab022f6c3a1e3806ca9_prof);
+        $__internal_65285806be6a381b247f24f686a4247060a3675f1227eda9b2944192565a30f5->leave($__internal_65285806be6a381b247f24f686a4247060a3675f1227eda9b2944192565a30f5_prof);
 
     }
 
-    // line 168
+    // line 164
     public function block_javascripts1($context, array $blocks = array())
     {
-        $__internal_5e662b040bacb0a4e4fa6d2678d03f17e930e0941239b2653f1683466b0b40ed = $this->env->getExtension("native_profiler");
-        $__internal_5e662b040bacb0a4e4fa6d2678d03f17e930e0941239b2653f1683466b0b40ed->enter($__internal_5e662b040bacb0a4e4fa6d2678d03f17e930e0941239b2653f1683466b0b40ed_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts1"));
+        $__internal_e51359682094f6e56d42a7f9523dc3f874bbc3bde7d1d8614f555e49fde9c289 = $this->env->getExtension("native_profiler");
+        $__internal_e51359682094f6e56d42a7f9523dc3f874bbc3bde7d1d8614f555e49fde9c289->enter($__internal_e51359682094f6e56d42a7f9523dc3f874bbc3bde7d1d8614f555e49fde9c289_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts1"));
 
-        // line 169
+        // line 165
         echo "\t\t<script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/jquery.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 170
+        // line 166
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/bootstrap.min.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 171
+        // line 167
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/scripts.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 172
+        // line 168
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/polyfills.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t<script src=\"";
-        // line 173
+        // line 169
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/index/js/demo1.js"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
 \t\t";
         
-        $__internal_5e662b040bacb0a4e4fa6d2678d03f17e930e0941239b2653f1683466b0b40ed->leave($__internal_5e662b040bacb0a4e4fa6d2678d03f17e930e0941239b2653f1683466b0b40ed_prof);
+        $__internal_e51359682094f6e56d42a7f9523dc3f874bbc3bde7d1d8614f555e49fde9c289->leave($__internal_e51359682094f6e56d42a7f9523dc3f874bbc3bde7d1d8614f555e49fde9c289_prof);
 
     }
 
@@ -368,7 +377,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 
     public function getDebugInfo()
     {
-        return array (  351 => 173,  347 => 172,  343 => 171,  339 => 170,  334 => 169,  328 => 168,  320 => 146,  314 => 145,  304 => 47,  298 => 46,  289 => 44,  285 => 43,  281 => 42,  277 => 41,  272 => 40,  266 => 39,  257 => 175,  255 => 168,  233 => 148,  231 => 145,  222 => 139,  218 => 138,  202 => 124,  199 => 123,  193 => 122,  184 => 119,  179 => 118,  174 => 117,  169 => 116,  167 => 115,  162 => 112,  154 => 110,  148 => 107,  144 => 106,  139 => 105,  137 => 104,  130 => 100,  118 => 91,  110 => 86,  71 => 49,  68 => 46,  66 => 39,  26 => 1,);
+        return array (  360 => 169,  356 => 168,  352 => 167,  348 => 166,  343 => 165,  337 => 164,  329 => 143,  323 => 142,  313 => 44,  307 => 43,  298 => 41,  294 => 40,  290 => 39,  286 => 38,  281 => 37,  275 => 36,  266 => 171,  264 => 164,  243 => 145,  241 => 142,  234 => 138,  227 => 134,  211 => 120,  208 => 119,  202 => 118,  193 => 115,  188 => 114,  183 => 113,  178 => 112,  176 => 111,  173 => 110,  165 => 108,  157 => 103,  153 => 102,  148 => 100,  144 => 98,  142 => 97,  132 => 90,  120 => 81,  112 => 76,  96 => 63,  92 => 62,  88 => 61,  84 => 60,  68 => 46,  65 => 43,  63 => 36,  26 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -380,38 +389,35 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* .visible-xs*/
 /* Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero no desde una dispositivo con la pantalla mayor.*/
 /* -->*/
-/*   <head>*/
-/*   <style>*/
-/* 		  .btnJ{*/
-/* 		   -webkit-border-radius: 35;*/
-/* 		  -moz-border-radius: 35;*/
-/* 		  border-radius: 35px;*/
-/* 		  color: #ffffff;*/
-/* 		  font-size: 20px;*/
-/* 		  background: #00BCD4;*/
-/* 		  padding: 10px 20px 10px 20px;*/
-/* 		  border: solid #1f628d 0px;*/
-/* 		  text-decoration: none;*/
-/* 		}*/
-/* */
-/* */
-/* 		.btnJ:hover {*/
-/* 		  text-decoration: none;*/
-/* 		}*/
-/* */
-/* 		.navbar-nav.nav-justified > li{*/
-/*     float:none;*/
-/* }*/
-/* */
-/* */
-/*   </style>*/
-/*     <meta charset="utf-8">*/
-/*     <meta http-equiv="X-UA-Compatible" content="IE=edge">*/
-/*     <!-- menu redondo-->*/
-/*     <meta name="viewport" content="width=device-width, initial-scale=1">*/
-/*     {% block estilos %}*/
-/*     <link href="{{ asset('bundles/index/css/normalize.css') }}" type="text/css" rel="stylesheet" />*/
-/*     <link href="{{ asset('bundles/index/css/demo.css') }}" type="text/css" rel="stylesheet" />*/
+/* 	<head>*/
+/*   		<style>*/
+/* 			.btnJ{*/
+/* 				-webkit-border-radius: 35;*/
+/* 				-moz-border-radius: 35;*/
+/* 				border-radius: 35px;*/
+/* 				color: #ffffff;*/
+/* 				font-size: 20px;*/
+/* 				background: #00BCD4;*/
+/* 				padding: 10px 20px 10px 20px;*/
+/* 				border: solid #1f628d 0px;*/
+/* 				text-decoration: none;*/
+/* 			}*/
+/* 			*/
+/* 			.btnJ:hover {*/
+/* 				text-decoration: none;*/
+/* 			}*/
+/* 			*/
+/* 			.navbar-nav.nav-justified > li{*/
+/* 				float:none;*/
+/* 			}*/
+/*   		</style>*/
+/* 		<meta charset="utf-8">*/
+/* 		<meta http-equiv="X-UA-Compatible" content="IE=edge">*/
+/* 		<!-- menu redondo-->*/
+/* 		<meta name="viewport" content="width=device-width, initial-scale=1">*/
+/* 		{% block estilos %}*/
+/* 		<link href="{{ asset('bundles/index/css/normalize.css') }}" type="text/css" rel="stylesheet" />*/
+/* 		<link href="{{ asset('bundles/index/css/demo.css') }}" type="text/css" rel="stylesheet" />*/
 /* 		<link href="{{ asset('bundles/index/css/component1.css') }}" type="text/css" rel="stylesheet" />*/
 /* 		<link href="{{ asset('bundles/index/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />*/
 /* 		<link href="{{ asset('bundles/index/css/style.css') }}" type="text/css" rel="stylesheet" />*/
@@ -420,115 +426,114 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 		<script src="{{ asset('bundles/index/js/modernizr-2.6.2.min.js') }}" type="text/javascript"></script>*/
 /* 		{% endblock %}*/
 /* 		*/
-/* 	<!-- fin menu redondo -->*/
-/*     <title>Pet’s, adoptalo y no compres</title>*/
-/* */
-/*     <meta name="description" content="Pets page">*/
-/*     <meta name="author" content="Pets">*/
-/* */
-/* */
-/*     */
-/* */
-/*   </head>*/
-/*   <body>*/
-/*   	<!-- menu redondo-->*/
-/*   	<div class="component">*/
-/* 				<!-- Start Nav Structure -->*/
-/* 				<button class="cn-button" id="cn-button">+</button>*/
-/* 				<div class="cn-wrapper" id="cn-wrapper" style="margin-bottom: 10px"> <!-- mover posicion de los botones del menu -->*/
-/* 				    <ul>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/camada.png" width="45px"></a></li>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png" width="45px"></span></a></li>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/home.png" width="40px"></a></li>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/buscar.png" width="30px"></a></li>*/
-/* 				      <li><a href="#"><img src="/my_project/web/bundles/index/imgs/iconsMenu/donar.png" width="45px"></a></li>*/
-/* */
-/* */
-/* */
-/* 				     </ul>*/
-/* 				</div>*/
-/* 				<div id="cn-overlay" class="cn-overlay"></div>*/
-/* 				<!-- End Nav Structure -->*/
-/* 	</div>*/
-/* 	<!-- fin menu redondo-->*/
-/*     <div class="container-fluid">*/
-/* 	<div class="row">*/
-/* 		<div class="col-md-12">*/
-/* 			<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="height:95px;">*/
-/* 				<div class="navbar-header" >*/
-/* 					<a href="{{ path("ani") }}">*/
-/* 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border:0;">*/
-/* 						<img src="/my_project/web/bundles/index/imgs/publicar.png" class="visible-xs">*/
+/* 		<!-- fin menu redondo -->*/
+/* 		<title>Pet’s, adoptalo y no compres</title>*/
+/* 		*/
+/* 		<meta name="description" content="Pets page">*/
+/* 		<meta name="author" content="Pets">*/
+/* 	</head>*/
+/*   	<body>*/
+/* 	  	<!-- menu redondo-->*/
+/* 	  	<div class="component">*/
+/* 			<!-- Start Nav Structure -->*/
+/* 			<button class="cn-button" id="cn-button">+</button>*/
+/* 			<div class="cn-wrapper" id="cn-wrapper" style="margin-bottom: 10px"> <!-- mover posicion de los botones del menu -->*/
+/* 				<ul>*/
+/* 					<li><a onclick="location.href='{{ path("paginas_sebusca") }}'" ><img src="/my_project/web/bundles/index/imgs/iconsMenu/buscarperdido.png" width="45px"></a></li>*/
+/* 					<li><a onclick="location.href='{{ path("paginas_adopciones") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png" width="50px"></span></a></li>*/
+/* 					<li><a onclick="location.href='{{ path("paginas_protectoras") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/refugio.png" width="45px"></a></li>*/
+/* 					<li><a onclick="location.href='{{ path("paginas_camadas") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/camada.png" width="45px"></a></li>*/
+/* 					<li><a href="http://www.sustitutas.com/"><img src="/my_project/web/bundles/index/imgs/iconsMenu/forum.png" width="45px"></a></li>*/
+/* 				</ul>*/
+/* 			</div>*/
+/* 			<div id="cn-overlay" class="cn-overlay"></div>*/
+/* 			<!-- End Nav Structure -->*/
+/* 		</div>*/
+/* 		<!-- fin menu redondo-->*/
+/*     	<div class="container-fluid">*/
+/* 			<div class="row">*/
+/* 				<div class="col-md-12">*/
+/* 					<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="height:95px;">*/
+/* 						<div class="navbar-header" >*/
+/* 							<a href="{{ path("ani") }}">*/
+/* 								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" style="border:0;">*/
+/* 									<img src="/my_project/web/bundles/index/imgs/publicar.png" class="visible-xs">*/
+/* 								</button>*/
+/* 							</a>*/
+/* 							<a class="navbar-brand container-fluid" style="height:100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>*/
+/* 						</div>*/
+/* 						<ul class="nav navbar-nav nav-justified hidden-xs" role="menu">*/
+/* 							<li>*/
+/* 								<!--<button type="submit" class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
+/* 								-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;">*/
+/* 								<img src="/my_project/web/bundles/index/imgs/publicar.png" onClick="location.href=''"/>&nbsp;&nbsp;&nbsp;Publicar anuncio*/
+/* 								</button>-->*/
+/* 								<button class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
+/* 								-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">*/
+/* 									<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio*/
+/* 								</button>*/
+/* 							</li>*/
+/* 							<div class="navbar-right container-fluid " >*/
+/* 								<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-105px; border: 0px;border-radius: 27px 27px 27px 27px;*/
+/* 								-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px;">*/
+/* 									{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}*/
+/* 										<img src="/my_project/web/bundles/index/imgs/user.png">&nbsp;&nbsp; */
+/* 										<a style="height:-150px;" href="http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/profile/">*/
+/* 											{{ 'Perfil'|trans({}, 'FOSUserBundle') }}*/
+/* 										</a> | */
+/* 										<a style="height:-150px;" href="{{ path('fos_user_security_logout') }}">*/
+/* 											{{ 'Cerrar sesión'|trans({}, 'FOSUserBundle') }}*/
+/* 										</a>&nbsp;&nbsp; */
+/* 										<center>*/
+/* 										</center>*/
+/* 									{% else %}*/
+/* 										<a style="height:-150px; text-decoration:none;" href="{{ path('fos_user_security_login') }}"><img src="/my_project/web/bundles/index/imgs/user.png">&nbsp;{{ '   Mi cuenta'|trans({}, 'FOSUserBundle') }}</a>*/
+/* 									{% endif %}*/
+/* 								</div>*/
+/* 								{% if app.request.hasPreviousSession %}*/
+/* 									{% for type, messages in app.session.flashbag.all() %}*/
+/* 										{% for message in messages %}*/
+/* 											<div class="flash-{{ type }}">*/
+/* 												{{ message }}*/
+/* 											</div>*/
+/* 										{% endfor %}*/
+/* 									{% endfor %}*/
+/* 								{% endif %}*/
+/* 							</div>		*/
+/* 						</ul>*/
+/* 						<!--*/
+/* 						<form class="navbar-right" style="margin-top:10px;">*/
+/* 						<a href="publicar.html">*/
+/* 						<button type="submit" class="btn btn-default hidden-xs" style="border: 0px;border-radius: 27px 27px 27px 27px;*/
+/* 						-moz-border-radius: 27px 27px 27px 27px;*/
+/* 						-webkit-border-radius: 27px 27px 27px 27px; margin-right:390px;">*/
+/* 						<img src="imgs/publicar.png"/>&nbsp;&nbsp;&nbsp;Publicar anuncio*/
 /* 						</button>*/
-/* 					</a>*/
-/* 					<a class="navbar-brand container-fluid" style="height:100px" href="{{ path("index_homepage") }}"><img src="/my_project/web/bundles/index/imgs/logo.png" width="160px"> </a>*/
-/* 				</div>*/
-/* 				<ul class="nav navbar-nav nav-justified hidden-xs" role="menu">*/
-/*  					<li>*/
-/* 							<!--<button type="submit" class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
-/* 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-32px;">*/
-/* 							<img src="/my_project/web/bundles/index/imgs/publicar.png" onClick="location.href=''"/>&nbsp;&nbsp;&nbsp;Publicar anuncio*/
-/* 							</button>-->*/
-/* 							<button class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;*/
-/* 							-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;" onClick="location.href='{{ path("ani") }}'" value="publicar anuncio">*/
-/* 								<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio</button>*/
-/* 				<div class="navbar-right container-fluid " >*/
-/* 						<div style="background-color:white; padding:5px; margin-right:13px; margin-top:-90px; border-radius: 15px;">*/
-/*             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}*/
-/*                     Estás logueado como: {{ app.user.username }} <br><center>*/
-/*                 <a style="height:-150px;" href="{{ path('fos_user_security_logout') }}">*/
-/*                     {{ 'Salir'|trans({}, 'FOSUserBundle') }}*/
-/*                 </a></center>*/
-/*             {% else %}*/
-/*                 <a style="height:-150px;" href="{{ path('fos_user_security_login') }}">{{ 'Login'|trans({}, 'FOSUserBundle') }}</a>*/
-/*             {% endif %}*/
-/*             */
-/*         </div>*/
-/* */
-/*         {% if app.request.hasPreviousSession %}*/
-/*             {% for type, messages in app.session.flashbag.all() %}*/
-/*                 {% for message in messages %}*/
-/*                     <div class="flash-{{ type }}">*/
-/*                         {{ message }}*/
-/*                     </div>*/
-/*                 {% endfor %}*/
-/*             {% endfor %}*/
-/*         {% endif %}*/
-/*         </div>		*/
-/*  				</ul>*/
-/* 								<!--*/
-/* 				<form class="navbar-right" style="margin-top:10px;">*/
-/* 					<a href="publicar.html">*/
-/* 							<button type="submit" class="btn btn-default hidden-xs" style="border: 0px;border-radius: 27px 27px 27px 27px;*/
-/* 							-moz-border-radius: 27px 27px 27px 27px;*/
-/* 							-webkit-border-radius: 27px 27px 27px 27px; margin-right:390px;">*/
-/* 							<img src="imgs/publicar.png"/>&nbsp;&nbsp;&nbsp;Publicar anuncio*/
-/* 							</button>*/
 /* 						*/
 /* 						</a>*/
-/* 				</form>-->*/
-/* 				<div class="navbar-right container-fluid" style="margin-top:-20px;">*/
-/* 		<input type="button" class="btnJ" value="Iniciar sesión" onclick="location.href='{{ path("fos_user_security_login") }}';"/><div class="visible-xs"><br></div>*/
-/* 		<input type="button" class="btnJ" value="Registrarse" onclick="location.href='{{ path("fos_user_registration_register") }}';"/>*/
-/* 		*/
-/* 		</div>*/
-/* 			</nav>*/
-/* 			<center>*/
-/* 			<div style="margin-top: 170px; margin-bottom: 50px; width:100%;">*/
-/* 				{% block body %}*/
+/* 						</form>-->*/
+/* 						<div class="navbar-right container-fluid" style="margin-top:7px;">*/
+/* 							<img class="visible-xs" src="/my_project/web/bundles/index/imgs/user.png" onclick="location.href='{{ path("fos_user_security_login") }}';" style="float: right; margin-right: 10px"><br>*/
+/* 						</div>*/
+/* 					</nav>*/
+/* 					<div style="vertical-align:left; margin-top: 100px; margin-bottom: -60px; font-weight:bold;">*/
+/*                         <a href="{{ path("index_homepage") }}">Inicio</a> > <a href="#">Donaciones</a>*/
+/*                     </div>*/
+/* 					<center>*/
+/* 						<div style="margin-top: 110px; margin-bottom: 50px; width:100%;">*/
+/* 							{% block body %}*/
 /* 				*/
-/*         		{% endblock body %}*/
+/*         					{% endblock body %}*/
+/* 						</div>*/
+/* 					</center>*/
+/* 				</div>*/
 /* 			</div>*/
-/* 			</center>*/
 /* 		</div>*/
-/* 	</div>*/
-/* 	*/
-/* </div>*/
-/* <footer id="footer" style="background-color: #00BCD4;text-align: right; line-height: 40px;">*/
-/*       <div class="container" >*/
-/*         <p class="text-muted credit" ><font color="#FFFFFF">Pet's | Copyright © 2016 - 2017</font></p>*/
-/* 	</div>*/
-/* </footer>*/
+/* 		<div id="footer" style="position: fixed; bottom: 0; width: 100%; height: 50px; background-color: #00BCD4;text-align: right; line-height: 40px;">*/
+/*             <div class="container" >*/
+/*                 <p class="text-muted credit" ><font color="#FFFFFF">Pet's | Copyright © 2016</font></p>*/
+/*             </div>*/
+/*             </div>*/
 /* */
 /* */
 /*     <!--<script src="js/jquery.min.js"></script>*/
@@ -546,5 +551,5 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 /* 		<script src="{{ asset('bundles/index/js/demo1.js') }}" type="text/javascript"></script>*/
 /* 		{% endblock %}*/
 /* 		<!-- fin menu redondo -->   */
-/*   </body>*/
+/* 	</body>*/
 /* </html>*/

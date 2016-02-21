@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use AnunciosBundle\Entity\Anuncios;
 use AnunciosBundle\Form\AnunciosType;
+use AnimalesBundle\Entity\Animales;
+use AppBundle\Entity\User;
 
 /**
  * Anuncios controller.
@@ -36,6 +38,11 @@ class AnunciosController extends Controller
     public function newAction(Request $request)
     {
         $anuncio = new Anuncios();
+        $animal = new Animales();
+#        $anuncio->setUser($this->getUser());
+#        ($this->getUser())->addAnuncio($anuncio );
+        $animal->setAnuncio($anuncio);
+        $anuncio->setAnimal($animal);
         $form = $this->createForm('AnunciosBundle\Form\AnunciosType', $anuncio);
         $form->handleRequest($request);
 
@@ -44,7 +51,7 @@ class AnunciosController extends Controller
             $em->persist($anuncio);
             $em->flush();
 
-            return $this->redirectToRoute('anuncios_show', array('id' => $anuncios->getId()));
+            return $this->redirectToRoute('anuncios_show', array('id' => $anuncio->getId()));
         }
 
         return $this->render('anuncios/new.html.twig', array(

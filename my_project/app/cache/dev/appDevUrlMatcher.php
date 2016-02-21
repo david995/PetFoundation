@@ -115,6 +115,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'PaginasIndexBundle\\Controller\\DefaultController::indexAction',  '_route' => 'paginas_index_homepage',);
         }
 
+        // paginas_camadas
+        if ($pathinfo === '/camadas') {
+            return array (  '_controller' => 'PaginasIndexBundle\\Controller\\DefaultController::camadasAction',  '_route' => 'paginas_camadas',);
+        }
+
+        // paginas_adopciones
+        if ($pathinfo === '/adopciones') {
+            return array (  '_controller' => 'PaginasIndexBundle\\Controller\\DefaultController::adopcionesAction',  '_route' => 'paginas_adopciones',);
+        }
+
+        // paginas_protectoras
+        if ($pathinfo === '/protectoras') {
+            return array (  '_controller' => 'PaginasIndexBundle\\Controller\\DefaultController::protectorasAction',  '_route' => 'paginas_protectoras',);
+        }
+
+        // paginas_sebusca
+        if ($pathinfo === '/sebusca') {
+            return array (  '_controller' => 'PaginasIndexBundle\\Controller\\DefaultController::sebuscaAction',  '_route' => 'paginas_sebusca',);
+        }
+
         // index_homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
