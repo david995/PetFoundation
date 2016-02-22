@@ -15,8 +15,8 @@ class __TwigTemplate_d06e866fd6f126699b0dad0998414d4dfbf51789e7da88a11fbdf561d57
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_00b00df0c02928202280352056250a619780d3244223e31d46c80e4bdae8c157 = $this->env->getExtension("native_profiler");
-        $__internal_00b00df0c02928202280352056250a619780d3244223e31d46c80e4bdae8c157->enter($__internal_00b00df0c02928202280352056250a619780d3244223e31d46c80e4bdae8c157_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
+        $__internal_2dd9626804bd0e88aac899475472180b0b339808e6eb844c5f61fe208a25ca30 = $this->env->getExtension("native_profiler");
+        $__internal_2dd9626804bd0e88aac899475472180b0b339808e6eb844c5f61fe208a25ca30->enter($__internal_2dd9626804bd0e88aac899475472180b0b339808e6eb844c5f61fe208a25ca30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
 
         // line 2
         echo "<div>
@@ -68,7 +68,8 @@ class __TwigTemplate_d06e866fd6f126699b0dad0998414d4dfbf51789e7da88a11fbdf561d57
         // line 35
         if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
             // line 36
-            echo "        <div class=\"form-group\">
+            echo "        <center>
+        <div class=\"form-group\">
           <label class=\"control-label col-sm-2\" for=\"password\">Rol:</label>
           <br>
             <select style=\"\" id=\"fos_user_registration_form_roles\" name=\"fos_user_registration_form[roles][]\" required=\"required\" multiple=\"multiple\">
@@ -76,22 +77,23 @@ class __TwigTemplate_d06e866fd6f126699b0dad0998414d4dfbf51789e7da88a11fbdf561d57
                 <option value=\"ROLE_SUPERADMIN\" >SUPERADMINISTRADOR</option>
                 <option value=\"ROLE_USER\"  selected=\"selected\">USUARIO</option>
             </select>
+            
         </div>
+        </center>
         ";
         } else {
-            // line 46
+            // line 49
             echo "          <div class=\"col-sm-10\">
-              <select style=\"\" id=\"fos_user_registration_form_roles\" name=\"fos_user_registration_form[roles][]\" required=\"required\" multiple=\"multiple\">
-                <option value=\"ROLE_ADMIN\" >ADMINISTRADOR</option>
-                <option value=\"ROLE_SUPERADMIN\" >SUPERADMINISTRADOR</option>
-                <option value=\"ROLE_USER\"  selected=\"selected\">USUARIO</option>
-            </select> 
+              ";
+            // line 50
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "roles", array()), 'row');
+            echo "
             
           </div>
       
       ";
         }
-        // line 56
+        // line 55
         echo "            
       
             <input id=\"botonPublicar\" class=\"btn btn-info\" type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"Registrarse\" style='width:100%; height:40px; font-size:20px' />
@@ -103,12 +105,12 @@ class __TwigTemplate_d06e866fd6f126699b0dad0998414d4dfbf51789e7da88a11fbdf561d57
 
 
 ";
-        // line 66
+        // line 65
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 </div>";
         
-        $__internal_00b00df0c02928202280352056250a619780d3244223e31d46c80e4bdae8c157->leave($__internal_00b00df0c02928202280352056250a619780d3244223e31d46c80e4bdae8c157_prof);
+        $__internal_2dd9626804bd0e88aac899475472180b0b339808e6eb844c5f61fe208a25ca30->leave($__internal_2dd9626804bd0e88aac899475472180b0b339808e6eb844c5f61fe208a25ca30_prof);
 
     }
 
@@ -124,7 +126,7 @@ class __TwigTemplate_d06e866fd6f126699b0dad0998414d4dfbf51789e7da88a11fbdf561d57
 
     public function getDebugInfo()
     {
-        return array (  107 => 66,  95 => 56,  83 => 46,  71 => 36,  69 => 35,  62 => 31,  44 => 16,  40 => 15,  25 => 3,  22 => 2,);
+        return array (  109 => 65,  97 => 55,  89 => 50,  86 => 49,  71 => 36,  69 => 35,  62 => 31,  44 => 16,  40 => 15,  25 => 3,  22 => 2,);
     }
 }
 /* {% trans_default_domain 'FOSUserBundle' %}*/
@@ -162,6 +164,7 @@ class __TwigTemplate_d06e866fd6f126699b0dad0998414d4dfbf51789e7da88a11fbdf561d57
 /*       */
 /*          */
 /*         {% if is_granted('ROLE_ADMIN') %}*/
+/*         <center>*/
 /*         <div class="form-group">*/
 /*           <label class="control-label col-sm-2" for="password">Rol:</label>*/
 /*           <br>*/
@@ -170,14 +173,12 @@ class __TwigTemplate_d06e866fd6f126699b0dad0998414d4dfbf51789e7da88a11fbdf561d57
 /*                 <option value="ROLE_SUPERADMIN" >SUPERADMINISTRADOR</option>*/
 /*                 <option value="ROLE_USER"  selected="selected">USUARIO</option>*/
 /*             </select>*/
+/*             */
 /*         </div>*/
+/*         </center>*/
 /*         {% else %}*/
 /*           <div class="col-sm-10">*/
-/*               <select style="" id="fos_user_registration_form_roles" name="fos_user_registration_form[roles][]" required="required" multiple="multiple">*/
-/*                 <option value="ROLE_ADMIN" >ADMINISTRADOR</option>*/
-/*                 <option value="ROLE_SUPERADMIN" >SUPERADMINISTRADOR</option>*/
-/*                 <option value="ROLE_USER"  selected="selected">USUARIO</option>*/
-/*             </select> */
+/*               {{ form_row(form.roles) }}*/
 /*             */
 /*           </div>*/
 /*       */

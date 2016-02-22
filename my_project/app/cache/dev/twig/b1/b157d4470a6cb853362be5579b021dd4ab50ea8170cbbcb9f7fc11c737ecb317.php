@@ -1,6 +1,6 @@
 <?php
 
-/* :animales:index.html.twig */
+/* animales/index.html.twig */
 class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb83902095 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", ":animales:index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "animales/index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -21,25 +21,25 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1 = $this->env->getExtension("native_profiler");
-        $__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1->enter($__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":animales:index.html.twig"));
+        $__internal_63848aadd1190083d995fdbe023eaf261b26d551901cf6de983cf4aa8503bf15 = $this->env->getExtension("native_profiler");
+        $__internal_63848aadd1190083d995fdbe023eaf261b26d551901cf6de983cf4aa8503bf15->enter($__internal_63848aadd1190083d995fdbe023eaf261b26d551901cf6de983cf4aa8503bf15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "animales/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1->leave($__internal_1044240865b7593bb65369d979bfc414616ea332418e0afe7b6c7a5ac323d5f1_prof);
+        $__internal_63848aadd1190083d995fdbe023eaf261b26d551901cf6de983cf4aa8503bf15->leave($__internal_63848aadd1190083d995fdbe023eaf261b26d551901cf6de983cf4aa8503bf15_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6 = $this->env->getExtension("native_profiler");
-        $__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6->enter($__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_c3c26f55aade66162d6fe1e5e9797f27135e668a0cb9420d7fcbf32da38be793 = $this->env->getExtension("native_profiler");
+        $__internal_c3c26f55aade66162d6fe1e5e9797f27135e668a0cb9420d7fcbf32da38be793->enter($__internal_c3c26f55aade66162d6fe1e5e9797f27135e668a0cb9420d7fcbf32da38be793_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Animales list</h1>
 
-    <table>
+    <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
@@ -137,13 +137,13 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
     </ul>
 ";
         
-        $__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6->leave($__internal_423fce3fdb20402c4731caf505d2cf4da5eeddb6e4bd991cd7033bbcb077a5a6_prof);
+        $__internal_c3c26f55aade66162d6fe1e5e9797f27135e668a0cb9420d7fcbf32da38be793->leave($__internal_c3c26f55aade66162d6fe1e5e9797f27135e668a0cb9420d7fcbf32da38be793_prof);
 
     }
 
     public function getTemplateName()
     {
-        return ":animales:index.html.twig";
+        return "animales/index.html.twig";
     }
 
     public function isTraitable()
@@ -161,7 +161,7 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
 /* {% block body %}*/
 /*     <h1>Animales list</h1>*/
 /* */
-/*     <table>*/
+/*     <table class="table">*/
 /*         <thead>*/
 /*             <tr>*/
 /*                 <th>Id</th>*/

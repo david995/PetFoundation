@@ -21,20 +21,20 @@ class __TwigTemplate_93486d2e439f338837d04641782703301f5ff4e0c7e29882778417f8fff
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5f76e9c1afd4ce078a30e99000c80cc44eb3515887a7d9e7293e0ab09c9847b2 = $this->env->getExtension("native_profiler");
-        $__internal_5f76e9c1afd4ce078a30e99000c80cc44eb3515887a7d9e7293e0ab09c9847b2->enter($__internal_5f76e9c1afd4ce078a30e99000c80cc44eb3515887a7d9e7293e0ab09c9847b2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "DonacionesBundle:Default:contenido_index.html.twig"));
+        $__internal_ffa96500d1c9584d970001181d2c56db0c387b143af4326c62f12fce91c5208c = $this->env->getExtension("native_profiler");
+        $__internal_ffa96500d1c9584d970001181d2c56db0c387b143af4326c62f12fce91c5208c->enter($__internal_ffa96500d1c9584d970001181d2c56db0c387b143af4326c62f12fce91c5208c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "DonacionesBundle:Default:contenido_index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5f76e9c1afd4ce078a30e99000c80cc44eb3515887a7d9e7293e0ab09c9847b2->leave($__internal_5f76e9c1afd4ce078a30e99000c80cc44eb3515887a7d9e7293e0ab09c9847b2_prof);
+        $__internal_ffa96500d1c9584d970001181d2c56db0c387b143af4326c62f12fce91c5208c->leave($__internal_ffa96500d1c9584d970001181d2c56db0c387b143af4326c62f12fce91c5208c_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_9a8e05776edd5ad370df1bc97250fffa0a4c9cd89aa5da7aec702fb4c9aa9777 = $this->env->getExtension("native_profiler");
-        $__internal_9a8e05776edd5ad370df1bc97250fffa0a4c9cd89aa5da7aec702fb4c9aa9777->enter($__internal_9a8e05776edd5ad370df1bc97250fffa0a4c9cd89aa5da7aec702fb4c9aa9777_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_66df611f54a8755f44c09b8efeb00a5dd95fe5ec78853b6c4f2502acddc57b0e = $this->env->getExtension("native_profiler");
+        $__internal_66df611f54a8755f44c09b8efeb00a5dd95fe5ec78853b6c4f2502acddc57b0e->enter($__internal_66df611f54a8755f44c09b8efeb00a5dd95fe5ec78853b6c4f2502acddc57b0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <div class=\"jumbotron\" style=\"margin-top: -70px; margin-bottom: 50px; width:100%; padding-top: 40px; background-color: white\">
@@ -69,7 +69,7 @@ class __TwigTemplate_93486d2e439f338837d04641782703301f5ff4e0c7e29882778417f8fff
     </div>
 ";
         
-        $__internal_9a8e05776edd5ad370df1bc97250fffa0a4c9cd89aa5da7aec702fb4c9aa9777->leave($__internal_9a8e05776edd5ad370df1bc97250fffa0a4c9cd89aa5da7aec702fb4c9aa9777_prof);
+        $__internal_66df611f54a8755f44c09b8efeb00a5dd95fe5ec78853b6c4f2502acddc57b0e->leave($__internal_66df611f54a8755f44c09b8efeb00a5dd95fe5ec78853b6c4f2502acddc57b0e_prof);
 
     }
 

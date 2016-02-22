@@ -21,25 +21,25 @@ class __TwigTemplate_970155b43205dfead4ef97fe9bf449ba8cc17740436b9746ebc4b87b669
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_70a1ef1719f04ac27f503fc2e944546c2a0a73d68429d34d347ed0cfad24a74a = $this->env->getExtension("native_profiler");
-        $__internal_70a1ef1719f04ac27f503fc2e944546c2a0a73d68429d34d347ed0cfad24a74a->enter($__internal_70a1ef1719f04ac27f503fc2e944546c2a0a73d68429d34d347ed0cfad24a74a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "anuncios/show.html.twig"));
+        $__internal_b10c5a6fc8edb289da3886470e5ff5836fab278b70d33baadd4bf9d1310f1c04 = $this->env->getExtension("native_profiler");
+        $__internal_b10c5a6fc8edb289da3886470e5ff5836fab278b70d33baadd4bf9d1310f1c04->enter($__internal_b10c5a6fc8edb289da3886470e5ff5836fab278b70d33baadd4bf9d1310f1c04_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "anuncios/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_70a1ef1719f04ac27f503fc2e944546c2a0a73d68429d34d347ed0cfad24a74a->leave($__internal_70a1ef1719f04ac27f503fc2e944546c2a0a73d68429d34d347ed0cfad24a74a_prof);
+        $__internal_b10c5a6fc8edb289da3886470e5ff5836fab278b70d33baadd4bf9d1310f1c04->leave($__internal_b10c5a6fc8edb289da3886470e5ff5836fab278b70d33baadd4bf9d1310f1c04_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_1f7de665ca27f6e873945ee6f3dd07df1fdd39b2c43377d905df18216528a1b3 = $this->env->getExtension("native_profiler");
-        $__internal_1f7de665ca27f6e873945ee6f3dd07df1fdd39b2c43377d905df18216528a1b3->enter($__internal_1f7de665ca27f6e873945ee6f3dd07df1fdd39b2c43377d905df18216528a1b3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_ff90c438170401086158effa8bb00fe055661f665cd4404488ccfa8d1ed36cfd = $this->env->getExtension("native_profiler");
+        $__internal_ff90c438170401086158effa8bb00fe055661f665cd4404488ccfa8d1ed36cfd->enter($__internal_ff90c438170401086158effa8bb00fe055661f665cd4404488ccfa8d1ed36cfd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Anuncios</h1>
 
-    <table>
+    <table class=\"table\">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -93,7 +93,7 @@ class __TwigTemplate_970155b43205dfead4ef97fe9bf449ba8cc17740436b9746ebc4b87b669
     </ul>
 ";
         
-        $__internal_1f7de665ca27f6e873945ee6f3dd07df1fdd39b2c43377d905df18216528a1b3->leave($__internal_1f7de665ca27f6e873945ee6f3dd07df1fdd39b2c43377d905df18216528a1b3_prof);
+        $__internal_ff90c438170401086158effa8bb00fe055661f665cd4404488ccfa8d1ed36cfd->leave($__internal_ff90c438170401086158effa8bb00fe055661f665cd4404488ccfa8d1ed36cfd_prof);
 
     }
 
@@ -117,7 +117,7 @@ class __TwigTemplate_970155b43205dfead4ef97fe9bf449ba8cc17740436b9746ebc4b87b669
 /* {% block body %}*/
 /*     <h1>Anuncios</h1>*/
 /* */
-/*     <table>*/
+/*     <table class="table">*/
 /*         <tbody>*/
 /*             <tr>*/
 /*                 <th>Id</th>*/

@@ -64,10 +64,10 @@ class Animales extends \AnimalesBundle\Entity\Animales implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'anuncio', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'id', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nombre', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'tipo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'raza', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'sexo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nacimiento', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'propietario', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'pedigri'];
+            return ['__isInitialized__', 'anuncio', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'id', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nombre', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'tipo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'raza', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'sexo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nacimiento', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'propietario', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'pedigri', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'img', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'descripcion', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'tlf'];
         }
 
-        return ['__isInitialized__', 'anuncio', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'id', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nombre', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'tipo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'raza', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'sexo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nacimiento', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'propietario', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'pedigri'];
+        return ['__isInitialized__', 'anuncio', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'id', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nombre', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'tipo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'raza', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'sexo', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'nacimiento', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'propietario', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'pedigri', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'img', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'descripcion', '' . "\0" . 'AnimalesBundle\\Entity\\Animales' . "\0" . 'tlf'];
     }
 
     /**
@@ -373,6 +373,72 @@ class Animales extends \AnimalesBundle\Entity\Animales implements \Doctrine\ORM\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnuncio', []);
 
         return parent::getAnuncio();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setImg($img)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setImg', [$img]);
+
+        return parent::setImg($img);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getImg()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImg', []);
+
+        return parent::getImg();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDescripcion($descripcion)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDescripcion', [$descripcion]);
+
+        return parent::setDescripcion($descripcion);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDescripcion()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDescripcion', []);
+
+        return parent::getDescripcion();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTlf($tlf)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTlf', [$tlf]);
+
+        return parent::setTlf($tlf);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTlf()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTlf', []);
+
+        return parent::getTlf();
     }
 
 }

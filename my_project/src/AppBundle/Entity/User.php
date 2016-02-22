@@ -17,7 +17,7 @@ class User extends BaseUser
     /**
      * Relationship OneToMany
      * 
-     * @ORM\OneToMany(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="user",cascade={"persist", "remove"})
      */
      protected $anuncios;
     
@@ -42,7 +42,7 @@ class User extends BaseUser
      *
      * @return User
      */
-    public function addAnuncio(\AnunciosBundle\Anuncios $anuncio)
+    public function addAnuncio(\AnunciosBundle\Entity\Anuncios $anuncio)
     {
         $this->anuncios[] = $anuncio;
 
@@ -54,7 +54,7 @@ class User extends BaseUser
      *
      * @param \AnunciosBundle\Anuncios $anuncio
      */
-    public function removeAnuncio(\AnunciosBundle\Anuncios $anuncio)
+    public function removeAnuncio(\AnunciosBundle\Entity\Anuncios $anuncio)
     {
         $this->anuncios->removeElement($anuncio);
     }

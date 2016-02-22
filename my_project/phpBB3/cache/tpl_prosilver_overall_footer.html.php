@@ -29,6 +29,16 @@
 	<?php if (! $this->_rootref['S_IS_BOT']) {  echo (isset($this->_rootref['RUN_CRON_TASK'])) ? $this->_rootref['RUN_CRON_TASK'] : ''; } ?>
 
 </div>
+<br><br><br><br><br><br>
+<div id="footer" style="position: fixed; bottom: 0; width: 100%; height: 50px; background-color: #00BCD4;text-align: right; line-height: 40px; padding-top: 20px;">
+    <div class="container" >
+        <p class="text-muted credit" ><font color="#FFFFFF">Pet's | Copyright © 2016</font></p>
+    </div>
+</div>
+<!-- menu redondo-->
+<script src="/my_project/web/bundles/paginasindex/js/polyfills.js"></script>
+<script src="/my_project/web/bundles/paginasindex/js/demo1.js"></script>
+<!-- fin menu redondo -->
 
 </body>
 </html>

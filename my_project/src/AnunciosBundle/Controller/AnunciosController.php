@@ -39,8 +39,9 @@ class AnunciosController extends Controller
     {
         $anuncio = new Anuncios();
         $animal = new Animales();
-#        $anuncio->setUser($this->getUser());
-#        ($this->getUser())->addAnuncio($anuncio );
+        $user = new User();
+        
+       $anuncio->setUser($this->getUser());
         $animal->setAnuncio($anuncio);
         $anuncio->setAnimal($animal);
         $form = $this->createForm('AnunciosBundle\Form\AnunciosType', $anuncio);
@@ -53,6 +54,7 @@ class AnunciosController extends Controller
 
             return $this->redirectToRoute('anuncios_show', array('id' => $anuncio->getId()));
         }
+
 
         return $this->render('anuncios/new.html.twig', array(
             'anuncio' => $anuncio,
@@ -109,9 +111,15 @@ class AnunciosController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($anuncio);
-            $em->flush();
+      #      $em = $this->getDoctrine()->getManager();
+      #      $em->remove($anuncio);
+      #      $em->flush();
+      
+      $stmt = $this->getDoctrine()->getEntityManager()
+        ->getConnection()
+        ->prepare("update symfony.anuncios set anuncio_id=NULL, animal_id=NULL where anuncios.id=".$anuncio->getId().";");
+        $stmt->execute();
+    
         }
 
         return $this->redirectToRoute('anuncios_index');
@@ -136,4 +144,7 @@ class AnunciosController extends Controller
     {
         return 'animal';
     }
+    
+    
+    
 }

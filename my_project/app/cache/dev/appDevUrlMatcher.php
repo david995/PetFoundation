@@ -105,6 +105,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // contactame_homepage
+        if ($pathinfo === '/contactame') {
+            return array (  '_controller' => 'ContactameBundle\\Controller\\DefaultController::indexAction',  '_route' => 'contactame_homepage',);
+        }
+
         // donaciones_homepage
         if ($pathinfo === '/donaciones') {
             return array (  '_controller' => 'DonacionesBundle\\Controller\\DefaultController::indexAction',  '_route' => 'donaciones_homepage',);
@@ -151,6 +156,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             if (0 === strpos($pathinfo, '/anuncios')) {
+                // anunc
+                if ($pathinfo === '/anuncios/new') {
+                    return array (  '_controller' => 'AnunciosBundle\\Controller\\AnunciosController::newAction',  '_route' => 'anunc',);
+                }
+
                 // anuncios_index
                 if (rtrim($pathinfo, '/') === '/anuncios') {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {

@@ -33,6 +33,7 @@
       
          
         {% if is_granted('ROLE_ADMIN') %}
+        <center>
         <div class="form-group">
           <label class="control-label col-sm-2" for="password">Rol:</label>
           <br>
@@ -41,14 +42,12 @@
                 <option value="ROLE_SUPERADMIN" >SUPERADMINISTRADOR</option>
                 <option value="ROLE_USER"  selected="selected">USUARIO</option>
             </select>
+            
         </div>
+        </center>
         {% else %}
           <div class="col-sm-10">
-              <select style="" id="fos_user_registration_form_roles" name="fos_user_registration_form[roles][]" required="required" multiple="multiple">
-                <option value="ROLE_ADMIN" >ADMINISTRADOR</option>
-                <option value="ROLE_SUPERADMIN" >SUPERADMINISTRADOR</option>
-                <option value="ROLE_USER"  selected="selected">USUARIO</option>
-            </select> 
+              {{ form_row(form.roles) }}
             
           </div>
       

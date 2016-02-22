@@ -20,8 +20,8 @@ class Anuncios
      protected $animal;
      
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="anuncios",cascade={"persist", "remove"})
-     * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="anuncios")
+     * @ORM\JoinColumn(name="anuncio_id", referencedColumnName="id",onDelete="CASCADE")
      */
     protected $user;
     /**
@@ -43,7 +43,7 @@ class Anuncios
     /**
      * @var string
      *
-     * @ORM\Column(name="Categoria", type="string", columnDefinition="enum('Camadas', 'Adopción', 'Se busca', 'Protectoras')")
+     * @ORM\Column(name="Categoria", type="string", columnDefinition="enum('Camadas', 'Adopciones', 'Se busca', 'Protectoras')")
      */
     private $categoria;
 
@@ -159,5 +159,9 @@ class Anuncios
     {
         return $this->animal;
     }
-       
+    
+          public function __toString()
+{
+    return (string) $this->getAnimal();
+} 
 }
