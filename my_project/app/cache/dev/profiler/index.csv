@@ -1063,3 +1063,6 @@ cfc3ef,10.240.0.196,POST,http://pruebaaaspets-daflpa.c9users.io/my_project/web/a
 ad009e,10.240.0.181,DELETE,http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/anuncios/28/delete,1456174737,,302
 f8664c,10.240.0.181,GET,http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/anuncios/,1456174738,f453f4,200
 f453f4,10.240.0.181,GET,http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/anuncios/,1456174738,,500
+c1027c,10.240.0.188,GET,http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/,1456182851,,200
+59afcb,10.240.0.174,GET,http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/sebusca,1456182866,,200
+3338e5,10.240.0.185,GET,http://pruebaaaspets-daflpa.c9users.io/my_project/web/app_dev.php/adopciones,1456182873,,200

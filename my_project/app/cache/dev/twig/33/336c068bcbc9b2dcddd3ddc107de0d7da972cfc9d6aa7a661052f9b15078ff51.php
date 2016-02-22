@@ -22,20 +22,20 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_66dcd1d9b93684773c09439849d398024b8aa2a58473ad6fdcc7163ce7f440b6 = $this->env->getExtension("native_profiler");
-        $__internal_66dcd1d9b93684773c09439849d398024b8aa2a58473ad6fdcc7163ce7f440b6->enter($__internal_66dcd1d9b93684773c09439849d398024b8aa2a58473ad6fdcc7163ce7f440b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_adopciones.html.twig"));
+        $__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0 = $this->env->getExtension("native_profiler");
+        $__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0->enter($__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_adopciones.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_66dcd1d9b93684773c09439849d398024b8aa2a58473ad6fdcc7163ce7f440b6->leave($__internal_66dcd1d9b93684773c09439849d398024b8aa2a58473ad6fdcc7163ce7f440b6_prof);
+        $__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0->leave($__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0_prof);
 
     }
 
     // line 3
     public function block_guide($context, array $blocks = array())
     {
-        $__internal_0e1c24222b0c6bbc5ed13a226387d4f5b32a9e6aeed7d89bc28d1b913b140c33 = $this->env->getExtension("native_profiler");
-        $__internal_0e1c24222b0c6bbc5ed13a226387d4f5b32a9e6aeed7d89bc28d1b913b140c33->enter($__internal_0e1c24222b0c6bbc5ed13a226387d4f5b32a9e6aeed7d89bc28d1b913b140c33_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
+        $__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf = $this->env->getExtension("native_profiler");
+        $__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf->enter($__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
 
         // line 4
         echo "  <a href=\"";
@@ -43,15 +43,15 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
         echo "\">Inicio</a> > <a href=\"#\">Adopciones</a>
 ";
         
-        $__internal_0e1c24222b0c6bbc5ed13a226387d4f5b32a9e6aeed7d89bc28d1b913b140c33->leave($__internal_0e1c24222b0c6bbc5ed13a226387d4f5b32a9e6aeed7d89bc28d1b913b140c33_prof);
+        $__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf->leave($__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf_prof);
 
     }
 
     // line 8
     public function block_body($context, array $blocks = array())
     {
-        $__internal_168eb2ef3505a91bfed72cc0de73eca227c18ca262af97c768688e8fd116923b = $this->env->getExtension("native_profiler");
-        $__internal_168eb2ef3505a91bfed72cc0de73eca227c18ca262af97c768688e8fd116923b->enter($__internal_168eb2ef3505a91bfed72cc0de73eca227c18ca262af97c768688e8fd116923b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52 = $this->env->getExtension("native_profiler");
+        $__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52->enter($__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 9
         echo "
@@ -125,7 +125,7 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
                                         <b>- Pedrigri:</b>";
             // line 48
             if ($this->getAttribute($context["anuncio"], "Pedigri", array())) {
-                echo "Yes";
+                echo "Si";
             } else {
                 echo "No";
             }
@@ -249,7 +249,7 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
     </table>
 ";
         
-        $__internal_168eb2ef3505a91bfed72cc0de73eca227c18ca262af97c768688e8fd116923b->leave($__internal_168eb2ef3505a91bfed72cc0de73eca227c18ca262af97c768688e8fd116923b_prof);
+        $__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52->leave($__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52_prof);
 
     }
 
@@ -315,7 +315,7 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
 /*                                         <b>- Sexo:</b>  {{ anuncio.Sexo }}<br>*/
 /*                                         <b>- Teléfono:</b>  {{ anuncio.tlf }}<br>*/
 /*                                         <b>- Nacimiento:</b>  {{ anuncio.Nacimiento }}<br>*/
-/*                                         <b>- Pedrigri:</b>{% if anuncio.Pedigri  %}Yes{% else %}No{% endif %}  <br>*/
+/*                                         <b>- Pedrigri:</b>{% if anuncio.Pedigri  %}Si{% else %}No{% endif %}  <br>*/
 /*                                         <b>- Propietario:</b>  {{ anuncio.Propietario }}<br>*/
 /*                                     </div>*/
 /*                                 </div>*/
