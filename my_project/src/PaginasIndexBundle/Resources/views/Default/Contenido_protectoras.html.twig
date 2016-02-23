@@ -63,47 +63,6 @@
                                    {% endfor %} 
                             </center>
 
- <table class="table">
-        <thead>
-            <tr>
-               
-                <th>Titulo</th>
-                <th>Categoria</th>
-                <th>Descripcion</th>
-                <th>Idpropietario</th>
-                <th>Idanimal</th>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Raza</th>
-                <th>Sexo</th>
-                <th>Nacimiento</th>
-                <th>Propietario</th>
-                <th>Telefono</th>
-                <th>Pedigri</th>
-            </tr>
-        </thead>
-        <tbody>
-           
-        {% for anuncio in anuncios %}
-            <tr>
-                
-                <td>{{ anuncio.titulo }}</td>
-                <td>{{ anuncio.Categoria }}</td>
-                <td>{{ anuncio.descripcion }}</td>
-                <td>{{ anuncio.anuncio_id }}</td>
-                <td>{{ anuncio.animal_id }}</td>
-                <td>{{ anuncio.Nombre }}</td>
-                <td>{{ anuncio.Tipo }}</td>
-                <td>{{ anuncio.Raza }}</td>
-                <td>{{ anuncio.Sexo }}</td>
-                <td>{{ anuncio.Nacimiento }}</td>
-                <td>{{ anuncio.Propietario }}</td>
-                <td>{{ anuncio.tlf }}</td>
-                <td>{{ anuncio.Pedigri }}</td>
-                
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
 {% endblock body %}
       

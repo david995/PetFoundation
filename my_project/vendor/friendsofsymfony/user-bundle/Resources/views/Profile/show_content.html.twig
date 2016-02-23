@@ -63,7 +63,7 @@
                 <td>{{ anuncio.tlf }}</td>
                 <td>{% if anuncio.Pedigri  %}Si{% else %}No{% endif %}</td>
                 <td>
-                   <a href="{{ path('anuncios_show', { 'id': anuncio.id }) }}">show</a>
+                   <a href="{{ path('anuncios_show', { 'id': anuncio.id }) }}">Ver tu anuncio</a>
                 </td>
             </tr>
         {% endfor %}

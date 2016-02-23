@@ -22,20 +22,20 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0 = $this->env->getExtension("native_profiler");
-        $__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0->enter($__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_adopciones.html.twig"));
+        $__internal_2890dafaf2ffd307aaec37af14b72e3ef734e91be1fc12ba7e21bd0e1966b0de = $this->env->getExtension("native_profiler");
+        $__internal_2890dafaf2ffd307aaec37af14b72e3ef734e91be1fc12ba7e21bd0e1966b0de->enter($__internal_2890dafaf2ffd307aaec37af14b72e3ef734e91be1fc12ba7e21bd0e1966b0de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_adopciones.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0->leave($__internal_e347103946a676bbfc13d3c1aaefd887a9dc4218e101655a8a64f779050e0ef0_prof);
+        $__internal_2890dafaf2ffd307aaec37af14b72e3ef734e91be1fc12ba7e21bd0e1966b0de->leave($__internal_2890dafaf2ffd307aaec37af14b72e3ef734e91be1fc12ba7e21bd0e1966b0de_prof);
 
     }
 
     // line 3
     public function block_guide($context, array $blocks = array())
     {
-        $__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf = $this->env->getExtension("native_profiler");
-        $__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf->enter($__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
+        $__internal_59ee03a594b1486764c74270d5e62ed2670ade088897358879acc496d60ae87b = $this->env->getExtension("native_profiler");
+        $__internal_59ee03a594b1486764c74270d5e62ed2670ade088897358879acc496d60ae87b->enter($__internal_59ee03a594b1486764c74270d5e62ed2670ade088897358879acc496d60ae87b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
 
         // line 4
         echo "  <a href=\"";
@@ -43,15 +43,15 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
         echo "\">Inicio</a> > <a href=\"#\">Adopciones</a>
 ";
         
-        $__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf->leave($__internal_0614a6b76719522b94af1d3fe0d1f8717c9727ca70e00250cece23c7f017c0bf_prof);
+        $__internal_59ee03a594b1486764c74270d5e62ed2670ade088897358879acc496d60ae87b->leave($__internal_59ee03a594b1486764c74270d5e62ed2670ade088897358879acc496d60ae87b_prof);
 
     }
 
     // line 8
     public function block_body($context, array $blocks = array())
     {
-        $__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52 = $this->env->getExtension("native_profiler");
-        $__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52->enter($__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_ce92ceef5c51d050333279aa423cdb5b02a69f76c8d7f6281ef4f1efabc36429 = $this->env->getExtension("native_profiler");
+        $__internal_ce92ceef5c51d050333279aa423cdb5b02a69f76c8d7f6281ef4f1efabc36429->enter($__internal_ce92ceef5c51d050333279aa423cdb5b02a69f76c8d7f6281ef4f1efabc36429_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 9
         echo "
@@ -156,100 +156,9 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
         echo " 
                             </center>
 
- <table class=\"table\">
-        <thead>
-            <tr>
-               
-                <th>Titulo</th>
-                <th>Categoria</th>
-                <th>Descripcion</th>
-                <th>Idpropietario</th>
-                <th>Idanimal</th>
-                <th>Nombre</th>
-                <th>Tipo</th>
-                <th>Raza</th>
-                <th>Sexo</th>
-                <th>Nacimiento</th>
-                <th>Propietario</th>
-                <th>Telefono</th>
-                <th>Pedigri</th>
-            </tr>
-        </thead>
-        <tbody>
-           
-        ";
-        // line 87
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["anuncios"]) ? $context["anuncios"] : $this->getContext($context, "anuncios")));
-        foreach ($context['_seq'] as $context["_key"] => $context["anuncio"]) {
-            // line 88
-            echo "            <tr>
-                
-                <td>";
-            // line 90
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "titulo", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 91
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Categoria", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 92
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "descripcion", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 93
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "anuncio_id", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 94
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "animal_id", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 95
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Nombre", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 96
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Tipo", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 97
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Raza", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 98
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Sexo", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 99
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Nacimiento", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 100
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Propietario", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 101
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "tlf", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 102
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Pedigri", array()), "html", null, true);
-            echo "</td>
-                
-            </tr>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['anuncio'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 106
-        echo "        </tbody>
-    </table>
 ";
         
-        $__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52->leave($__internal_e3f5afab06310190a914dcc35b154bfaafa0e8733f7b7605bc7fa37b3a67ed52_prof);
+        $__internal_ce92ceef5c51d050333279aa423cdb5b02a69f76c8d7f6281ef4f1efabc36429->leave($__internal_ce92ceef5c51d050333279aa423cdb5b02a69f76c8d7f6281ef4f1efabc36429_prof);
 
     }
 
@@ -265,7 +174,7 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
 
     public function getDebugInfo()
     {
-        return array (  248 => 106,  238 => 102,  234 => 101,  230 => 100,  226 => 99,  222 => 98,  218 => 97,  214 => 96,  210 => 95,  206 => 94,  202 => 93,  198 => 92,  194 => 91,  190 => 90,  186 => 88,  182 => 87,  156 => 63,  135 => 49,  127 => 48,  123 => 47,  119 => 46,  115 => 45,  111 => 44,  107 => 43,  103 => 42,  99 => 41,  93 => 38,  83 => 30,  79 => 29,  57 => 9,  51 => 8,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  156 => 63,  135 => 49,  127 => 48,  123 => 47,  119 => 46,  115 => 45,  111 => 44,  107 => 43,  103 => 42,  99 => 41,  93 => 38,  83 => 30,  79 => 29,  57 => 9,  51 => 8,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends "PaginasIndexBundle:Default:index.html.twig" %}*/
@@ -333,47 +242,5 @@ class __TwigTemplate_43b8128c386fb67d88c87cad75870a4b7913f59a1e8d75ec0e4e89ee868
 /*                                    {% endfor %} */
 /*                             </center>*/
 /* */
-/*  <table class="table">*/
-/*         <thead>*/
-/*             <tr>*/
-/*                */
-/*                 <th>Titulo</th>*/
-/*                 <th>Categoria</th>*/
-/*                 <th>Descripcion</th>*/
-/*                 <th>Idpropietario</th>*/
-/*                 <th>Idanimal</th>*/
-/*                 <th>Nombre</th>*/
-/*                 <th>Tipo</th>*/
-/*                 <th>Raza</th>*/
-/*                 <th>Sexo</th>*/
-/*                 <th>Nacimiento</th>*/
-/*                 <th>Propietario</th>*/
-/*                 <th>Telefono</th>*/
-/*                 <th>Pedigri</th>*/
-/*             </tr>*/
-/*         </thead>*/
-/*         <tbody>*/
-/*            */
-/*         {% for anuncio in anuncios %}*/
-/*             <tr>*/
-/*                 */
-/*                 <td>{{ anuncio.titulo }}</td>*/
-/*                 <td>{{ anuncio.Categoria }}</td>*/
-/*                 <td>{{ anuncio.descripcion }}</td>*/
-/*                 <td>{{ anuncio.anuncio_id }}</td>*/
-/*                 <td>{{ anuncio.animal_id }}</td>*/
-/*                 <td>{{ anuncio.Nombre }}</td>*/
-/*                 <td>{{ anuncio.Tipo }}</td>*/
-/*                 <td>{{ anuncio.Raza }}</td>*/
-/*                 <td>{{ anuncio.Sexo }}</td>*/
-/*                 <td>{{ anuncio.Nacimiento }}</td>*/
-/*                 <td>{{ anuncio.Propietario }}</td>*/
-/*                 <td>{{ anuncio.tlf }}</td>*/
-/*                 <td>{{ anuncio.Pedigri }}</td>*/
-/*                 */
-/*             </tr>*/
-/*         {% endfor %}*/
-/*         </tbody>*/
-/*     </table>*/
 /* {% endblock body %}*/
 /*       */

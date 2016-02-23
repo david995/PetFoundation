@@ -15,8 +15,8 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1 = $this->env->getExtension("native_profiler");
-        $__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1->enter($__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:show_content.html.twig"));
+        $__internal_0c56e34ae56b5b20d9cb98c6b97e240105c4b8f2202d8dd4154ea3d5faf25500 = $this->env->getExtension("native_profiler");
+        $__internal_0c56e34ae56b5b20d9cb98c6b97e240105c4b8f2202d8dd4154ea3d5faf25500->enter($__internal_0c56e34ae56b5b20d9cb98c6b97e240105c4b8f2202d8dd4154ea3d5faf25500_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:show_content.html.twig"));
 
         // line 2
         echo "
@@ -153,7 +153,7 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
                    <a href=\"";
             // line 66
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("anuncios_show", array("id" => $this->getAttribute($context["anuncio"], "id", array()))), "html", null, true);
-            echo "\">show</a>
+            echo "\">Ver tu anuncio</a>
                 </td>
             </tr>
         ";
@@ -171,7 +171,7 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
 
 ";
         
-        $__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1->leave($__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1_prof);
+        $__internal_0c56e34ae56b5b20d9cb98c6b97e240105c4b8f2202d8dd4154ea3d5faf25500->leave($__internal_0c56e34ae56b5b20d9cb98c6b97e240105c4b8f2202d8dd4154ea3d5faf25500_prof);
 
     }
 
@@ -255,7 +255,7 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
 /*                 <td>{{ anuncio.tlf }}</td>*/
 /*                 <td>{% if anuncio.Pedigri  %}Si{% else %}No{% endif %}</td>*/
 /*                 <td>*/
-/*                    <a href="{{ path('anuncios_show', { 'id': anuncio.id }) }}">show</a>*/
+/*                    <a href="{{ path('anuncios_show', { 'id': anuncio.id }) }}">Ver tu anuncio</a>*/
 /*                 </td>*/
 /*             </tr>*/
 /*         {% endfor %}*/

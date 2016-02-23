@@ -22,20 +22,20 @@ class __TwigTemplate_6dd38d8c451685ed8194b8e1133e08235f072811fd26e43a9c9303d2a9a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_9a71c78cfb0756d03b48ae863181d7e39c5edc1581b27fc803a8b587dc5381e6 = $this->env->getExtension("native_profiler");
-        $__internal_9a71c78cfb0756d03b48ae863181d7e39c5edc1581b27fc803a8b587dc5381e6->enter($__internal_9a71c78cfb0756d03b48ae863181d7e39c5edc1581b27fc803a8b587dc5381e6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_protectoras.html.twig"));
+        $__internal_c0f3dd4bc6efe7c04dce212ac0ff69c00598ff5cd4f813f219c95c81d808256f = $this->env->getExtension("native_profiler");
+        $__internal_c0f3dd4bc6efe7c04dce212ac0ff69c00598ff5cd4f813f219c95c81d808256f->enter($__internal_c0f3dd4bc6efe7c04dce212ac0ff69c00598ff5cd4f813f219c95c81d808256f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_protectoras.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_9a71c78cfb0756d03b48ae863181d7e39c5edc1581b27fc803a8b587dc5381e6->leave($__internal_9a71c78cfb0756d03b48ae863181d7e39c5edc1581b27fc803a8b587dc5381e6_prof);
+        $__internal_c0f3dd4bc6efe7c04dce212ac0ff69c00598ff5cd4f813f219c95c81d808256f->leave($__internal_c0f3dd4bc6efe7c04dce212ac0ff69c00598ff5cd4f813f219c95c81d808256f_prof);
 
     }
 
     // line 3
     public function block_guide($context, array $blocks = array())
     {
-        $__internal_69f261cd035fca39961d51cdf6584c02f0e5c152d30a5240dd8e0c047cc23e43 = $this->env->getExtension("native_profiler");
-        $__internal_69f261cd035fca39961d51cdf6584c02f0e5c152d30a5240dd8e0c047cc23e43->enter($__internal_69f261cd035fca39961d51cdf6584c02f0e5c152d30a5240dd8e0c047cc23e43_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
+        $__internal_9bd23de34e50b950ead4fd43ff77ff21908c5f8e6f78f29c46a89f84fe3c5cdc = $this->env->getExtension("native_profiler");
+        $__internal_9bd23de34e50b950ead4fd43ff77ff21908c5f8e6f78f29c46a89f84fe3c5cdc->enter($__internal_9bd23de34e50b950ead4fd43ff77ff21908c5f8e6f78f29c46a89f84fe3c5cdc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
 
         // line 4
         echo "  <a href=\"";
@@ -43,15 +43,15 @@ class __TwigTemplate_6dd38d8c451685ed8194b8e1133e08235f072811fd26e43a9c9303d2a9a
         echo "\">Inicio</a> > <a href=\"#\">Protectoras</a>
 ";
         
-        $__internal_69f261cd035fca39961d51cdf6584c02f0e5c152d30a5240dd8e0c047cc23e43->leave($__internal_69f261cd035fca39961d51cdf6584c02f0e5c152d30a5240dd8e0c047cc23e43_prof);
+        $__internal_9bd23de34e50b950ead4fd43ff77ff21908c5f8e6f78f29c46a89f84fe3c5cdc->leave($__internal_9bd23de34e50b950ead4fd43ff77ff21908c5f8e6f78f29c46a89f84fe3c5cdc_prof);
 
     }
 
     // line 8
     public function block_body($context, array $blocks = array())
     {
-        $__internal_13db0359c03e5e576de79b6b92911bdba9384bd5ef59bef69ca9a59b2cbddf53 = $this->env->getExtension("native_profiler");
-        $__internal_13db0359c03e5e576de79b6b92911bdba9384bd5ef59bef69ca9a59b2cbddf53->enter($__internal_13db0359c03e5e576de79b6b92911bdba9384bd5ef59bef69ca9a59b2cbddf53_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_84731272e45ea098e8e00aa157e6a6d5f4451e38bd60e5f8aa459572d2aba2b9 = $this->env->getExtension("native_profiler");
+        $__internal_84731272e45ea098e8e00aa157e6a6d5f4451e38bd60e5f8aa459572d2aba2b9->enter($__internal_84731272e45ea098e8e00aa157e6a6d5f4451e38bd60e5f8aa459572d2aba2b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 9
         echo "
@@ -122,10 +122,14 @@ class __TwigTemplate_6dd38d8c451685ed8194b8e1133e08235f072811fd26e43a9c9303d2a9a
             // line 47
             echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Nacimiento", array()), "html", null, true);
             echo "<br>
-                                        <b>- Pedrigri:</b>  ";
+                                        <b>- Pedrigri:</b>";
             // line 48
-            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Pedigri", array()), "html", null, true);
-            echo "<br>
+            if ($this->getAttribute($context["anuncio"], "Pedigri", array())) {
+                echo "Si";
+            } else {
+                echo "No";
+            }
+            echo "  <br>
                                         <b>- Propietario:</b>  ";
             // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Propietario", array()), "html", null, true);
@@ -245,7 +249,7 @@ class __TwigTemplate_6dd38d8c451685ed8194b8e1133e08235f072811fd26e43a9c9303d2a9a
     </table>
 ";
         
-        $__internal_13db0359c03e5e576de79b6b92911bdba9384bd5ef59bef69ca9a59b2cbddf53->leave($__internal_13db0359c03e5e576de79b6b92911bdba9384bd5ef59bef69ca9a59b2cbddf53_prof);
+        $__internal_84731272e45ea098e8e00aa157e6a6d5f4451e38bd60e5f8aa459572d2aba2b9->leave($__internal_84731272e45ea098e8e00aa157e6a6d5f4451e38bd60e5f8aa459572d2aba2b9_prof);
 
     }
 
@@ -261,7 +265,7 @@ class __TwigTemplate_6dd38d8c451685ed8194b8e1133e08235f072811fd26e43a9c9303d2a9a
 
     public function getDebugInfo()
     {
-        return array (  244 => 106,  234 => 102,  230 => 101,  226 => 100,  222 => 99,  218 => 98,  214 => 97,  210 => 96,  206 => 95,  202 => 94,  198 => 93,  194 => 92,  190 => 91,  186 => 90,  182 => 88,  178 => 87,  152 => 63,  131 => 49,  127 => 48,  123 => 47,  119 => 46,  115 => 45,  111 => 44,  107 => 43,  103 => 42,  99 => 41,  93 => 38,  83 => 30,  79 => 29,  57 => 9,  51 => 8,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  248 => 106,  238 => 102,  234 => 101,  230 => 100,  226 => 99,  222 => 98,  218 => 97,  214 => 96,  210 => 95,  206 => 94,  202 => 93,  198 => 92,  194 => 91,  190 => 90,  186 => 88,  182 => 87,  156 => 63,  135 => 49,  127 => 48,  123 => 47,  119 => 46,  115 => 45,  111 => 44,  107 => 43,  103 => 42,  99 => 41,  93 => 38,  83 => 30,  79 => 29,  57 => 9,  51 => 8,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends "PaginasIndexBundle:Default:index.html.twig" %}*/
@@ -311,7 +315,7 @@ class __TwigTemplate_6dd38d8c451685ed8194b8e1133e08235f072811fd26e43a9c9303d2a9a
 /*                                         <b>- Sexo:</b>  {{ anuncio.Sexo }}<br>*/
 /*                                         <b>- Teléfono:</b>  {{ anuncio.tlf }}<br>*/
 /*                                         <b>- Nacimiento:</b>  {{ anuncio.Nacimiento }}<br>*/
-/*                                         <b>- Pedrigri:</b>  {{ anuncio.Pedigri }}<br>*/
+/*                                         <b>- Pedrigri:</b>{% if anuncio.Pedigri  %}Si{% else %}No{% endif %}  <br>*/
 /*                                         <b>- Propietario:</b>  {{ anuncio.Propietario }}<br>*/
 /*                                     </div>*/
 /*                                 </div>*/
