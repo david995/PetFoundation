@@ -1,6 +1,6 @@
 <?php
 
-/* animales/index.html.twig */
+/* :animales:index.html.twig */
 class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb83902095 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "animales/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":animales:index.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -21,20 +21,20 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6a29ebf9f9469a2a6ef5231ccfc88dce52a1b78961c3594323af80b65b0aa46b = $this->env->getExtension("native_profiler");
-        $__internal_6a29ebf9f9469a2a6ef5231ccfc88dce52a1b78961c3594323af80b65b0aa46b->enter($__internal_6a29ebf9f9469a2a6ef5231ccfc88dce52a1b78961c3594323af80b65b0aa46b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "animales/index.html.twig"));
+        $__internal_7522962b6b5190c65bbf59a1d0f71e40ef18c52f328f35573fa9df6db6d67820 = $this->env->getExtension("native_profiler");
+        $__internal_7522962b6b5190c65bbf59a1d0f71e40ef18c52f328f35573fa9df6db6d67820->enter($__internal_7522962b6b5190c65bbf59a1d0f71e40ef18c52f328f35573fa9df6db6d67820_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", ":animales:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_6a29ebf9f9469a2a6ef5231ccfc88dce52a1b78961c3594323af80b65b0aa46b->leave($__internal_6a29ebf9f9469a2a6ef5231ccfc88dce52a1b78961c3594323af80b65b0aa46b_prof);
+        $__internal_7522962b6b5190c65bbf59a1d0f71e40ef18c52f328f35573fa9df6db6d67820->leave($__internal_7522962b6b5190c65bbf59a1d0f71e40ef18c52f328f35573fa9df6db6d67820_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_75d5881eb05e7c08e3899aa61f9ff946497d3cc1c2a7a350d3fd2af123166f3e = $this->env->getExtension("native_profiler");
-        $__internal_75d5881eb05e7c08e3899aa61f9ff946497d3cc1c2a7a350d3fd2af123166f3e->enter($__internal_75d5881eb05e7c08e3899aa61f9ff946497d3cc1c2a7a350d3fd2af123166f3e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_89371fcb118478be49e07c2fb6367b7acaefcb9bbd426dd8dd3fafeab5e044f3 = $this->env->getExtension("native_profiler");
+        $__internal_89371fcb118478be49e07c2fb6367b7acaefcb9bbd426dd8dd3fafeab5e044f3->enter($__internal_89371fcb118478be49e07c2fb6367b7acaefcb9bbd426dd8dd3fafeab5e044f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Animales list</h1>
@@ -137,13 +137,13 @@ class __TwigTemplate_36dcd873f9fb9ac292c9e027389dd845ccf690b5b2cecd2efa2135cb839
     </ul>
 ";
         
-        $__internal_75d5881eb05e7c08e3899aa61f9ff946497d3cc1c2a7a350d3fd2af123166f3e->leave($__internal_75d5881eb05e7c08e3899aa61f9ff946497d3cc1c2a7a350d3fd2af123166f3e_prof);
+        $__internal_89371fcb118478be49e07c2fb6367b7acaefcb9bbd426dd8dd3fafeab5e044f3->leave($__internal_89371fcb118478be49e07c2fb6367b7acaefcb9bbd426dd8dd3fafeab5e044f3_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "animales/index.html.twig";
+        return ":animales:index.html.twig";
     }
 
     public function isTraitable()

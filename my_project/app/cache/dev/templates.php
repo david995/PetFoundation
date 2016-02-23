@@ -118,6 +118,8 @@
   'PaginasIndexBundle:Default:Contenido_camadas.html.twig' => '/home/ubuntu/workspace/my_project/src/PaginasIndexBundle/Resources/views/Default/Contenido_camadas.html.twig',
   'DonacionesBundle:Default:index.html.twig' => '/home/ubuntu/workspace/my_project/src/DonacionesBundle/Resources/views/Default/index.html.twig',
   'DonacionesBundle:Default:contenido_index.html.twig' => '/home/ubuntu/workspace/my_project/src/DonacionesBundle/Resources/views/Default/contenido_index.html.twig',
+  'ContactameBundle:Default:index.html.twig' => '/home/ubuntu/workspace/my_project/src/ContactameBundle/Resources/views/Default/index.html.twig',
+  'ContactameBundle:Default:contenido_index.html.twig' => '/home/ubuntu/workspace/my_project/src/ContactameBundle/Resources/views/Default/contenido_index.html.twig',
   'DebugBundle:Profiler:dump.html.twig' => '/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views/Profiler/dump.html.twig',
   'WebProfilerBundle:Router:panel.html.twig' => '/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Router/panel.html.twig',
   'WebProfilerBundle:Collector:twig.html.twig' => '/home/ubuntu/workspace/my_project/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/twig.html.twig',
