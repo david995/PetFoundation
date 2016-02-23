@@ -5,10 +5,7 @@
 
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ anuncio.id }}</td>
-            </tr>
+            
             <tr>
                 <th>Titulo</th>
                 <td>{{ anuncio.titulo }}</td>
@@ -22,15 +19,10 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('anuncios_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('anuncios_edit', { 'id': anuncio.id }) }}">Edit</a>
-        </li>
+       
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="BORRAR ANUNCIO">
             {{ form_end(delete_form) }}
         </li>
     </ul>

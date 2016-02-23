@@ -22,20 +22,20 @@ class __TwigTemplate_c5eca6f358181e2527fa1b90e99de9ea1a0aa962dc32709e21ac032c02c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ffba579d3051899ffa879819056c0cefffe36e5a9c2da1e14c2f84c82cc17059 = $this->env->getExtension("native_profiler");
-        $__internal_ffba579d3051899ffa879819056c0cefffe36e5a9c2da1e14c2f84c82cc17059->enter($__internal_ffba579d3051899ffa879819056c0cefffe36e5a9c2da1e14c2f84c82cc17059_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_camadas.html.twig"));
+        $__internal_a4df7bf6bea8671c413552504377f8c5b42e2c883b03c3ff01fe06bb2aadcbe0 = $this->env->getExtension("native_profiler");
+        $__internal_a4df7bf6bea8671c413552504377f8c5b42e2c883b03c3ff01fe06bb2aadcbe0->enter($__internal_a4df7bf6bea8671c413552504377f8c5b42e2c883b03c3ff01fe06bb2aadcbe0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:Contenido_camadas.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_ffba579d3051899ffa879819056c0cefffe36e5a9c2da1e14c2f84c82cc17059->leave($__internal_ffba579d3051899ffa879819056c0cefffe36e5a9c2da1e14c2f84c82cc17059_prof);
+        $__internal_a4df7bf6bea8671c413552504377f8c5b42e2c883b03c3ff01fe06bb2aadcbe0->leave($__internal_a4df7bf6bea8671c413552504377f8c5b42e2c883b03c3ff01fe06bb2aadcbe0_prof);
 
     }
 
     // line 3
     public function block_guide($context, array $blocks = array())
     {
-        $__internal_4bf1ac56a58f7391a22af02ae4116162b6fd0a6977ccf72ab423c90072dc3b15 = $this->env->getExtension("native_profiler");
-        $__internal_4bf1ac56a58f7391a22af02ae4116162b6fd0a6977ccf72ab423c90072dc3b15->enter($__internal_4bf1ac56a58f7391a22af02ae4116162b6fd0a6977ccf72ab423c90072dc3b15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
+        $__internal_f5e6b05d42b0a5eb3dd8d0f8ea4e21897fe0f963bb24a814ac4926f85567883f = $this->env->getExtension("native_profiler");
+        $__internal_f5e6b05d42b0a5eb3dd8d0f8ea4e21897fe0f963bb24a814ac4926f85567883f->enter($__internal_f5e6b05d42b0a5eb3dd8d0f8ea4e21897fe0f963bb24a814ac4926f85567883f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
 
         // line 4
         echo "  <a href=\"";
@@ -43,15 +43,15 @@ class __TwigTemplate_c5eca6f358181e2527fa1b90e99de9ea1a0aa962dc32709e21ac032c02c
         echo "\">Inicio</a> > <a href=\"#\">Camadas</a>
 ";
         
-        $__internal_4bf1ac56a58f7391a22af02ae4116162b6fd0a6977ccf72ab423c90072dc3b15->leave($__internal_4bf1ac56a58f7391a22af02ae4116162b6fd0a6977ccf72ab423c90072dc3b15_prof);
+        $__internal_f5e6b05d42b0a5eb3dd8d0f8ea4e21897fe0f963bb24a814ac4926f85567883f->leave($__internal_f5e6b05d42b0a5eb3dd8d0f8ea4e21897fe0f963bb24a814ac4926f85567883f_prof);
 
     }
 
     // line 8
     public function block_body($context, array $blocks = array())
     {
-        $__internal_4e1f539077b0456d0ed52ca0b4d52cda45e0dc8bf0be66e2307390ca6997b333 = $this->env->getExtension("native_profiler");
-        $__internal_4e1f539077b0456d0ed52ca0b4d52cda45e0dc8bf0be66e2307390ca6997b333->enter($__internal_4e1f539077b0456d0ed52ca0b4d52cda45e0dc8bf0be66e2307390ca6997b333_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_07849933a5b3ae23f9db57d9acedb98eeaf41bd2a2da5d6b9d18c39205fb027f = $this->env->getExtension("native_profiler");
+        $__internal_07849933a5b3ae23f9db57d9acedb98eeaf41bd2a2da5d6b9d18c39205fb027f->enter($__internal_07849933a5b3ae23f9db57d9acedb98eeaf41bd2a2da5d6b9d18c39205fb027f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 9
         echo "
@@ -126,7 +126,7 @@ class __TwigTemplate_c5eca6f358181e2527fa1b90e99de9ea1a0aa962dc32709e21ac032c02c
                                         <b>- Pedrigri:</b>";
             // line 49
             if ($this->getAttribute($context["anuncio"], "Pedigri", array())) {
-                echo "Yes";
+                echo "Si";
             } else {
                 echo "No";
             }
@@ -250,7 +250,7 @@ class __TwigTemplate_c5eca6f358181e2527fa1b90e99de9ea1a0aa962dc32709e21ac032c02c
     </table>
 ";
         
-        $__internal_4e1f539077b0456d0ed52ca0b4d52cda45e0dc8bf0be66e2307390ca6997b333->leave($__internal_4e1f539077b0456d0ed52ca0b4d52cda45e0dc8bf0be66e2307390ca6997b333_prof);
+        $__internal_07849933a5b3ae23f9db57d9acedb98eeaf41bd2a2da5d6b9d18c39205fb027f->leave($__internal_07849933a5b3ae23f9db57d9acedb98eeaf41bd2a2da5d6b9d18c39205fb027f_prof);
 
     }
 
@@ -317,7 +317,7 @@ class __TwigTemplate_c5eca6f358181e2527fa1b90e99de9ea1a0aa962dc32709e21ac032c02c
 /*                                         <b>- Teléfono:</b>  {{ anuncio.tlf }}<br>*/
 /*                                         <b>- Nacimiento:</b>  {{ anuncio.Nacimiento }}<br>*/
 /*                                         */
-/*                                         <b>- Pedrigri:</b>{% if anuncio.Pedigri  %}Yes{% else %}No{% endif %}  <br>*/
+/*                                         <b>- Pedrigri:</b>{% if anuncio.Pedigri  %}Si{% else %}No{% endif %}  <br>*/
 /*                                         <b>- Propietario:</b>  {{ anuncio.Propietario }}<br>*/
 /*                                     </div>*/
 /*                                 </div>*/

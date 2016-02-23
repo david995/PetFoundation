@@ -22,7 +22,7 @@
                  {{form_row(form.titulo, { 'attr': {'class': 'form-control','placeholder':'...'} }) }}<br>
                  
                  {{form_row(form.animal.descripcion, { 'attr': {'class': 'form-control','rows':'5','placeholder':'...'} }) }}<br>
-                 {{form_row(form.animal.propietario) }}<br>
+                 {{form_row(form.animal.propietario, { 'attr': {'value': app.user.username ,'readonly':'readonly'} }) }}<br>
                  
                  {{form_row(form.animal.tlf, { 'attr': {'class': 'form-control','maxlength':'9','placeholder':'...'} }) }}
                  
@@ -40,7 +40,7 @@
                  {{form_row(form.animal.tipo) }}<br>
                  {{form_row(form.animal.sexo) }}<br>
                  {{form_row(form.animal.nacimiento) }}<br>
-                 {{form_row(form.animal.pedigri) }}<br>
+                 {{form_row(form.animal.pedigri, { 'removeAttr': {'required':'required'} }) }}<br>
                  {{form_row(form.animal.img) }}<br>
                  
                     </div>

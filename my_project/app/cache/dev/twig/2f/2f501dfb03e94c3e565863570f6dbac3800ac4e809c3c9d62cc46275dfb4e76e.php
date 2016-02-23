@@ -15,8 +15,8 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_3e16b22ebe3214f412c7f72f4b64b247f086f8129db47d81fd9392f544779961 = $this->env->getExtension("native_profiler");
-        $__internal_3e16b22ebe3214f412c7f72f4b64b247f086f8129db47d81fd9392f544779961->enter($__internal_3e16b22ebe3214f412c7f72f4b64b247f086f8129db47d81fd9392f544779961_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:show_content.html.twig"));
+        $__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1 = $this->env->getExtension("native_profiler");
+        $__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1->enter($__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:show_content.html.twig"));
 
         // line 2
         echo "
@@ -55,11 +55,123 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
         echo "';\" class=\"btn btn-info\" type=\"submit\" value=\"Cambiar contraseña\" style='width:100%; height:40px; font-size:20px' />
                  </div>
              </div>
+             <br><br>
+             <div class=\"col-sm-10 col-md-offset-1\">
+                  <font style=\"color: #00BCD4;font-weight: bold; font-size:23px;\">Anuncios de  ";
+        // line 24
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "username", array()), "html", null, true);
+        echo "</font>
+                  <br><br>
+                  
+                  <table class=\"table\">
+        <thead>
+            <tr>
+               
+                <th>Titulo</th>
+                <th>Categoria</th>
+                <th>Descripcion</th>
+                <th>Idpropietario</th>
+                <th>Idanimal</th>
+                <th>Nombre</th>
+                <th>Tipo</th>
+                <th>Raza</th>
+                <th>Sexo</th>
+                <th>Nacimiento</th>
+                <th>Propietario</th>
+                <th>Telefono</th>
+                <th>Pedigri</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        ";
+        // line 49
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["anuncios"]) ? $context["anuncios"] : $this->getContext($context, "anuncios")));
+        foreach ($context['_seq'] as $context["_key"] => $context["anuncio"]) {
+            // line 50
+            echo "            <tr>
+                
+                <td>";
+            // line 52
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "titulo", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 53
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Categoria", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 54
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "descripcion", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 55
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "anuncio_id", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 56
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "animal_id", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 57
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Nombre", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 58
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Tipo", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 59
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Raza", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 60
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Sexo", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 61
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Nacimiento", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 62
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "Propietario", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 63
+            echo twig_escape_filter($this->env, $this->getAttribute($context["anuncio"], "tlf", array()), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 64
+            if ($this->getAttribute($context["anuncio"], "Pedigri", array())) {
+                echo "Si";
+            } else {
+                echo "No";
+            }
+            echo "</td>
+                <td>
+                   <a href=\"";
+            // line 66
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("anuncios_show", array("id" => $this->getAttribute($context["anuncio"], "id", array()))), "html", null, true);
+            echo "\">show</a>
+                </td>
+            </tr>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['anuncio'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 70
+        echo "        </tbody>
+    </table>
+                  
+                  
+</div>
 <br><br><br><br><br><br>
 
 ";
         
-        $__internal_3e16b22ebe3214f412c7f72f4b64b247f086f8129db47d81fd9392f544779961->leave($__internal_3e16b22ebe3214f412c7f72f4b64b247f086f8129db47d81fd9392f544779961_prof);
+        $__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1->leave($__internal_2657be6d70a02b45f0f04d9c6d579987e04f83f14a93337897d4e43da2767ac1_prof);
 
     }
 
@@ -75,7 +187,7 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
 
     public function getDebugInfo()
     {
-        return array (  54 => 19,  50 => 18,  39 => 12,  33 => 11,  22 => 2,);
+        return array (  165 => 70,  155 => 66,  146 => 64,  142 => 63,  138 => 62,  134 => 61,  130 => 60,  126 => 59,  122 => 58,  118 => 57,  114 => 56,  110 => 55,  106 => 54,  102 => 53,  98 => 52,  94 => 50,  90 => 49,  62 => 24,  54 => 19,  50 => 18,  39 => 12,  33 => 11,  22 => 2,);
     }
 }
 /* {% trans_default_domain 'FOSUserBundle' %}*/
@@ -99,6 +211,59 @@ class __TwigTemplate_b07e6fb530232a9febc3307c527f678bbfc769d63ccf48db1de677024b0
 /*                        <input id="botonPublicar" onclick="location.href='{{ path("fos_user_change_password") }}';" class="btn btn-info" type="submit" value="Cambiar contraseña" style='width:100%; height:40px; font-size:20px' />*/
 /*                  </div>*/
 /*              </div>*/
+/*              <br><br>*/
+/*              <div class="col-sm-10 col-md-offset-1">*/
+/*                   <font style="color: #00BCD4;font-weight: bold; font-size:23px;">Anuncios de  {{ app.user.username }}</font>*/
+/*                   <br><br>*/
+/*                   */
+/*                   <table class="table">*/
+/*         <thead>*/
+/*             <tr>*/
+/*                */
+/*                 <th>Titulo</th>*/
+/*                 <th>Categoria</th>*/
+/*                 <th>Descripcion</th>*/
+/*                 <th>Idpropietario</th>*/
+/*                 <th>Idanimal</th>*/
+/*                 <th>Nombre</th>*/
+/*                 <th>Tipo</th>*/
+/*                 <th>Raza</th>*/
+/*                 <th>Sexo</th>*/
+/*                 <th>Nacimiento</th>*/
+/*                 <th>Propietario</th>*/
+/*                 <th>Telefono</th>*/
+/*                 <th>Pedigri</th>*/
+/*                 <th>Acciones</th>*/
+/*             </tr>*/
+/*         </thead>*/
+/*         <tbody>*/
+/*            */
+/*         {% for anuncio in anuncios %}*/
+/*             <tr>*/
+/*                 */
+/*                 <td>{{ anuncio.titulo }}</td>*/
+/*                 <td>{{ anuncio.Categoria }}</td>*/
+/*                 <td>{{ anuncio.descripcion }}</td>*/
+/*                 <td>{{ anuncio.anuncio_id }}</td>*/
+/*                 <td>{{ anuncio.animal_id }}</td>*/
+/*                 <td>{{ anuncio.Nombre }}</td>*/
+/*                 <td>{{ anuncio.Tipo }}</td>*/
+/*                 <td>{{ anuncio.Raza }}</td>*/
+/*                 <td>{{ anuncio.Sexo }}</td>*/
+/*                 <td>{{ anuncio.Nacimiento }}</td>*/
+/*                 <td>{{ anuncio.Propietario }}</td>*/
+/*                 <td>{{ anuncio.tlf }}</td>*/
+/*                 <td>{% if anuncio.Pedigri  %}Si{% else %}No{% endif %}</td>*/
+/*                 <td>*/
+/*                    <a href="{{ path('anuncios_show', { 'id': anuncio.id }) }}">show</a>*/
+/*                 </td>*/
+/*             </tr>*/
+/*         {% endfor %}*/
+/*         </tbody>*/
+/*     </table>*/
+/*                   */
+/*                   */
+/* </div>*/
 /* <br><br><br><br><br><br>*/
 /* */
 /* */

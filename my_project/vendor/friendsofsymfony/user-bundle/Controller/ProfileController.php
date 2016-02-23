@@ -20,6 +20,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use AnunciosBundle\Entity\Anuncios;
+use AnunciosBundle\Form\AnunciosType;
+use AnimalesBundle\Entity\Animales;
+use AppBundle\Entity\User;
 
 /**
  * Controller managing the user profile
@@ -37,9 +41,27 @@ class ProfileController extends Controller
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
+        
+        
+        $stmt = $this->getDoctrine()->getEntityManager()
+   ->getConnection()
+    ->prepare("select
+    anuncios.id,anuncios.titulo,animales.descripcion,anuncios.Categoria,anuncios.anuncio_id,anuncios.animal_id,animales.Nombre,animales.Tipo,animales.Raza,animales.Sexo,animales.Nacimiento,animales.Propietario,animales.tlf,animales.Pedigri
+    from
+    symfony.anuncios
+    LEFT JOIN
+    symfony.animales ON anuncios.animal_id=animales.id
+    where
+    Propietario='".$user."' ORDER BY anuncios.id desc");
+$stmt->execute();
+$result = $stmt->fetchAll();
+      
+        
+        
 
         return $this->render('FOSUserBundle:Profile:show.html.twig', array(
-            'user' => $user
+            'user' => $user,
+            'anuncios' => $result,
         ));
     }
 
@@ -94,4 +116,5 @@ class ProfileController extends Controller
             'form' => $form->createView()
         ));
     }
+   
 }

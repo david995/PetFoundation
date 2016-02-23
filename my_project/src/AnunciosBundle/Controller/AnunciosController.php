@@ -52,7 +52,8 @@ class AnunciosController extends Controller
             $em->persist($anuncio);
             $em->flush();
 
-            return $this->redirectToRoute('anuncios_show', array('id' => $anuncio->getId()));
+           // return $this->redirectToRoute('anuncios_show', array('id' => $anuncio->getId()));
+            return $this->redirectToRoute('index_homepage');
         }
 
 
@@ -109,7 +110,7 @@ class AnunciosController extends Controller
     {
         $form = $this->createDeleteForm($anuncio);
         $form->handleRequest($request);
-
+         $animal = new Animales();
         if ($form->isSubmitted() && $form->isValid()) {
       #      $em = $this->getDoctrine()->getManager();
       #      $em->remove($anuncio);
@@ -117,12 +118,15 @@ class AnunciosController extends Controller
       
       $stmt = $this->getDoctrine()->getEntityManager()
         ->getConnection()
-        ->prepare("update symfony.anuncios set anuncio_id=NULL, animal_id=NULL where anuncios.id=".$anuncio->getId().";");
+        ->prepare("update symfony.anuncios set anuncio_id=NULL, animal_id=NULL where anuncios.id=".$anuncio->getId());
         $stmt->execute();
-    
+    $anun = $this->getDoctrine()->getEntityManager()
+        ->getConnection()
+        ->prepare("delete from symfony.anuncios where anuncios.id=".$anuncio->getId());
+        $anun->execute();
         }
 
-        return $this->redirectToRoute('anuncios_index');
+        return $this->redirectToRoute('index_homepage');
     }
 
     /**
