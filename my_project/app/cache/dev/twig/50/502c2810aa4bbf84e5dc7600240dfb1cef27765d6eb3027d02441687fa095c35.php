@@ -17,8 +17,8 @@ class __TwigTemplate_e7506826d07b4e5d89a952ead0526b78cefb935502171c95b31ca924240
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e5ba803a2812c15c9fb13f98305206114d30563da21d30e19503b5c849749cf9 = $this->env->getExtension("native_profiler");
-        $__internal_e5ba803a2812c15c9fb13f98305206114d30563da21d30e19503b5c849749cf9->enter($__internal_e5ba803a2812c15c9fb13f98305206114d30563da21d30e19503b5c849749cf9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
+        $__internal_05896cf5bd7333ae10cdf591150347a902a6501d112dc745b1929fe5eee750d5 = $this->env->getExtension("native_profiler");
+        $__internal_05896cf5bd7333ae10cdf591150347a902a6501d112dc745b1929fe5eee750d5->enter($__internal_05896cf5bd7333ae10cdf591150347a902a6501d112dc745b1929fe5eee750d5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "PaginasIndexBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -292,31 +292,31 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
     </body>
 </html>";
         
-        $__internal_e5ba803a2812c15c9fb13f98305206114d30563da21d30e19503b5c849749cf9->leave($__internal_e5ba803a2812c15c9fb13f98305206114d30563da21d30e19503b5c849749cf9_prof);
+        $__internal_05896cf5bd7333ae10cdf591150347a902a6501d112dc745b1929fe5eee750d5->leave($__internal_05896cf5bd7333ae10cdf591150347a902a6501d112dc745b1929fe5eee750d5_prof);
 
     }
 
     // line 170
     public function block_guide($context, array $blocks = array())
     {
-        $__internal_7669250a1e1b0936ee5f7e54d45e02901e930d167590f57bc14ae99e1c87697a = $this->env->getExtension("native_profiler");
-        $__internal_7669250a1e1b0936ee5f7e54d45e02901e930d167590f57bc14ae99e1c87697a->enter($__internal_7669250a1e1b0936ee5f7e54d45e02901e930d167590f57bc14ae99e1c87697a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
+        $__internal_2974a90bdd434e875f1e94aa8ffaff73194dd82ac3bd9ea25a7e274d057b03b0 = $this->env->getExtension("native_profiler");
+        $__internal_2974a90bdd434e875f1e94aa8ffaff73194dd82ac3bd9ea25a7e274d057b03b0->enter($__internal_2974a90bdd434e875f1e94aa8ffaff73194dd82ac3bd9ea25a7e274d057b03b0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "guide"));
 
         
-        $__internal_7669250a1e1b0936ee5f7e54d45e02901e930d167590f57bc14ae99e1c87697a->leave($__internal_7669250a1e1b0936ee5f7e54d45e02901e930d167590f57bc14ae99e1c87697a_prof);
+        $__internal_2974a90bdd434e875f1e94aa8ffaff73194dd82ac3bd9ea25a7e274d057b03b0->leave($__internal_2974a90bdd434e875f1e94aa8ffaff73194dd82ac3bd9ea25a7e274d057b03b0_prof);
 
     }
 
     // line 174
     public function block_body($context, array $blocks = array())
     {
-        $__internal_e80363f2c4a77ff3e4ecf334bb97f80695b3f2c3c87c33e246593ec73048fb67 = $this->env->getExtension("native_profiler");
-        $__internal_e80363f2c4a77ff3e4ecf334bb97f80695b3f2c3c87c33e246593ec73048fb67->enter($__internal_e80363f2c4a77ff3e4ecf334bb97f80695b3f2c3c87c33e246593ec73048fb67_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_adc19d123dc64c6767eff71585566af6fd4f605812954d9788cd386a2481e813 = $this->env->getExtension("native_profiler");
+        $__internal_adc19d123dc64c6767eff71585566af6fd4f605812954d9788cd386a2481e813->enter($__internal_adc19d123dc64c6767eff71585566af6fd4f605812954d9788cd386a2481e813_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 175
         echo "\t\t\t\t\t\t\t";
         
-        $__internal_e80363f2c4a77ff3e4ecf334bb97f80695b3f2c3c87c33e246593ec73048fb67->leave($__internal_e80363f2c4a77ff3e4ecf334bb97f80695b3f2c3c87c33e246593ec73048fb67_prof);
+        $__internal_adc19d123dc64c6767eff71585566af6fd4f605812954d9788cd386a2481e813->leave($__internal_adc19d123dc64c6767eff71585566af6fd4f605812954d9788cd386a2481e813_prof);
 
     }
 
