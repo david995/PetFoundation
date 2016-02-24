@@ -19,8 +19,8 @@ class __TwigTemplate_e7e73f944f43492bdd18bc1bb6cc5d804756c35945ec3cf12c44e537dc7
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_2a5ca281e1f72cbc66c7815c171266e241c679133fb1146617f939b0036e0b09 = $this->env->getExtension("native_profiler");
-        $__internal_2a5ca281e1f72cbc66c7815c171266e241c679133fb1146617f939b0036e0b09->enter($__internal_2a5ca281e1f72cbc66c7815c171266e241c679133fb1146617f939b0036e0b09_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IndexBundle:Default:index.html.twig"));
+        $__internal_92e61184401429d56f392c0faa8d0d0e221a48ac9fa05f790ef22572097b88b6 = $this->env->getExtension("native_profiler");
+        $__internal_92e61184401429d56f392c0faa8d0d0e221a48ac9fa05f790ef22572097b88b6->enter($__internal_92e61184401429d56f392c0faa8d0d0e221a48ac9fa05f790ef22572097b88b6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "IndexBundle:Default:index.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -264,15 +264,15 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 \t</body>
 </html>";
         
-        $__internal_2a5ca281e1f72cbc66c7815c171266e241c679133fb1146617f939b0036e0b09->leave($__internal_2a5ca281e1f72cbc66c7815c171266e241c679133fb1146617f939b0036e0b09_prof);
+        $__internal_92e61184401429d56f392c0faa8d0d0e221a48ac9fa05f790ef22572097b88b6->leave($__internal_92e61184401429d56f392c0faa8d0d0e221a48ac9fa05f790ef22572097b88b6_prof);
 
     }
 
     // line 40
     public function block_estilos($context, array $blocks = array())
     {
-        $__internal_905d1e86d42a66f1348de055332f76ca77d99279fa97eb6a1dceea8234c00dd0 = $this->env->getExtension("native_profiler");
-        $__internal_905d1e86d42a66f1348de055332f76ca77d99279fa97eb6a1dceea8234c00dd0->enter($__internal_905d1e86d42a66f1348de055332f76ca77d99279fa97eb6a1dceea8234c00dd0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "estilos"));
+        $__internal_8f2e8ddbe0a3c542f95d6fd957e5e04ee63ce336b45b759015ed034c9c9a1c06 = $this->env->getExtension("native_profiler");
+        $__internal_8f2e8ddbe0a3c542f95d6fd957e5e04ee63ce336b45b759015ed034c9c9a1c06->enter($__internal_8f2e8ddbe0a3c542f95d6fd957e5e04ee63ce336b45b759015ed034c9c9a1c06_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "estilos"));
 
         // line 41
         echo "\t\t\t<link href=\"";
@@ -296,15 +296,15 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
         echo "\" type=\"text/css\" rel=\"stylesheet\" />
 \t\t";
         
-        $__internal_905d1e86d42a66f1348de055332f76ca77d99279fa97eb6a1dceea8234c00dd0->leave($__internal_905d1e86d42a66f1348de055332f76ca77d99279fa97eb6a1dceea8234c00dd0_prof);
+        $__internal_8f2e8ddbe0a3c542f95d6fd957e5e04ee63ce336b45b759015ed034c9c9a1c06->leave($__internal_8f2e8ddbe0a3c542f95d6fd957e5e04ee63ce336b45b759015ed034c9c9a1c06_prof);
 
     }
 
     // line 47
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_d8b00367d5e60cc5f912f9bb2a9e025aab63fc8b058f54a05e29d84afdfefac2 = $this->env->getExtension("native_profiler");
-        $__internal_d8b00367d5e60cc5f912f9bb2a9e025aab63fc8b058f54a05e29d84afdfefac2->enter($__internal_d8b00367d5e60cc5f912f9bb2a9e025aab63fc8b058f54a05e29d84afdfefac2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_89b2dbb39d0f1af3bdb71a8748e0a54e2fbe674abf711cceee44040ad3088205 = $this->env->getExtension("native_profiler");
+        $__internal_89b2dbb39d0f1af3bdb71a8748e0a54e2fbe674abf711cceee44040ad3088205->enter($__internal_89b2dbb39d0f1af3bdb71a8748e0a54e2fbe674abf711cceee44040ad3088205_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 48
         echo "\t\t\t<script src=\"";
@@ -312,28 +312,28 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
         echo "\" type=\"text/javascript\"></script>
 \t\t";
         
-        $__internal_d8b00367d5e60cc5f912f9bb2a9e025aab63fc8b058f54a05e29d84afdfefac2->leave($__internal_d8b00367d5e60cc5f912f9bb2a9e025aab63fc8b058f54a05e29d84afdfefac2_prof);
+        $__internal_89b2dbb39d0f1af3bdb71a8748e0a54e2fbe674abf711cceee44040ad3088205->leave($__internal_89b2dbb39d0f1af3bdb71a8748e0a54e2fbe674abf711cceee44040ad3088205_prof);
 
     }
 
     // line 142
     public function block_body($context, array $blocks = array())
     {
-        $__internal_2708fa293605152b0ea814bdf7b7a9188552beee3c558dd9e0ab1b4bbb39591a = $this->env->getExtension("native_profiler");
-        $__internal_2708fa293605152b0ea814bdf7b7a9188552beee3c558dd9e0ab1b4bbb39591a->enter($__internal_2708fa293605152b0ea814bdf7b7a9188552beee3c558dd9e0ab1b4bbb39591a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_5fa31e8a37192ab502774585a7444a10b6b06f4049c9fbee67c6d7c40e23b872 = $this->env->getExtension("native_profiler");
+        $__internal_5fa31e8a37192ab502774585a7444a10b6b06f4049c9fbee67c6d7c40e23b872->enter($__internal_5fa31e8a37192ab502774585a7444a10b6b06f4049c9fbee67c6d7c40e23b872_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 143
         echo "\t\t\t\t\t\t\t";
         
-        $__internal_2708fa293605152b0ea814bdf7b7a9188552beee3c558dd9e0ab1b4bbb39591a->leave($__internal_2708fa293605152b0ea814bdf7b7a9188552beee3c558dd9e0ab1b4bbb39591a_prof);
+        $__internal_5fa31e8a37192ab502774585a7444a10b6b06f4049c9fbee67c6d7c40e23b872->leave($__internal_5fa31e8a37192ab502774585a7444a10b6b06f4049c9fbee67c6d7c40e23b872_prof);
 
     }
 
     // line 163
     public function block_javascripts1($context, array $blocks = array())
     {
-        $__internal_78196d73844d97d33f48c3dc2d251fc267fbf84efc466d42c90f788126d83f29 = $this->env->getExtension("native_profiler");
-        $__internal_78196d73844d97d33f48c3dc2d251fc267fbf84efc466d42c90f788126d83f29->enter($__internal_78196d73844d97d33f48c3dc2d251fc267fbf84efc466d42c90f788126d83f29_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts1"));
+        $__internal_72add24963c290c77b14a8c1aeba88672a070753c6e6c0c8ecad1a12e3038275 = $this->env->getExtension("native_profiler");
+        $__internal_72add24963c290c77b14a8c1aeba88672a070753c6e6c0c8ecad1a12e3038275->enter($__internal_72add24963c290c77b14a8c1aeba88672a070753c6e6c0c8ecad1a12e3038275_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts1"));
 
         // line 164
         echo "\t\t\t<script src=\"";
@@ -357,7 +357,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
         echo "\" type=\"text/javascript\"></script>
 \t\t";
         
-        $__internal_78196d73844d97d33f48c3dc2d251fc267fbf84efc466d42c90f788126d83f29->leave($__internal_78196d73844d97d33f48c3dc2d251fc267fbf84efc466d42c90f788126d83f29_prof);
+        $__internal_72add24963c290c77b14a8c1aeba88672a070753c6e6c0c8ecad1a12e3038275->leave($__internal_72add24963c290c77b14a8c1aeba88672a070753c6e6c0c8ecad1a12e3038275_prof);
 
     }
 
