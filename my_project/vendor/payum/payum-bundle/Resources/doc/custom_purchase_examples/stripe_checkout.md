@@ -22,11 +22,11 @@ $ php composer.phar require "payum/stripe"
 #app/config/config.yml
 
 payum:
-    gateways:
+    gateways_v2:
         your_gateway_here:
-            stripe_checkout:
-                publishable_key: 'get this from gateway'
-                secret_key:      'get this from gateway'
+            factory: stripe_checkout
+            publishable_key: 'get this from gateway'
+            secret_key:      'get this from gateway'
 ```
 
 _**Attention**: You have to changed `your_gateway_name` to something more descriptive and domain related, for example `post_a_job_with_stripe`._
@@ -60,7 +60,7 @@ class PaymentController extends Controller
         $details["description"] = 'a description';
         $storage->update($details);
         
-        $captureToken = $this->get('payum.security.token_factory')->createCaptureToken(
+        $captureToken = $this->get('payum')->getTokenFactory()->createCaptureToken(
             $gatewayName,
             $details,
             'acme_payment_done' // the route to redirect after capture;

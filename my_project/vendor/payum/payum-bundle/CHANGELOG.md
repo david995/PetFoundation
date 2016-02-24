@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.2.2 (2016-02-16)
+
+* [compiler] backport `payum.gateway_factory_builder` tag from 2.x.
+
+## 1.2.1 (2016-02-16)
+
+* [gateway] inject core gateway factory builder into payum builder.
+
+## 1.2.0 (2016-02-12)
+
+* Supports Symfony 3.x
+* deprecate some stuff which is going to be remove in 2.x
+* add 2.x logic BC way.
+* Use token factory builder and http request verifier builder to build services.
+* [factory] Introduce CoreGatewayFactory, deprecate GatewayFactory.
+* [builder] Use PayumBuilder to build payum service.
+* Use Payum service everywhere.
+
 ## 1.0.3 (2015-12-11)
 
 * Support PHP7

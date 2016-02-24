@@ -7,7 +7,6 @@ use Payum\Core\Exception\InvalidArgumentException;
 use Payum\Bundle\PayumBundle\DependencyInjection\Factory\Storage\StorageFactoryInterface;
 use Payum\Core\Exception\LogicException;
 use Sonata\AdminBundle\Admin\Admin;
-use Symfony\Component\DependencyInjection\Alias;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\DefinitionDecorator;
@@ -21,11 +20,15 @@ class PayumExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * @var StorageFactoryInterface[]
+     *
+     * @deprecated  since 1.2 and will be removed in 2.0
      */
     protected $storagesFactories = array();
 
     /**
      * @var GatewayFactoryInterface[]
+     *
+     * @deprecated  since 1.2 and will be removed in 2.0
      */
     protected $gatewaysFactories = array();
 
@@ -52,6 +55,7 @@ class PayumExtension extends Extension implements PrependExtensionInterface
         $this->loadSecurity($config['security'], $container);
 
         $this->loadGateways($config['gateways'], $container);
+        $this->loadGatewaysV2($config['gateways_v2'], $container);
 
         if (isset($config['dynamic_gateways'])) {
             $this->loadDynamicGateways($config['dynamic_gateways'], $container);
@@ -107,6 +111,8 @@ class PayumExtension extends Extension implements PrependExtensionInterface
     }
 
     /**
+     * @deprecated  since 1.2 and will be removed in 2.0
+     *
      * @param array $config
      * @param ContainerBuilder $container
      */
@@ -128,6 +134,19 @@ class PayumExtension extends Extension implements PrependExtensionInterface
                 'factory' => $gatewayFactoryName,
                 'gateway' => $gatewayName
             ));
+        }
+    }
+
+    /**
+     * @param array $config
+     * @param ContainerBuilder $container
+     */
+    protected function loadGatewaysV2(array $config, ContainerBuilder $container)
+    {
+        $builder = $container->getDefinition('payum.builder');
+
+        foreach ($config as $gatewayName => $gatewayConfig) {
+            $builder->addMethodCall('addGateway', [$gatewayName, $gatewayConfig]);
         }
     }
 
@@ -209,14 +228,17 @@ class PayumExtension extends Extension implements PrependExtensionInterface
             );
 
             $container->setDefinition('payum.dynamic_gateways.config_storage', new DefinitionDecorator($configStorage));
+
+            $payumBuilder = $container->getDefinition('payum.builder');
+            $payumBuilder->addMethodCall('setGatewayConfigStorage', [new Reference('payum.dynamic_gateways.config_storage')]);
         }
 
+        //deprecated
         $registry =  new Definition('Payum\Core\Registry\DynamicRegistry', array(
             new Reference('payum.dynamic_gateways.config_storage'),
             new Reference('payum.static_registry')
         ));
         $container->setDefinition('payum.dynamic_registry', $registry);
-        $container->setAlias('payum', new Alias('payum.dynamic_registry'));
 
         if ($dynamicGatewaysConfig['sonata_admin']) {
             if (false == class_exists(Admin::class)) {
@@ -258,6 +280,8 @@ class PayumExtension extends Extension implements PrependExtensionInterface
     }
 
     /**
+     * @deprecated  since 1.2 and will be removed in 2.0
+     *
      * @param GatewayFactoryInterface $factory
      *
      * @throws \Payum\Core\Exception\InvalidArgumentException

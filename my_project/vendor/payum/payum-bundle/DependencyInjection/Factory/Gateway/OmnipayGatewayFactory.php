@@ -8,6 +8,9 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
+/**
+ * @deprecated  since 1.2 and will be removed in 2.0
+ */
 class OmnipayGatewayFactory extends AbstractGatewayFactory
 {
     /**
@@ -58,7 +61,7 @@ class OmnipayGatewayFactory extends AbstractGatewayFactory
             null,
             new Reference('payum.omnipay_factory'),
             $this->createFactoryConfig(),
-            new Reference('payum.gateway_factory')
+            new Reference('payum.core_gateway_factory')
         ));
         $factory->addTag('payum.gateway_factory', array(
             'factory_name' => $this->getName(),

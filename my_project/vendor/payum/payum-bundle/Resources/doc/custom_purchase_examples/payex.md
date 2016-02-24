@@ -22,12 +22,12 @@ $ php composer.phar require "payum/payex"
 #app/config/config.yml
 
 payum:
-    gateways:
+    gateways_v2:
         your_gateway_here:
-            payex:
-                account_number:  'get this from gateway side'
-                encryption_key:  'get this from gateway side'
-                sandbox: true
+            factory: payex
+            account_number:  'get this from gateway side'
+            encryption_key:  'get this from gateway side'
+            sandbox: true
 ```
 
 _**Attention**: You have to changed `your_gateway_name` to something more descriptive and domain related, for example `post_a_job_with_payex`._
@@ -70,7 +70,7 @@ class PaymentController extends Controller
         $details['clientLanguage'] = 'en-US';
         $storage->update($details);
 
-        $captureToken = $this->get('payum.security.token_factory')->createCaptureToken(
+        $captureToken = $this->get('payum')->getTokenFactory()->createCaptureToken(
             $gatewayName,
             $details,
             'acme_payment_done' // the route to redirect after capture;

@@ -2,7 +2,6 @@
 namespace Payum\Bundle\PayumBundle\Tests\DependencyInjection;
 
 use Payum\Bundle\PayumBundle\DependencyInjection\MainConfiguration;
-use Payum\Bundle\PayumBundle\DependencyInjection\Factory\Gateway\GatewayFactoryInterface;
 use Payum\Bundle\PayumBundle\DependencyInjection\Factory\Storage\StorageFactoryInterface;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -10,28 +9,22 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
 class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
 {
-    protected $gatewayFactories = array();
-
     protected $storageFactories = array();
-    
+
     protected function setUp()
     {
-        $this->gatewayFactories = array(
-            new FooGatewayFactory(),
-            new BarGatewayFactory()
-        );
         $this->storageFactories = array(
-            new FooStorageFactory(),
-            new BarStorageFactory()
+            new BazStorageFactory(),
+            new OloloStorageFactory()
         );
     }
-    
+
     /**
      * @test
      */
     public function couldBeConstructedWithArrayOfGatewayFactoriesAndStorageFactories()
     {
-        new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        new MainConfiguration([], $this->storageFactories);
     }
 
     /**
@@ -39,10 +32,10 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function shouldPassConfigurationProcessing()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
-        
+        $configuration = new MainConfiguration([], $this->storageFactories);
+
         $processor = new Processor();
-        
+
         $fooModelClass = get_class($this->getMock('stdClass'));
         $barModelClass = get_class($this->getMock('stdClass'));
 
@@ -69,12 +62,15 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
+                'gateways_v2' => array(
+                    'a_gateway' => [
+                        'foo' => 'fooVal'
+                    ],
+                    'another_gateway' => [
+                        'factory' => 'aCustomFactory',
+                        'bar' => 'barVal'
+                    ],
+                    'null_gateway' => null,
                 )
             )
         ));
@@ -85,7 +81,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function shouldAddStoragesToAllGatewayByDefault()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -127,7 +123,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function shouldAllowDisableAddStoragesToAllGatewayFeature()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -166,7 +162,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function shouldAllowSetConcreteGatewaysWhereToAddStorages()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -207,7 +203,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function shouldAllowSetGatewaysCreatedWithFactoriesWhereToAddStorages()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -251,7 +247,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfTryToUseNotValidClassAsStorageEntry()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -273,13 +269,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -292,7 +281,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfTryToAddMoreThenOneStorageForOneEntry()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -317,13 +306,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -336,7 +318,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfStorageEntryDefinedWithoutConcreteStorage()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -354,43 +336,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
-            )
-        ));
-    }
-
-    /**
-     * @test
-     *
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage Invalid configuration for path "payum.gateways.a_gateway": One gateway from the  gateways available must be selected
-     */
-    public function throwIfNoneGatewaySelected()
-    {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
-
-        $processor = new Processor();
-
-        $processor->processConfiguration($configuration, array(
-            array(
-                'security' => array(
-                    'token_storage' => array(
-                        'Payum\Core\Model\Token' => array(
-                            'foo_storage' => array(
-                                'foo_opt' => 'foo'
-                            )
-                        )
-                    )
-                ),
-                'gateways' => array(
-                    'a_gateway' => array()
-                )
             )
         ));
     }
@@ -400,7 +345,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function shouldPassIfNoneStorageSelected()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -415,49 +360,8 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        )
-                    )
-                )
-            )
-        ));
-    }
-
-    /**
-     * @test
-     *
-     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
-     * @expectedExceptionMessage Invalid configuration for path "payum.gateways.a_gateway": Only one gateway per gateway could be selected
-     */
-    public function throwIfMoreThenOneGatewaySelected()
-    {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
-
-        $processor = new Processor();
-
-        $processor->processConfiguration($configuration, array(
-            array(
-                'security' => array(
-                    'token_storage' => array(
-                        'Payum\Core\Model\Token' => array(
-                            'foo_storage' => array(
-                                'foo_opt' => 'foo'
-                            )
-                        )
-                    )
-                ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'bar_gateway' => array(
-                            'bar_opt' => 'bar'
-                        ),
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        )
-                    )
+                'gateways_v2' => array(
+                    'a_gateway' => ['foo' => 'fooVal']
                 )
             )
         ));
@@ -471,7 +375,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfMoreThenOneTokenStorageConfigured()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -491,13 +395,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -510,7 +407,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfTokenStorageConfiguredWithModelNotImplementingTokenInterface()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -525,13 +422,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -544,7 +434,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfTokenStorageConfiguredWithNotModelClass()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -559,13 +449,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -578,20 +461,12 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfSecurityNotConfigured()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
         $processor->processConfiguration($configuration, array(
-            array(
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
-            )
+            []
         ));
     }
 
@@ -603,21 +478,13 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfTokenStorageNotConfigured()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
         $processor->processConfiguration($configuration, array(
             array(
-                'security' => array(
-                ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
+                'security' => [],
             )
         ));
     }
@@ -630,7 +497,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfMoreThenOneGatewayConfigStorageConfigured()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -659,13 +526,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -678,7 +538,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfGatewayConfigStorageConfiguredWithModelNotImplementingGatewayConfigInterface()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -702,13 +562,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -721,7 +574,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfGatewayConfigStorageConfiguredWithNotModelClass()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -745,13 +598,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -764,7 +610,7 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
      */
     public function throwIfGatewayConfigStorageNotConfigured()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -781,13 +627,6 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
             )
         ));
     }
@@ -795,9 +634,9 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function shouldOverwriteGatewaysWithSameNameDefinedInDifferentConfigFiles()
+    public function shouldTreatNullGatewaysV2AsEmptyArray()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -812,45 +651,19 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
-                )
+                'gateways_v2' => null,
             ),
-            array(
-                'security' => array(
-                    'token_storage' => array(
-                        'Payum\Core\Model\Token' => array(
-                            'foo_storage' => array(
-                                'foo_opt' => 'foo'
-                            )
-                        )
-                    )
-                ),
-                'gateways' => array(
-                    'a_gateway' => array(
-                        'bar_gateway' => array(
-                            'bar_opt' => 'bar'
-                        ),
-                    )
-                )
-            )
         ));
 
-        $this->assertCount(1, $config['gateways']);
-        $this->assertCount(1, $config['gateways']['a_gateway']);
-        $this->assertArrayHasKey('bar_gateway', $config['gateways']['a_gateway']);
+        $this->assertEquals([], $config['gateways_v2']);
     }
 
     /**
      * @test
      */
-    public function shouldMergeGatewaysWithDifferentNameDefinedInDifferentConfigFiles()
+    public function shouldAllowPutAnythingToGatewaysV2AndNotPerformAnyValidations()
     {
-        $configuration = new MainConfiguration($this->gatewayFactories, $this->storageFactories);
+        $configuration = new MainConfiguration([], $this->storageFactories);
 
         $processor = new Processor();
 
@@ -865,91 +678,43 @@ class MainConfigurationTest extends  \PHPUnit_Framework_TestCase
                         )
                     )
                 ),
-                'gateways' => array(
-                    'a_foo_gateway' => array(
-                        'foo_gateway' => array(
-                            'foo_opt' => 'foo'
-                        ),
-                    )
+                'gateways_v2' => array(
+                    'a_gateway' => array(
+                        'factory' => 'aFactory',
+                        'foo' => 'fooVal',
+                        'bar' => 'barVal',
+                    ),
+                    'another_gateway' => array(
+                        'factory' => 'anotherFactory',
+                        'foo' => ['fooVal', 'barVal'],
+                    ),
+                    'gateway_with_injection' => array(
+                        'foo' => '%foo%',
+                        'bar' => '%bar%',
+                    ),
                 )
             ),
-            array(
-                'security' => array(
-                    'token_storage' => array(
-                        'Payum\Core\Model\Token' => array(
-                            'foo_storage' => array(
-                                'foo_opt' => 'foo'
-                            )
-                        )
-                    )
-                ),
-                'gateways' => array(
-                    'a_bar_gateway' => array(
-                        'bar_gateway' => array(
-                            'bar_opt' => 'bar'
-                        ),
-                    )
-                )
-            )
         ));
 
-        $this->assertCount(2, $config['gateways']);
-        $this->assertArrayHasKey('a_foo_gateway', $config['gateways']);
-        $this->assertArrayHasKey('a_bar_gateway', $config['gateways']);
+        $this->assertEquals(array(
+            'a_gateway' => array(
+                'factory' => 'aFactory',
+                'foo' => 'fooVal',
+                'bar' => 'barVal',
+            ),
+            'another_gateway' => array(
+                'factory' => 'anotherFactory',
+                'foo' => ['fooVal', 'barVal'],
+            ),
+            'gateway_with_injection' => array(
+                'foo' => '%foo%',
+                'bar' => '%bar%',
+            ),
+        ), $config['gateways_v2']);
     }
 }
 
-class FooGatewayFactory implements GatewayFactoryInterface
-{
-    public function create(ContainerBuilder $container, $gatewayName, array $config)
-    {
-    }
-
-    public function getName()
-    {
-        return 'foo_gateway';
-    }
-
-    public function addConfiguration(ArrayNodeDefinition $builder)
-    {
-        $builder
-            ->children()
-                ->scalarNode('foo_opt')->isRequired()->cannotBeEmpty()->end()
-            ->end()
-        ;
-    }
-
-    public function load(ContainerBuilder $container)
-    {
-    }
-}
-
-class BarGatewayFactory implements GatewayFactoryInterface
-{
-    public function create(ContainerBuilder $container, $gatewayName, array $config)
-    {
-    }
-
-    public function getName()
-    {
-        return 'bar_gateway';
-    }
-
-    public function addConfiguration(ArrayNodeDefinition $builder)
-    {
-        $builder
-            ->children()
-                ->scalarNode('bar_opt')->isRequired()->cannotBeEmpty()->end()
-            ->end()
-        ;
-    }
-
-    public function load(ContainerBuilder $container)
-    {
-    }
-}
-
-class FooStorageFactory implements StorageFactoryInterface
+class BazStorageFactory implements StorageFactoryInterface
 {
     public function create(ContainerBuilder $container, $modelClass, array $config)
     {
@@ -964,13 +729,13 @@ class FooStorageFactory implements StorageFactoryInterface
     {
         $builder
             ->children()
-                ->scalarNode('foo_opt')->isRequired()->cannotBeEmpty()->end()
+            ->scalarNode('foo_opt')->isRequired()->cannotBeEmpty()->end()
             ->end()
         ;
     }
 }
 
-class BarStorageFactory implements StorageFactoryInterface
+class OloloStorageFactory implements StorageFactoryInterface
 {
     public function create(ContainerBuilder $container, $modelClass, array $config)
     {
@@ -985,7 +750,7 @@ class BarStorageFactory implements StorageFactoryInterface
     {
         $builder
             ->children()
-               ->scalarNode('bar_opt')->isRequired()->cannotBeEmpty()->end()
+            ->scalarNode('bar_opt')->isRequired()->cannotBeEmpty()->end()
             ->end()
         ;
     }

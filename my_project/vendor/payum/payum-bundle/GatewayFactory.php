@@ -2,17 +2,13 @@
 namespace Payum\Bundle\PayumBundle;
 
 use Payum\Core\Bridge\Spl\ArrayObject;
-use Payum\Core\CoreGatewayFactory;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Payum\Core\Bridge\Symfony\ContainerAwareCoreGatewayFactory;
 
-class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterface
+/**
+ * @deprecated since 1.2, will be removed in 2.0. Use Payum\Bundle\PayumBundle\CoreGatewayFactory class.
+ */
+class GatewayFactory extends ContainerAwareCoreGatewayFactory
 {
-    /**
-     * @var ContainerInterface
-     */
-    protected $container;
-
     /**
      * @var array
      */
@@ -32,22 +28,15 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
      * @param array $actionsTags
      * @param array $extensionsTags
      * @param array $apisTags
+     * @param array $defaultConfig
      */
-    public function __construct(array $actionsTags, array $extensionsTags, array $apisTags)
+    public function __construct(array $actionsTags, array $extensionsTags, array $apisTags, array $defaultConfig = [])
     {
         $this->actionsTags = $actionsTags;
         $this->extensionsTags = $extensionsTags;
         $this->apisTags = $apisTags;
 
-        parent::__construct([]);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
+        parent::__construct($defaultConfig);
     }
 
     /**
@@ -64,7 +53,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                 $name = isset($attributes['alias']) ? $attributes['alias'] : $id;
 
                 if (isset($attributes['all']) && $attributes['all']) {
-                    $config["payum.action.$name"] = $this->container->get($id);
+                    $config["payum.action.$name"] = $this->container->get($id);;
                 }
 
                 if (
@@ -72,7 +61,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                     isset($config['payum.factory_name']) &&
                     $config['payum.factory_name'] === $attributes['factory']
                 ) {
-                    $config["payum.action.$name"] = $this->container->get($id);
+                    $config["payum.action.$name"] = $this->container->get($id);;
                 }
 
                 if (
@@ -80,7 +69,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                     isset($config['payum.gateway_name']) &&
                     $config['payum.gateway_name'] === $attributes['gateway']
                 ) {
-                    $config["payum.action.$name"] = $this->container->get($id);
+                    $config["payum.action.$name"] = $this->container->get($id);;
                 }
 
                 if (isset($attributes['prepend'])) {
@@ -97,7 +86,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                 $name = isset($attributes['alias']) ? $attributes['alias'] : $id;
 
                 if (isset($attributes['all']) && $attributes['all']) {
-                    $config["payum.extension.$name"] = $this->container->get($id);
+                    $config["payum.extension.$name"] = $this->container->get($id);;
                 }
 
                 if (
@@ -105,7 +94,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                     isset($config['payum.factory_name']) &&
                     $config['payum.factory_name'] === $attributes['factory']
                 ) {
-                    $config["payum.extension.$name"] = $this->container->get($id);
+                    $config["payum.extension.$name"] = $this->container->get($id);;
                 }
 
                 if (
@@ -113,7 +102,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                     isset($config['payum.gateway_name']) &&
                     $config['payum.gateway_name'] === $attributes['gateway']
                 ) {
-                    $config["payum.extension.$name"] = $this->container->get($id);
+                    $config["payum.extension.$name"] = $this->container->get($id);;
                 }
 
                 if (isset($attributes['prepend'])) {
@@ -129,7 +118,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                 $name = isset($attributes['alias']) ? $attributes['alias'] : $id;
 
                 if (isset($attributes['all']) && $attributes['all']) {
-                    $config["payum.api.$name"] = $this->container->get($id);
+                    $config["payum.api.$name"] = $this->container->get($id);;
                 }
 
                 if (
@@ -137,7 +126,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                     isset($config['payum.factory_name']) &&
                     $config['payum.factory_name'] === $attributes['factory']
                 ) {
-                    $config["payum.api.$name"] = $this->container->get($id);
+                    $config["payum.api.$name"] = $this->container->get($id);;
                 }
 
                 if (
@@ -145,7 +134,7 @@ class GatewayFactory extends CoreGatewayFactory implements ContainerAwareInterfa
                     isset($config['payum.gateway_name']) &&
                     $config['payum.gateway_name'] === $attributes['gateway']
                 ) {
-                    $config["payum.api.$name"] = $this->container->get($id);
+                    $config["payum.api.$name"] = $this->container->get($id);;
                 }
 
                 if (isset($attributes['prepend'])) {

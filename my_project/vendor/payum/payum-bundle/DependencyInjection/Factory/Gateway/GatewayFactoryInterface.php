@@ -4,6 +4,9 @@ namespace Payum\Bundle\PayumBundle\DependencyInjection\Factory\Gateway;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
+/**
+ * @deprecated  since 1.2 and will be removed in 2.0
+ */
 interface GatewayFactoryInterface
 {
     /**
@@ -18,7 +21,7 @@ interface GatewayFactoryInterface
     function create(ContainerBuilder $container, $gatewayName, array $config);
 
     /**
-     * Method could be used to load services which you need always, even if you do not create any gateways with this factory riht now.
+     * Method could be used to load services which you need always, even if you do not create any gateways with this factory right now.
      * It could a gateway factory service for example
      */
     function load(ContainerBuilder $container);
