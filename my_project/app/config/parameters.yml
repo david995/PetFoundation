@@ -2,7 +2,7 @@
 parameters:
     database_host: eu-cdbr-azure-west-d.cloudapp.net
     database_port: 3306
-    database_name: symfony
+    database_name: acsm_3bf5181bd3572aa	
     database_user: b1fcc7ed74a4d1
     database_password: 92a5065f
     mailer_transport: smtp
