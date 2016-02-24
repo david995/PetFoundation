@@ -1,5 +1,5 @@
 <?php
-set_time_limit(300);
+
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
@@ -32,3 +32,4 @@ $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);
+set_time_limit(300);
