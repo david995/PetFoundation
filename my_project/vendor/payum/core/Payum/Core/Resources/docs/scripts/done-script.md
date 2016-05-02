@@ -74,9 +74,9 @@ if ($status->isFailed() || $status->isCanceled()) {
 
 ## Invalidation
 
-A good practise is not do some actions and redirect a user to another url.
-This url has to no more accessible.
-This way user is not able to purchase stuff two times for example.
+A good practise is to do some actions and redirect a user to another url.
+This url should not be accessible more than once.
+This way the user is not able to accidentally purchase the same order two times for example.
 
 ```php
 <?php
@@ -87,5 +87,5 @@ $payum->getHttpRequestVerifier()->invalidate($token);
 
 _**Note**: We advice you to invalidate(remove) the token as soon as you do not need it._
 
-Back to [scripts](https://github.com/Payum/Core/tree/master/Resources/docs/scripts/index.md).
-Back to [index](https://github.com/Payum/Core/tree/master/Resources/docs/index.md).
+Back to [scripts](index.md).
+Back to [index](../index.md).

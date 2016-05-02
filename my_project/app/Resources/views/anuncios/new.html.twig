@@ -40,8 +40,7 @@
                  {{form_row(form.animal.tipo) }}<br>
                  {{form_row(form.animal.sexo) }}<br>
                  {{form_row(form.animal.nacimiento) }}<br>
-                 {{form_row(form.animal.pedigri, { 'removeAttr': {'required':'required'} }) }}<br>
-                 {{form_row(form.animal.img) }}<br>
+                 
                  
                     </div>
                </div>
@@ -49,8 +48,9 @@
                <div class="row">
                     <div class="col-sm-6 col-md-offset-3" align="left"><br>
                      <font style="color: #00BCD4;font-weight: bold; font-size:23px;">Elija la imagen que se mostrará</font>
-                 <input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
+             <!--<input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
                      <!--    http://plugins.krajee.com/file-input/demo -->
+                     {{form_row(form.animal.file) }}<br>
                     </div>
                </div>
              

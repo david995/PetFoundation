@@ -10,8 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('IndexBundle:Default:contenido_index.html.twig');
     }
-  
-  
-
     
+    public function indexpAction()
+    {
+        return $this->render('IndexBundle:Default:index.html.twig');
+    }
 }

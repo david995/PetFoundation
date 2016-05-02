@@ -10,4 +10,39 @@ namespace AnunciosBundle\Repository;
  */
 class AnunciosRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllAdopcionesDesc() {
+
+        return $this->createQueryBuilder('a')
+                        ->where('a.categoria = :categoria')
+                        ->setParameter('categoria', 'Adopciones')
+                        ->OrderBy('a.id', 'DESC')
+                        ->getQuery()->getResult();
+    }
+    
+    public function findAllCamadasDesc() {
+
+        return $this->createQueryBuilder('a')
+                        ->where('a.categoria = :categoria')
+                        ->setParameter('categoria', 'Camadas')
+                        ->OrderBy('a.id', 'DESC')
+                        ->getQuery()->getResult();
+    }
+    
+    public function findAllSeBuscaDesc() {
+
+        return $this->createQueryBuilder('a')
+                        ->where('a.categoria = :categoria')
+                        ->setParameter('categoria', 'Se busca')
+                        ->OrderBy('a.id', 'DESC')
+                        ->getQuery()->getResult();
+    }
+    
+    public function findAllProtectorasDesc() {
+
+        return $this->createQueryBuilder('a')
+                        ->where('a.categoria = :categoria')
+                        ->setParameter('categoria', 'Protectoras')
+                        ->OrderBy('a.id', 'DESC')
+                        ->getQuery()->getResult();
+    }
 }

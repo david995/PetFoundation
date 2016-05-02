@@ -1,4 +1,4 @@
-{% extends "IndexBundle:Default:index.html.twig" %}
+{% extends "::base.html.twig" %}
 
 {% block body %}
 	<style>
@@ -42,26 +42,35 @@
 		}
 	
 	
+	
+	
 	</style>
+	{#<div align="right">
+		<a href="./buscador" data-toggle="tooltip" data-placement="left" title="Tooltip on left" class="btn btn-info" role="button">Buscar</a>
+	</div>#}
+	
+	<br>
+	<br>
+	<br>
 	<div class="row">
 		<div class="col-sm-12">
 			<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/buscaPerd.jpg);
 			background-repeat:no-repeat;
 			background-position:center; background-size: 330px ;" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/labrador.jpg);
 			background-repeat:no-repeat;
-			background-position:center;" onclick="location.href='{{ path("paginas_sebusca") }}'" value="Se busca" id="imagen">
+			background-position:center;" onclick="location.href='{{ path("paginas_sebusca") }}'" value="Se busca" id="imagen" alt="Se Busca" title="Se Busca">
 			<label class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 			<div class="visible-xs"><br></div>
 	
 			<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/protectora.jpg);
 			background-repeat:no-repeat;
-			background-position:center; background-size: 300px ;" onclick="location.href='{{ path("paginas_protectoras") }}'" value="Protectoras" id="imagen">
+			background-position:center; background-size: 300px ;" onclick="location.href='{{ path("paginas_protectoras") }}'" value="Protectoras" id="imagen" alt="Protectoras" title="Protectoras">
 			<label class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 			<div class="visible-xs"><br></div>
 	
 			<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/labrador.jpg);
 			background-repeat:no-repeat;
-			background-position:center;" onclick="location.href='{{ path("paginas_camadas") }}'" value="Camadas" id="imagen">
+			background-position:center;" onclick="location.href='{{ path("paginas_camadas") }}'" value="Camadas" id="imagen"  alt="Camadas" title="Camadas">
 			<br><br>
 		</div>
 	</div>
@@ -70,17 +79,16 @@
 		<div class="col-sm-12">
 			<a href="{{ path("paginas_adopciones") }}"><input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/adopttt.jpg);
 			background-repeat:no-repeat;
-			background-position:center; background-size: 310px ;" onclick="location.href='{{ path("paginas_adopciones") }}'" value="Adopciones" id="imagen"></a>
+			background-position:center; background-size: 310px ;" onclick="location.href='{{ path("paginas_adopciones") }}'" value="Adopciones" id="imagen"  alt="Adopciones" title="Adopciones"></a>
 			<label class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 			<div class="visible-xs"><br></div>
-			<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/foro.jpg);
-			background-repeat:no-repeat;
-			background-position:center; background-size: 320px ;" value="Foro" id="imagen" onclick="location.href='/my_project/phpBB3/'">
 			<label class="hidden-xs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 			<div class="visible-xs"><br></div>
 			<input type="button" class="btn botonMenuPaginaPrincipal" style="background-image:url(/my_project/web/bundles/index/imgs/imgs/donaciones.png);
 			background-repeat:no-repeat;
-			background-position:center; background-size: 300px ;" onclick="location.href='{{ path("donaciones_homepage") }}'" value="Donaciones" id="imagen">
+			background-position:center; background-size: 300px ;" onclick="location.href='{{ path("donaciones_homepage") }}'" value="Donaciones" id="imagen" alt="Donaciones" title="Donaciones">
 		</div>
 	</div>
+	<br>
+
 {% endblock body %}

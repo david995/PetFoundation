@@ -22,9 +22,13 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new IndexBundle\IndexBundle(),
             new PaginasIndexBundle\PaginasIndexBundle(),
-#            new Payum\Bundle\PayumBundle\PayumBundle(),
+#           new Payum\Bundle\PayumBundle\PayumBundle(),
             new DonacionesBundle\DonacionesBundle(),
             new ContactameBundle\ContactameBundle(),
+            new FOS\ElasticaBundle\FOSElasticaBundle(),
+            new ImagenesBundle\ImagenesBundle(),
+            new RaulFraile\Bundle\LadybugBundle\RaulFraileLadybugBundle(),
+            new MessageBundle\MessageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

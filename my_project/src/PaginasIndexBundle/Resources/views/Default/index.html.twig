@@ -69,16 +69,21 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
         <link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="/my_project/web/bundles/index/css/component1.css" />
-        <link rel="stylesheet" href="/my_project/web/bundles/index/css/normalizebuscar.css">
-        <link rel="stylesheet" href="/my_project/web/bundles/index/css/estilobuscar.css">
+        
+        {% block estiloscss %}
+       
+		{% endblock estiloscss %}
+        
+        
         <script src="/my_project/web/bundles/index/js/modernizr-2.6.2.min.js"></script>
-        <script src="/my_project/web/bundles/index/js/jquery-1.10.2.js"></script>
+        {#<script src="/my_project/web/bundles/paginasindex/js/jquery-1.10.2.js"></script>#}
         <script src="/my_project/web/bundles/index/js/anuncioshow.js"></script>
+        
         <!-- fin menu redondo -->
         <title>Pet’s, adoptalo y no compres</title>
         <meta name="description" content="Pets page">
         <meta name="author" content="Pets">
-        <link href="/my_project/web/bundles/index/css/bootstrap.min.css" rel="stylesheet">
+        {#<link href="/my_project/web/bundles/index/css/bootstrap.min.css" rel="stylesheet">#}
         <link href="/my_project/web/bundles/index/css/style.css" rel="stylesheet">
     </head>
     <body>
@@ -89,11 +94,11 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
             <!--<button class="cn-button visible-xs" id="cn-button" style="width:90px;">+</button>-->
             <div class="cn-wrapper" id="cn-wrapper" style="margin-bottom: 10px"> <!-- mover posicion de los botones del menu -->
                		<ul>
-					<li><a onclick="location.href='{{ path("paginas_sebusca") }}'" ><img src="/my_project/web/bundles/index/imgs/iconsMenu/buscarperdido.png" width="45px"></a></li>
-					<li><a onclick="location.href='{{ path("paginas_adopciones") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png" width="50px"></span></a></li>
-					<li><a onclick="location.href='{{ path("paginas_protectoras") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/refugio.png" width="45px"></a></li>
-					<li><a onclick="location.href='{{ path("paginas_camadas") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/camada.png" width="45px"></a></li>
-					<li><a href="/my_project/phpBB3/"><img src="/my_project/web/bundles/index/imgs/iconsMenu/forum.png" width="45px"></a></li>
+					<li><a onclick="location.href='{{ path("paginas_sebusca") }}'" ><img src="/my_project/web/bundles/index/imgs/iconsMenu/buscarperdido.png" alt="Se Busca" title="Se Busca" width="45px"></a></li>
+					<li><a onclick="location.href='{{ path("paginas_adopciones") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/adoptar.png" alt="Adopciones" title="Adopciones" width="50px"></span></a></li>
+					<li><a onclick="location.href='{{ path("paginas_protectoras") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/refugio.png"  alt="Protectoras" title="Protectoras" width="45px"></a></li>
+					<li><a onclick="location.href='{{ path("paginas_camadas") }}'"><img src="/my_project/web/bundles/index/imgs/iconsMenu/camada.png" alt="Camadas" title="Camadas" width="45px"></a></li>
+					<li><a href="/my_project/phpBB3/"><img src="/my_project/web/bundles/index/imgs/iconsMenu/forum.png" alt="Foro" title="Foro" width="45px"></a></li>
 				</ul>
             </div>
             <div id="cn-overlay" class="cn-overlay"></div>
@@ -120,7 +125,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 								</button>-->
 								<button class="btn btn-default hidden-xs"  style="border: 0px;border-radius: 27px 27px 27px 27px;
 								-moz-border-radius: 27px 27px 27px 27px; -webkit-border-radius: 27px 27px 27px 27px; margin-left:40%; margin-top:-130px;" onClick="location.href='{{ path("anunc") }}'" value="publicar anuncio">
-									<img src="/my_project/web/bundles/index/imgs/publicar.png">&nbsp;&nbsp;&nbsp; Publicar anuncio
+									<img src="/my_project/web/bundles/index/imgs/publicar.png" alt="Publicar Anuncio" title="Publicar Anuncio">&nbsp;&nbsp;&nbsp; Publicar anuncio
 								</button>
 							</li>
 							<div class="navbar-right container-fluid " >
@@ -162,7 +167,7 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
 						
 						</a>
 						</form>-->
-						<div class="navbar-right container-fluid" style="margin-top:7px;">
+						<div style="margin-top:7px;">
 							<img class="visible-xs" src="/my_project/web/bundles/index/imgs/user.png" onclick="location.href='{{ path("fos_user_security_login") }}';" style="float: right; margin-right: 10px"><br>
 						</div>
 					</nav>
@@ -178,16 +183,19 @@ Si aplicamos esta clase CSS a un DIV sí aparecerá en la versión móvil pero n
                 </div>
             </div>
         </div>
-      <div id="footer" style="position: fixed; bottom: 0; width: 100%; height: 50px; background-color: #00BCD4;text-align: right; line-height: 40px;">
+        <div id="footer" style="position: fixed; bottom: 0; width: 100%; height: 50px; background-color: #00BCD4;text-align: right; line-height: 40px;">
             <div class="container" >
                 <p class="text-muted credit" ><font color="#FFFFFF"><a href="/my_project/web/app_dev.php/contactame" style="color: white; text-decoration: none">Contacto</a> | Pet's - Copyright © 2016</font></p>
             </div>
-        <script src="/my_project/web/bundles/paginasindex/js/jquery.min.js"></script>
-        <script src="/my_project/web/bundles/paginasindex/js/bootstrap.min.js"></script>
+        </div>
+        
         <script src="/my_project/web/bundles/paginasindex/js/scripts.js"></script>
         <!-- menu redondo-->
         <script src="/my_project/web/bundles/paginasindex/js/polyfills.js"></script>
         <script src="/my_project/web/bundles/paginasindex/js/demo1.js"></script>
+        
+     
+        
         <!-- fin menu redondo -->   
     </body>
 </html>

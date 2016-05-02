@@ -1,0 +1,407 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace AppBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ */
+class User extends BaseUser
+{
+    
+     /**
+     * Relationship OneToMany
+     * 
+     * @ORM\OneToMany(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="user",cascade={"persist", "remove"})
+     */
+     protected $anuncios;
+    
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this->anuncios = new ArrayCollection();
+    }
+    
+
+    /**
+     * Add anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     *
+     * @return User
+     */
+    public function addAnuncio(\AnunciosBundle\Entity\Anuncios $anuncio)
+    {
+        $this->anuncios[] = $anuncio;
+
+        return $this;
+    }
+
+    /**
+     * Remove anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     */
+    public function removeAnuncio(\AnunciosBundle\Entity\Anuncios $anuncio)
+    {
+        $this->anuncios->removeElement($anuncio);
+    }
+
+    /**
+     * Get anuncios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnuncios()
+    {
+        return $this->anuncios;
+    }
+    
+    
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+   
+    /**
+     * @Assert\File(maxSize="2097152")
+     */
+    private $picture;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="picturePath", type="string", length=255, nullable=true)
+     */
+    private $picturePath;
+
+
+    
+
+    public function __construct()
+    {
+        parent::__construct();
+
+    }
+
+    public function upload()
+    {
+        // la propiedad de los archivos puede estar vacía si no se requiere el campo
+        if (null === $this->getPicture()) {
+            return;
+        }
+
+        // utilizar el nombre de archivo original aquí, pero que debiera
+        // desinfectar al menos para evitar cualquier problema de seguridad
+        $nameArchiveImage = uniqid('agendat-').'-user_picture.'. $this->getPicture()->getClientOriginalExtension();
+
+        // move toma el directorio de destino y luego le
+        // apunta el nombre de archivo para subirlo
+        $this->getPicture()->move(
+            $this->getUploadRootDir(),
+            $nameArchiveImage
+        );
+        // establecer la propiedad ruta al nombre del archivo donde se ha guardado el archivo
+        $this->picturePath = $nameArchiveImage;
+
+        // limpiar la propiedad del archivo, ya que no lo va a necesitar
+        $this->picture = null;
+    }
+
+    public function getAbsolutePath()
+    {
+        return null === $this->picturePath
+            ? null
+            : $this->getUploadRootDir().'/'.$this->picturePath;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->picturePath
+            ? null
+            : $this->getUploadDir() . '/' . $this->picturePath;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded
+        // documents should be saved
+        return __DIR__ . '/../../../web/' . $this->getUploadDir();
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw up
+        // when displaying uploaded doc/image in the view.
+        return 'uploads/images';
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+     /**
+     * Set picturePath
+     *
+     * @param String $picturePath
+     * @return Player
+     */
+    public function setPicturePath($picturePath) {
+        $this->picturePath = $picturePath;
+
+        return $this;
+    }
+
+    /**
+     * Get picturePath
+     *
+     * @return String
+     */
+    public function getPicturePath() {
+        return $this->picturePath;
+    }
+
+   
+
+    /**
+     * Sets picture.
+     *
+     * @param UploadedFile $picture
+     */
+    public function setPicture(UploadedFile $picture = null)
+    {
+        $this->picture = $picture;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return string
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+  
+    public function __toString()
+    {
+       
+            return $this->getUserName();
+       
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace AppBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="fos_user")
+ * @ORM\HasLifecycleCallbacks
+ */
+class User extends BaseUser
+{
+    
+    /**
+     * Relationship OneToMany
+     * 
+     * @ORM\OneToMany(targetEntity="AnunciosBundle\Entity\Anuncios", mappedBy="user",cascade={"persist", "remove"})
+     */
+     protected $anuncios;
+    
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this->anuncios = new ArrayCollection();
+    }
+    
+
+    /**
+     * Add anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     *
+     * @return User
+     */
+    public function addAnuncio(\AnunciosBundle\Entity\Anuncios $anuncio)
+    {
+        $this->anuncios[] = $anuncio;
+
+        return $this;
+    }
+
+    /**
+     * Remove anuncio
+     *
+     * @param \AnunciosBundle\Anuncios $anuncio
+     */
+    public function removeAnuncio(\AnunciosBundle\Entity\Anuncios $anuncio)
+    {
+        $this->anuncios->removeElement($anuncio);
+    }
+
+    /**
+     * Get anuncios
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnuncios()
+    {
+        return $this->anuncios;
+    }
+    
+    
+    
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    public $path;
+    
+    
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $file;
+
+    /**
+     * Sets file.
+     *
+     * @param UploadedFile $file
+     */
+    public function setFile(UploadedFile $file = null)
+    {
+        $this->file = $file;
+    }
+
+    /**
+     * Get file.
+     *
+     * @return UploadedFile
+     */
+    public function getFile()
+    {
+        return $this->file;
+    }
+    
+    public function upload()
+    {
+        // the file property can be empty if the field is not required
+        if (null === $this->getFile()) {
+            return;
+        }
+    
+        // use the original file name here but you should
+        // sanitize it at least to avoid any security issues
+    
+        // move takes the target directory and then the
+        // target filename to move to
+        $this->getFile()->move(
+            $this->getUploadRootDir(),
+            $this->getFile()->getClientOriginalName()
+        );
+    
+        // set the path property to the filename where you've saved the file
+        $this->path = $this->getFile()->getClientOriginalName();
+    
+        // clean up the file property as you won't need it anymore
+        $this->file = null;
+    }
+    
+    public function getAbsolutePath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadRootDir().'/'.$this->path;
+    }
+
+    public function getWebPath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadDir().'/'.$this->path;
+    }
+
+    protected function getUploadRootDir()
+    {
+        // the absolute directory path where uploaded
+        // documents should be saved
+        return '/home/ubuntu/workspace/my_project/web/uploads/images';
+    }
+
+    protected function getUploadDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw up
+        // when displaying uploaded doc/image in the view.
+        return 'uploads/images';
+    }
+    
+    
+     public function __toString(){
+         return $this->getUserName();
+    }
+}

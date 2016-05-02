@@ -21,8 +21,7 @@ class AnimalesType extends AbstractType
             ->add('sexo','choice',array('label'=>'Sexo:', 'attr' => array('class' => 'form-control'), 'choices' => array('m' => 'Macho', 'f' => 'Hembra')))
             ->add('nacimiento','date',array('label'=>'Nacimiento:','attr' => array('class' => 'form-control'),'years'=>range(date('Y')-50,date('Y')), 'attr' => array('width' => '100%', 'style' =>'padding:7px')))
             ->add('propietario','text',array('label'=>'Propietario del animal:', 'attr' => array('class' => 'form-control','placeholder' => '...')))
-            ->add('pedigri','checkbox',array('label'=>'¿Tiene pedigrí? '))
-            ->add('img','file',array('label'=>'Seleccione una imagen'))
+            ->add('file','file',array('label'=>'Seleccione una imagen'))
             ->add('descripcion','textarea',array('label'=>'Descripción:'))
             ->add('tlf','text',array('label'=>'Teléfono'))
             ;

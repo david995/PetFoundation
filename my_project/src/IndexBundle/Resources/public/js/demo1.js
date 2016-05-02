@@ -32,7 +32,7 @@
 	}
 	function closeNav(){
 		open = false;
-		button.innerHTML = "+";
+		button.innerHTML = "<span class='glyphicon glyphicon-menu-hamburger' aria-hidden='true'></span>";
 		classie.remove(overlay, 'on-overlay');
 		classie.remove(wrapper, 'opened-nav');
 	}

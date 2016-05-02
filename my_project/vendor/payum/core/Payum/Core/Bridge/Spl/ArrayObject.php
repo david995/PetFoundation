@@ -28,6 +28,28 @@ class ArrayObject extends \ArrayObject
     }
 
     /**
+     * @param string $key
+     * @param mixed $default
+     *
+     * @return mixed
+     */
+    public function get($key, $default = null)
+    {
+        return isset($this[$key]) ? $this[$key] : $default;
+    }
+
+    /**
+     * @param string $key
+     * @param mixed $default
+     *
+     * @return static
+     */
+    public function getArray($key, $default = [])
+    {
+        return static::ensureArrayObject($this->get($key, $default));
+    }
+
+    /**
      * @param array|\Traversable $input
      *
      * @throws \Payum\Core\Exception\InvalidArgumentException
@@ -169,7 +191,7 @@ class ArrayObject extends \ArrayObject
      */
     public function toUnsafeArray()
     {
-        $array = array();
+        $array = [];
         foreach ($this as $name => $value) {
             if ($value instanceof SensitiveValue) {
                 $array[$name] = $value->get();
@@ -180,6 +202,19 @@ class ArrayObject extends \ArrayObject
             $array[$name] = $value;
         }
 
+        return $array;
+    }
+
+    /**
+     * @experimental
+     *
+     * @return array
+     */
+    public function toUnsafeArrayWithoutLocal()
+    {
+        $array = $this->toUnsafeArray();
+        unset($array['local']);
+        
         return $array;
     }
 

@@ -17,6 +17,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Security\Core\Validator\Constraints\UserPassword;
+use ImagenesBundle\Form\ImagenType;
 
 class ProfileFormType extends AbstractType
 {
@@ -80,6 +81,7 @@ class ProfileFormType extends AbstractType
         $builder
             ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
             ->add('email', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\EmailType'), array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
+            ->add('imagenes', ImagenType::class, array('by_reference'  => false))
         ;
     }
 }

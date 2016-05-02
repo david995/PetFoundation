@@ -1,0 +1,7 @@
+message_message:
+    resource: "@MessageBundle/Resources/config/routing/message.yml"
+    prefix:   /message
+
+message_homepage:
+    path:     /message
+    defaults: { _controller: MessageBundle:Default:index }

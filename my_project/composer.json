@@ -23,7 +23,10 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "payum/payum-bundle": "^1.0",
-        "payum/offline": "^1.1"
+        "payum/offline": "^1.1",
+        "friendsofsymfony/elastica-bundle": "^3.1",
+        "kartik-v/bootstrap-fileinput": "dev-master",
+        "raulfraile/ladybug-bundle": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

@@ -1,6 +1,7 @@
 <?php
 namespace Payum\Core\Model;
 
+use Payum\Core\Exception\InvalidArgumentException;
 use Payum\Core\Security\SensitiveValue;
 use Payum\Core\Security\Util\Mask;
 
@@ -23,6 +24,8 @@ class CreditCard implements CreditCardInterface
 
     /**
      * @var SensitiveValue
+     *
+     * @deprecated
      */
     protected $securedHolder;
 
@@ -38,6 +41,8 @@ class CreditCard implements CreditCardInterface
 
     /**
      * @var SensitiveValue
+     *
+     * @deprecated
      */
     protected $securedNumber;
 
@@ -53,6 +58,8 @@ class CreditCard implements CreditCardInterface
 
     /**
      * @var SensitiveValue
+     *
+     * @deprecated
      */
     protected $securedSecurityCode;
 
@@ -63,15 +70,17 @@ class CreditCard implements CreditCardInterface
 
     /**
      * @var SensitiveValue
+     *
+     * @deprecated
      */
     protected $securedExpireAt;
 
     public function __construct()
     {
-        $this->holder = new SensitiveValue(null);
-        $this->securityCode = new SensitiveValue(null);
-        $this->number = new SensitiveValue(null);
-        $this->expireAt = new SensitiveValue(null);
+        $this->securedHolder = SensitiveValue::ensureSensitive(null);
+        $this->securedSecurityCode = SensitiveValue::ensureSensitive(null);
+        $this->securedNumber = SensitiveValue::ensureSensitive(null);
+        $this->securedExpireAt = SensitiveValue::ensureSensitive(null);
     }
 
     /**
@@ -111,8 +120,11 @@ class CreditCard implements CreditCardInterface
      */
     public function setHolder($holder)
     {
-        $this->holder = $holder;
-        $this->maskedHolder = Mask::mask($this->holder);
+        $this->securedHolder = SensitiveValue::ensureSensitive($holder);
+        $this->maskedHolder = Mask::mask($this->securedHolder->peek());
+
+        // BC
+        $this->holder = $this->securedHolder->peek();
     }
 
     /**
@@ -120,7 +132,7 @@ class CreditCard implements CreditCardInterface
      */
     public function getHolder()
     {
-        return $this->securedHolder ? $this->securedHolder->peek() : $this->holder;
+        return $this->securedHolder->peek();
     }
 
     /**
@@ -144,8 +156,11 @@ class CreditCard implements CreditCardInterface
      */
     public function setNumber($number)
     {
-        $this->number = $number;
-        $this->maskedNumber = Mask::mask($this->number);
+        $this->securedNumber = SensitiveValue::ensureSensitive($number);
+        $this->maskedNumber = Mask::mask($this->securedNumber->peek());
+
+        //BC
+        $this->number = $this->securedNumber->peek();
     }
 
     /**
@@ -153,7 +168,7 @@ class CreditCard implements CreditCardInterface
      */
     public function getNumber()
     {
-        return $this->securedNumber ? $this->securedNumber->peek() : $this->number;
+        return $this->securedNumber->peek();
     }
 
     /**
@@ -177,7 +192,10 @@ class CreditCard implements CreditCardInterface
      */
     public function setSecurityCode($securityCode)
     {
-        $this->securityCode = $securityCode;
+        $this->securedSecurityCode = SensitiveValue::ensureSensitive($securityCode);
+
+        // BC
+        $this->securityCode = $this->securedSecurityCode->peek();
     }
 
     /**
@@ -185,7 +203,7 @@ class CreditCard implements CreditCardInterface
      */
     public function getSecurityCode()
     {
-        return $this->securedSecurityCode ? $this->securedSecurityCode->peek() : $this->securityCode;
+        return $this->securedSecurityCode->peek();
     }
 
     /**
@@ -193,15 +211,24 @@ class CreditCard implements CreditCardInterface
      */
     public function getExpireAt()
     {
-        return $this->securedExpireAt ? $this->securedExpireAt->peek() : $this->expireAt;
+        return $this->securedExpireAt->peek();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setExpireAt(\DateTime $date = null)
+    public function setExpireAt($date = null)
     {
-        $this->expireAt = $date;
+        $date = SensitiveValue::ensureSensitive($date);
+
+        if (false == (null === $date->peek() || $date->peek() instanceof \DateTime)) {
+            throw new InvalidArgumentException('The date argument must be either instance of DateTime or null');
+        }
+
+        $this->securedExpireAt = $date;
+
+        // BC
+        $this->expireAt = $this->securedExpireAt->peek();
     }
 
     /**
@@ -209,24 +236,6 @@ class CreditCard implements CreditCardInterface
      */
     public function secure()
     {
-        if ($this->holder) {
-            $this->securedHolder = new SensitiveValue($this->holder);
-            $this->holder = null;
-        }
-
-        if ($this->number) {
-            $this->securedNumber = new SensitiveValue($this->number);
-            $this->number = null;
-        }
-
-        if ($this->securityCode) {
-            $this->securedSecurityCode = new SensitiveValue($this->securityCode);
-            $this->securityCode = null;
-        }
-
-        if ($this->expireAt) {
-            $this->securedExpireAt = new SensitiveValue($this->expireAt);
-            $this->expireAt = null;
-        }
+        $this->holder = $this->number = $this->expireAt = $this->securityCode = null;
     }
 }

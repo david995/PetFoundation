@@ -1,0 +1,24 @@
+imagen_index:
+    path:     /
+    defaults: { _controller: "ImagenesBundle:Imagen:index" }
+    methods:  GET
+
+imagen_show:
+    path:     /{id}/show
+    defaults: { _controller: "ImagenesBundle:Imagen:show" }
+    methods:  GET
+
+imagen_new:
+    path:     /new
+    defaults: { _controller: "ImagenesBundle:Imagen:new" }
+    methods:  [GET, POST]
+
+imagen_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ImagenesBundle:Imagen:edit" }
+    methods:  [GET, POST]
+
+imagen_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ImagenesBundle:Imagen:delete" }
+    methods:  DELETE

@@ -25,10 +25,14 @@ class AnimalesController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $animales = $em->getRepository('AnimalesBundle:Animales')->findAll();
-
-        return $this->render('animales/index.html.twig', array(
-            'animales' => $animales,
-        ));
+        
+        if(!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')){
+            return $this->redirectToRoute('index_homepage');
+        }else{
+            return $this->render('animales/index.html.twig', array(
+                'animales' => $animales,
+            ));
+        }
     }
 
     /**

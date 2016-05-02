@@ -13,7 +13,6 @@
                 <th>Sexo</th>
                 <th>Nacimiento</th>
                 <th>Propietario</th>
-                <th>Pedigri</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,7 +26,6 @@
                 <td>{{ animale.sexo }}</td>
                 <td>{% if animale.nacimiento %}{{ animale.nacimiento|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ animale.propietario }}</td>
-                <td>{% if animale.pedigri %}Yes{% else %}No{% endif %}</td>
                 <td>
                     <ul>
                         <li>

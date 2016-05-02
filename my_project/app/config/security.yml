@@ -27,11 +27,13 @@ security:
     access_control:
         - { path: ^/animales, roles: ROLE_ADMIN }
         - { path: ^/anuncios/new, roles: ROLE_USER }
+        - { path: ^/message, roles: ROLE_ADMIN }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/anuncios, roles: ROLE_USER }
+        
         
        
         

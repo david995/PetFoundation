@@ -1,3 +1,15 @@
+message:
+    resource: "@MessageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+imagenes:
+    resource: "@ImagenesBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# buscador:
+#     resource: "@BuscadorBundle/Resources/config/routing.yml"
+#     prefix:   /
+
 contactame:
     resource: "@ContactameBundle/Resources/config/routing.yml"
     prefix:   /
@@ -22,6 +34,10 @@ propietario:
     resource: "@PropietarioBundle/Resources/config/routing.yml"
     prefix:   /
 
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /
+
 animales:
     resource: "@AnimalesBundle/Controller/"
     type:     annotation
@@ -35,6 +51,7 @@ propietario:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+    prefix:   /
     
 animales_animales:
     resource: "@AnimalesBundle/Resources/config/routing/animales.yml"

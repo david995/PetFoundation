@@ -25,10 +25,16 @@ class AnunciosController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $anuncios = $em->getRepository('AnunciosBundle:Anuncios')->findAll();
-
-        return $this->render('anuncios/index.html.twig', array(
-            'anuncios' => $anuncios,
-        ));
+        
+        
+        if(!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN')){
+            return $this->redirectToRoute('index_homepage');
+        }else{
+            return $this->render('anuncios/index.html.twig', array(
+                'anuncios' => $anuncios,
+            ));
+        }
+        
     }
 
     /**
@@ -41,7 +47,7 @@ class AnunciosController extends Controller
         $animal = new Animales();
         $user = new User();
         
-       $anuncio->setUser($this->getUser());
+        $anuncio->setUser($this->getUser());
         $animal->setAnuncio($anuncio);
         $anuncio->setAnimal($animal);
         $form = $this->createForm('AnunciosBundle\Form\AnunciosType', $anuncio);

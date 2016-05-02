@@ -1,0 +1,7 @@
+imagenes_imagen:
+    resource: "@ImagenesBundle/Resources/config/routing/imagen.yml"
+    prefix:   /imagen
+
+imagenes_homepage:
+    path:     /imagen
+    defaults: { _controller: ImagenesBundle:Default:index }

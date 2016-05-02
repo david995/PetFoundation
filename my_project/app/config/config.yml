@@ -9,6 +9,8 @@ imports:
     - { resource: "@PaginasIndexBundle/Resources/config/services.yml" }
     - { resource: "@DonacionesBundle/Resources/config/services.yml" }
     - { resource: "@ContactameBundle/Resources/config/services.yml" }
+    - { resource: "@ImagenesBundle/Resources/config/services.yml" }
+    - { resource: "@MessageBundle/Resources/config/services.yml" }
 
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -82,6 +84,32 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    
+# # ElasticSearch
+# fos_elastica:
+#     clients:
+#         default:
+#             host: %fos_elastica.host%
+#             port: %fos_elastica.port%
+#     indexes:
+#         search:
+#             finder: ~
+#             client: default
+#             types:
+#                 books:
+#                     mappings:
+#                         id:
+#                             type: integer
+#                         categoria: ~
+#                         tipo: ~
+#                         nombre: ~
+#                         propietario: ~
+#                     persistence:
+#                         driver: orm
+#                         model: Obtao\BlogBundle\Entity\Article
+#                         finder: ~
+#                         provider: ~
+#                         listener: ~
     
     
 #payum:

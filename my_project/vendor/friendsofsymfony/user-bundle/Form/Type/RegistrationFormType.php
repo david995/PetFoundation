@@ -16,6 +16,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use ImagenesBundle\Form\ImagenType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -44,6 +45,8 @@ class RegistrationFormType extends AbstractType
             ->add('roles', 'choice', array('label' => ' ','attr' => array('hidden'=> true), 
                            'choices' => array( 'ROLE_ADMIN' => 'ADMINISTRADOR','ROLE_SUPERADMIN' => 'SUPERADMINISTRADOR', 
                                                'ROLE_USER' => 'USUARIO'), 'multiple' => true))
+            
+            ->add('imagenes', ImagenType::class, array('by_reference'  => false))
         ;
         
         

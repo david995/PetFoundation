@@ -1,0 +1,234 @@
+{% extends "::base.html.twig" %}
+
+{% block guide %}
+<br>
+  <a style="fixed:top" href="{{ path("index_homepage") }}">Inicio</a> > <a href="#">Se busca</a>
+{% endblock guide %}
+
+{% block estiloscss %}
+     <link href="/my_project/web/bundles/index/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="/my_project/web/bundles/index/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="/my_project/web/bundles/index/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="/my_project/web/bundles/index/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/my_project/web/bundles/index/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/my_project/web/bundles/index/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    .dataTables_filter {
+display: none; 
+}
+.centrarcosas{text-align: center}
+.izquierda{text-align: left}
+#mitabla_info{float:left;}
+#mitabla_length{float:left;}
+
+    </style>
+    
+    
+    
+    {% endblock estiloscss %}
+    {% block body %}
+    <br>
+    <div class="container-fluid">
+    <div class="row">
+        <div class=" col-md-12 ">
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <div style="ovefrlow-x:auto; ovefrlow-y:auto;">
+                        <table id="mitabla"  class=" table-striped table table-hover">
+                            <thead>
+                                <tr><center>
+                                    <div id="prueba"></div>
+                                    <th class="visible-lg"> </th>
+                                    <th id="titulo" class="centrarcosas">TÍTULO DEL ANUNCIO</th>
+                                    <th id="informacion" class="centrarcosas">INFORMACIÓN</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 
+                                {% for anuncio in anuncios %}
+                                
+                                <tr>
+                                    <td  class="col-lg-4 visible-lg">
+                                        <div><!--  col-md-offset-2 -->
+                                            <center>
+                                                {% if anuncio.animal.getWebPath %}
+                                                    <img width="70%" src="{{ asset(anuncio.animal.getWebPath) }}" id="imgfor" class="img-rounded hidden-md ">
+                                                {% else %}
+                                                    <img width="70%" src="{{ asset('bundles/index/imgs/imgs/labrador.jpg') }}" id="imgfor" class="img-rounded hidden-md ">
+                                                {% endif %}
+                                            </center>
+                                        </div>
+                                    </td>
+                                    <td height="100%" class="col-lg-2 col-md-2 centrarcosas"><b>{{ anuncio.titulo }}</b></td>
+                                    <td class="col-lg-5 col-md-5">
+                                        <center>
+                                            <center><img width="70%" src="{{ asset('bundles/index/imgs/imgs/labrador.jpg') }}" id="imgfor" class="img-rounded visible-sm visible-md"></center>
+                                            <br>
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <th>Descripción </span></th>
+                                                    <td colspan="3"> {{ anuncio.animal.descripcion }} <span style="float:right">|</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <td class="centrarcosas">{{ anuncio.animal.Nombre }} <span style="float:right">|</span></td>
+                                                     
+                                                    <th>Sexo</th>
+                                                    <td class="centrarcosas">{% if anuncio.animal.Sexo == 'm'  %}Macho{% else %}Hembra{% endif %} <span style="float:right">|</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Raza</th>
+                                                    <td class="centrarcosas">{{ anuncio.animal.Raza }} <span style="float:right">|</span></td>
+                                                     
+                                                    <th>Tipo</th>
+                                                    <td class="centrarcosas">{{ anuncio.animal.Tipo }} <span style="float:right">|</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Propietario</th>
+                                                    <td class="centrarcosas">{{ anuncio.animal.Propietario }} <span style="float:right">|</span></td>
+                                                     
+                                                    <th>Teléfono</th>
+                                                    <td class="centrarcosas">{{ anuncio.animal.tlf }} <span style="float:right">|</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>F. de nacimiento</th>
+                                                    <td class="centrarcosas">{{ anuncio.animal.Nacimiento|date('Y-m-d H:i') }} <span style="float:right">|</span></td>
+                                                     
+                                                    
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </td>
+                                </tr> 
+                                
+                                {% endfor %} 
+                            
+                            </tbody>
+                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+    
+         $(document).ready(function() {
+            $('#mitabla').DataTable({
+                    responsive: true,
+                     "sPaginationType": "full_numbers",
+                    "aoColumnDefs": [{ "bSortable": false, "aTargets": [ 0, 2] }]
+                    
+            });
+            $('#prueba').each( function () {
+                    $(this).html( '<form class="form-inline" role="form">'+
+                                    '<div class="form-group">'+
+                                        '<input type="text" class="form-control col-lg-6" name="titulo" id="titulo" placeholder="Título">'+
+                                        '<input type="text" class="form-control col-lg-6" name="info" id="info" placeholder="Información">'+
+                                    '</div>'+
+                                  '</form>');
+                });
+         
+            // DataTable
+                var table = $('#mitabla').DataTable();
+             
+                // Apply the search
+                table.row( ':contains(Descripción)' ).every( function () {
+                    var that = this;
+             
+                    $( '#info').on( 'keyup change', function () {
+                        if ( that.search() !== this.value ) {
+                            that
+                                .search( this.value )
+                                .draw();
+                        }
+                    } );
+                } );
+             
+            table.columns( ':contains(TÍTULO)' ).every( function () {
+                    var that = this;
+             
+                    $( '#titulo').on( 'keyup change', function () {
+                        if ( that.search() !== this.value ) {
+                            that
+                                .search( this.value )
+                                .draw();
+                        }
+                    } );
+                } );
+         });
+    </script>
+    
+    
+        <script src="{{ asset('bundles/paginasindex/js/jquery.dataTables.min.js') }}"></script>
+        
+        <script src="{{ asset('bundles/paginasindex/js/jquery-1.12.0.min.js') }}"></script>
+    
+        <!-- jQuery -->
+        <script src="/my_project/web/bundles/index/bower_components/jquery/dist/jquery.min.js"></script>
+    
+        <!-- Bootstrap Core JavaScript -->
+        <script src="/my_project/web/bundles/index/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="/my_project/web/bundles/index/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    
+        <!-- DataTables JavaScript -->
+        <script src="/my_project/web/bundles/index/bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+        <script src="/my_project/web/bundles/index/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+        <script src="/my_project/web/bundles/index/bower_components/datatables-responsive/js/dataTables.responsive.js"></script>
+        
+        <!-- Custom Theme JavaScript -->
+        <script src="/my_project/web/bundles/index/dist/js/sb-admin-2.js"></script>
+    
+        <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+        <script>
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                    responsive: true,
+                    "aoColumnDefs": [{ "bSortable": false, "aTargets": [ 0, 1, 2, 3, 4 ] }]
+            });
+            // Setup - add a text input to each footer cell
+        $('#dataTables-example thead td').each( function () {
+            var title = $(this).text();
+            $(this).html( '<input type="text" placeholder="Buscar en: '+title+'" />' );
+        } );
+     
+        // DataTable
+        var table = $('#dataTables-example').DataTable();
+     
+        // Apply the search
+        table.columns().every( function () {
+            var that = this;
+     
+            $( 'input', this.header() ).on( 'keyup change', function () {
+                if ( that.search() !== this.value ) {
+                    that
+                        .search( this.value )
+                        .draw();
+                }
+            } );
+        } );
+       
+        });
+        </script>
+    
+    {% endblock body %}

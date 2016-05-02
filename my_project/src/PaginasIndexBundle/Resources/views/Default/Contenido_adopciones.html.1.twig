@@ -1,0 +1,70 @@
+{% extends "::base.html.twig" %}
+
+{% block guide %}
+  <a href="{{ path("index_homepage") }}">Inicio</a> > <a href="#">Adopciones</a>
+{% endblock guide %}
+
+
+{% block body %}
+<script type="text/javascript" src="/my_project/web/bundles/paginasindex/js/jquery-1.10.2.js"></script>
+<!-- inicio buscador -->
+    <div class="container">
+        <div class="row">
+            <form id="buscador" class="form-inline" method="POST" role="form" action="/buscador">
+                <div class="form-group">
+                    <select name="categoria" id="categoria" class="form-control selectpicker" style="color:#9999B2">
+                        <option selected style="display:none;color:#9999B2">Categoría</option>
+                        <option value="adopciones" style="color:#9999B2;">Adopciones</option>
+                        <option value="camadas" style="color:#9999B2;">Camadas</option>
+                        <option value="protectoras" style="color:#9999B2;">Protectoras</option>
+                        <option value="sebusca"style="color:#9999B2;">Se Busca</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="tipo" id="tipo" placeholder="Tipo">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="propietario" id="propietario" placeholder="Propietario">
+                </div>
+                <button type="submit" class="btn btn-default" name="submit" value="submit" id="buscar" style="color:#9999B2;">
+                    Buscar
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </form>
+        </div>
+    </div><br><!-- fin buscador -->
+    <center> 
+        {% for anuncio in anuncios %}
+            <div class="row" > <!-- anuncio -->
+                <hr style="display: block;height: 1px;border: 0;border-top: 2px solid #ccc;margin: 1em 0;padding: 0; ">
+
+                <div class="col-sm-4 mostrarDescripcion "><!--  col-md-offset-2 -->
+                    <img src="/my_project/web/bundles/paginasindex/imgs/camadasboxers.jpg" class="img-rounded" style="width:50%">
+                </div>
+                <div class="col-sm-3" >
+                    <img src="/my_project/web/bundles/index/imgs/add-notes.png" style="width: 30px"/><b>{{ anuncio.titulo }}</b>
+                </div>
+                <div class="col-sm-5 " align="left" >
+                   <b>- Descripción:</b>{{ anuncio.descripcion }}<br>
+                    <b>- Nombre:</b>{{ anuncio.Nombre }}<br>
+                    <b>- Raza:</b>  {{ anuncio.Raza }}<br>
+                    <b>- Tipo:</b>  {{ anuncio.Tipo }}<br>
+                    <b>- Sexo:</b>  {{ anuncio.Sexo }}<br>
+                    <b>- Teléfono:</b>  {{ anuncio.tlf }}<br>
+                    <b>- Nacimiento:</b>  {{ anuncio.Nacimiento }}<br>
+                    <b>- Propietario:</b>  {{ anuncio.Propietario }}<br>
+                </div>
+            </div>
+            <hr style="display: block;
+            height: 1px;
+            border: 0;
+            border-top: 2px solid #ccc;
+            margin: 1em 0;
+            padding: 0; "><br><!-- fin anuncio -->
+       {% endfor %} 
+    </center>
+{% endblock body %}
+      

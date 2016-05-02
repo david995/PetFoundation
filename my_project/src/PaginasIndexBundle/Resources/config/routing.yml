@@ -13,5 +13,13 @@ paginas_protectoras:
 paginas_sebusca:
     path:     /sebusca
     defaults: { _controller: PaginasIndexBundle:Default:sebusca}
+paginas_pruebabuscar:
+    path:     /pruebabuscar
+    defaults: { _controller: PaginasIndexBundle:Default:pruebabuscar}
+paginas_buscador:
+    path:     /buscador
+    defaults: { _controller: PaginasIndexBundle:Default:buscador}
+
+
 
     

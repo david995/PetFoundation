@@ -9,3 +9,7 @@ ani:
 anunc:
     path:     /anuncios/new
     defaults: { _controller: AnunciosBundle:Anuncios:new }
+
+index_p:
+    path:     /index
+    defaults: { _controller: IndexBundle:Default:indexp }

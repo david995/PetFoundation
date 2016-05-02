@@ -46,7 +46,7 @@ class ProfileController extends Controller
         $stmt = $this->getDoctrine()->getEntityManager()
    ->getConnection()
     ->prepare("select
-    anuncios.id,anuncios.titulo,animales.descripcion,anuncios.Categoria,anuncios.anuncio_id,anuncios.animal_id,animales.Nombre,animales.Tipo,animales.Raza,animales.Sexo,animales.Nacimiento,animales.Propietario,animales.tlf,animales.Pedigri
+    anuncios.id,anuncios.titulo,animales.descripcion,anuncios.Categoria,anuncios.anuncio_id,anuncios.animal_id,animales.Nombre,animales.Tipo,animales.Raza,animales.Sexo,animales.Nacimiento,animales.Propietario,animales.tlf
     from
     symfony.anuncios
     LEFT JOIN

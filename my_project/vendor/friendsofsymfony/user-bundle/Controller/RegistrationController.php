@@ -21,6 +21,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
+use ImagenesBundle\Entity\Imagen;
 
 /**
  * Controller managing the registration
@@ -32,6 +33,8 @@ class RegistrationController extends Controller
 {
     public function registerAction(Request $request)
     {
+        
+
         /** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
@@ -41,7 +44,9 @@ class RegistrationController extends Controller
 
         $user = $userManager->createUser();
         $user->setEnabled(true);
-
+        
+        $imagen = new Imagen();
+        
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
 
@@ -51,18 +56,24 @@ class RegistrationController extends Controller
 
         $form = $formFactory->createForm();
         $form->setData($user);
+        
+        $user->setImagen($imagen);
+        
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $event = new FormEvent($form, $request);
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
-
+            
+            
             $userManager->updateUser($user);
 
             if (null === $response = $event->getResponse()) {
+                
                 $url = $this->generateUrl('index_homepage');
                 $response = new RedirectResponse($url);
+                
             }
 
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
@@ -71,6 +82,7 @@ class RegistrationController extends Controller
         }
 
         return $this->render('FOSUserBundle:Registration:register.html.twig', array(
+            'imagen' =>$imagen,
             'form' => $form->createView(),
         ));
     }

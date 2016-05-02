@@ -18,23 +18,21 @@ class AnunciosType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-         $builder->add('categoria', 'choice',array(
+         $builder
+            ->add('categoria', 'choice',array(
                 'choices'=>array(
                     'Camadas' =>'Camadas',
                     'Adopciones' =>'Adopciones',
                     'Se busca' =>'Se busca',
-                     'Protectoras' =>'Protectoras'
+                    'Protectoras' =>'Protectoras'
                     
                     ),
-                    ));
-        $builder
+                ))
             ->add('titulo')
-            
             ->add('animal')
-           # ->add('user')
-        ;
-       
-        $builder->add('animal', AnimalesType::class,array('by_reference'   => false));
+            ->add('animal', AnimalesType::class, array('by_reference'  => false))
+            /*->add('user') //ya funciona   */
+            ;
         
          
     }
@@ -49,3 +47,4 @@ class AnunciosType extends AbstractType
         ));
     }
 }
+?>

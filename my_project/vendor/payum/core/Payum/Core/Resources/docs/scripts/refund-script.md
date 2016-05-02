@@ -13,10 +13,10 @@ $token = $payum->getHttpRequestVerifier()->verify($_REQUEST);
 $gateway = $payum->getGateway($token->getGatewayName());
 
 try {
-    $gateway->execute(new Notify($token));
+    $gateway->execute(new Refund($token));
 
     if (false == isset($_REQUEST['noinvalidate'])) {
-        $payum->getRequestVerifier()->invalidate($token);
+        $payum->getHttpRequestVerifier()->invalidate($token);
     }
 
     if ($token->getAfterUrl()) {
@@ -39,6 +39,6 @@ try {
 }
 ```
 
-Back to [scripts](https://github.com/Payum/Core/tree/master/Resources/docs/scripts/index.md).
-Back to [index](https://github.com/Payum/Core/tree/master/Resources/docs/index.md).
+Back to [scripts](index.md).
+Back to [index](../index.md).
 

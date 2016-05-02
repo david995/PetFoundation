@@ -1,29 +1,72 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Anuncios</h1>
-
-    <table class="table">
-        <tbody>
+    <center>
+      <h1>Anuncio</h1>  
+    </center>
+    
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-1">
+            <table class="table">
+                <tbody>
+                    
+                    <tr>
+                        <th>Titulo</th>
+                        <td>{{ anuncio.titulo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Categoria</th>
+                        <td>{{ anuncio.categoria }}</td>
+                    </tr>
+                    <tr>
+                        <th>Descripción</th>
+                        <td> {{ anuncio.animal.descripcion }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ anuncio.animal.Nombre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Sexo</th>
+                        <td>{% if anuncio.animal.Sexo == 'm'  %}Macho{% else %}Hembra{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <th>Raza</th>
+                        <td>{{ anuncio.animal.Raza }}</td>
+                    </tr>
+                    <tr>
+                        <th>Tipo</th>
+                        <td>{{ anuncio.animal.Tipo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Propietario</th>
+                        <td>{{ anuncio.animal.Propietario }}</td>
+                    </tr>
+                    <tr> 
+                        <th>Teléfono</th>
+                        <td>{{ anuncio.animal.tlf }}</td>
+                    </tr>
+                    <tr>
+                        <th>F. de nacimiento</th>
+                        <td>{{ anuncio.animal.Nacimiento|date('Y-m-d H:i') }}</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-4">
+            <br>
+            <center>
+               <img width="60%" height="60%" src="{{asset(anuncio.animal.getWebPath)}}"></img> 
+            </center>
             
-            <tr>
-                <th>Titulo</th>
-                <td>{{ anuncio.titulo }}</td>
-            </tr>
-            <tr>
-                <th>Categoria</th>
-                <td>{{ anuncio.categoria }}</td>
-            </tr>
+        </div>
+    </div>
 
-        </tbody>
-    </table>
-
-    <ul>
+    <br>
+   
+    {{ form_start(delete_form, {'attr': {'onclick': 'return confirm("Estas seguro de que quieres borrar el anuncio?")'}}) }}
+        <input type="submit" class="btn btn-danger" value="BORRAR ANUNCIO">
+    {{ form_end(delete_form) }}
        
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="BORRAR ANUNCIO">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}
