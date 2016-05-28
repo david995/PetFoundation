@@ -1,0 +1,22 @@
+titles:
+    index: Pet's
+flags:
+    spanish: Español
+    english: Inglés
+    valencian: Valenciano
+alerts:
+    access_denied: Acceso denegado - Necesita permisos de administrador para acceder a esta parte de la página
+index:
+    index:
+        index: Página principal
+        publish_add: Publicar anuncio
+        navbar_settings: Configuración
+        navbar_profile: Perfil
+        footer_contact: Contacto
+        wanted: Se busca
+        animal_shelter: Protectoras
+        donations: Donaciones
+        adoptions: Adopciones
+        litters: Camadas
+        logout: Salir
+        

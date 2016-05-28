@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="shortcut icon" href="{{asset('bundles/pets/imgs/icon.png')}}" />
+        <meta name="description" content="Pets page">
+		<meta name="author" content="Pets">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {% block stylesheets %}
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+			<link rel="stylesheet" type="text/css" href="{{asset('bundles/pets/css/menu_circle/menu_circle.css')}}">
+			<link href="{{asset("bundles/pets/font-awesome/css/font-awesome.min.css")}}" rel="stylesheet" type="text/css">
+            <link href="{{asset('bundles/pets/css/fileinput.min.css')}}" media="all" rel="stylesheet" type="text/css" />
+			<style>
+			
+			    body {
+			        width:99%;
+			        overflow-x:hidden;
+			    }
+			
+			    /*BORDER SHADOWS CENTRAL DIV COLOR*/
+			    
+			    .shadowBlue{
+			        background-color:white;
+			        -webkit-box-shadow: 10px 10px 58px 5px rgba(0,187,212,1);
+                    -moz-box-shadow: 10px 10px 58px 5px rgba(0,187,212,1);
+                    box-shadow: 10px 10px 58px 5px rgba(0,187,212,1);
+                    Copiar texto
+			    }
+			    .shadowBlack{
+			        background-color:white;
+			        top: 0; bottom: 0; 
+			        -webkit-box-shadow: 10px 10px 59px 16px rgba(0,0,0,0.60);
+			        -moz-box-shadow: 10px 10px 59px 16px rgba(0,0,0,0.60);
+			        box-shadow: 10px 10px 59px 16px rgba(0,0,0,0.60);
+			    }
+			
+			    /*NAVBAR TEXT COLOR AND NAVBAR BACKGROUND COLOR*/
+			    
+			    .navbar-inverse {
+                    color:white;
+                    background-color:#00BCD4;
+                    border-color: #00BCD4;
+                }
+                .navbar-inverse .navbar-brand {
+                    color: white;
+                }
+                .navbar-inverse .navbar-nav>li>a {
+                    color: white;
+                }
+                
+                .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+                    color: #fff;
+                    background-color:#00BCD4;
+                }
+              
+              
+                /* CENTER BUTTON ON NAVBAR */
+              
+                .navbar-brand-centered {
+                    position: absolute;
+                    left: 50%;
+                    display: block;
+                    width: 160px;
+                    text-align: center;
+                    background-color: transparent;
+                }
+                .navbar>.container .navbar-brand-centered, 
+                .navbar>.container-fluid .navbar-brand-centered {
+                    margin-left: -100px;
+                    margin-top:-9px;
+                }
+                
+                /* BACKGROUNDS */
+                
+                .white-navbar{
+                    background-color:white;
+                }
+                
+                .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+                    color: #fff;
+                    background-color:#00BCD4;
+                }
+                
+                /* styles custom */
+                
+                /*MARGINS*/
+                .marginLogo{
+                    margin-top:-11%;
+                }
+                .marginOptionsNavBar{
+                    margin-top:10%;
+                }
+                
+                .marginPageContent{
+                    margin-top:1.5%;
+                    margin-bottom:10%;
+                }
+                
+                .marginFlashBag{
+                    margin-top:2%;
+                }
+                
+                .marginDivNavBar{
+                    /*margin-top:4%;*/
+                    margin-top:70px;
+                }
+                
+                .botonPublicar{
+				    margin-top:1.9%;
+				
+    			}
+                
+                /**/
+                
+                * html .footer-pets {
+                   position:absolute;
+                   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+                }
+
+                .navbar .navbar-inverse .navbar-fixed-top{
+                    height:100px;
+                }
+    			
+    			.borde{
+    				border: 0px;
+    				border-radius: 27px 27px 27px 27px;
+    				-moz-border-radius: 27px 27px 27px 27px;
+    				-webkit-border-radius: 27px 27px 27px 27px;
+    			}
+    			
+    			.imgb {
+                    background-image: url("{{asset('bundles/pets/imgs/imgs/huellas_perro.jpg')}}");
+                    background-repeat: repeat-x;
+                    opacity: 0.4;
+                    filter: alpha(opacity=40);
+                }
+                
+                .footer-pets{
+                    position: fixed; 
+                    left:0px;
+                    bottom:0px;
+                    width:100%;
+                    height: 50px; 
+                    background-color: #00BCD4;
+                    text-align: right; 
+                    line-height: 40px;
+                }
+                
+                
+                .footer.fixed {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1000;
+                    height: 6%; 
+                    background-color: #00BCD4;
+                    border-top: 1px solid #e7eaec;
+                    
+                }
+                .pull-right {
+                    float: right;
+                }
+                
+			</style>
+        {% endblock %}
+        <script src="{{asset('bundles/pets/js/jquery.js')}}"></script>
+        <script src="{{asset('bundles/pets/js/fileinput.min.js')}}" type="text/javascript"></script>
+    </head>
+    <body background="https://pets-daflpa.c9users.io{{asset('bundles/pets/imgs/hperro.jpg')}}">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="height:70px;">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="{{path('pets_homepage')}}"><img class="marginLogo" src="{{ asset('bundles/pets/imgs/logo.png') }}" width="140px" height="70" alt="Inicio" title="Inicio"></a>
+                </div>
+                <div class="navbar-brand navbar-brand-centered">
+                    <button class="btn btn-default hidden-xs botonPublicar borde" onClick="location.href='{{path('anuncios_new')}}'" value="publicar anuncio">
+        				<img width="40" height="40" src="{{ asset('bundles/pets/imgs/publicar.png') }}" alt="Publicar Anuncio" title="Publicar Anuncio">&nbsp;&nbsp;&nbsp; {{"index.index.publish_add"|trans}}
+        			</button>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    {% if is_granted("ROLE_USER") %}
+                    
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" style="padding:0px; margin-top:6%;" data-toggle="dropdown" href="#">
+                                {% if app.user.getWebPath %}
+    							    <img class="img-circle" style="cursor:pointer;" width="60" height="60" src="{{ asset(app.user.getWebPath) }}" alt="Mi Perfil" text="Mi Perfil">&nbsp;&nbsp;<br>
+    							{% else %}
+    							    <img src="{{asset('bundles/pets/imgs/user.png')}}" class="img-circle" width="60" height="60" alt="Mi Perfil">
+    							{% endif %}                            
+    						</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{path('user_show', { 'id': app.user.id }) }}"><span class="glyphicon glyphicon-user"></span> {{ "index.index.navbar_profile"|trans }}</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-cog"></span> {{ 'index.index.navbar_settings'|trans }}</a></li> 
+                                <li><a href="{{path('fos_user_security_logout')}}"><i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'index.index.logout'|trans }}</a></li>
+                            </ul>
+                        </li>
+                        
+                    {% else %}
+                    
+                        <li>
+                           {#<span class="glyphicon glyphicon-triangle-bottom"></span>#}
+                            <button class="btn btn-default hidden-xs borde" style="margin-top:15%;" onClick="location.href='{{path('fos_user_security_login')}}'" value="Iniciar sesion" >Iniciar sesion</button> 
+                        </li>
+                        
+                    {% endif %}
+                    
+                    {% set locale = app.request.locale %}
+    
+                    <!-- begin TASKS DROPDOWN -->
+                    <li class="dropdown marginOptionsNavBar">
+                        <a href="#" class="idiom-link dropdown-toggle" data-toggle=dropdown>
+                            <i class="fa fa-flag"></i>
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-scroll dropdown-idiom">
+            
+                            <!-- Tasks Dropdown Header -->
+                            <li class="dropdown-header ">
+                                <center>
+                                    {# <i class="fa fa-flag"></i> #}
+                                    {% if locale == 'es' %}
+                                        <img width="30" height="30" src="{{ asset('bundles/pets/imgs/flags/espanya.png' ) }}" alt="">
+                                        {{ 'flags.spanish'|trans }}
+                                    {% elseif locale == 'en' %}
+                                        <img width="30" height="30" src="{{ asset('bundles/pets/imgs/flags/uk.png' ) }}" alt="">
+                                        {{ 'flags.english'|trans }}
+                                    {% elseif locale == 'val' %}
+                                         <img width="30" height="30" src="{{ asset('bundles/pets/imgs/flags/valencia.png' ) }}" alt="">
+                                        {{ 'flags.valencian'|trans }}
+                                    {% endif %}
+                                </center>
+                            </li>
+                            <hr style="background-color:black; height:1px;">
+                            <!-- Tasks Dropdown Body - This is contained within a SlimScroll fixed height box. You can change the height using the SlimScroll jQuery features. -->
+                            <li id="taskScroll">
+                                <ul class="list-unstyled">
+                                    <div class="row">
+                                        <div class="col-lg-10 col-lg-offset-1">
+                                            <li>
+                                                <a href="{{ path('pets_homepage', { '_locale': 'es' }) }}">
+                                                    <p>
+                                                        {{ 'flags.spanish'|trans }}
+                                                        <span class="pull-right">
+                                                            <img width="30" height="30" src="{{ asset('bundles/pets/imgs/flags/espanya.png' ) }}" alt="">
+                                                        </span>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-10 col-lg-offset-1">
+                                            <li>
+                                                <a href="{{ path('pets_homepage', { '_locale': 'en' }) }}">
+                                                    <p>
+                                                        {{ 'flags.english'|trans }}
+                                                        <span class="pull-right">
+                                                            <img width="30" height="30" src="{{ asset('bundles/pets/imgs/flags/uk.png' ) }}" alt="">
+                                                        </span>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-10 col-lg-offset-1">
+                                            <li>
+                                                <a href="{{ path('pets_homepage', { '_locale': 'val' }) }}">
+                                                    <p>
+                                                        {{ 'flags.valencian'|trans }}
+                                                        <span class="pull-right">
+                                                            <img width="30" height="30" src="{{ asset('bundles/pets/imgs/flags/valencia.png' ) }}" alt="">
+                                                        </span>
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-menu -->
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="marginDivNavBar"></div>
+        
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 marginFlashBag">
+                {{ render_flash_alerts() }}
+            </div>
+        </div>
+        
+        
+        
+        <div class="row marginPageContent">
+            <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 shadowBlack">
+                
+                <br>
+                <br>
+                
+                {% block body %}
+                {% endblock body %}
+                
+                <br>
+                <br>
+                <br>
+                
+            </div>
+        </div>   
+           
+        
+    
+        <div class="footer fixed">
+            <center>
+                <div class="parent2">
+                  <div class="test1" data-toggle="tooltip" data-placement="right" title="{{ 'index.index.litters'|trans }}"><a href=""><img src="{{asset('bundles/pets/imgs/iconsMenu/camada.png')}}" width="50%" height="50%"></img></i></a></div>
+                  <div class="test3" data-toggle="tooltip" data-placement="right" title="{{ 'index.index.adoptions'|trans }}"><a href="http://www.google.com"><img src="{{asset('bundles/pets/imgs/iconsMenu/adoptar.png')}}" width="50%" height="50%"></img></i></a></div>
+                  <div class="test4" data-toggle="tooltip" data-placement="left" title="{{ 'index.index.donations'|trans }}"><a href="http://www.google.com"><img src="{{asset('bundles/pets/imgs/iconsMenu/donar.png')}}" width="50%" height="50%"></img></i></a></div>
+                  <div class="test2" data-toggle="tooltip" data-placement="left" title="{{ 'index.index.animal_shelter'|trans }}"><a href="http://www.google.com"><img src="{{asset('bundles/pets/imgs/iconsMenu/profesional.png')}}" width="50%" height="50%"></img></i></a></div>
+                  <div class="test5" data-toggle="tooltip" data-placement="top" title="{{ 'index.index.wanted'|trans }}"><a href="http://www.google.com"><img src="{{asset('bundles/pets/imgs/iconsMenu/buscar.png')}}" width="50%" height="50%"></img></i></a></div>
+                  <div class="mask2"><i style="margin-bottom:10px;" class="fa fa-bars fa-3x"></i></div>
+                </div>
+            </center>
+            <div class="pull-right">
+                <font color="#FFFFFF"><a href="/my_project/web/app_dev.php/contactame">{{ 'index.index.footer_contact'|trans }}</a> | Pet's - Copyright © 2016</font>
+            </div>
+        </div>
+            
+            
+            {#<div id="footer" class="footer-pets" >
+                
+                <p class="" ><font color="#FFFFFF"><a href="/my_project/web/app_dev.php/contactame">{{ 'index.index.footer_contact'|trans }}</a> | Pet's - Copyright © 2016</font></p>
+                
+            </div>#}
+        
+        
+        
+        
+        
+        {% block javascripts %}
+            
+            <script src="{{asset('bundles/pets/js/bootstrap.js')}}"></script>
+            
+            
+            
+			<script type="text/javascript">
+                $(document).ready(function() {
+        
+                  var active1 = false;
+                  var active2 = false;
+                  var active3 = false;
+                  var active4 = false;
+                  var active5 = false;
+        
+                    $('.parent2').on('mousedown touchstart', function() {
+                    
+                    if (!active1) $(this).find('.test1').css({'background-color': 'gray', 'transform': 'translate(105px,-60px)'});//0 -125 //-125 0
+                    else $(this).find('.test1').css({'background-color': 'dimGray', 'transform': 'none'}); 
+                    
+                     if (!active2) $(this).find('.test3').css({'background-color': 'gray', 'transform': 'translate(60px,-105px)'});//-60 -105
+                    else $(this).find('.test3').css({'background-color': 'darkGray', 'transform': 'none'});
+                    
+                      if (!active3) $(this).find('.test2').css({'background-color': 'gray', 'transform': 'translate(-105px,-60px)'});//-125 -60
+                    else $(this).find('.test2').css({'background-color': 'silver', 'transform': 'none'});
+                    
+                      if (!active4) $(this).find('.test4').css({'background-color': 'gray', 'transform': 'translate(-60px,-105px)'});//105 -60
+                    else $(this).find('.test4').css({'background-color': 'silver', 'transform': 'none'});
+                    
+                     if (!active5) $(this).find('.test5').css({'background-color': 'gray', 'transform': 'translate(0px,-125px)'});//105 -60
+                    else $(this).find('.test5').css({'background-color': 'silver', 'transform': 'none'});
+                    active1 = !active1;
+                    active2 = !active2;
+                    active3 = !active3;
+                    active4 = !active4;
+                    active5 = !active5;
+                      
+                    });
+        
+                    $(function () {
+                      $('[data-toggle="tooltip"]').tooltip()
+                    })
+                });
+			</script>
+        {% endblock %}
+    </body>
+    
+</html>
+
+        

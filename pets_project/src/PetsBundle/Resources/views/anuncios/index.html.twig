@@ -1,0 +1,166 @@
+{% extends "::base.html.twig" %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{asset('bundles/pets/css/datatables/dataTables.bootstrap.min.css')}}" type="text/css" rel="stylesheet"/>
+    <link href="{{asset('bundles/pets/bower_components/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
+    <link href="{{asset('bundles/pets/dist/css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{asset('bundles/pets/bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    
+    <style>
+        .dataTables_filter {
+            display: none; 
+        }
+        
+        .centrarcosas{text-align: center}
+        
+        .izquierda{text-align: left}
+        
+        #mitabla_info{float:left;}
+        
+        #mitabla_length{float:left;}
+    </style>
+{% endblock stylesheets %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12 ">
+            <ol class="breadcrumb" style="background-color:#D8F1FD !important;">
+              <li><a href="{{path('pets_homepage')}}">{{'index.index.index'|trans}}</a></li>
+              {% if category == "litters" %}
+                  <li class="active">{{'index.index.litters'|trans}}</li>
+              {% elseif category == "adoptions" %}
+                  <li class="active">{{'index.index.adoptions'|trans}}</li>
+              {% elseif category == "wanted" %}
+                  <li class="active">{{'index.index.wanted'|trans}}</li>
+              {% elseif category == "animal_shelter" %}
+                  <li class="active">{{'index.index.animal_shelter'|trans}}</li>
+              {% endif %}
+              
+            </ol>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <table id="mitabla"  class="table table-striped"  width="100%">
+                        <thead>
+                             <tr><center>
+                                 <div id="prueba"></div>
+                                 <th class="hidden-md"> </th>
+                                 <th id="informacion"></th>
+                             </tr>
+                            
+                        </thead>
+                        <tbody>
+                            {% for anuncio in anuncios %}
+                                <tr>
+                                    <td  class="col-md-4 hidden-md">
+                                        <div><!--  col-md-offset-2 -->
+                                            <center>
+                                                {% if anuncio.animal.getWebPath %}
+                                                    {{ anuncio.titulo }}<br>
+                                                    <img width="70%" src="{{ asset(anuncio.animal.getWebPath) }}" id="imgfor" class="img-rounded hidden-md ">
+                                                {% else %}
+                                                    <img width="70%" src="{{ asset('bundles/pets/imgs/imgs/labrador.jpg') }}" id="imgfor" class="img-rounded hidden-md ">
+                                                {% endif %}
+                                            </center>
+                                        </div>
+                                    </td>
+                                    {#<td height="100%" class="col-md-3 centrarcosas"><b>{{ anuncio.titulo }}</b></td>#}
+                                    <td class="col-md-6">
+                                        <center>
+                                            <br>
+                                            <table class="table table-hover">
+                                                <tr>
+                                                    <th class="col-md-3">Descripción</th>
+                                                    <td class="col-md-9"> {{ anuncio.animal.descripcion }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-md-3">Nombre</th>
+                                                    <td class="col-md-9">{{ anuncio.animal.Nombre }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-md-3">Sexo</th>
+                                                    <td class="col-md-9">{% if anuncio.animal.Sexo == 'm'  %}Macho{% else %}Hembra{% endif %}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-md-3">Raza</th>
+                                                    <td class="col-md-9">{{ anuncio.animal.Raza }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-md-3">Tipo</th>
+                                                    <td class="col-md-9">{{ anuncio.animal.Tipo }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-md-3">Propietario</th>
+                                                    <td class="col-md-9">{{ anuncio.animal.Propietario }}</td>
+                                                </tr>
+                                                <tr> 
+                                                    <th class="col-md-3">Teléfono</th>
+                                                    <td class="col-md-9">{{ anuncio.animal.tlf }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="col-md-3">F. de nacimiento</th>
+                                                    <td class="col-md-9">{{ anuncio.animal.Nacimiento|date('Y-m-d H:i') }}</td>
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>  
+        </div>
+    </div>
+            
+    <script src="{{asset('bundles/pets/js/jquery.js')}}"></script>
+    <script src="{{ asset('bundles/pets/js/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('bundles/pets/js/datatables/dataTables.bootstrap.min.js') }}"></script>
+  
+    <script>
+            $(document).ready(function() {
+                $('#mitabla').DataTable({
+                    responsive: true,
+                    "sPaginationType": "full_numbers",
+                    "aoColumnDefs" : [ { "bSortable" : false, "aTargets" : [ "no-sort" ] } ]
+                    
+                });
+                $('#prueba').each( function () {
+                        $(this).html( '<form class="form-inline" role="form">'+
+                                        
+                                            '<input type="text" class="pull-right form-control col-lg-6" name="info" id="info" placeholder="Información">'+
+                                        
+                                      '</form>');
+                    });
+             
+                // DataTable
+                    var table = $('#mitabla').DataTable();
+                 
+                    // Apply the search
+                    table.row( ':contains(Descripción)' ).every( function () {
+                        var that = this;
+                 
+                        $( '#info').on( 'keyup change', function () {
+                            if ( that.search() !== this.value ) {
+                                that
+                                    .search( this.value )
+                                    .draw();
+                            }
+                        } );
+                    } );
+            } );
+             
+            
+             
+            
+            
+         
+    </script>
+{% endblock body %}

@@ -1,0 +1,21 @@
+titles:
+    index: Pet's
+flags:
+    spanish: Spanish
+    english: English
+    valencian: Valencian
+alerts:
+    access_denied: Access Denied - You need administrative permission to access this part of the page
+index:
+    index:
+        index: Home
+        publish_add: Publish add
+        navbar_settings: Settings
+        navbar_profile: Profile
+        footer_contact: Contact
+        wanted: Wanted
+        animal_shelter: Animal Shelter
+        donations: Donations
+        adoptions: Adoptions
+        litters: Litters
+        logout: Logout

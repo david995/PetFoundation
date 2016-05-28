@@ -1,0 +1,11 @@
+pets_homepage:
+    path:     /
+    defaults: { _controller: PetsBundle:Default:index }
+
+animales_homepage:
+    resource: "@PetsBundle/Resources/config/routing/animales.yml"
+    prefix:   /animales
+
+anuncios_homepage:
+    resource: "@PetsBundle/Resources/config/routing/anuncios.yml"
+    prefix:   /anuncios

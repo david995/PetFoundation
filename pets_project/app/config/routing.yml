@@ -1,0 +1,14 @@
+pets:
+    resource: "@PetsBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: |es|en|val
+
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: |es|en|val
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

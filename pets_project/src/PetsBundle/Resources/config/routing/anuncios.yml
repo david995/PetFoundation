@@ -1,0 +1,24 @@
+anuncios_index:
+    path:     /{page}
+    defaults: { _controller: "PetsBundle:Anuncios:index" }
+    methods:  GET
+
+anuncios_show:
+    path:     /{id}/show
+    defaults: { _controller: "PetsBundle:Anuncios:show" }
+    methods:  GET
+
+anuncios_new:
+    path:     /new
+    defaults: { _controller: "PetsBundle:Anuncios:new" }
+    methods:  [GET, POST]
+
+anuncios_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PetsBundle:Anuncios:edit" }
+    methods:  [GET, POST]
+
+anuncios_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PetsBundle:Anuncios:delete" }
+    methods:  DELETE

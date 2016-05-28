@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-10 col-md-offset-1">
+            <font style="color: #00BCD4;font-weight: bold; font-size:23px;">Perfil de usuario</font>
+            <br><br>
+        </div>
+    </div>
+    <div class="row"> 
+        <div class="col-sm-5 col-md-offset-3" align="left"  ><!--  col-md-offset-2 -->
+            <p><label>{{ 'profile.show.username'|trans }}:</label> {{ app.user.username }}</p>
+            <p><label>{{ 'profile.show.email'|trans }}:</label> {{ app.user.email }}</p>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-lg-4 col-lg-offset-4 ">
+            <br>
+            <input id="botonPublicar" onclick="location.href='{{ path("fos_user_profile_edit") }}';" class="btn btn-info" type="submit" value="Editar Perfil" style='width:100%; height:40px;' />
+            <br><br>
+            <input id="botonPublicar" onclick="location.href='{{ path("fos_user_change_password") }}';" class="btn btn-info" type="submit" value="Cambiar contraseña" style='width:100%; height:40px;' />
+        </div>
+    </div>
+    <br><br>
+    <div class="col-lg-10 col-lg-offset-1">
+        <font style="color: #00BCD4;font-weight: bold; font-size:23px;">Anuncios de  {{ app.user.username }}</font>
+        <br><br>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                       
+                        <th>Titulo</th>
+                        <th>Categoria</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Raza</th>
+                        <th>Sexo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                {% for anuncio in anuncios %}
+                    <tr>
+                        
+                        <td>{{ anuncio.titulo }}</td>
+                        <td>{{ anuncio.Categoria }}</td>
+                        <td>{{ anuncio.animal.Nombre }}</td>
+                        <td>{{ anuncio.animal.Tipo }}</td>
+                        <td>{{ anuncio.animal.Raza }}</td>
+                        <td>{% if anuncio.animal.Sexo == 'm'  %}Macho{% else %}Hembra{% endif %}</td>
+                        <td>
+                           <a href="{{ path('anuncios_show', { 'id': anuncio.animal.id }) }}">Ver tu anuncio</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>                  
+    </div>
+<br><br><br><br><br><br>
+{% endblock %}

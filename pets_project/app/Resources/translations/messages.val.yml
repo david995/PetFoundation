@@ -1,0 +1,21 @@
+titles:
+    index: Pet's
+flags:
+    spanish: Espanyol
+    english: Anglés
+    valencian: Valencià
+alerts:
+    access_denied: Accés denegat - necessita permisos d'administrador per accedir a aquesta part de la pàgina
+index:
+    index:
+        index: Pàgina principal
+        publish_add: Publicar anunci
+        navbar_settings: Configuració
+        navbar_profile: Perfil
+        footer_contact: Contacte
+        wanted: Es busca
+        animal_shelter: Protectores
+        donations: Donacions
+        adoptions: Adopcions
+        litters: Camades
+        logout: Eixir
